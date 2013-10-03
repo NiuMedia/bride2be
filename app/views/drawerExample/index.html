@@ -14,5 +14,22 @@
       <input class="topcoat-button--large" type="button" value="Seleccionar imagen de Portada">
       <input id="save-btn" class="topcoat-button" type="button" value="Guardar">
     </form>
+    <script type="text/javascript">
+      var saveBtn = document.querySelector("#save-btn");
+      saveBtn.addEventListener("click", function(){
+        window.localStorage.setItem("novio", document.querySelector("#novio"));
+        window.localStorage.setItem("novia", document.querySelector("#novia"));
+        window.localStorage.setItem("lugar", document.querySelector("#lugar"));
+        window.localStorage.setItem("fecha", document.querySelector("#fecha"));
+
+        window.localStorage.setItem("init", 1);
+      });
+
+      //Rellena los datos, segun la informacion guardada
+      document.querySelector("#novio").value = window.localStorage.getItem("novio");
+      document.querySelector("#novia").value = window.localStorage.getItem("novia");
+      document.querySelector("#lugar").value = window.localStorage.getItem("lugar");
+      document.querySelector("#fecha").value = window.localStorage.getItem("fecha");
+    </script>
 </div>
 
