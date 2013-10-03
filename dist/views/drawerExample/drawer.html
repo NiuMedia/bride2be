@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>Drawer Example</title>
+
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-light.css" />
+  <link rel="stylesheet" href="/stylesheets/application.css" />
+
+  <script src="/javascripts/onerror.js"></script>
+
+  <!-- cordova.js is served from localhost to ensure the correct version -->
+  <script src="http://localhost/appgyver/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+  <!-- Controllers can be loaded dynamically based on the resource name -->
+  <script src="/controllers/drawerExample.js"></script>  
+
+</head>
+<body>
+
+  <script>
+
+  // Sends message for the main view that listens with addEventListener()
+
+  function closeDrawerAndSendMessage(selection) {
+    var msg = { selection: selection };
+    window.postMessage(msg, "*");
+
+    steroids.drawers.hideAll();
+  }
+
+</script>
+
+<div class="topcoat-list__container black-bg">
+  <ul class="topcoat-list">
+    <li class="topcoat-list__item">Proveedores</li>
+    <li class="topcoat-list__item">Mis proveedores</li>
+    <li class="topcoat-list__item">Tips y notas</li>
+    <li class="topcoat-list__item">Agenda</li>
+    <li class="topcoat-list__item">Gastos</li>
+    <li class="topcoat-list__item">Invitados</li>
+    <li class="topcoat-list__item">Mesa de regalos</li>
+    <li class="topcoat-list__item">Configuración</li>
+  </ul>
+
+</div>
+
+
+</body>
+</html>

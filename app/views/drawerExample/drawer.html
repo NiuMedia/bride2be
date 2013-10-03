@@ -1,0 +1,26 @@
+<script>
+
+  // Sends message for the main view that listens with addEventListener()
+
+  function closeDrawerAndSendMessage(selection) {
+    var msg = { selection: selection };
+    window.postMessage(msg, "*");
+
+    steroids.drawers.hideAll();
+  }
+
+</script>
+
+<div class="topcoat-list__container black-bg">
+  <ul class="topcoat-list">
+    <li class="topcoat-list__item">Proveedores</li>
+    <li class="topcoat-list__item">Mis proveedores</li>
+    <li class="topcoat-list__item">Tips y notas</li>
+    <li class="topcoat-list__item">Agenda</li>
+    <li class="topcoat-list__item">Gastos</li>
+    <li class="topcoat-list__item">Invitados</li>
+    <li class="topcoat-list__item">Mesa de regalos</li>
+    <li class="topcoat-list__item">Configuración</li>
+  </ul>
+
+</div>

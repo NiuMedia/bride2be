@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>Drawer Example</title>
+
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-light.css" />
+  <link rel="stylesheet" href="/stylesheets/application.css" />
+
+  <script src="/javascripts/onerror.js"></script>
+
+  <!-- cordova.js is served from localhost to ensure the correct version -->
+  <script src="http://localhost/appgyver/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+  <!-- Controllers can be loaded dynamically based on the resource name -->
+  <script src="/controllers/drawerExample.js"></script>  
+
+</head>
+<body>
+
+  <script>
+
+  // Listen for window.postMessage() messages that drawer sends us
+
+  window.addEventListener("message", function(msg) {
+    var elem = document.querySelector("#selectedInDrawer");
+    elem.textContent = msg.data.selection;
+  });
+
+  // Initialize the left drawer
+
+  var leftDrawer = new steroids.views.WebView("/views/drawerExample/drawer.html");
+
+  leftDrawer.preload({},{
+    onSuccess: initGesture  // When the view has loaded, enable finger tracking
+  });
+
+  function initGesture() {
+    steroids.drawers.enableGesture(leftDrawer);
+  }
+
+
+  // Helper functions
+
+  function openDrawer() {
+    steroids.drawers.show(leftDrawer);
+  }
+
+  steroids.view.navigationBar.show("Bride2Be");
+</script>
+
+
+<div class="content-padded">
+  <h1>Configuración</h1>
+    <form>
+      <label for="novia">Nombre de la novia</label>
+      <input type="text" name="novia" id="novia">
+    </form>
+  </div>
+</div>
+
+
+
+</body>
+</html>
