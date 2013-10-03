@@ -1,12 +1,15 @@
   // Listen for window.postMessage() messages that drawer sends us
 
   document.addEventListener("deviceready", onDiviceReady, false);
+  document.addEventListener("ready", onReady, false);
 
   function onDiviceReady(){
     if(window.localStorage.getItem("init") != null){
       alert("Redirecciona a la pantalla principal");
     }
+  }
 
+  function onReady(){
     var saveBtn = document.querySelector("#save-btn");
     saveBtn.addEventListener("click", function(){
       window.localStorage.setItem("novio", document.querySelector("#novio"));
@@ -17,11 +20,6 @@
       window.localStorage.setItem("init", 1);
     });
   }
-
-  window.addEventListener("message", function(msg) {
-    var elem = document.querySelector("#selectedInDrawer");
-    elem.textContent = msg.data.selection;
-  });
 
   // Initialize the left drawer
 
@@ -34,8 +32,6 @@
   function initGesture() {
     steroids.drawers.enableGesture(leftDrawer);
   }
-
-
   // Helper functions
 
   function openDrawer() {
