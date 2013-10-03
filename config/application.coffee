@@ -75,7 +75,7 @@ steroids.config.location = "http://localhost/views/drawerExample/index.html"
 # steroids.config.tabBar.tabTitleShadowColor = ""
 # steroids.config.tabBar.selectedTabTintColor = ""
 
-steroids.config.navigationBar.tintColor = "#00aeef"
+steroids.config.navigationBar.tintColor = "#000000"
 steroids.config.navigationBar.titleColor = "#ffffff"
 steroids.config.navigationBar.titleShadowColor = "#000000"
 
