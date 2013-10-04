@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>Drawer Example</title>
+
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
+  <link rel="stylesheet" href="/stylesheets/application.css" />
+
+  <script src="/javascripts/onerror.js"></script>
+
+  <!-- cordova.js is served from localhost to ensure the correct version -->
+  <script src="http://localhost/appgyver/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+  <script src="/components/jquery/jquery.min.js"></script>
+
+  <!-- Controllers can be loaded dynamically based on the resource name -->
+  <script src="/controllers/drawerExample.js"></script> 
+
+
+</head>
+<body>
+
+  <div class="content-padded">
+  <h1>Configuración</h1>
+    <form>
+      <label for="novia">Nombre de la novia</label>
+      <input type="text" name="novia" id="novia">
+      <label for="novio">Nombre de la novio</label>
+      <input type="text" name="novio" id="novio">
+      <label for="lugar">Lugar</label>
+      <select name="lugar" id="lugar">
+        <option>San Luis Potosí</option>
+      </select> 
+      <label for="fecha">Fecha de la Boda</label>
+      <input type="datetime-local" name="fecha" id="fecha">
+      <div class="topcoat-button center full">Seleccionar imagen de Portada</div>
+      <div class="topcoat-button center" id="save-btn">Guardar</div>
+    </form>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#save-btn").on("click", function(){
+          window.localStorage.setItem("novio", $("#novio").val());
+          window.localStorage.setItem("novia", $("#novia").val());
+          window.localStorage.setItem("lugar", $("#lugar").val());
+          window.localStorage.setItem("fecha", $("#fecha").val());
+
+          alert("Información guardada correctamente");
+
+          webView = new steroids.views.WebView("http://localhost/views/drawerExample/index.html");
+          steroids.layers.push(webView);   
+        });
+
+        //Rellena los datos, segun la informacion guardada
+        $("#novio").val(window.localStorage.getItem("novio"));
+        $("#novia").val(window.localStorage.getItem("novia"));
+        $("#lugar").val(window.localStorage.getItem("lugar"));
+        $("#fecha").val(window.localStorage.getItem("fecha"));
+      });
+    </script>
+</div>
+
+
+  
+</body>
+</html>

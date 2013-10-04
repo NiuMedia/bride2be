@@ -1,35 +1,21 @@
 <div class="content-padded">
-  <h1>Configuración</h1>
-    <form>
-      <label for="novia">Nombre de la novia</label>
-      <input type="text" name="novia" id="novia">
-      <label for="novio">Nombre de la novio</label>
-      <input type="text" name="novio" id="novio">
-      <label for="lugar">Lugar</label>
-      <select name="lugar" id="lugar">
-        <option>San Luis Potosí</option>
-      </select> 
-      <label for="fecha">Fecha de la Boda</label>
-      <input type="datetime-local" name="fecha" id="fecha">
-      <input class="topcoat-button--large" type="button" value="Seleccionar imagen de Portada">
-      <input id="save-btn" class="topcoat-button" type="button" value="Guardar">
-    </form>
-    <script type="text/javascript">
-      var saveBtn = document.querySelector("#save-btn");
-      saveBtn.addEventListener("click", function(){
-        window.localStorage.setItem("novio", document.querySelector("#novio"));
-        window.localStorage.setItem("novia", document.querySelector("#novia"));
-        window.localStorage.setItem("lugar", document.querySelector("#lugar"));
-        window.localStorage.setItem("fecha", document.querySelector("#fecha"));
+  <span id="dias">Faltan XXX días</span>
+  <span>para la boda de</span>
+  <span id="novios">Juan y Juana</span>
+  <span id="lugar">San Luis Potosí</span>
 
-        window.localStorage.setItem("init", 1);
-      });
+  <script type="text/javascript">
 
-      //Rellena los datos, segun la informacion guardada
-      document.querySelector("#novio").value = window.localStorage.getItem("novio");
-      document.querySelector("#novia").value = window.localStorage.getItem("novia");
-      document.querySelector("#lugar").value = window.localStorage.getItem("lugar");
-      document.querySelector("#fecha").value = window.localStorage.getItem("fecha");
-    </script>
+    if(window.localStorage.getItem("init") == null){
+      var webView = new steroids.views.WebView("http://localhost/views/drawerExample/config_modal_screen.html");
+      steroids.modal.show(webView);   
+    }
+
+    $(document).ready(function(){
+      //Rellena los datos, segun la informacion guardada 
+      $("#novios").text(window.localStorage.getItem("novio") + " y " + window.localStorage.getItem("novia"));
+      $("#lugar").text("en " + window.localStorage.getItem("lugar"));
+    });
+
+  </script>
 </div>
-

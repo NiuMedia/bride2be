@@ -1,13 +1,3 @@
-  // Listen for window.postMessage() messages that drawer sends us
-
-  document.addEventListener("deviceready", onDiviceReady, false);
-
-  function onDiviceReady(){
-    if(window.localStorage.getItem("init") != null){
-      alert("Redirecciona a la pantalla principal");
-    }
-  }
-
   // Initialize the left drawer
 
   var leftDrawer = new steroids.views.WebView("/views/drawerExample/drawer.html");
