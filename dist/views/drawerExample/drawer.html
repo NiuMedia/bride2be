@@ -13,6 +13,8 @@
   <script src="http://localhost/appgyver/cordova.js"></script>
   <script src="/components/steroids-js/steroids.js"></script>
 
+  <script src="/components/jquery/jquery.min.js"></script>
+
   <!-- Controllers can be loaded dynamically based on the resource name -->
   <script src="/controllers/drawerExample.js"></script> 
 
@@ -20,20 +22,7 @@
 </head>
 <body>
 
-  <script>
-
-  // Sends message for the main view that listens with addEventListener()
-
-  function closeDrawerAndSendMessage(selection) {
-    var msg = { selection: selection };
-    window.postMessage(msg, "*");
-
-    steroids.drawers.hideAll();
-  }
-
-</script>
-
-<div class="topcoat-list__container black-bg">
+  <div class="topcoat-list__container black-bg">
   <ul class="topcoat-list">
     <li class="topcoat-list__item">Proveedores</li>
     <li class="topcoat-list__item">Mis proveedores</li>
@@ -42,10 +31,22 @@
     <li class="topcoat-list__item">Gastos</li>
     <li class="topcoat-list__item">Invitados</li>
     <li class="topcoat-list__item">Mesa de regalos</li>
-    <li class="topcoat-list__item">Configuración</li>
+    <li id="confi-list-item" class="topcoat-list__item">Configuración</li>
+    <li id="clear-list-item" class="topcoat-list__item">Borra datos (PELIGRO PELIGRO DESTRUIR DESTRUIR)</li>
   </ul>
-
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#confi-list-item").on("click", function(){
+      steroids.drawers.hideAll();
+      var webView = new steroids.views.WebView("http://localhost/views/drawerExample/config_screen.html");
+      steroids.layers.push(webView);
+    });
+    $("#clear-list-item").on("click", function(){
+      window.localStorage.clear();
+    });
+  });
+</script>
 
   
 </body>
