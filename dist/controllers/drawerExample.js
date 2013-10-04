@@ -1,24 +1,11 @@
   // Listen for window.postMessage() messages that drawer sends us
 
   document.addEventListener("deviceready", onDiviceReady, false);
-  document.addEventListener("ready", onReady, false);
 
   function onDiviceReady(){
     if(window.localStorage.getItem("init") != null){
       alert("Redirecciona a la pantalla principal");
     }
-  }
-
-  function onReady(){
-    var saveBtn = document.querySelector("#save-btn");
-    saveBtn.addEventListener("click", function(){
-      window.localStorage.setItem("novio", document.querySelector("#novio"));
-      window.localStorage.setItem("novia", document.querySelector("#novia"));
-      window.localStorage.setItem("lugar", document.querySelector("#lugar"));
-      window.localStorage.setItem("fecha", document.querySelector("#fecha"));
-
-      window.localStorage.setItem("init", 1);
-    });
   }
 
   // Initialize the left drawer
@@ -37,5 +24,28 @@
   function openDrawer() {
     steroids.drawers.show(leftDrawer);
   }
+
+  var drawerButton = new steroids.buttons.NavigationBarButton();
+  drawerButton.title = "Menu";
+
+  var drawerButtonClose = new steroids.buttons.NavigationBarButton();
+  drawerButtonClose.title = "Cerrar";
+
+  drawerButton.onTap = function (){
+    steroids.drawers.show(leftDrawer);
+    steroids.view.navigationBar.setButtons({
+      right: [drawerButtonClose]
+    });
+  };
+
+  drawerButtonClose.onTap = function(){
+    steroids.view.navigationBar.setButtons({
+      right: [drawerButton]
+    });
+  };
+
+  steroids.view.navigationBar.setButtons({
+    right: [drawerButton]
+  });
 
   steroids.view.navigationBar.show("Bride2Be");
