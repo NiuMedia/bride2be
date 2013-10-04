@@ -13,11 +13,8 @@
   <script src="http://localhost/appgyver/cordova.js"></script>
   <script src="/components/steroids-js/steroids.js"></script>
 
-<<<<<<< HEAD
   <script src="/components/jquery/jquery.min.js"></script>
 
-=======
->>>>>>> 7bcae918ca307a321154282cfa8e5bebe163dae9
   <!-- Controllers can be loaded dynamically based on the resource name -->
   <script src="/controllers/drawerExample.js"></script> 
 
@@ -26,11 +23,11 @@
 <body>
 
   <div class="content-padded">
+  <img id="foto" src="" width="100%"/>
   <span id="dias">Faltan XXX días</span>
   <span>para la boda de</span>
   <span id="novios">Juan y Juana</span>
   <span id="lugar">San Luis Potosí</span>
-
   <script type="text/javascript">
 
     if(window.localStorage.getItem("init") == null){
@@ -42,6 +39,11 @@
       //Rellena los datos, segun la informacion guardada 
       $("#novios").text(window.localStorage.getItem("novio") + " y " + window.localStorage.getItem("novia"));
       $("#lugar").text("en " + window.localStorage.getItem("lugar"));
+      $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
+      stampWedding = new Date(window.localStorage.getItem("fecha")).getTime();
+      stampToday = new Date().getTime();
+      seconds = stampWedding - stampToday;
+      $("#dias").text("Faltan "+Math.round(seconds/86400000)+" días");
     });
 
   </script>

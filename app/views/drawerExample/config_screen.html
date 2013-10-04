@@ -7,11 +7,13 @@
       <input type="text" name="novio" id="novio">
       <label for="lugar">Lugar</label>
       <select name="lugar" id="lugar">
-        <option>San Luis Potosí</option>
+        <option value="San Luis Potosí">San Luis Potosí</option>
+        <option value="Queretaro">Queretaro</option>
+        <option value="Chiapas">Chiapas</option>
       </select> 
       <label for="fecha">Fecha de la Boda</label>
-      <input type="datetime-local" name="fecha" id="fecha">
-      <div class="topcoat-button center full">Seleccionar imagen de Portada</div>
+      <input type="date" name="fecha" id="fecha">
+      <div class="topcoat-button center full" id="getPic-btn">Seleccionar imagen de Portada</div>
       <div class="topcoat-button center" id="save-btn">Guardar</div>
     </form>
     <script type="text/javascript">
@@ -26,6 +28,18 @@
 
           webView = new steroids.views.WebView("http://localhost/views/drawerExample/index.html");
           steroids.layers.push(webView);   
+        });
+
+        $("#getPic-btn").on("click", function(){
+          navigator.camera.getPicture( function(imageData){
+            window.localStorage.setItem("foto", imageData);
+          }, function(msg){
+            alert(msg);
+          }, {
+            sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
+            destinationType : Camera.DestinationType.DATA_URL,
+            correctOrientation: true
+          });
         });
 
         //Rellena los datos, segun la informacion guardada
