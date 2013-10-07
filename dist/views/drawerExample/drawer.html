@@ -26,7 +26,7 @@
   <ul class="topcoat-list">
     <li class="topcoat-list__item">Proveedores</li>
     <li class="topcoat-list__item">Mis proveedores</li>
-    <li class="topcoat-list__item">Tips y notas</li>
+    <li id="tips-and-notes" class="topcoat-list__item">Tips y notas</li>
     <li class="topcoat-list__item">Agenda</li>
     <li class="topcoat-list__item">Gastos</li>
     <li class="topcoat-list__item">Invitados</li>
@@ -36,11 +36,19 @@
   </ul>
 </div>
 <script type="text/javascript">
+  var tips = new steroids.views.WebView("http://localhost/views/drawerExample/tipsynotas.html");
+  var webView = new steroids.views.WebView("http://localhost/views/drawerExample/config_screen.html");
+
   $(document).ready(function(){
+    tips.preload();
+    webView.preload();
     $("#confi-list-item").on("click", function(){
+      steroids.layers.replace({view: webView});
       steroids.drawers.hideAll();
-      var webView = new steroids.views.WebView("http://localhost/views/drawerExample/config_screen.html");
-      steroids.layers.push(webView);
+    });
+    $("#tips-and-notes").on("click",function(){
+      steroids.layers.replace({view: tips});
+      steroids.drawers.hideAll();
     });
     $("#clear-list-item").on("click", function(){
       window.localStorage.clear();
