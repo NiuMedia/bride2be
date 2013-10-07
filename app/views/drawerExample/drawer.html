@@ -22,18 +22,44 @@
   var gastosView = new steroids.views.WebView("http://localhost/views/drawerExample/gastos.html");
 
   $(document).ready(function(){
-    tips.preload();
-    webView.preload();
-    $("#confi-list-item").on("click", function(){
-      steroids.layers.replace({view: configView});
-      steroids.drawers.hideAll();
-    });
+    tipsView.preload();
+    configView.preload();
+    guestsView.preload();
+    agendaView.preload();
+    regalosView.preload();
+    providersView.preload();
+    myProvidersView.preload();
+    gastosView.preload();
     $("#tips-and-notes").on("click",function(){
-      steroids.layers.replace({view: tips});
+      steroids.layers.replace({view: tipsView});
       steroids.drawers.hideAll();
     });
     $("#invitados").on("click", function(){
       steroids.layers.replace({view: guestsView});
+      steroids.drawers.hideAll();
+    });
+    $("#confi-list-item").on("click", function(){
+      steroids.layers.replace({view: configView});
+      steroids.drawers.hideAll();
+    });
+    $("#providers").on("click",function(){
+      steroids.layers.replace({view: providersView});
+      steroids.drawers.hideAll();
+    });
+    $("#my-providers").on("click", function(){
+      steroids.layers.replace({view: myProvidersView});
+      steroids.drawers.hideAll();
+    });
+    $("#regalos").on("click", function(){
+      steroids.layers.replace({view: regalosView});
+      steroids.drawers.hideAll();
+    });
+    $("#agenda").on("click",function(){
+      steroids.layers.replace({view: agendaView});
+      steroids.drawers.hideAll();
+    });
+    $("#gastos").on("click", function(){
+      steroids.layers.replace({view: gastosView});
       steroids.drawers.hideAll();
     });
     $("#clear-list-item").on("click", function(){
