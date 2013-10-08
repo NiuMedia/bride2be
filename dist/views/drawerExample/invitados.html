@@ -40,9 +40,7 @@
 		});
 		if(window.localStorage.getItem("invitados") != null){
 			json = $.parseJSON(window.localStorage.getItem("invitados"));
-			alert(window.localStorage.getItem("invitados"));
 			for(x in json.invitados){
-				alert(json.invitados[x].nombre);
 				html = '<li class="topcoat-list__item">' +
 		  	    	'<span>' + json.invitados[x].nombre + '</span> ' +
 		  	    	'<div class="acciones-invitados">  ' +
