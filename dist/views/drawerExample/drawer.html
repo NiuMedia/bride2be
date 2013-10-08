@@ -24,23 +24,67 @@
 
   <div class="topcoat-list__container black-bg">
   <ul class="topcoat-list">
-    <li class="topcoat-list__item">Proveedores</li>
-    <li class="topcoat-list__item">Mis proveedores</li>
-    <li class="topcoat-list__item">Tips y notas</li>
-    <li class="topcoat-list__item">Agenda</li>
-    <li class="topcoat-list__item">Gastos</li>
-    <li class="topcoat-list__item">Invitados</li>
-    <li class="topcoat-list__item">Mesa de regalos</li>
-    <li id="confi-list-item" class="topcoat-list__item">Configuración</li>
-    <li id="clear-list-item" class="topcoat-list__item">Borra datos (PELIGRO PELIGRO DESTRUIR DESTRUIR)</li>
+    <li id="providers"        class="topcoat-list__item">Proveedores</li>
+    <li id="my-providers"     class="topcoat-list__item">Mis proveedores</li>
+    <li id="tips-and-notes"   class="topcoat-list__item">Tips y notas</li>
+    <li id="agenda"           class="topcoat-list__item">Agenda</li>
+    <li id="gastos"           class="topcoat-list__item">Gastos</li>
+    <li id="invitados"        class="topcoat-list__item">Invitados</li>
+    <li id="regalos"          class="topcoat-list__item">Mesa de regalos</li>
+    <li id="confi-list-item"  class="topcoat-list__item">Configuración</li>
+    <li id="clear-list-item"  class="topcoat-list__item">Borra datos (PELIGRO PELIGRO DESTRUIR DESTRUIR)</li>
   </ul>
 </div>
 <script type="text/javascript">
+  var tipsView = new steroids.views.WebView("http://localhost/views/drawerExample/tipsynotas.html");
+  var configView = new steroids.views.WebView("http://localhost/views/drawerExample/config_screen.html");
+  var guestsView = new steroids.views.WebView("http://localhost/views/drawerExample/invitados.html");
+  var agendaView = new steroids.views.WebView("http://localhost/views/drawerExample/agenda.html");
+  var regalosView = new steroids.views.WebView("http://localhost/views/drawerExample/regalos.html");
+  var providersView = new steroids.views.WebView("http://localhost/views/drawerExample/proveedores.html");
+  var myProvidersView = new steroids.views.WebView("http://localhost/views/drawerExample/mis-proveedores.html");
+  var gastosView = new steroids.views.WebView("http://localhost/views/drawerExample/gastos.html");
+
   $(document).ready(function(){
-    $("#confi-list-item").on("click", function(){
+    tipsView.preload();
+    configView.preload();
+    guestsView.preload();
+    agendaView.preload();
+    regalosView.preload();
+    providersView.preload();
+    myProvidersView.preload();
+    gastosView.preload();
+    $("#tips-and-notes").on("click",function(){
+      steroids.layers.replace({view: tipsView});
       steroids.drawers.hideAll();
-      var webView = new steroids.views.WebView("http://localhost/views/drawerExample/config_screen.html");
-      steroids.layers.push(webView);
+    });
+    $("#invitados").on("click", function(){
+      steroids.layers.replace({view: guestsView});
+      steroids.drawers.hideAll();
+    });
+    $("#confi-list-item").on("click", function(){
+      steroids.layers.replace({view: configView});
+      steroids.drawers.hideAll();
+    });
+    $("#providers").on("click",function(){
+      steroids.layers.replace({view: providersView});
+      steroids.drawers.hideAll();
+    });
+    $("#my-providers").on("click", function(){
+      steroids.layers.replace({view: myProvidersView});
+      steroids.drawers.hideAll();
+    });
+    $("#regalos").on("click", function(){
+      steroids.layers.replace({view: regalosView});
+      steroids.drawers.hideAll();
+    });
+    $("#agenda").on("click",function(){
+      steroids.layers.replace({view: agendaView});
+      steroids.drawers.hideAll();
+    });
+    $("#gastos").on("click", function(){
+      steroids.layers.replace({view: gastosView});
+      steroids.drawers.hideAll();
     });
     $("#clear-list-item").on("click", function(){
       window.localStorage.clear();

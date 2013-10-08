@@ -21,21 +21,21 @@
   var drawerButtonClose = new steroids.buttons.NavigationBarButton();
   drawerButtonClose.title = "Cerrar";
 
-  drawerButton.onTap = function (){
-    steroids.drawers.show(leftDrawer);
-    steroids.view.navigationBar.setButtons({
-      right: [drawerButtonClose]
-    });
-  };
+  // drawerButton.onTap = function (){
+  //   steroids.drawers.show(leftDrawer);
+  //   steroids.view.navigationBar.setButtons({
+  //     right: [drawerButtonClose]
+  //   });
+  // };
 
-  drawerButtonClose.onTap = function(){
-    steroids.view.navigationBar.setButtons({
-      right: [drawerButton]
-    });
-  };
+  // drawerButtonClose.onTap = function(){
+  //   steroids.view.navigationBar.setButtons({
+  //     right: [drawerButton]
+  //   });
+  // };
 
-  steroids.view.navigationBar.setButtons({
-    right: [drawerButton]
-  });
+  // steroids.view.navigationBar.setButtons({
+  //   right: [drawerButton]
+  // });
 
   steroids.view.navigationBar.show("Bride2Be");
