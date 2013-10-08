@@ -5,7 +5,7 @@
     <li class="topcoat-list__item">Tips y notas</li>
     <li class="topcoat-list__item">Agenda</li>
     <li class="topcoat-list__item">Gastos</li>
-    <li class="topcoat-list__item">Invitados</li>
+    <li id="guest-list-item" class="topcoat-list__item">Invitados</li>
     <li class="topcoat-list__item">Mesa de regalos</li>
     <li id="confi-list-item" class="topcoat-list__item">Configuración</li>
     <li id="clear-list-item" class="topcoat-list__item">Borra datos (PELIGRO PELIGRO DESTRUIR DESTRUIR)</li>
@@ -16,6 +16,11 @@
     $("#confi-list-item").on("click", function(){
       steroids.drawers.hideAll();
       var webView = new steroids.views.WebView("http://localhost/views/drawerExample/config_screen.html");
+      steroids.layers.push(webView);
+    });
+    $("#guest-list-item").on("click", function(){
+      steroids.drawers.hideAll();
+      var webView = new steroids.views.WebView("http://localhost/views/drawerExample/invitados.html");
       steroids.layers.push(webView);
     });
     $("#clear-list-item").on("click", function(){

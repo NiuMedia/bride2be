@@ -1,0 +1,54 @@
+<div class="content-padded" style="height:100%">
+  <h1>XXX invitados</h1>
+  <div class="topcoat-list">
+  	<h3 class="topcoat-list__header">Invitados</h3>
+	  <ul class="topcoat-list__container less-padding" id="lista-invitados">
+	  </ul>
+	</div>
+	<div class="topcoat-button center" id="add-guest">Nuevo invitado</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#add-guest").on("click", function(){
+			webView = new steroids.views.WebView("http://localhost/views/drawerExample/nuevo_invitado.html");
+          	steroids.layers.push(webView);   
+		});
+		if(window.localStorage.getItem("invitados") != null){
+			json = $.parseJSON(window.localStorage.getItem("invitados"));
+			for(x in json.invitados){
+				html = '<li class="topcoat-list__item">' +
+		  	    	'<span>' + json.invitados[x].nombre + '</span> ' +
+		  	    	'<div class="acciones-invitados">  ' +
+		  	    		'<label class="topcoat-checkbox guest-action"> ' +
+		  	    			'Personas ' +
+	  						'<input class="center-element" type="checkbox" disabled> ' +
+	  						'<div class="topcoat-checkbox__checkmark"></div> ' +
+						'</label> ' +
+		  	    		'<label class="topcoat-checkbox guest-action"> ' +
+		  	    			'Invitacion ' +
+	  						'<input class="center-element" type="checkbox" disabled> ' +
+	  						'<div class="topcoat-checkbox__checkmark"></div> ' +
+						'</label> ' +
+		  	    		'<label class="topcoat-checkbox guest-action"> ' +
+		  	    			'RSVP ' +
+	  						'<input class="center-element" type="checkbox" disabled> ' +
+	  						'<div class="topcoat-checkbox__checkmark"></div>	 ' +
+						'</label> ' +
+		  	    		'<label class="topcoat-checkbox guest-action"> ' +
+		  	    			'Regalo ' +
+	  						'<input class="center-element" type="checkbox" disabled> ' +
+	  						'<div class="topcoat-checkbox__checkmark"></div> ' +
+						'</label>  ' +
+		  	    		'<label class="topcoat-checkbox guest-action"> ' +
+		  	    			'Tarjeta ' +
+	  						'<input class="center-element" type="checkbox" disabled> ' +
+	  						'<div class="topcoat-checkbox__checkmark"></div> ' +
+						'</label> ' +
+		  	    	'</div> ' +
+		  	    	'<div class="clearfix"></div> ' +
+	  	    	'</li>';
+	  	    	$("#lista-invitados").append(html);
+			}
+		}
+	});
+</script>

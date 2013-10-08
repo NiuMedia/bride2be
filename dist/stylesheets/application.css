@@ -1,6 +1,8 @@
 * {
   -webkit-user-select: none;  /* Disable selection/copy of elements when tapping for a long time */
   -webkit-touch-callout: none; /* Disable touch callouts */
+  margin: 0;
+  padding: 0;
 }
 
 input {
@@ -9,4 +11,50 @@ input {
 
 .content-padded {
   padding: 10px;
+}
+
+.guest-action{
+	width: 20%;
+	float: left;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+.center-element{
+	margin: 0 auto;
+	width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#add-guest{
+	position: fixed;
+  	bottom: 0px;
 }

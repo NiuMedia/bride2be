@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>Drawer Example</title>
+
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
+  <link rel="stylesheet" href="/stylesheets/application.css" />
+
+  <script src="/javascripts/onerror.js"></script>
+  <script src="/javascripts/json2.js"></script>
+
+  <!-- cordova.js is served from localhost to ensure the correct version -->
+  <script src="http://localhost/appgyver/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+  <script src="/components/jquery/jquery.min.js"></script>
+
+  <!-- Controllers can be loaded dynamically based on the resource name -->
+  <script src="/controllers/drawerExample.js"></script> 
+
+
+</head>
+<body>
+
+  <div class="content-padded">
+	<h1>Añadir invitado</h1>
+	<label for="nombre">Nombre</label>
+	<input type="text" name="nombre" id="nombre">
+	<label for="numero">Numero de personas</label>
+	<input type="number" name="numero" id="numero">
+	<label class="topcoat-checkbox">
+  		<input type="checkbox" id="confirmado" disabled>
+  		<div class="topcoat-checkbox__checkmark"></div>
+  		Confirmado
+	</label>
+	<label class="topcoat-checkbox">
+  		<input type="checkbox" id="regalo" disabled>
+  		<div class="topcoat-checkbox__checkmark"></div>
+  		Envió regalo
+	</label>
+	<label class="topcoat-checkbox">
+  		<input type="checkbox" id="tarjeta" disabled>
+  		<div class="topcoat-checkbox__checkmark"></div>
+  		Tarjeta de agradecimiento
+	</label>
+	<div class="topcoat-button center" id="add-guest">Guardar invitado</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#add-guest").on("click", function(){
+			if(window.localStorage.getItem("invitados") == null){
+				window.localStorage.setItem("invitados", "{\"invitados\":[]}");
+			}else{
+				json_guest = $.parseJSON(window.localStorage.getItem("invitados"));
+				invitado = {
+					"nombre" : $("#nombre").val(),
+					"invitados": $("#numero").val(),
+					"confirmado": $("#confirmado").val(),
+					"regalo": $("#regalo").val(),
+					"tarjeta": $("#tarjeta").val()
+				}
+				json_guest.invitados.push(invitado);
+				window.localStorage.setItem("invitados", JSON.stringify(json_guest));
+			}
+			webView = new steroids.views.WebView("http://localhost/views/drawerExample/invitados.html");
+          	steroids.layers.push(webView); 
+		});	
+	});
+</script>
+  
+</body>
+</html>
