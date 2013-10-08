@@ -13,7 +13,6 @@ input {
   padding: 10px;
 }
 
-<<<<<<< HEAD
 .guest-action{
 	width: 20%;
 	float: left;
@@ -44,22 +43,11 @@ html[xmlns] .clearfix {
 	width: 50%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 #add-guest{
 	position: fixed;
   	bottom: 0px;
 }
-=======
+
 .card {
 	color: white;
 	margin: 0 auto;
@@ -90,11 +78,8 @@ h1 {
 	background-position:fixed;
 	height: 100%;
 }
-<<<<<<< HEAD
 
 .black {
 	color: black;
 }
-=======
->>>>>>> 6a980753fc40cf57218232983307edc07d69cffe
->>>>>>> 21fd4f57b237bceb727fae17a05bdf42e43824bb
+

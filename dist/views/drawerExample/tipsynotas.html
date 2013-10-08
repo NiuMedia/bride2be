@@ -27,27 +27,27 @@
   <h1>Tips y Notas</h1>
     <div class="tarjetas">
       <h2>Ceremonia Religiosa y Civil</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="boda-tips" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
     <div class="tarjetas">
       <h2>Recepción y Banquetes</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="recepcion" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
     <div class="tarjetas">
       <h2>Invitaciones</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="invitaciones" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
     <div class="tarjetas">
       <h2>Música</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="musica" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
     <div class="tarjetas">
       <h2>Flores, Decoración y Coordinación</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="flores" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
     <div class="tarjetas">
@@ -86,6 +86,49 @@
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
 </div>
+<script type="text/javascript">
+  var bodaTipsView = new steroids.views.WebView("http://localhost/views/drawerExample/boda-civil-tips.html");
+  var recepView = new steroids.views.WebView("http://localhost/views/drawerExample/recepcion-banquetes-tips.html");
+  var invitView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-invitaciones.html");
+  var musicView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-musica.html");
+  var floresView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-flores.html");
+  // var providersView = new steroids.views.WebView("http://localhost/views/drawerExample/proveedores.html");
+  // var myProvidersView = new steroids.views.WebView("http://localhost/views/drawerExample/mis-proveedores.html");
+  // var gastosView = new steroids.views.WebView("http://localhost/views/drawerExample/gastos.html");
+
+  $(document).ready(function(){
+    $("#boda-tips").on("click",function(){
+      steroids.layers.push(bodaTipsView);
+    });
+    $("#recepcion").on("click", function(){
+      steroids.layers.push(recepView);
+    });
+    $("#invitaciones").on("click", function(){
+      steroids.layers.push(invitView);
+    });
+    $("#musica").on("click",function(){
+      steroids.layers.push(musicView);
+    });
+    $("#flores").on("click", function(){
+      steroids.layers.push(floresView);
+    });
+    // $("#regalos").on("click", function(){
+    //   steroids.layers.replace({view: regalosView});
+    //   steroids.drawers.hideAll();
+    // });
+    // $("#agenda").on("click",function(){
+    //   steroids.layers.replace({view: agendaView});
+    //   steroids.drawers.hideAll();
+    // });
+    // $("#gastos").on("click", function(){
+    //   steroids.layers.replace({view: gastosView});
+    //   steroids.drawers.hideAll();
+    // });
+    // $("#clear-list-item").on("click", function(){
+    //   window.localStorage.clear();
+    // });
+  });
+</script>
 
 
   
