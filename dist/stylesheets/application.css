@@ -1,6 +1,8 @@
 * {
   -webkit-user-select: none;  /* Disable selection/copy of elements when tapping for a long time */
   -webkit-touch-callout: none; /* Disable touch callouts */
+  margin: 0;
+  padding: 0;
 }
 
 input {
@@ -11,6 +13,53 @@ input {
   padding: 10px;
 }
 
+<<<<<<< HEAD
+.guest-action{
+	width: 20%;
+	float: left;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+.center-element{
+	margin: 0 auto;
+	width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#add-guest{
+	position: fixed;
+  	bottom: 0px;
+}
+=======
 .card {
 	color: white;
 	margin: 0 auto;
@@ -41,7 +90,11 @@ h1 {
 	background-position:fixed;
 	height: 100%;
 }
+<<<<<<< HEAD
 
 .black {
 	color: black;
 }
+=======
+>>>>>>> 6a980753fc40cf57218232983307edc07d69cffe
+>>>>>>> 21fd4f57b237bceb727fae17a05bdf42e43824bb

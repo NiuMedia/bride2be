@@ -31,6 +31,8 @@
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
     <preference name="KeyboardShrinksView" value="false" />
     <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="orientation" value="portrait" />
 
     <plugins>
         <plugin name="Device" value="CDVDevice" />
