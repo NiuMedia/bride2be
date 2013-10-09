@@ -52,37 +52,37 @@
     </div>
     <div class="tarjetas">
       <h2>Iluminación y mobiliario</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="iluminacion" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
     <div class="tarjetas">
       <h2>Foto y video</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="foto" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
     <div class="tarjetas">
       <h2>Ambientacion y más</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="ambientacion" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
     <div class="tarjetas">
       <h2>El y ella</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="elyella" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
     <div class="tarjetas">
       <h2>Maquillaje, peinado y spa</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="maquillaje" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
     <div class="tarjetas">
       <h2>Luna de miel</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="luna" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
     <div class="tarjetas">
       <h2>Mesa de regalos y hogar</h2>
-      <input id="tips-button" class="topcoat-button" type="button" value="Tips">
+      <input id="regalos" class="topcoat-button" type="button" value="Tips">
       <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
 </div>
@@ -92,9 +92,13 @@
   var invitView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-invitaciones.html");
   var musicView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-musica.html");
   var floresView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-flores.html");
-  // var providersView = new steroids.views.WebView("http://localhost/views/drawerExample/proveedores.html");
-  // var myProvidersView = new steroids.views.WebView("http://localhost/views/drawerExample/mis-proveedores.html");
-  // var gastosView = new steroids.views.WebView("http://localhost/views/drawerExample/gastos.html");
+  var ilumiView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-iluminacion.html");
+  var fotoView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-foto.html");
+  var ambienView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-ambientacion.html");
+  var elyellaView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-el-ella.html");
+  var maquiView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-maquillaje.html");
+  var lunaView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-el-ella.html");
+  var regalosView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-maquillaje.html");
 
   $(document).ready(function(){
     $("#boda-tips").on("click",function(){
@@ -112,21 +116,27 @@
     $("#flores").on("click", function(){
       steroids.layers.push(floresView);
     });
-    // $("#regalos").on("click", function(){
-    //   steroids.layers.replace({view: regalosView});
-    //   steroids.drawers.hideAll();
-    // });
-    // $("#agenda").on("click",function(){
-    //   steroids.layers.replace({view: agendaView});
-    //   steroids.drawers.hideAll();
-    // });
-    // $("#gastos").on("click", function(){
-    //   steroids.layers.replace({view: gastosView});
-    //   steroids.drawers.hideAll();
-    // });
-    // $("#clear-list-item").on("click", function(){
-    //   window.localStorage.clear();
-    // });
+    $("#iluminacion").on("click", function(){
+      steroids.layers.push(ilumiView);
+    });
+    $("#foto").on("click",function(){
+      steroids.layers.push(fotoView);
+    });
+    $("#ambientacion").on("click", function(){
+      steroids.layers.push(ambienView);
+    });
+    $("#elyella").on("click",function(){
+      steroids.layers.push(elyellaView);
+    });
+    $("#maquillaje").on("click", function(){
+      steroids.layers.push(maquiView);
+    });
+    $("#luna").on("click",function(){
+      steroids.layers.push(lunaView);
+    });
+    $("#regalos").on("click", function(){
+      steroids.layers.push(regalosView);
+    });
   });
 </script>
 
