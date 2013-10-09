@@ -88,6 +88,15 @@ h2, h3, h4 {
 	color: black;
 }
 
+.white {
+	color: white;
+}
+
+.drawer {
+	color: white;
+	font-weight: bold;
+}
+
 .picture {
 	max-width: 100%;
 	max-height: 250px;

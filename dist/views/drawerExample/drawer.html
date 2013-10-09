@@ -25,14 +25,15 @@
 
   <div class="topcoat-list__container black-bg">
   <ul class="topcoat-list">
-    <li id="providers"        class="topcoat-list__item">Proveedores</li>
-    <li id="my-providers"     class="topcoat-list__item">Mis proveedores</li>
-    <li id="tips-and-notes"   class="topcoat-list__item">Tips y notas</li>
-    <li id="agenda"           class="topcoat-list__item">Agenda</li>
-    <li id="gastos"           class="topcoat-list__item">Gastos</li>
-    <li id="invitados"        class="topcoat-list__item">Invitados</li>
-    <li id="regalos"          class="topcoat-list__item">Mesa de regalos</li>
-    <li id="confi-list-item"  class="topcoat-list__item">Configuración</li>
+    <li id="home"             class="topcoat-list__item"><p class="drawer">Inicio</p></li>
+    <li id="providers"        class="topcoat-list__item"><p class="drawer">Proveedores</p></li>
+    <li id="my-providers"     class="topcoat-list__item"><p class="drawer">Mis proveedores</p></li>
+    <li id="tips-and-notes"   class="topcoat-list__item"><p class="drawer">Tips y notas</p></li>
+    <li id="agenda"           class="topcoat-list__item"><p class="drawer">Agenda</p></li>
+    <li id="gastos"           class="topcoat-list__item"><p class="drawer">Gastos</p></li>
+    <li id="invitados"        class="topcoat-list__item"><p class="drawer">Invitados</p></li>
+    <li id="regalos"          class="topcoat-list__item"><p class="drawer">Mesa de regalos</p></li>
+    <li id="confi-list-item"  class="topcoat-list__item"><p class="drawer">Configuración</p></li>
     <li id="clear-list-item"  class="topcoat-list__item">Borra datos (PELIGRO PELIGRO DESTRUIR DESTRUIR)</li>
   </ul>
 </div>
@@ -45,6 +46,7 @@
   var providersView = new steroids.views.WebView("http://localhost/views/drawerExample/proveedores.html");
   var myProvidersView = new steroids.views.WebView("http://localhost/views/drawerExample/mis-proveedores.html");
   var gastosView = new steroids.views.WebView("http://localhost/views/drawerExample/gastos.html");
+  var homeView = new steroids.views.WebView("http://localhost/views/drawerExample/index.html");
 
   $(document).ready(function(){
     tipsView.preload();
@@ -55,6 +57,7 @@
     providersView.preload();
     myProvidersView.preload();
     gastosView.preload();
+    homeView.preload();
     $("#tips-and-notes").on("click",function(){
       steroids.layers.replace({view: tipsView});
       steroids.drawers.hideAll();
@@ -85,6 +88,10 @@
     });
     $("#gastos").on("click", function(){
       steroids.layers.replace({view: gastosView});
+      steroids.drawers.hideAll();
+    });
+    $("#home").on("click", function(){
+      steroids.layers.replace({view: homeView});
       steroids.drawers.hideAll();
     });
     $("#clear-list-item").on("click", function(){
