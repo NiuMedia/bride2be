@@ -1,4 +1,29 @@
-<div class="content-padded">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>Drawer Example</title>
+
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
+  <link rel="stylesheet" href="/stylesheets/application.css" />
+
+  <script src="/javascripts/onerror.js"></script>
+  <script src="/javascripts/json2.js"></script>
+
+  <!-- cordova.js is served from localhost to ensure the correct version -->
+  <script src="http://localhost/appgyver/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+  <script src="/components/jquery/jquery.min.js"></script>
+
+  <!-- Controllers can be loaded dynamically based on the resource name -->
+  <script src="/controllers/drawerExample.js"></script> 
+
+
+</head>
+<body>
+
+  <div class="content-padded">
   <h1>Notas Boda Religiosa y Civil</h1>
   <div class="card">
   	<h2>Cortejo nupcial</h2>
@@ -23,7 +48,7 @@
   	<form>
   		<label for="solicitud-1 solicitud-2">1. Solicitud en el formato que el Registro Civil proporcione.</label>
   		<p>Novio Novia</p>
-        <input type="checkbox" class="topcoat-checkbox" name="solicitud-1" id="solicitud-1"><input type="checkbox" class="topcoat-checkbox" name="solicitud-2" id="solicitud-2"><br><br>
+        <input type="checkbox" class="topcoat-checkbox" name="solicitud-1" id="solicitud-1"><p>    </p><input type="checkbox" class="topcoat-checkbox" name="solicitud-2" id="solicitud-2"><br><br>
         <label for="velacion">2. Actas de nacimiento de los contrayentes (con copia).</label>
   		<p>Novio Novia</p>
         <input type="checkbox" class="topcoat-checkbox" name="velacion" id="velacion"><p>    </p><input type="checkbox" class="topcoat-checkbox" name="velacion" id="velacion"><br><br>
@@ -47,3 +72,7 @@
     
 </div>
 
+
+  
+</body>
+</html>

@@ -25,68 +25,62 @@
 
   <div class="content-padded">
   <h1>Tips y Notas</h1>
-    <div class="tarjetas">
+    <div class="card">
       <h2>Ceremonia Religiosa y Civil</h2>
       <input id="boda-tips" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
+      <input id="boda-notas" class="topcoat-button" type="button" value="Notas">
     </div>
-    <div class="tarjetas">
+    <div class="card">
       <h2>Recepción y Banquetes</h2>
       <input id="recepcion" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
+      <input id="recep-notas" class="topcoat-button" type="button" value="Notas">
     </div>
-    <div class="tarjetas">
+    <div class="card">
       <h2>Invitaciones</h2>
       <input id="invitaciones" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
-    <div class="tarjetas">
+    <div class="card">
       <h2>Música</h2>
       <input id="musica" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
+      <input id="music-notas" class="topcoat-button" type="button" value="Notas">
     </div>
-    <div class="tarjetas">
+    <div class="card">
       <h2>Flores, Decoración y Coordinación</h2>
       <input id="flores" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
-    <div class="tarjetas">
+    <div class="card">
       <h2>Iluminación y mobiliario</h2>
       <input id="iluminacion" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
-    <div class="tarjetas">
+    <div class="card">
       <h2>Foto y video</h2>
       <input id="foto" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
-    <div class="tarjetas">
+    <div class="card">
       <h2>Ambientacion y más</h2>
       <input id="ambientacion" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
+      <input id="ambien-notas" class="topcoat-button" type="button" value="Notas">
     </div>
-    <div class="tarjetas">
+    <div class="card">
       <h2>El y ella</h2>
       <input id="elyella" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
-    <div class="tarjetas">
+    <div class="card">
       <h2>Maquillaje, peinado y spa</h2>
       <input id="maquillaje" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
-    <div class="tarjetas">
+    <div class="card">
       <h2>Luna de miel</h2>
       <input id="luna" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
+      <input id="luna-notas" class="topcoat-button" type="button" value="Notas">
     </div>
-    <div class="tarjetas">
+    <div class="card">
       <h2>Mesa de regalos y hogar</h2>
       <input id="regalos" class="topcoat-button" type="button" value="Tips">
-      <input id="notas-button" class="topcoat-button" type="button" value="Notas">
     </div>
 </div>
 <script type="text/javascript">
+  //TIPS VIEWS
   var bodaTipsView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-boda-civil.html");
   var recepView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-recepcion-banquetes.html");
   var invitView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-invitaciones.html");
@@ -97,10 +91,21 @@
   var ambienView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-ambientacion.html");
   var elyellaView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-el-ella.html");
   var maquiView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-maquillaje.html");
-  var lunaView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-el-ella.html");
-  var regalosView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-maquillaje.html");
+  var lunaView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-luna.html");
+  var regalosView = new steroids.views.WebView("http://localhost/views/drawerExample/tips-regalos.html");
+
+  //NOTAS VIEWS
+  var bodaNotasView = new steroids.views.WebView("http://localhost/views/drawerExample/notas-boda-civil.html");
+  var recepNotasView = new steroids.views.WebView("http://localhost/views/drawerExample/notas-recepcion-banquetes.html");
+  var musicNotasView = new steroids.views.WebView("http://localhost/views/drawerExample/notas-musica.html");
+  var ambienNotasView = new steroids.views.WebView("http://localhost/views/drawerExample/notas-ambientacion.html");
+  var lunaNotasView = new steroids.views.WebView("http://localhost/views/drawerExample/notas-luna.html");
+
+
+  //ON CLICK FUNCTIONS
 
   $(document).ready(function(){
+    //TIPS
     $("#boda-tips").on("click",function(){
       steroids.layers.push(bodaTipsView);
     });
@@ -136,6 +141,22 @@
     });
     $("#regalos").on("click", function(){
       steroids.layers.push(regalosView);
+    });
+    //NOTAS
+    $("#boda-notas").on("click",function(){
+      steroids.layers.push(bodaNotasView);
+    });
+    $("#recep-notas").on("click", function(){
+      steroids.layers.push(recepNotasView);
+    });
+    $("#music-notas").on("click",function(){
+      steroids.layers.push(musicNotasView);
+    });
+    $("#ambien-notas").on("click", function(){
+      steroids.layers.push(ambienNotasView);
+    });
+    $("#luna-notas").on("click",function(){
+      steroids.layers.push(lunaNotasView);
     });
   });
 </script>
