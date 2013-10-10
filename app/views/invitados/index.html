@@ -1,0 +1,16 @@
+<div ng-app="invitadosApp">
+
+  <div ng-controller="IndexCtrl">
+    <div class="topcoat-list__container">
+
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" hm-tap="open($index)" ng-repeat="invitado in invitados">
+          Invitados: {{ invitado.nombre }}
+        </li>
+      </ul>
+
+    </div>
+	<div class="topcoat-button" style="position:fixed; top:300px" hm-tap="new()">Nuevo invitado</div>
+  </div>
+
+</div>

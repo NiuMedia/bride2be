@@ -1,0 +1,12 @@
+[
+  {
+    "invitados_id": 1,
+    "name": "First invitados",
+    "description": "This is awesome."
+  },
+  {
+    "invitados_id": 2,
+    "name": "Second invitados",
+    "description": "This is also okay."
+  }
+]

@@ -23,14 +23,13 @@
 </head>
 <body>
 
-<<<<<<< HEAD
   <div class="content-padded fondo">
   <div class="card">
     <h1 class="pink center">Configuración</h1>
       <form>
         <label for="novia">Nombre de la novia</label>
         <input type="text" class="topcoat-text-input center wide" name="novia" id="novia"><br><br>
-        <label for="novio">Nombre de la novio</label>
+        <label for="novio">Nombre del novio</label>
         <input type="text" class="topcoat-text-input center wide" name="novio" id="novio"><br><br>
         <label for="lugar">Lugar</label><br>
         <select name="lugar" id="lugar">
@@ -49,33 +48,6 @@
             window.localStorage.setItem("novia", $("#novia").val());
             window.localStorage.setItem("lugar", $("#lugar").val());
             window.localStorage.setItem("fecha", $("#fecha").val());
-=======
-  <div class="content-padded">
-  <h1>Configuración</h1>
-    <form>
-      <label for="novia">Nombre de la novia</label>
-      <input type="text" name="novia" id="novia">
-      <label for="novio">Nombre del novio</label>
-      <input type="text" name="novio" id="novio">
-      <label for="lugar">Lugar</label>
-      <select name="lugar" id="lugar">
-        <option value="San Luis Potosí">San Luis Potosí</option>
-        <option value="Queretaro">Queretaro</option>
-        <option value="Chiapas">Chiapas</option>
-      </select> 
-      <label for="fecha">Fecha de la Boda</label>
-      <input type="date" name="fecha" id="fecha">
-      <div class="topcoat-button center full" id="getPic-btn">Seleccionar imagen de Portada</div>
-      <div class="topcoat-button center" id="save-btn">Guardar</div>
-    </form>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $("#save-btn").on("click", function(){
-          window.localStorage.setItem("novio", $("#novio").val());
-          window.localStorage.setItem("novia", $("#novia").val());
-          window.localStorage.setItem("lugar", $("#lugar").val());
-          window.localStorage.setItem("fecha", $("#fecha").val());
->>>>>>> d2faf429da9861d188dfecc15c7968dbf7d7c731
 
             alert("Información guardada correctamente");
 

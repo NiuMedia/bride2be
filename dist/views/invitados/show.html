@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>Steroids App</title>
+
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-light.css" />
+  <link rel="stylesheet" href="/stylesheets/application.css" />
+
+  <script src="/appgyver/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+  <script src="/components/jquery/jquery.min.js"></script>
+
+  <script src="/components/angular/angular.min.js"></script>
+
+  <script src="/components/underscore/underscore-min.js"></script>
+  <script src="/components/restangular/dist/restangular.min.js"></script>
+
+  <script src="/vendor/hammerjs/hammer.min.js"></script>
+  <script src="/vendor/angular-hammer/angular-hammer.js"></script>
+
+  <script src="/models/models.js"></script>
+
+  <script src="/controllers/invitados.js"></script>
+</head>
+<body>
+
+
+  <div class="content-padded" ng-app="invitadosApp" ng-controller="ShowCtrl">
+	<h1>Añadir invitado</h1>
+	<label for="nombre">Nombre</label><br/>
+	<input ng-model="newGuest.nombre" type="text" name="nombre" id="nombre" class="topcoat-text-input"><br/>
+	<label for="numero">Numero de personas</label><br/>
+	<input ng-model="newGuest.invitados"  type="number" name="numero" class="topcoat-text-input" id="numero"><br/>
+	<label class="topcoat-checkbox">
+  		<input type="checkbox" id="confirmado" disabled>
+  		<div class="topcoat-checkbox__checkmark"></div>
+  		Confirmado
+	</label><br/>
+	<label class="topcoat-checkbox">
+  		<input type="checkbox" id="regalo" disabled>
+  		<div class="topcoat-checkbox__checkmark"></div>
+  		Envió regalo
+	</label><br/>
+	<label class="topcoat-checkbox">
+  		<input type="checkbox" id="tarjeta" disabled>
+  		<div class="topcoat-checkbox__checkmark"></div>
+  		Tarjeta de agradecimiento
+	</label><br/>
+	<div class="topcoat-button" hm-tap="invitadoServ.removeInvitado(index);">Eliminar invitado</div>
+	<div class="topcoat-button" hm-tap="invitadoServ.addInvitado(newGuest); newGuest = {};">Guardar invitado</div>
+</div>
+
+
+</body>
+</html>
