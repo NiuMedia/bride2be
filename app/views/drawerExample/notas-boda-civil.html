@@ -1,8 +1,111 @@
 <div class="content-padded">
-  <h1>Boda Civil. La ceremonia del matrimonio</h1>
+  <h1>Notas Boda Religiosa y Civil</h1>
   <div class="card">
-  	<p>La ceremonia debe celebrarse ante un Juez del Registro Civil y con las formalidades de ley, ya que la boda civil es un requisito que exige el Estado Mexicano para proteger y reconocer los matrimonios dentro de la ley del Código Civil (ahora puede ser antes o después de la ceremonia religiosa).</p>
+  	<h2>Cortejo nupcial</h2>
+  	<form>
+        <label for="velacion">Padrinos de Velación</label>
+        <input type="text" class="topcoat-text-input center wide" name="velacion" id="velacion"><br><br>
+        <label for="anillos">Padrinos de Anillos</label>
+        <input type="text" class="topcoat-text-input center wide" name="anillos" id="anillos"><br><br>
+        <label for="arras">Padrinos de Arras</label>
+        <input type="text" class="topcoat-text-input center wide" name="arras" id="arras"><br><br>
+        <label for="lazo">Padrinos de Lazo</label>
+        <input type="text" class="topcoat-text-input center wide" name="lazo" id="lazo"><br><br>
+        <label for="honor">Damas de Honor</label>
+        <input type="text" class="topcoat-text-input center wide" name="honor" id="honor"><br><br>
+        <label for="pajes">Pajes</label>
+        <input type="text" class="topcoat-text-input center wide" name="pajes" id="pajes"><br><br>
+        <div class="topcoat-button center" id="save-btn">Guardar</div><br>
+      </form>
   </div>
-    
+  <div class="card">
+  	<h2>Requisitos para el Matrimonio Civil</h2>
+  	<form>
+  		<p>1. Solicitud en el formato que el Registro Civil proporcione.</p>
+  		<label for="solicitud-1">Novio </label><input type="checkbox" class="topcoat-checkbox" name="solicitud-1" id="solicitud-1"><br>
+       	<label for="solicitud-2">Novia </label><input type="checkbox" class="topcoat-checkbox" name="solicitud-2" id="solicitud-2"><br><br>
+        
+        <p>2. Actas de nacimiento de los contrayentes (con copia).</p>
+  		<label for="acta-1">Novio </label><input type="checkbox" class="topcoat-checkbox" name="acta-1" id="acta-1"><br>
+       	<label for="acta-2">Novia </label><input type="checkbox" class="topcoat-checkbox" name="acta-2" id="acta-2"><br><br>
+        
+        <p>3. Análisis prenupciales.</p>
+  		<label for="analisis-1">Novio </label><input type="checkbox" class="topcoat-checkbox" name="analisis-1" id="analisis-1"><br>
+       	<label for="analisis-2">Novia </label><input type="checkbox" class="topcoat-checkbox" name="analisis-2" id="analisis-2"><br><br>
+        
+        <p>4. Certificado Médico de buena Salud.</p>
+  		<label for="salud-1">Novio </label><input type="checkbox" class="topcoat-checkbox" name="salud-1" id="salud-1"><br>
+       	<label for="salud-2">Novia </label><input type="checkbox" class="topcoat-checkbox" name="salud-2" id="salud-2"><br><br>
+        
+        <p>5. Cartilla del servicio militar.</p>
+  		<label for="cartilla-1">Novio </label><input type="checkbox" class="topcoat-checkbox" name="cartilla-1" id="cartilla-1"><br>
+       	<label for="cartilla-2">Novia </label><input type="checkbox" class="topcoat-checkbox" name="cartilla-2" id="cartilla-2"><br><br>
+        
+        <p>6. Identificaciones oficiales (con copia).</p>
+  		<label for="ids-1">Novio </label><input type="checkbox" class="topcoat-checkbox" name="ids-1" id="ids-1"><br>
+       	<label for="ids-2">Novia </label><input type="checkbox" class="topcoat-checkbox" name="ids-2" id="ids-2"><br><br>
+        
+        <p>7. Dos testigos mayores de edad por contrayente, con identificación ofical (y copia); en caso de ser menores de 18 años, el consentimiento de los padres. Para extranjeros su permiso de migración.</p>
+  		<label for="testigo-1">Novio </label><input type="checkbox" class="topcoat-checkbox" name="testigo-1" id="testigo-1"><br>
+       	<label for="testigo-2">Novia </label><input type="checkbox" class="topcoat-checkbox" name="testigo-2" id="testigo-2"><br><br>
+       	<div class="topcoat-button center" id="save-btn">Guardar</div><br>
+      </form>
+  </div>
+  <script type="text/javascript">
+      $(document).ready(function(){
+        $("#save-btn").on("click", function(){
+        	//cortejo
+          window.localStorage.setItem("velacion", $("#velacion").val());
+          window.localStorage.setItem("anillos", $("#anillos").val());
+          window.localStorage.setItem("arras", $("#arras").val());
+          window.localStorage.setItem("lazo", $("#lazo").val());
+          window.localStorage.setItem("honor", $("#honor").val());
+          window.localStorage.setItem("pajes", $("#pajes").val());
+          //requisitos
+          window.localStorage.setItem("solicitud-1", $("#solicitud-1").val());
+          window.localStorage.setItem("solicitud-2", $("#solicitud-2").val());
+          window.localStorage.setItem("acta-1", $("#acta-1").val());
+          window.localStorage.setItem("acta-2", $("#acta-2").val());
+          window.localStorage.setItem("analisis-1", $("#analisis-1").val());
+          window.localStorage.setItem("analisis-2", $("#analisis-2").val());
+          window.localStorage.setItem("salud-1", $("#salud-1").val());
+          window.localStorage.setItem("salud-2", $("#salud-2").val());
+          window.localStorage.setItem("cartilla-1", $("#cartilla-1").val());
+          window.localStorage.setItem("cartilla-2", $("#cartilla-2").val());
+          window.localStorage.setItem("ids-1", $("#ids-1").val());
+          window.localStorage.setItem("ids-2", $("#ids-2").val());
+          window.localStorage.setItem("testigo-1", $("#testigo-1").val());
+          window.localStorage.setItem("testigo-2", $("#testigo-2").val());
+
+          window.localStorage.setItem("init", 1);
+
+          steroids.modal.hide();
+        });
+
+        //Rellena los datos, segun la informacion guardada
+        $("#velacion").val(window.localStorage.getItem("velacion"));
+        $("#anillos").val(window.localStorage.getItem("anillos"));
+        $("#arras").val(window.localStorage.getItem("arras"));
+        $("#lazo").val(window.localStorage.getItem("lazo"));
+        $("#honor").val(window.localStorage.getItem("honor"));
+        $("#pajes").val(window.localStorage.getItem("pajes"));
+
+        $("#solicitud-1").val(window.localStorage.getItem("solicitud-1"));
+        $("#solicitud-2").val(window.localStorage.getItem("solicitud-2"));
+        $("#acta-1").val(window.localStorage.getItem("acta-1"));
+        $("#acta-2").val(window.localStorage.getItem("acta-2"));
+        $("#analisis-1").val(window.localStorage.getItem("analisis-1"));
+        $("#analisis-2").val(window.localStorage.getItem("analisis-2"));
+        $("#salud-1").val(window.localStorage.getItem("salud-1"));
+        $("#salud-2").val(window.localStorage.getItem("salud-2"));
+        $("#cartilla-1").val(window.localStorage.getItem("cartilla-1"));
+        $("#cartilla-2").val(window.localStorage.getItem("cartilla-2"));
+        $("#ids-1").val(window.localStorage.getItem("ids-1"));
+        $("#ids-2").val(window.localStorage.getItem("ids-2"));
+        $("#testigo-1").val(window.localStorage.getItem("testigo-1"));
+        $("#testigo-2").val(window.localStorage.getItem("testigo-2"));
+
+      });
+    </script>
 </div>
 
