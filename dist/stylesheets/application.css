@@ -106,3 +106,8 @@ li {
 	margin-left: 20px;
 	margin-top: 10px;
 }
+
+.icon {
+	vertical-align:middle;
+	margin:0 10px 5px 0;
+}
