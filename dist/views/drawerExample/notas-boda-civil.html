@@ -91,14 +91,7 @@
           window.localStorage.setItem("pajes", $("#pajes").val());
 
           window.localStorage.setItem("init", 1);
-        },{
-          onSuccess: function() {
-            console.log("datos guardados correctamente.");
-          }});
-        //   onFailure: function(error) {
-        //     alert("No se pudo guardar los datos, intente de nuevo");
-        //   }
-        // });
+        });
 
 		    $("#save-btn-2").on("click", function(){
           console.log("button 2");
