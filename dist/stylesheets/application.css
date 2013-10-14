@@ -5,6 +5,12 @@
   padding: 0;
 }
 
+@font-face
+{
+font-family: script;
+src: url('http://localhost/fonts/script.ttf')
+}
+
 input {
   -webkit-user-select: text;  /* Allow selection for input elements */
 }
@@ -49,13 +55,12 @@ html[xmlns] .clearfix {
 }
 
 .card {
-	color: white;
+	color: black;
 	margin: 0 auto;
 	max-width: 90%;
-	background-color: #ffffff;
 	padding: 10px;
-	background-color: black;
-	border:5px solid white;
+	background-color: white;
+	border:5px solid #e53588;
 	font-weight: bold;
 	margin-bottom: 25px;
 }	
@@ -71,11 +76,13 @@ html[xmlns] .clearfix {
 
 h1 {
 	margin-top: -5px;
+	font-family: script;
 }
 
 h2, h3, h4 {
 	margin-top: 5px;
 	margin-bottom: 5px;
+	font-family: script;
 }
 
 .fondo {
