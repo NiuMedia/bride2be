@@ -48,21 +48,24 @@
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
+		if(window.localStorage.getItem("invitados") == null){
+			window.localStorage.setItem("invitados", "{\"invitados\":[]}");
+		}
+		if(steroids.view.params["nombre"] != undefined){
+			alert(steroids.view.params["nombre"]);
+		}
 		$("#add-guest").on("click", function(){
-			if(window.localStorage.getItem("invitados") == null){
-				window.localStorage.setItem("invitados", "{\"invitados\":[]}");
-			}else{
-				json_guest = $.parseJSON(window.localStorage.getItem("invitados"));
-				invitado = {
-					"nombre" : $("#nombre").val(),
-					"invitados": $("#numero").val(),
-					"confirmado": $("#confirmado").val(),
-					"regalo": $("#regalo").val(),
-					"tarjeta": $("#tarjeta").val()
-				}
-				json_guest.invitados.push(invitado);
-				window.localStorage.setItem("invitados", JSON.stringify(json_guest));
+			json_guest = $.parseJSON(window.localStorage.getItem("invitados"));
+			invitado = {
+				"nombre" : $("#nombre").val(),
+				"invitados": $("#numero").val(),
+				"confirmado": $("#confirmado").val(),
+				"regalo": $("#regalo").val(),
+				"tarjeta": $("#tarjeta").val()
 			}
+			json_guest.invitados.push(invitado);
+			window.localStorage.setItem("invitados", JSON.stringify(json_guest));
+
 			webView = new steroids.views.WebView("http://localhost/views/drawerExample/invitados.html");
           	steroids.layers.push(webView); 
 		});	

@@ -24,7 +24,7 @@
 <body>
 
   <div class="content-padded" style="height:100%">
-  <h1>XXX invitados</h1>
+  <h1 id="titulo">0 invitados</h1>
   <div class="topcoat-list">
   	<h3 class="topcoat-list__header">Invitados</h3>
 	  <ul class="topcoat-list__container less-padding" id="lista-invitados">
@@ -40,8 +40,9 @@
 		});
 		if(window.localStorage.getItem("invitados") != null){
 			json = $.parseJSON(window.localStorage.getItem("invitados"));
+			$("#titulo").text(json.invitados.length + " invitados");
 			for(x in json.invitados){
-				html = '<li class="topcoat-list__item">' +
+				html = '<li class="topcoat-list__item" class="invitado" id="' + json.invitados[x].nombre + '">' +
 		  	    	'<span>' + json.invitados[x].nombre + '</span> ' +
 		  	    	'<div class="acciones-invitados">  ' +
 		  	    		'<label class="topcoat-checkbox guest-action"> ' +
@@ -73,7 +74,13 @@
 		  	    	'<div class="clearfix"></div> ' +
 	  	    	'</li>';
 	  	    	$("#lista-invitados").append(html);
+	  	    	$(html).on("click", function(){
+	  	    		alert(json.invitados[x].nombre);
+					webView = new steroids.views.WebView("http://localhost/views/drawerExample/nuevo_invitado.html?nombre=" + json.invitados[x].nombre);
+		          	steroids.layers.push(webView); 
+	  	   		});
 			}
+
 		}
 	});
 </script>
