@@ -53,9 +53,10 @@
   </div>
   <script type="text/javascript">
       $(document).ready(function(){
+        var flagCB=false;
         $("#save-btn").on("click", function(){
 
-        console.log("button 1");
+          console.log("button 1");
         	//cortejo
           window.localStorage.setItem("velacion", $("#velacion").val());
           window.localStorage.setItem("anillos", $("#anillos").val());
@@ -66,6 +67,7 @@
 
           window.localStorage.setItem("init", 1);
         });
+
 		    $("#save-btn-2").on("click", function(){
           console.log("button 2");
           //requisitos
@@ -84,8 +86,11 @@
           window.localStorage.setItem("ids-2", $("#ids-2").is(':checked'));
           window.localStorage.setItem("testigo-1", $("#testigo-1").is(':checked'));
           window.localStorage.setItem("testigo-2", $("#testigo-2").is(':checked'));
+          flagCB=true;
+          window.localStorage.setItem("flagCB",flagCB);
 
           window.localStorage.setItem("init", 1);
+          
         });
 
         //Rellena los datos, segun la informacion guardada
@@ -95,21 +100,25 @@
         $("#lazo").val(window.localStorage.getItem("lazo"));
         $("#honor").val(window.localStorage.getItem("honor"));
         $("#pajes").val(window.localStorage.getItem("pajes"));
-        window.localStorage.setItem("solicitud-1", "true");
-        document.getElementById("#solicitud-1").checked= window.localStorage.getItem("solicitud-1");
-        document.getElementById("#solicitud-2").checked= window.localStorage.getItem("solicitud-2");
-        document.getElementById("#acta-1").checked= window.localStorage.getItem("acta-1");
-        document.getElementById("#acta-2").checked= window.localStorage.getItem("acta-2");
-        document.getElementById("#analisis-1").checked= window.localStorage.getItem("analisis-1");
-        document.getElementById("#analisis-2").checked= window.localStorage.getItem("analisis-2");
-        document.getElementById("#salud-1").checked= window.localStorage.getItem("salud-1");
-        document.getElementById("#salud-2").checked= window.localStorage.getItem("salud-2");
-        document.getElementById("#cartilla-1").checked= window.localStorage.getItem("cartilla-1");
-        document.getElementById("#cartilla-2").checked= window.localStorage.getItem("cartilla-2");
-        document.getElementById("#ids-1").checked= window.localStorage.getItem("ids-1");
-        document.getElementById("#ids-2").checked= window.localStorage.getItem("ids-2");
-        document.getElementById("#testigo-1").checked= window.localStorage.getItem("testigo-1");
-        document.getElementById("#testigo-2").checked= window.localStorage.getItem("testigo-2");
+
+        
+          if (window.localStorage.getItem("flagCB")==true) {
+            document.getElementById("#solicitud-1").checked= window.localStorage.getItem("solicitud-1");
+            document.getElementById("#solicitud-2").checked= window.localStorage.getItem("solicitud-2");
+            document.getElementById("#acta-1").checked= window.localStorage.getItem("acta-1");
+            document.getElementById("#acta-2").checked= window.localStorage.getItem("acta-2");
+            document.getElementById("#analisis-1").checked= window.localStorage.getItem("analisis-1");
+            document.getElementById("#analisis-2").checked= window.localStorage.getItem("analisis-2");
+            document.getElementById("#salud-1").checked= window.localStorage.getItem("salud-1");
+            document.getElementById("#salud-2").checked= window.localStorage.getItem("salud-2");
+            document.getElementById("#cartilla-1").checked= window.localStorage.getItem("cartilla-1");
+            document.getElementById("#cartilla-2").checked= window.localStorage.getItem("cartilla-2");
+            document.getElementById("#ids-1").checked= window.localStorage.getItem("ids-1");
+            document.getElementById("#ids-2").checked= window.localStorage.getItem("ids-2");
+            document.getElementById("#testigo-1").checked= window.localStorage.getItem("testigo-1");
+            document.getElementById("#testigo-2").checked= window.localStorage.getItem("testigo-2");
+          };
+        
 
       });
     </script>
