@@ -34,17 +34,17 @@
 	<label for="numero">Numero de personas</label><br/>
 	<input ng-model="newGuest.invitados"  type="number" name="numero" class="topcoat-text-input" id="numero"><br/>
 	<label class="topcoat-checkbox">
-  		<input type="checkbox" id="confirmado" disabled>
+  		<input ng-model="newGuest.confirmado" type="checkbox" id="confirmado">
   		<div class="topcoat-checkbox__checkmark"></div>
   		Confirmado
 	</label><br/>
 	<label class="topcoat-checkbox">
-  		<input type="checkbox" id="regalo" disabled>
+  		<input ng-model="newGuest.regalo" type="checkbox" id="regalo">
   		<div class="topcoat-checkbox__checkmark"></div>
   		Envió regalo
 	</label><br/>
 	<label class="topcoat-checkbox">
-  		<input type="checkbox" id="tarjeta" disabled>
+  		<input ng-model="newGuest.tarjeta" type="checkbox" id="tarjeta">
   		<div class="topcoat-checkbox__checkmark"></div>
   		Tarjeta de agradecimiento
 	</label><br/>

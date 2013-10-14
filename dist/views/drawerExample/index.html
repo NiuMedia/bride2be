@@ -23,33 +23,36 @@
 </head>
 <body>
 
-  <div class="content-padded">
-  <img id="foto" src="" width="100%"/>
-  <span id="dias">Faltan XXX días</span>
-  <span>para la boda de</span>
-  <span id="novios">Juan y Juana</span>
-  <span id="lugar">San Luis Potosí</span>
-  <script type="text/javascript">
+  <div class="content-padded fondo">
+  <div class="card">   
+    <center><img id="foto" class="picture"src=""/><br>
+    <h2><span class="pink" id="dias">Faltan XXX días</span></h2>
+    <h3><span>para la boda de</span></h3>
+    <h2><span id="novios">Juan y Juana</span></h2>
+    <h2><span id="lugar">San Luis Potosí</span></h2>
+    </center><br>
 
-    if(window.localStorage.getItem("init") == null){
-      var webView = new steroids.views.WebView("http://localhost/views/drawerExample/config_modal_screen.html");
-      steroids.modal.show(webView);   
-    }
+    <script type="text/javascript">
 
-    $(document).ready(function(){
-      //Rellena los datos, segun la informacion guardada 
-      $("#novios").text(window.localStorage.getItem("novio") + " y " + window.localStorage.getItem("novia"));
-      $("#lugar").text("en " + window.localStorage.getItem("lugar"));
-      $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
-      stampWedding = new Date(window.localStorage.getItem("fecha")).getTime();
-      stampToday = new Date().getTime();
-      seconds = stampWedding - stampToday;
-      $("#dias").text("Faltan "+Math.round(seconds/86400000)+" días");
-    });
+      if(window.localStorage.getItem("init") == null){
+        var webView = new steroids.views.WebView("http://localhost/views/drawerExample/config_modal_screen.html");
+        steroids.modal.show(webView);   
+      }
 
-  </script>
+      $(document).ready(function(){
+        //Rellena los datos, segun la informacion guardada 
+        $("#novios").text(window.localStorage.getItem("novia") + " y " + window.localStorage.getItem("novio"));
+        $("#lugar").text("en " + window.localStorage.getItem("lugar"));
+        $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
+        stampWedding = new Date(window.localStorage.getItem("fecha")).getTime();
+        stampToday = new Date().getTime();
+        seconds = stampWedding - stampToday;
+        $("#dias").text("Faltan "+Math.round(seconds/86400000)+" días");
+      });
+
+    </script>
+  </div>    
 </div>
-
   
 </body>
 </html>

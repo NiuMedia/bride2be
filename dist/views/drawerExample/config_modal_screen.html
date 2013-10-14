@@ -23,25 +23,24 @@
 </head>
 <body>
 
-  <div class="content-padded">
-  <h1>Configuración</h1>
-    <form>
-      <label for="novia">Nombre de la novia</label>
-      <input type="text" name="novia" id="novia">
-      <label for="novio">Nombre del novio</label>
-      <input type="text" name="novio" id="novio">
-      <label for="lugar">Lugar</label>
-      <select name="lugar" id="lugar">
-        <option value="San Luis Potosí">San Luis Potosí</option>
-        <option value="Queretaro">Queretaro</option>
-        <option value="Chiapas">Chiapas</option>
-      </select> 
-      
-      <label for="fecha">Fecha de la Boda</label>
-      <input type="date" name="fecha" id="fecha">
-      <div class="topcoat-button center full" id="getPic-btn">Seleccionar imagen de Portada</div>
-      <div class="topcoat-button center" id="save-btn">Guardar</div>
-    </form>
+  <div class="content-padded fondo">
+  <div class="card">
+    <h1 class="pink center">Configuración</h1>
+      <form>
+        <label for="novia">Nombre de la novia</label>
+        <input type="text" class="topcoat-text-input center wide" name="novia" id="novia"><br><br>
+        <label for="novio">Nombre del novio</label>
+        <input type="text" class="topcoat-text-input center wide" name="novio" id="novio"><br><br>
+        <label for="lugar">Lugar</label><br>
+        <select class="topcoat-text-input center wide black" name="lugar" id="lugar">
+          <option value="San Luis Potosí">San Luis Potosí</option>
+          <option value="Queretaro">Querétaro</option>
+        </select><br><br>
+        <label for="fecha">Fecha de la Boda</label><br>
+        <input type="date" class="topcoat-text-input center wide black" name="fecha" id="fecha"><br><br>
+        <div class="topcoat-button center full" id="getPic-btn">Seleccionar Portada</div><br><br>
+        <div class="topcoat-button center" id="save-btn">Guardar</div><br>
+      </form>
     <script type="text/javascript">
       $(document).ready(function(){
         $("#save-btn").on("click", function(){
@@ -74,6 +73,7 @@
         $("#fecha").val(window.localStorage.getItem("fecha"));
       });
     </script>
+  </div>    
 </div>
   
 </body>

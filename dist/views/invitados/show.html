@@ -28,11 +28,11 @@
 
 
   <div class="content-padded" ng-app="invitadosApp" ng-controller="ShowCtrl">
-	<h1>Añadir invitado</h1>
+	<h1>Invitado {{invitado.nombre}}</h1>
 	<label for="nombre">Nombre</label><br/>
-	<input ng-model="newGuest.nombre" type="text" name="nombre" id="nombre" class="topcoat-text-input"><br/>
+	<input ng-value="{{invitado.nombre}}" ng-model="newGuest.nombre" type="text" name="nombre" id="nombre" class="topcoat-text-input"><br/>
 	<label for="numero">Numero de personas</label><br/>
-	<input ng-model="newGuest.invitados"  type="number" name="numero" class="topcoat-text-input" id="numero"><br/>
+	<input ng-value="{{invitado.invitados}}" ng-model="newGuest.invitados"  type="number" name="numero" class="topcoat-text-input" id="numero"><br/>
 	<label class="topcoat-checkbox">
   		<input type="checkbox" id="confirmado" disabled>
   		<div class="topcoat-checkbox__checkmark"></div>

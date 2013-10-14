@@ -25,14 +25,15 @@
 
   <div class="topcoat-list__container black-bg">
   <ul class="topcoat-list">
-    <li id="providers"        class="topcoat-list__item">Proveedores</li>
-    <li id="my-providers"     class="topcoat-list__item">Mis proveedores</li>
-    <li id="tips-and-notes"   class="topcoat-list__item">Tips y notas</li>
-    <li id="agenda"           class="topcoat-list__item">Agenda</li>
-    <li id="gastos"           class="topcoat-list__item">Gastos</li>
-    <li id="invitados"        class="topcoat-list__item">Invitados</li>
-    <li id="regalos"          class="topcoat-list__item">Mesa de regalos</li>
-    <li id="confi-list-item"  class="topcoat-list__item">Configuración</li>
+    <li id="home"             class="topcoat-list__item"><img class="icon" src="http://www.niumedia.mx/wp-content/uploads/2013/10/icon_inicio.png" width="20" height="20"/><span class="drawer">   Inicio</span></li>
+    <li id="providers"        class="topcoat-list__item"><img class="icon" src="http://www.niumedia.mx/wp-content/uploads/2013/10/icon_proveedores.png" width="20" height="20"/><span class="drawer">   Proveedores</span></li>
+    <li id="my-providers"     class="topcoat-list__item"><img class="icon" src="http://www.niumedia.mx/wp-content/uploads/2013/10/icon_mis_proveedores.png" width="20" height="20"/><span class="drawer">   Mis proveedores</span></li>
+    <li id="tips-and-notes"   class="topcoat-list__item"><img class="icon" src="http://www.niumedia.mx/wp-content/uploads/2013/10/icon_tips_y_notas.png" width="20" height="20"/><span class="drawer">   Tips y notas</span></li>
+    <li id="agenda"           class="topcoat-list__item"><img class="icon" src="http://www.niumedia.mx/wp-content/uploads/2013/10/icon_agenda.png" width="20" height="20"/><span class="drawer">   Agenda</span></li>
+    <li id="gastos"           class="topcoat-list__item"><img class="icon" src="http://www.niumedia.mx/wp-content/uploads/2013/10/icon_gastos.png" width="20" height="20"/><span class="drawer">   Gastos</span></li>
+    <li id="invitados"        class="topcoat-list__item"><img class="icon" src="http://www.niumedia.mx/wp-content/uploads/2013/10/icon_invitados.png" width="20" height="20"/><span class="drawer">   Invitados</span></li>
+    <li id="regalos"          class="topcoat-list__item"><img class="icon" src="http://www.niumedia.mx/wp-content/uploads/2013/10/icon_mesa_de_regalos.png" width="20" height="20"/><span class="drawer">   Mesa de regalos</span></li>
+    <li id="confi-list-item"  class="topcoat-list__item"><img class="icon" src="http://www.niumedia.mx/wp-content/uploads/2013/10/icon_configuracion.png" width="20" height="20"/><span class="drawer">   Configuración</span></li>
     <li id="clear-list-item"  class="topcoat-list__item">Borra datos (PELIGRO PELIGRO DESTRUIR DESTRUIR)</li>
   </ul>
 </div>
@@ -45,6 +46,7 @@
   var providersView = new steroids.views.WebView("http://localhost/views/drawerExample/proveedores.html");
   var myProvidersView = new steroids.views.WebView("http://localhost/views/drawerExample/mis-proveedores.html");
   var gastosView = new steroids.views.WebView("http://localhost/views/drawerExample/gastos.html");
+  var homeView = new steroids.views.WebView("http://localhost/views/drawerExample/index.html");
 
   $(document).ready(function(){
     tipsView.preload();
@@ -55,6 +57,7 @@
     providersView.preload();
     myProvidersView.preload();
     gastosView.preload();
+    homeView.preload();
     $("#tips-and-notes").on("click",function(){
       steroids.layers.replace({view: tipsView});
       steroids.drawers.hideAll();
@@ -85,6 +88,10 @@
     });
     $("#gastos").on("click", function(){
       steroids.layers.replace({view: gastosView});
+      steroids.drawers.hideAll();
+    });
+    $("#home").on("click", function(){
+      steroids.layers.replace({view: homeView});
       steroids.drawers.hideAll();
     });
     $("#clear-list-item").on("click", function(){
