@@ -51,7 +51,17 @@
 			<li>De una botella de champagne o vino espumoso salen aproximadamente seis copas y generalmente una persona no se toma más de dos.</li>
 			<li>Si ofreces cerveza, calcula tres pequeñas o dos grandes por persona.</li>
 		</ul>
+		<p>Mira nuestra guía para calcular la bebida:</p>
+		<div class="topcoat-button center" id="guia-bebida">Guía</div><br>
 	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			 var recepNotasView = new steroids.views.WebView("http://localhost/views/drawerExample/notas-recepcion-banquetes.html");
+			$("#guia-bebida").on('click',function(){
+				steroids.layers.push(recepNotasView);
+			});
+		});
+	</script>
     
 </div>
 

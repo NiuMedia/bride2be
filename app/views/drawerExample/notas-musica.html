@@ -1,36 +1,52 @@
 <div class="content-padded">
-  <h1>Música</h1>
+  <h1>Notas: Música</h1>
   <div class="card">
   	<h2>La música para la ceremonia</h2>
   	<p>La música más emotiva de toda tu boda la debes tener en tu ceremonia religiosa, por eso antes de contratar al grupo de cuerdas, te recomendamos escucharlos en la iglesia en un evento previo a tu boda, para así evitar sorpresas.</p>
-  </div>
-  <div class="card">
-  	<h2>El alma de la fiesta</h2>
-  	<h3>Musica para bienvenida, brindis y banquete</h3>
-  	<p>Una vez finalizada la boda religiosa, darás paso a la celebración junto a tus invitados; es importante elegir la música que te acompañará en tu llegada al salón o jardín, ya que de esta manera los invitados estarán avisados de la entrada del nuevo matrimonio para así dar inicio al banquete. Te recomendamos elegir una canción alegre –de preferencia cantada– con la que se identifiquen.<br />
-	Durante la cena se recomienda elegir música de repertorio suave, con volumen moderado que permita a los invitados disfrutar de la bebida, de la comida y de una tranquila conversación.<br />
-	Las opciones son muchas: clásica con piano, jazz suave, bossa nova, música operística, entre otros.
-	</p>
-		
-	<h3>El vals</h3>
-	<p>La canción que elijan para su vals los acompañará durante toda su vida y será motivo de recuerdos inolvidables. Elijan una canción que hayan hecho suya y con la que se sientan totalmente identificados; manténganse tranquilos y recuerden disfrutar cada momento de su boda.</p>
+  	<br />
 
-	<h3>Grupo musical</h3>
-	<ul>
-		<li>La música en vivo puede crear más ambiente que cualquier cd grabado.</li>
-		<li>Los cantantes pueden ser capaces de crear un ambiente de fiesta entre los novios y sus invitados.</li>
-		<li>El grupo puede cantar o tocar las canciones más lento o más rápido o alargarlas según el ambiente que deseen crear.</li>
-		<li>Los novios y los invitados también pueden cantar las canciones que deseen, solicitando al grupo que toque sólo la melodía.</li>
-	</ul>
-	<h3>DJ</h3>
-	<ul>
-		<li>Un DJ tiene un repertorio muy amplio de música.</li>
-		<li>La mayoría es más barato.</li>
-		<li>Las canciones especiales que ustedes quieran, las podrán escuchar tal cual les gustan.</li>
-		<li>No necesita descansos.</li>
-		<li>Su instalación no requiere de tanto esfuerzo y no ocupa tanto espacio.</li>
-	</ul>
+  	<form>
+  		<label for"marcha">MARCHA DE ENTRADA <em>Tienes que escoger algo rítmico y alegre</em></label>
+  		<input type="text" class="topcoat-text-input center wide" name="marcha" id="marcha"><br><br>
+  		<label for"aleluya">ALELUYA <em>Tiene que ser algo breve y alegre, ésta se canta antes del Evangelio.</em></label>
+  		<input type="text" class="topcoat-text-input center wide" name="aleluya" id="aleluya"><br><br>
+  		<label for"ofertorio">OFERTORIO</label>
+  		<input type="text" class="topcoat-text-input center wide" name="ofertorio" id="ofertorio"><br><br>
+  		<label for"santo">SANTO</label>
+  		<input type="text" class="topcoat-text-input center wide" name="santo" id="santo"><br><br>
+  		<label for"comunion">COMUNIÓN <em>Es aquí cuando más tiempo de música se requiere.</em></label>
+  		<input type="text" class="topcoat-text-input center wide" name="comunion" id="comunion"><br><br>
+  		<label for"ramo">ENTREGA DEL RAMO A LA VIRGEN <em>definitivamente lo mejor es el Ave María.</em></label>
+  		<input type="text" class="topcoat-text-input center wide" name="ramo" id="ramo"><br><br>
+  		<label for"salida">SALIDA <em>Para este feliz momento la música debe ser alegre y de lo más emotiva.</em></label>
+  		<input type="text" class="topcoat-text-input center wide" name="salida" id="salida"><br><br>
+  		<div class="topcoat-button center" id="save-btn">Guardar</div><br>
+  	</form>
   </div>
+  <script type="text/javascript">
+  	$(document).ready(function(){
+        $("#save-btn").on("click", function(){
+          window.localStorage.setItem("marcha", $("#marcha").val());
+          window.localStorage.setItem("aleluya", $("#aleluya").val());
+          window.localStorage.setItem("ofertorio", $("#ofertorio").val());
+          window.localStorage.setItem("santo", $("#santo").val());
+          window.localStorage.setItem("comunion", $("#comunion").val());
+          window.localStorage.setItem("ramo", $("#ramo").val());
+          window.localStorage.setItem("salida", $("#salida").val());
+
+          window.localStorage.setItem("init", 1);
+        });
+//Rellena los datos, segun la informacion guardada
+        $("#marcha").val(window.localStorage.getItem("marcha"));
+        $("#aleluya").val(window.localStorage.getItem("aleluya"));
+        $("#ofertorio").val(window.localStorage.getItem("ofertorio"));
+        $("#santo").val(window.localStorage.getItem("santo"));
+        $("#comunion").val(window.localStorage.getItem("comunion"));
+        $("#ramo").val(window.localStorage.getItem("ramo"));
+        $("#salida").val(window.localStorage.getItem("salida"));
+
+      });
+  </script>
     
 </div>
 

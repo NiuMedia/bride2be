@@ -4,6 +4,8 @@
 	  	<h2>Mesa de Regalos</h2>
 	  	<h3>¡Diviertanse escogiendo!</h3>
 		<p>Las mesas de regalos son una excelente oportunidad para conseguir todos aquellos detalles que faltan para poner a punto su nueva casa. Pero prepararla no es tan sencillo como parece. Les ayudamos con un checklist para escoger su mesa de regalos.</p>
+		<br>
+		<div class="topcoat-button center" id="regalos">Mesa de Regalos</div><br>
 	</div>
 	<div class="card">
 		<h2>Hogar</h2>
@@ -13,6 +15,15 @@
 		<p>Para evitar errores al buscar tu nuevo hogar, debes hacer una planeación de os próximos cinco a ocho años; los expertos recomiendan considerar al menos ocho opciones de propiedades antes de tomar una decisión.</p>
 
 	</div>
+	<script type="text/javascript">
+		var regalosView = new steroids.views.WebView("http://localhost/views/drawerExample/regalos.html");
+
+		$(document).ready(function(){
+			$("#regalos").on("click", function(){
+		      steroids.layers.push(regalosView);
+		    });
+		});
+	</script>
     
 </div>
 
