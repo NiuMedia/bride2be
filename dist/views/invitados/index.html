@@ -34,7 +34,25 @@
 
       <ul class="topcoat-list">
         <li class="topcoat-list__item" hm-tap="open($index)" ng-repeat="invitado in invitados">
-          Invitados: {{ invitado.nombre }}
+          <p>{{ invitado.nombre }}</p>
+          <p>
+            <span>Px <br> {{ invitado.invitados }} </span>
+            <label class="topcoat-checkbox">
+              <input ng-model="invitado.confirmado" type="checkbox" id="confirmado" disabled>
+              <div class="topcoat-checkbox__checkmark"></div>
+                Confirmado
+            </label>
+            <label class="topcoat-checkbox">
+              <input ng-model="invitado.regalo" type="checkbox" id="regalo" disabled>
+              <div class="topcoat-checkbox__checkmark"></div>
+              Envió regalo
+            </label>
+            <label class="topcoat-checkbox">
+              <input ng-model="invitado.tarjeta" type="checkbox" id="tarjeta" disabled>
+              <div class="topcoat-checkbox__checkmark"></div>
+              Tarjeta de agradecimiento
+            </label>
+          </p>
         </li>
       </ul>
 

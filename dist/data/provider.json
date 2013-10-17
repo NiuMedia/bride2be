@@ -1,0 +1,12 @@
+[
+  {
+    "provider_id": 1,
+    "name": "First provider",
+    "description": "This is awesome."
+  },
+  {
+    "provider_id": 2,
+    "name": "Second provider",
+    "description": "This is also okay."
+  }
+]

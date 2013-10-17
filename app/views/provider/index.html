@@ -1,0 +1,16 @@
+<div ng-app="providerApp">
+
+  <div ng-controller="CeremoniaCtrl">
+    <div class="topcoat-list__container">
+
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" hm-tap="open(provider.provider_id)" ng-repeat="provider in providers">
+          Provider: {{ provider.title }}
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>

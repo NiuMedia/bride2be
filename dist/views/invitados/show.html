@@ -30,26 +30,26 @@
   <div class="content-padded" ng-app="invitadosApp" ng-controller="ShowCtrl">
 	<h1>Invitado {{invitado.nombre}}</h1>
 	<label for="nombre">Nombre</label><br/>
-	<input ng-value="{{invitado.nombre}}" ng-model="newGuest.nombre" type="text" name="nombre" id="nombre" class="topcoat-text-input"><br/>
+	<input ng-model="newGuest.nombre" type="text" name="nombre" id="nombre" class="topcoat-text-input"><br/>
 	<label for="numero">Numero de personas</label><br/>
-	<input ng-value="{{invitado.invitados}}" ng-model="newGuest.invitados"  type="number" name="numero" class="topcoat-text-input" id="numero"><br/>
+	<input ng-model="newGuest.invitados"  type="number" name="numero" class="topcoat-text-input" id="numero"><br/>
 	<label class="topcoat-checkbox">
-  		<input type="checkbox" id="confirmado" disabled>
+  		<input type="checkbox" ng-model="newGuest.confirmado" id="confirmado">
   		<div class="topcoat-checkbox__checkmark"></div>
   		Confirmado
 	</label><br/>
 	<label class="topcoat-checkbox">
-  		<input type="checkbox" id="regalo" disabled>
+  		<input type="checkbox" ng-model="newGuest.regalo" id="regalo">
   		<div class="topcoat-checkbox__checkmark"></div>
   		Envió regalo
 	</label><br/>
 	<label class="topcoat-checkbox">
-  		<input type="checkbox" id="tarjeta" disabled>
+  		<input type="checkbox" ng-model="newGuest.tarjeta" id="tarjeta">
   		<div class="topcoat-checkbox__checkmark"></div>
   		Tarjeta de agradecimiento
 	</label><br/>
-	<div class="topcoat-button" hm-tap="invitadoServ.removeInvitado(index);">Eliminar invitado</div>
-	<div class="topcoat-button" hm-tap="invitadoServ.addInvitado(newGuest); newGuest = {};">Guardar invitado</div>
+	<div class="topcoat-button" hm-tap="invitadoServ.removeInvitado(index); returnToList();">Eliminar invitado</div>
+	<div class="topcoat-button" hm-tap="invitadoServ.updateInvitado(index, newGuest); newGuest = {}; returnToList();">Guardar invitado</div>
 </div>
 
 

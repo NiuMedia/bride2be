@@ -7,10 +7,25 @@ invitadosApp.factory('invitadoService', function(){
   myInvitadosService.addInvitado = function(invitado){
     json_guest.invitados.push(invitado);
     window.localStorage.setItem("invitados", JSON.stringify(json_guest));
+
   };
 
   myInvitadosService.removeInvitado = function(index){
-    json_guest.invitados.splice(index);
+    json_guest.invitados.splice(index, 1);
+    window.localStorage.setItem("invitados", JSON.stringify(json_guest));
+  };
+
+  myInvitadosService.updateInvitado = function(index, newInvitado){
+    invitado = json_guest.invitados[index];
+
+    invitado.nombre = newInvitado.nombre;
+    invitado.invitados = newInvitado.invitados;
+    invitado.confirmado = newInvitado.confirmado;
+    invitado.regalo = newInvitado.regalo;
+    invitado.tarjeta = newInvitado.tarjeta;
+
+    json_guest.invitados[index] = invitado;
+
     window.localStorage.setItem("invitados", JSON.stringify(json_guest));
   };
 
@@ -54,15 +69,27 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
 
 invitadosApp.controller('ShowCtrl', function ($scope, invitadoService) {
 
-  $scope.index = steroids.view.params.id;
+  $scope.returnToList = function(){
+    guestsRetunView = new steroids.views.WebView("/views/invitados/index.html");
+    steroids.layers.push({view:guestsRetunView});
+    steroids.layers.popAll();
+  };
 
-  $scope.newGuest = {};
+  $scope.index = steroids.view.params.id;
 
   $scope.invitadoServ = invitadoService;
 
   json_guest = $.parseJSON(window.localStorage.getItem("invitados"));
 
   $scope.invitado = json_guest.invitados[steroids.view.params.id];
+
+  $scope.newGuest = {
+    "nombre": json_guest.invitados[steroids.view.params.id].nombre,
+    "invitados": json_guest.invitados[steroids.view.params.id].invitados,
+    "confirmado": json_guest.invitados[steroids.view.params.id].confirmado,
+    "regalo": json_guest.invitados[steroids.view.params.id].regalo,
+    "tarjeta": json_guest.invitados[steroids.view.params.id].tarjeta
+  };
 
   // -- Native navigation
   steroids.view.navigationBar.show("Invitado: " + $scope.invitado.nombre );
@@ -71,7 +98,16 @@ invitadosApp.controller('ShowCtrl', function ($scope, invitadoService) {
 
 
 invitadosApp.controller('NewCtrl', function ($scope, invitadoService) {
+
+  $scope.returnToList = function(){
+    guestsRetunView = new steroids.views.WebView("/views/invitados/index.html");
+    steroids.layers.push({view:guestsRetunView});
+    steroids.layers.popAll();
+  };
+
   $scope.newGuest = {};
+
+
 
   $scope.invitadoServ = invitadoService;
 
