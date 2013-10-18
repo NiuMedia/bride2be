@@ -107,8 +107,13 @@
    			//alert('SALDO!!!');
    			//document.getElementById('#saldo-iglesia').innerText = 'shi :3';
    			window.localStorage.setItem("costo-iglesia", $("#costo-iglesia").val());
+   			window.localStorage.setItem("anticipo-iglesia", $("#anticipo-iglesia").val());
+   			window.localStorage.setItem("init", 1);
+   			$("#saldo-iglesia").val(window.localStorage.getItem("costo-iglesia")-window.localStorage.getItem("anticipo-iglesia"));
    		});
    		$("#costo-iglesia").val(window.localStorage.getItem("costo-iglesia"));
+   		$("#anticipo-iglesia").val(window.localStorage.getItem("anticipo-iglesia"));
+   		$("#saldo-iglesia").val(window.localStorage.getItem("costo-iglesia")-window.localStorage.getItem("anticipo-iglesia"));
    	});
    </script>
 </div>
