@@ -30,11 +30,10 @@ providerApp.controller('CeremoniaCtrl', function ($scope, ProviderRestangular) {
   };
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=ceremonia').getList().then(function(){
-    alert("Todo esta bien");
-  }, function(error){
-    alert(JSON.stringify(error));
-  });
+  $scope.providers = ProviderRestangular.all('posts?type=ceremonia').getList();
+
+  alert($scope.providers);
+  console.log($scope.providers);
 
   // -- Native navigation
   steroids.view.navigationBar.show("Ceremonia");
@@ -47,10 +46,12 @@ providerApp.controller('CeremoniaCtrl', function ($scope, ProviderRestangular) {
 providerApp.controller('ShowCtrl', function ($scope, $filter, ProviderRestangular) {
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  ProviderRestangular.all('provider').getList().then( function(providers) {
+  ProviderRestangular.all('posts?type=ceremonia').getList().then( function(providers) {
     // Then select the one based on the view's id query parameter
-    $scope.provider = $filter('filter')(providers, {provider_id: steroids.view.params['id']})[0];
+    $scope.provider = $filter('filter')(providers, {ID: steroids.view.params['id']})[0];
   });
+
+  //$scope.provider = ProviderRestangular.one("posts", steroids.view.params['id']);
 
   // -- Native navigation
   steroids.view.navigationBar.show("Provider: " + steroids.view.params.id );

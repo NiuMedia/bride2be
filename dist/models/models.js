@@ -45,8 +45,8 @@ module.factory('ProviderRestangular', function(Restangular) {
   return Restangular.withConfig(function(RestangularConfigurer) {
 
   	// URL base para los provedores 
-    RestangularConfigurer.setBaseUrl('https://public-api.wordpress.com/rest/v1/sites/www.bride2be.com.mx/');
-    RestangularConfigurer.setResponseExtractor(function(response, operation, what, url){
+    RestangularConfigurer.setBaseUrl('http://bride2be.com.mx/wp-json.php/');
+    /*RestangularConfigurer.setResponseExtractor(function(response, operation, what, url){
 
     	var newResponse;
     	if (operation === "getList") {
@@ -54,7 +54,7 @@ module.factory('ProviderRestangular', function(Restangular) {
     	}
 
     	return newResponse;
-    });
+    });*/
 
   });
 

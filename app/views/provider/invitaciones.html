@@ -1,0 +1,19 @@
+<div ng-app="providerApp">
+
+  <div ng-controller="InvitacionesCtrl">
+    <div class="topcoat-list__container">
+
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" hm-tap="open(provider.ID)" ng-repeat="provider in providers">
+          <h1>{{ provider.title }}</h1>
+          <div>
+          	{{ provider.content }}
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
