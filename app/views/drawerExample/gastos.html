@@ -6,9 +6,20 @@
 	  	<h2>Ceremonia Religiosa</h2>
 
 	  	<h3>Donativo a la iglesia</h3>
-	  	<label for="costo-iglesia">costo</label><input type="tel" class="topcoat-text-input" name="costo-iglesia" id="costo-iglesia" width="50px"><br>
-	  	<label for="anticipo-iglesia">anticipo</label><input type="tel" class="topcoat-text-input" name="anticipo-iglesia" id="anticipo-iglesia" width="50px"><br>
-	  	<div class="topcoat-button" id="ok-iglesia">Saldo</div><input type="text" class="topcoat-text-input" name="saldo-iglesia" id="saldo-iglesia" width="50px"><br>
+	  	<table>
+	  	<tr>
+	  		<td style="align:center;"><label for="costo-iglesia">costo</label></td><td style="align:center;"><label for="anticipo-iglesia">anticipo</label></td>
+	  	</tr>
+	  	<tr>
+	  		<td style="align:center;">
+	  			<input type="tel" class="topcoat-text-input" name="costo-iglesia" id="costo-iglesia" style="width:100%">
+	  		</td>
+	  		<td style="align:center;">
+			  	<input type="tel" class="topcoat-text-input" name="anticipo-iglesia" id="anticipo-iglesia" style="width:100%">
+			</td>
+	  	</tr>
+	  	</table>
+	  	<button class="topcoat-button--cta" id="ok-iglesia">Saldo</button><label id="saldo-iglesia" style="width:150px"></label><br>
 	  	<label for="fecha-iglesia">fecha</label><input type="date" class="topcoat-text-input" name="fecha-iglesia" id="fecha-iglesia"><br><br>
 
 
@@ -103,17 +114,41 @@
    </form>
    <script type="text/javascript">
    	$(document).ready(function(){
+   		document.getElementById('ok-iglesia').disabled=true;
+   		$('#anticipo-iglesia').on('click',function(){
+   			document.getElementById('ok-iglesia').disabled=false;
+   		});
+
    		$('#ok-iglesia').on('click',function(){
    			//alert('SALDO!!!');
-   			//document.getElementById('#saldo-iglesia').innerText = 'shi :3';
    			window.localStorage.setItem("costo-iglesia", $("#costo-iglesia").val());
+
    			window.localStorage.setItem("anticipo-iglesia", $("#anticipo-iglesia").val());
+   			
+   			alert('anticipo '+window.localStorage.getItem("anticipo-iglesia"));
+   			if{
+   				monto=parseFloat(window.localStorage.getItem("monto-iglesia"))+parseFloat(window.localStorage.getItem("anticipo-iglesia"));
+   			}else{
+   				monto=parseFloat(window.localStorage.getItem("monto-iglesia"))+parseFloat(window.localStorage.getItem("anticipo-iglesia"));
+   			}
+   			window.localStorage.setItem("monto-iglesia",monto);
+
+   			alert('monto '+monto);
+
+
    			window.localStorage.setItem("init", 1);
-   			$("#saldo-iglesia").val(window.localStorage.getItem("costo-iglesia")-window.localStorage.getItem("anticipo-iglesia"));
+   			document.getElementById("saldo-iglesia").innerHTML=""+(window.localStorage.getItem("costo-iglesia")-window.localStorage.getItem("monto-iglesia"));
+   			document.getElementById('ok-iglesia').disabled=true;
    		});
+
+
    		$("#costo-iglesia").val(window.localStorage.getItem("costo-iglesia"));
-   		$("#anticipo-iglesia").val(window.localStorage.getItem("anticipo-iglesia"));
-   		$("#saldo-iglesia").val(window.localStorage.getItem("costo-iglesia")-window.localStorage.getItem("anticipo-iglesia"));
+
+   		if(window.localStorage.getItem("monto-iglesia")==window.localStorage.getItem("costo-iglesia")){
+   			document.getElementById("saldo-iglesia").innerHTML="Liquidado!";
+   		}else{
+   			document.getElementById("saldo-iglesia").innerHTML=""+(window.localStorage.getItem("costo-iglesia")-window.localStorage.getItem("monto-iglesia"));
+   		}
    	});
    </script>
 </div>
