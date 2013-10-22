@@ -26,93 +26,394 @@
   <div class="content-padded">
   <h1>Gastos</h1>
   <form>
+  	<div class="card">
+  		<label id="costo-total" style="font-size:1.5em"></label><br>
+  		<label id="saldo-total" style="font-size:1.5em"></label><br>
+  	</div>
+
+
 	  <div class="card">
-
+<!-- CEREMONIA RELIGIOSA -->
+		<div id="ceremonia-header">
 	  	<h2>Ceremonia Religiosa</h2>
+	  	</div>
+	  	<div id="cont-ceremonia">
+	  		<!-- Donativo -->
+		  	<div id="donativo-content" style="clear:both">
+			  	<div id="titulo-donativo">
+			  		<div style="float:left"><h3>Donativo a la iglesia</h3></div>
+			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-donativo">Abrir</button></div>
+			  	</div>
+			  	<div id="donativo-specs" style="clear:both">
+			  		<div style="width:33%;float:left">Costo<br /><label id="don-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="don-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="don-spec-f"></label></div>
+			  	</div>
+			  	<div id="ceremonia-donativo"> <!--style="display:none"-->
+			  	<table>
+				  	<tr>
+				  		<td><label for="costo-iglesia">Costo</label></td>
+				  		<td><label>Saldo</label><br/></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="costo-iglesia" id="costo-iglesia" style="width:80%"></td>
+						<td><label id="saldo-iglesia" style="width:150px;font-size:1.5em"></label></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="fecha-iglesia">Fecha para<br />liquidación</label></td>
+				  		<td><input type="date" class="topcoat-text-input center" name="fecha-iglesia" id="fecha-iglesia" style="width:99%"></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="anticipo-iglesia">Anticipo</label></td>
+				  		<td></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-iglesia" id="anticipo-iglesia" style="width:80%"></td>
+				  		<td><button class="topcoat-button--cta" id="ok-iglesia">Aceptar</button></td>
+				  	</tr>
+			  	</table>
+			  	</div>
+			  	<br><br>
+		  	</div>
 
-	  	<h3>Donativo a la iglesia</h3>
-	  	<table>
-	  	<tr>
-	  		<td style="align:center;"><label for="costo-iglesia">costo</label></td><td style="align:center;"><label for="anticipo-iglesia">anticipo</label></td>
-	  	</tr>
-	  	<tr>
-	  		<td style="align:center;">
-	  			<input type="tel" class="topcoat-text-input" name="costo-iglesia" id="costo-iglesia" style="width:100%">
-	  		</td>
-	  		<td style="align:center;">
-			  	<input type="tel" class="topcoat-text-input" name="anticipo-iglesia" id="anticipo-iglesia" style="width:100%">
-			</td>
-	  	</tr>
-	  	</table>
-	  	<button class="topcoat-button--cta" id="ok-iglesia">Saldo</button><label id="saldo-iglesia" style="width:150px"></label><br>
-	  	<label for="fecha-iglesia">fecha</label><input type="date" class="topcoat-text-input" name="fecha-iglesia" id="fecha-iglesia"><br><br>
+	  	<!-- Musica -->
+	  	<div id="musica-content" style="clear:both">
+			<div id="titulo-musica">
+		  		<div style="float:left"><h3>Música</h3></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-musica">Abrir</button></div>
+		  	</div>
+		  	<div id="musica-specs" style="clear:both">
+			  		<div style="width:33%;float:left">Costo<br /><label id="mus-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="mus-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="mus-spec-f"></label></div>
+			  	</div>
+		  	<div id="ceremonia-musica"> <!--style="display:none"-->
+		  	<table>
+			  	<tr>
+			  		<td><label for="costo-musica">Costo</label></td>
+			  		<td><label>Saldo</label><br/></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="costo-musica" id="costo-musica" style="width:80%"></td>
+					<td><label id="saldo-musica" style="width:150px;font-size:1.5em"></label></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="fecha-musica">Fecha para<br />liquidación</label></td>
+			  		<td><input type="date" class="topcoat-text-input center" name="fecha-musica" id="fecha-musica" style="width:99%"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="anticipo-musica">Anticipo</label></td>
+			  		<td></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="anticipo-musica" id="anticipo-musica" style="width:80%"></td>
+			  		<td><button class="topcoat-button--cta" id="ok-musica">Aceptar</button></td>
+			  	</tr>
+		  	</table>
+		  	</div>
+		  	<br><br>
+	  	</div>
 
+	  	<!-- Decoracion -->
+		<div id="decoracion-content" style="clear:both">
+			<div id="titulo-decoracion">
+		  		<div style="float:left"><h3>Decoración</h3></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-decoracion">Abrir</button></div>
+		  	</div>
+		  	<div id="ceremonia-decoracion" style="display:none">
+		  	<table>
+			  	<tr>
+			  		<td><label for="costo-decoracion">Costo</label></td>
+			  		<td><label>Saldo</label><br/></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="costo-decoracion" id="costo-decoracion" style="width:80%"></td>
+					<td><label id="saldo-decoracion" style="width:150px;font-size:1.5em"></label></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="fecha-decoracion">Fecha para<br />liquidación</label></td>
+			  		<td><input type="date" class="topcoat-text-input center" name="fecha-decoracion" id="fecha-decoracion" style="width:99%"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="anticipo-decoracion">Anticipo</label></td>
+			  		<td></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="anticipo-decoracion" id="anticipo-decoracion" style="width:80%"></td>
+			  		<td><button class="topcoat-button--cta" id="ok-decoracion">Aceptar</button></td>
+			  	</tr>
+		  	</table>
+		  	</div>
+		  	<br><br>
+	  	</div>
 
-		<h3>Música</h3>
-	  	<label for="costo">costo</label><input type="text" class="topcoat-text-input" name="costo" id="costo"><br>
-	  	<label for="anticipo">anticipo</label><input type="text" class="topcoat-text-input" name="anticipo" id="anticipo"><br>
-	  	<label for="saldo">saldo</label><input type="text" class="topcoat-text-input" name="saldo" id="saldo"><br>
-	  	<label for="fecha">fecha</label><input type="date" class="topcoat-text-input" name="fecha" id="fecha"><br><br>
+	  	<!-- Anillos -->
+	  	<div id="anillos-content" style="clear:both">
+			<div id="titulo-anillos">
+		  		<div style="float:left"><h3>Anillos, Arras y lazo</h3></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-anillos">Abrir</button></div>
+		  	</div>
+		  	<div id="ceremonia-anillos" style="display:none">
+		  	<table>
+			  	<tr>
+			  		<td><label for="costo-anillos">Costo</label></td>
+			  		<td><label>Saldo</label><br/></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="costo-anillos" id="costo-anillos" style="width:80%"></td>
+					<td><label id="saldo-anillos" style="width:150px;font-size:1.5em"></label></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="fecha-anillos">Fecha para<br />liquidación</label></td>
+			  		<td><input type="date" class="topcoat-text-input center" name="fecha-anillos" id="fecha-anillos" style="width:99%"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="anticipo-anillos">Anticipo</label></td>
+			  		<td></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="anticipo-anillos" id="anticipo-anillos" style="width:80%"></td>
+			  		<td><button class="topcoat-button--cta" id="ok-anillos">Aceptar</button></td>
+			  	</tr>
+		  	</table>
+		  	</div>
+		  	<br><br>
+	  	</div>
 
+	  	<!-- Rosario -->
+	  	<div id="rosario-content" style="clear:both">
+			<div id="titulo-rosario">
+		  		<div style="float:left"><h3>Rosario o lazo</h3></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-rosario">Abrir</button></div>
+		  	</div>
+		  	<div id="ceremonia-rosario" style="display:none">
+		  	<table>
+			  	<tr>
+			  		<td><label for="costo-rosario">Costo</label></td>
+			  		<td><label>Saldo</label><br/></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="costo-rosario" id="costo-rosario" style="width:80%"></td>
+					<td><label id="saldo-rosario" style="width:150px;font-size:1.5em"></label></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="fecha-rosario">Fecha para<br />liquidación</label></td>
+			  		<td><input type="date" class="topcoat-text-input center" name="fecha-rosario" id="fecha-rosario" style="width:99%"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="anticipo-rosario">Anticipo</label></td>
+			  		<td></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="anticipo-rosario" id="anticipo-rosario" style="width:80%"></td>
+			  		<td><button class="topcoat-button--cta" id="ok-rosario">Aceptar</button></td>
+			  	</tr>
+		  	</table>
+		  	</div>
+		  	<br><br>
+	  	</div>
 
-		<h3>Decoración</h3>
-	  	<label for="costo">costo</label><input type="text" class="topcoat-text-input" name="costo" id="costo"><br>
-	  	<label for="anticipo">anticipo</label><input type="text" class="topcoat-text-input" name="anticipo" id="anticipo"><br>
-	  	<label for="saldo">saldo</label><input type="text" class="topcoat-text-input" name="saldo" id="saldo"><br>
-	  	<label for="fecha">fecha</label><input type="date" class="topcoat-text-input" name="fecha" id="fecha"><br><br>
+	  	<!-- Biblia -->
+		<div id="biblia-content" style="clear:both">
+			<div id="titulo-biblia">
+		  		<div style="float:left"><h3>Biblia</h3></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-biblia">Abrir</button></div>
+		  	</div>
+		  	<div id="ceremonia-biblia" style="display:none">
+		  	<table>
+			  	<tr>
+			  		<td><label for="costo-biblia">Costo</label></td>
+			  		<td><label>Saldo</label><br/></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="costo-biblia" id="costo-biblia" style="width:80%"></td>
+					<td><label id="saldo-biblia" style="width:150px;font-size:1.5em"></label></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="fecha-biblia">Fecha para<br />liquidación</label></td>
+			  		<td><input type="date" class="topcoat-text-input center" name="fecha-biblia" id="fecha-biblia" style="width:99%"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="anticipo-biblia">Anticipo</label></td>
+			  		<td></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="anticipo-biblia" id="anticipo-biblia" style="width:80%"></td>
+			  		<td><button class="topcoat-button--cta" id="ok-biblia">Aceptar</button></td>
+			  	</tr>
+		  	</table>
+		  	</div>
+		  	<br><br>
+	  	</div>
 
+	  	<!-- Renta de auto -->
+		<div id="renta-content" style="clear:both">
+			<div id="titulo-renta">
+		  		<div style="float:left"><h3>Renta de auto</h3></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-renta">Abrir</button></div>
+		  	</div>
+		  	<div id="ceremonia-renta" style="display:none">
+		  	<table>
+			  	<tr>
+			  		<td><label for="costo-renta">Costo</label></td>
+			  		<td><label>Saldo</label><br/></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="costo-renta" id="costo-renta" style="width:80%"></td>
+					<td><label id="saldo-renta" style="width:150px;font-size:1.5em"></label></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="fecha-renta">Fecha para<br />liquidación</label></td>
+			  		<td><input type="date" class="topcoat-text-input center" name="fecha-renta" id="fecha-renta" style="width:99%"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="anticipo-renta">Anticipo</label></td>
+			  		<td></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="anticipo-renta" id="anticipo-renta" style="width:80%"></td>
+			  		<td><button class="topcoat-button--cta" id="ok-renta">Aceptar</button></td>
+			  	</tr>
+		  	</table>
+		  	</div>
+		  	<br><br>
+	  	</div>
 
-		<h3>Anillos, Arras y lazo</h3>
-	  	<label for="costo">costo</label><input type="text" class="topcoat-text-input" name="costo" id="costo"><br>
-	  	<label for="anticipo">anticipo</label><input type="text" class="topcoat-text-input" name="anticipo" id="anticipo"><br>
-	  	<label for="saldo">saldo</label><input type="text" class="topcoat-text-input" name="saldo" id="saldo"><br>
-	  	<label for="fecha">fecha</label><input type="date" class="topcoat-text-input" name="fecha" id="fecha"><br><br>
+	  	<!-- Ramo -->
+		<div id="ramo-content" style="clear:both">
+			<div id="titulo-ramo">
+		  		<div style="float:left"><h3>Ramo de la Novia</h3></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-ramo">Abrir</button></div>
+		  	</div>
+		  	<div id="ceremonia-ramo" style="display:none">
+		  	<table>
+			  	<tr>
+			  		<td><label for="costo-ramo">Costo</label></td>
+			  		<td><label>Saldo</label><br/></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="costo-ramo" id="costo-ramo" style="width:80%"></td>
+					<td><label id="saldo-ramo" style="width:150px;font-size:1.5em"></label></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="fecha-ramo">Fecha para<br />liquidación</label></td>
+			  		<td><input type="date" class="topcoat-text-input center" name="fecha-ramo" id="fecha-ramo" style="width:99%"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="anticipo-ramo">Anticipo</label></td>
+			  		<td></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="anticipo-ramo" id="anticipo-ramo" style="width:80%"></td>
+			  		<td><button class="topcoat-button--cta" id="ok-ramo">Aceptar</button></td>
+			  	</tr>
+		  	</table>
+		  	</div>
+		  	<br><br>
+	  	</div>
 
-
-		<h3>Rosario o lazo</h3>
-	  	<label for="costo">costo</label><input type="text" class="topcoat-text-input" name="costo" id="costo"><br>
-	  	<label for="anticipo">anticipo</label><input type="text" class="topcoat-text-input" name="anticipo" id="anticipo"><br>
-	  	<label for="saldo">saldo</label><input type="text" class="topcoat-text-input" name="saldo" id="saldo"><br>
-	  	<label for="fecha">fecha</label><input type="date" class="topcoat-text-input" name="fecha" id="fecha"><br><br>
-
-
-		<h3>Biblia</h3>
-	  	<label for="costo">costo</label><input type="text" class="topcoat-text-input" name="costo" id="costo"><br>
-	  	<label for="anticipo">anticipo</label><input type="text" class="topcoat-text-input" name="anticipo" id="anticipo"><br>
-	  	<label for="saldo">saldo</label><input type="text" class="topcoat-text-input" name="saldo" id="saldo"><br>
-	  	<label for="fecha">fecha</label><input type="date" class="topcoat-text-input" name="fecha" id="fecha"><br><br>
-
-
-		<h3>Renta de auto</h3>
-	  	<label for="costo">costo</label><input type="text" class="topcoat-text-input" name="costo" id="costo"><br>
-	  	<label for="anticipo">anticipo</label><input type="text" class="topcoat-text-input" name="anticipo" id="anticipo"><br>
-	  	<label for="saldo">saldo</label><input type="text" class="topcoat-text-input" name="saldo" id="saldo"><br>
-	  	<label for="fecha">fecha</label><input type="date" class="topcoat-text-input" name="fecha" id="fecha"><br><br>
-
-
-		<h3>Ramo de Novia</h3>
-	  	<label for="costo">costo</label><input type="text" class="topcoat-text-input" name="costo" id="costo"><br>
-	  	<label for="anticipo">anticipo</label><input type="text" class="topcoat-text-input" name="anticipo" id="anticipo"><br>
-	  	<label for="saldo">saldo</label><input type="text" class="topcoat-text-input" name="saldo" id="saldo"><br>
-	  	<label for="fecha">fecha</label><input type="date" class="topcoat-text-input" name="fecha" id="fecha"><br><br>
-		<h3>Recuerdos</h3>
-	  	<label for="costo">costo</label><input type="text" class="topcoat-text-input" name="costo" id="costo"><br>
-	  	<label for="anticipo">anticipo</label><input type="text" class="topcoat-text-input" name="anticipo" id="anticipo"><br>
-	  	<label for="saldo">saldo</label><input type="text" class="topcoat-text-input" name="saldo" id="saldo"><br>
-	  	<label for="fecha">fecha</label><input type="date" class="topcoat-text-input" name="fecha" id="fecha"><br><br>
+	  	<!-- Recuerdos -->
+		<div id="recuerdos-content" style="clear:both">
+			<div id="titulo-recuerdos">
+		  		<div style="float:left"><h3>Recuerdos</h3></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-recuerdos">Abrir</button></div>
+		  	</div>
+		  	<div id="ceremonia-recuerdos" style="display:none">
+		  	<table>
+			  	<tr>
+			  		<td><label for="costo-recuerdos">Costo</label></td>
+			  		<td><label>Saldo</label><br/></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="costo-recuerdos" id="costo-recuerdos" style="width:80%"></td>
+					<td><label id="saldo-recuerdos" style="width:150px;font-size:1.5em"></label></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="fecha-recuerdos">Fecha para<br />liquidación</label></td>
+			  		<td><input type="date" class="topcoat-text-input center" name="fecha-recuerdos" id="fecha-recuerdos" style="width:99%"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="anticipo-recuerdos">Anticipo</label></td>
+			  		<td></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="anticipo-recuerdos" id="anticipo-recuerdos" style="width:80%"></td>
+			  		<td><button class="topcoat-button--cta" id="ok-recuerdos">Aceptar</button></td>
+			  	</tr>
+		  	</table>
+		  	</div>
+		  	<br><br>
+	  	</div>
 		
-	  	<label for="concepto">concepto</label><input type="text" class="topcoat-text-input" name="concepto" id="concepto" value="Otros"><br>
-	  	<label for="costo">costo</label><input type="text" class="topcoat-text-input" name="costo" id="costo"><br>
-	  	<label for="anticipo">anticipo</label><input type="text" class="topcoat-text-input" name="anticipo" id="anticipo"><br>
-	  	<label for="saldo">saldo</label><input type="text" class="topcoat-text-input" name="saldo" id="saldo"><br>
-	  	<label for="fecha">fecha</label><input type="date" class="topcoat-text-input" name="fecha" id="fecha"><br><br>
+		<!-- Otros1 -->
+	  	<div id="otros1-content" style="clear:both">
+			<div id="titulo-otros1">
+		  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros2" id="concepto-otros2" value="Otros" style="width:150px;"></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros1">Abrir</button></div>
+		  	</div>
+		  	<div id="ceremonia-otros1" style="display:none">
+		  	<table>
+			  	<tr>
+			  		<td><label for="costo-otros1">Costo</label></td>
+			  		<td><label>Saldo</label><br/></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="costo-otros1" id="costo-otros1" style="width:80%"></td>
+					<td><label id="saldo-otros1" style="width:150px;font-size:1.5em"></label></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="fecha-otros1">Fecha para<br />liquidación</label></td>
+			  		<td><input type="date" class="topcoat-text-input center" name="fecha-otros1" id="fecha-otros1" style="width:99%"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="anticipo-otros1">Anticipo</label></td>
+			  		<td></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="anticipo-otros1" id="anticipo-otros1" style="width:80%"></td>
+			  		<td><button class="topcoat-button--cta" id="ok-otros1">Aceptar</button></td>
+			  	</tr>
+		  	</table>
+		  	</div>
+		  	<br><br>
+	  	</div>
 		
-	  	<label for="concepto">concepto</label><input type="text" class="topcoat-text-input" name="concepto" id="concepto" value="Otros"><br>
-	  	<label for="costo">costo</label><input type="text" class="topcoat-text-input" name="costo" id="costo"><br>
-	  	<label for="anticipo">anticipo</label><input type="text" class="topcoat-text-input" name="anticipo" id="anticipo"><br>
-	  	<label for="saldo">saldo</label><input type="text" class="topcoat-text-input" name="saldo" id="saldo"><br>
-	  	<label for="fecha">fecha</label><input type="date" class="topcoat-text-input" name="fecha" id="fecha"><br><br>
-	  </div>
+		<!-- Otros2 -->
+	  	<div id="otros2-content" style="clear:both">
+			<div id="titulo-otros2">
+		  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros2" id="concepto-otros2" value="Otros" style="width:150px;"></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros2">Abrir</button></div>
+		  	</div>
+		  	<div id="ceremonia-otros2" style="display:none">
+		  	<table>
+			  	<tr>
+			  		<td><label for="costo-otros2">Costo</label></td>
+			  		<td><label>Saldo</label><br/></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="costo-otros2" id="costo-otros2" style="width:80%"></td>
+					<td><label id="saldo-otros2" style="width:150px;font-size:1.5em"></label></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="fecha-otros2">Fecha para<br />liquidación</label></td>
+			  		<td><input type="date" class="topcoat-text-input center" name="fecha-otros2" id="fecha-otros2" style="width:99%"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><label for="anticipo-otros2">Anticipo</label></td>
+			  		<td></td>
+			  	</tr>
+			  	<tr>
+			  		<td><input type="tel" class="topcoat-text-input" name="anticipo-otros2" id="anticipo-otros2" style="width:80%"></td>
+			  		<td><button class="topcoat-button--cta" id="ok-otros2">Aceptar</button></td>
+			  	</tr>
+		  	</table>
+		  	</div>
+		  	<br><br>
+	  	</div>
+	  	<br>
+	  	</div><!-- cont-ceremonia -->
+	  </div><!-- END card CEREMONIA -->
+
 	  <div class="card">
 	  	<h2>Ceremonia Civil</h2>
 
@@ -139,46 +440,162 @@
    </form>
    <script type="text/javascript">
    	$(document).ready(function(){
-   		document.getElementById('ok-iglesia').disabled=true;
-   		$('#anticipo-iglesia').on('click',function(){
-   			document.getElementById('ok-iglesia').disabled=false;
-   		});
-
+  //  		$('#abrir-donativo').on('click',function(){
+		// 	document.getElementById("ceremonia-donativo").style.display="block";
+		// });
+		//CEREMONIA IGLESIA
+		//donativos{
    		$('#ok-iglesia').on('click',function(){
-   			//alert('SALDO!!!');
-   			window.localStorage.setItem("costo-iglesia", $("#costo-iglesia").val());
+   			window.localStorage.setItem("costo-iglesia", $("#costo-iglesia").val());//guarda costo
+   			window.localStorage.setItem("anticipo-iglesia", $("#anticipo-iglesia").val());//guarda anticipo
 
-   			window.localStorage.setItem("anticipo-iglesia", $("#anticipo-iglesia").val());
-   			
-   			alert('anticipo '+window.localStorage.getItem("anticipo-iglesia"));
-   			if{
-   				monto=parseFloat(window.localStorage.getItem("monto-iglesia"))+parseFloat(window.localStorage.getItem("anticipo-iglesia"));
-   			}else{
-   				monto=parseFloat(window.localStorage.getItem("monto-iglesia"))+parseFloat(window.localStorage.getItem("anticipo-iglesia"));
-   			}
-   			window.localStorage.setItem("monto-iglesia",monto);
+   			anticipo = window.localStorage.getItem('anticipo-iglesia');//asigna valor guardado de anticipo a variable local
 
-   			alert('monto '+monto);
-
-
-   			window.localStorage.setItem("init", 1);
-   			document.getElementById("saldo-iglesia").innerHTML=""+(window.localStorage.getItem("costo-iglesia")-window.localStorage.getItem("monto-iglesia"));
-   			document.getElementById('ok-iglesia').disabled=true;
+   			if(anticipo!=''){//Si anticipo es diferente a vacío
+   				if(typeof window.localStorage.getItem("monto-iglesia")=='object'){//Si monto es de tipo Objeto (cuando no tiene nada aun)
+	   				monto=parseFloat(anticipo);//monto es una variable local y se le asigna anticipo
+	   			}
+	   			if(typeof window.localStorage.getItem("monto-iglesia")=='string'){//Si monto es de tipo string (cuando ya tiene un valor)
+	   				monto=parseFloat(window.localStorage.getItem("monto-iglesia"))+parseFloat(anticipo);//monto local es igual a monto más anticipo
+	   			}
+			}else{
+				monto=window.localStorage.getItem("monto-iglesia");//si anticipo es vacio entonces monto local es igual a monto guardado
+			}
+			
+			window.localStorage.setItem("monto-iglesia",monto);//guarda monto
+			window.localStorage.setItem("saldo-iglesia", ($("#costo-iglesia").val())-monto);//guarda el saldo
+			window.localStorage.setItem("fecha-iglesia",$("#fecha-iglesia").val());//guarda fecha
+			window.localStorage.setItem("init", 1);//guarda init
+			document.getElementById("saldo-iglesia").innerHTML=""+(window.localStorage.getItem("costo-iglesia")-monto);//actualiza valor de saldo en pantalla
+   			if(window.localStorage.getItem("monto-iglesia")==window.localStorage.getItem("costo-iglesia")){//Si monto guardado es igual a costo guardado
+	   			document.getElementById("saldo-iglesia").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
+	   		}
    		});
 
+		costoIglesia=window.localStorage.getItem("costo-iglesia");
+		saldoIglesia=window.localStorage.getItem("saldo-iglesia");
+		fechaIglesia=window.localStorage.getItem("fecha-iglesia");
+		if(costoIglesia!==null){
+			document.getElementById("don-spec-c").innerHTML=""+costoIglesia;
+		}else{
+			document.getElementById("don-spec-c").innerHTML="N/A";
+			costoIglesia=0;
+		}
+		if(saldoIglesia!==null){
+			document.getElementById("don-spec-s").innerHTML=""+saldoIglesia;
+		}else{
+			document.getElementById("don-spec-s").innerHTML="N/A";
+			saldoIglesia=0;
+		}
+		if(fechaIglesia!==null){
+			document.getElementById("don-spec-f").innerHTML=""+fechaIglesia;
+		}else{
+			document.getElementById("don-spec-f").innerHTML="N/A";
+		}
 
    		$("#costo-iglesia").val(window.localStorage.getItem("costo-iglesia"));
+   		$("#fecha-iglesia").val(window.localStorage.getItem("fecha-iglesia"));
 
    		if(window.localStorage.getItem("monto-iglesia")==window.localStorage.getItem("costo-iglesia")){
    			document.getElementById("saldo-iglesia").innerHTML="Liquidado!";
-   		}else{
-   			document.getElementById("saldo-iglesia").innerHTML=""+(window.localStorage.getItem("costo-iglesia")-window.localStorage.getItem("monto-iglesia"));
+   		}else if(typeof window.localStorage.getItem("monto-iglesia")=='object'){
+   			document.getElementById("saldo-iglesia").innerHTML=" ";
+		}else{
+			document.getElementById("saldo-iglesia").innerHTML=""+(window.localStorage.getItem("costo-iglesia")-window.localStorage.getItem("monto-iglesia"));
    		}
+   		//}fin donativos xxx
+
+   		//musica{
+   		$('#ok-musica').on('click',function(){
+   			window.localStorage.setItem("costo-musica", $("#costo-musica").val());//guarda costo
+   			window.localStorage.setItem("anticipo-musica", $("#anticipo-musica").val());//guarda anticipo
+
+   			anticipo = window.localStorage.getItem('anticipo-musica');//asigna valor guardado de anticipo a variable local
+
+   			if(anticipo!=''){//Si anticipo es diferente a vacío
+   				if(typeof window.localStorage.getItem("monto-musica")=='object'){//Si monto es de tipo Objeto (cuando no tiene nada aun)
+	   				monto=parseFloat(anticipo);//monto es una variable local y se le asigna anticipo
+	   			}
+	   			if(typeof window.localStorage.getItem("monto-musica")=='string'){//Si monto es de tipo string (cuando ya tiene un valor)
+	   				monto=parseFloat(window.localStorage.getItem("monto-musica"))+parseFloat(anticipo);//monto local es igual a monto más anticipo
+	   			}
+			}else{
+				monto=window.localStorage.getItem("monto-musica");//si anticipo es vacio entonces monto local es igual a monto guardado
+			}
+			
+			window.localStorage.setItem("monto-musica",monto);//guarda monto
+			window.localStorage.setItem("saldo-musica", ($("#costo-musica").val())-monto);//guarda el saldo
+			window.localStorage.setItem("fecha-musica",$("#fecha-musica").val());//guarda fecha
+			window.localStorage.setItem("init", 1);//guarda init
+			document.getElementById("saldo-musica").innerHTML=""+(window.localStorage.getItem("costo-musica")-monto);//actualiza valor de saldo en pantalla
+   			if(window.localStorage.getItem("monto-musica")==window.localStorage.getItem("costo-musica")){//Si monto guardado es igual a costo guardado
+	   			document.getElementById("saldo-musica").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
+	   		}
+   		});
+
+		costoMusica=window.localStorage.getItem("costo-musica");
+		saldoMusica=window.localStorage.getItem("saldo-musica");
+		fechaMusica=window.localStorage.getItem("fecha-musica");
+		if(costoMusica!==null){
+			document.getElementById("mus-spec-c").innerHTML=""+costoMusica;
+		}else{
+			document.getElementById("mus-spec-c").innerHTML="N/A";
+			costoMusica=0;
+		}
+		if(saldoMusica!==null){
+			document.getElementById("mus-spec-s").innerHTML=""+saldoMusica;
+		}else{
+			document.getElementById("mus-spec-s").innerHTML="N/A";
+			saldoMusica=0;
+		}
+		if(fechaMusica!==null){
+			document.getElementById("mus-spec-f").innerHTML=""+fechaMusica;
+		}else{
+			document.getElementById("mus-spec-f").innerHTML="N/A";
+		}
+
+   		$("#costo-musica").val(window.localStorage.getItem("costo-musica"));
+   		$("#fecha-musica").val(window.localStorage.getItem("fecha-musica"));
+
+   		if(window.localStorage.getItem("monto-musica")==window.localStorage.getItem("costo-musica")){
+   			document.getElementById("saldo-musica").innerHTML="Liquidado!";
+   		}else if(typeof window.localStorage.getItem("monto-musica")=='object'){
+   			document.getElementById("saldo-musica").innerHTML=" ";
+		}else{
+			document.getElementById("saldo-musica").innerHTML=""+(window.localStorage.getItem("costo-musica")-window.localStorage.getItem("monto-musica"));
+   		}
+
+
+   		//}fin musica xxx
+
+   		//FIN CEREMONIA IGLESIA XXX
+   		//TOTALES GENERAL
+   		costoTotal=parseInt(costoIglesia,10)+parseInt(costoMusica,10);
+   		alert('costo total es: '+costoTotal);
+   		saldoTotal=parseInt(saldoIglesia,10)+parseInt(saldoMusica,10);
+   		alert('saldo total es: '+saldoTotal);
+
+   		if(costoTotal!==null){
+   			document.getElementById("costo-total").innerHTML="Costo Total: $"+costoTotal;
+   		}else{
+   			document.getElementById("costo-total").innerHTML="Costo Total: $0";
+   		}
+
+   		if(saldoTotal===null){
+   			document.getElementById("saldo-total").innerHTML="Saldo Total: $0";
+   		// }else if(saldoTotal==costoTotal){
+   		// 	document.getElementById("saldo-total").innerHTML="Saldo Total: Liquidado!";
+		}else{
+			if(saldoTotal==costoTotal){
+				document.getElementById("saldo-total").innerHTML="Saldo Total: Liquidado!";
+			}else{
+				document.getElementById("saldo-total").innerHTML="Saldo Total: $"+saldoTotal;
+			}
+   		}
+   		//FIN TOTALES GENERAL XXX
    	});
    </script>
 </div>
-
-
   
 </body>
 </html>
