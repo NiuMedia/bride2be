@@ -2,8 +2,37 @@
 	<h1>Notas: Recepción y Banquetes</h1>
 	<div class="card">
   	<h2>Guía para calcular la bebida.</h2>
-
+  	<table style="width:100%">
+  		<thead><td style="padding-right:.5em;" align="right"><h3>Bebida</h3></td><td style="padding-left:.5em;"><h3>Copeo</h3></td></thead>
+  		<tr><td style="padding-right:.5em;" align="right">Baileys</td><td style="padding-left:.5em;">15 x 750ml.</td></tr>
+  		<tr><td style="padding-right:.5em;" align="right">Brandy</td><td style="padding-left:.5em;">15 x 750ml.</td></tr>
+  		<tr><td style="padding-right:.5em;" align="right">Champaña</td><td style="padding-left:.5em;">7 x botella</td></tr>
+  		<tr><td style="padding-right:.5em;" align="right">Ron</td><td style="padding-left:.5em;">22 x botella</td></tr>
+  		<tr><td style="padding-right:.5em;" align="right">Tequila</td><td style="padding-left:.5em;">25 x botella</td></tr>
+  		<tr><td style="padding-right:.5em;" align="right">Vino Blanco</td><td style="padding-left:.5em;">8 x botella</td></tr>
+  		<tr><td style="padding-right:.5em;" align="right">Vino Tinto</td><td style="padding-left:.5em;">7 x botella</td></tr>
+  		<tr><td style="padding-right:.5em;" align="right">Vodka</td><td style="padding-left:.5em;">20 x botella</td></tr>
+  		<tr><td style="padding-right:.5em;" align="right">Whisky</td><td style="padding-left:.5em;">15 x 750ml.</td></tr>
+  	</table>
+  	<br>
+  	<h2>¿Cuantas botellas tienes que comprar?</h2>
+  	<label for="invitados">Ingresa tu numero de invitados</label>
+  	<input type="tel" class="topcoat-text-input" name="invitados" id="invitados" style="width:40%;padding-right:1em;">
+    <div class="topcoat-button center" id="calc-btn" style="width:40%;margin-top:3px;">Calcular</div>
+    <label id="cantidad" style="font-size:1.2em"></label>
+  	<br><br>
 	</div>
     
 </div>
-
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#calc-btn").on('click',function(){
+      invitados=$("#invitados").val();
+      calcular(invitados);
+    });
+  }); 
+  function calcular(invitados){
+    operacion=parseInt(5*parseInt(invitados,10)/18);
+    document.getElementById("cantidad").innerHTML="Compra "+operacion+" botellas de 750 ml.";
+  }
+</script>
