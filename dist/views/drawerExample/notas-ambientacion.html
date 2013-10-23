@@ -4,7 +4,7 @@
   <meta charset="utf8">
   <title>Drawer Example</title>
 
-  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-light.css" />
   <link rel="stylesheet" href="/stylesheets/application.css" />
 
   <script src="/javascripts/onerror.js"></script>
@@ -132,7 +132,8 @@
 	        window.localStorage.setItem("lista", $("#lista").is(':checked'));
 	        window.localStorage.setItem("itinerario", $("#itinerario").is(':checked'));
 
-	       window.localStorage.setItem("init", 1); 
+	       window.localStorage.setItem("init", 1);
+	       alert('Datos almacenados con éxito');
 		});
 
 		toallasVar=window.localStorage.getItem("toallas");
