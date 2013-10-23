@@ -11,6 +11,11 @@ font-family: script;
 src: url('http://localhost/fonts/script.ttf')
 }
 
+@font-face
+{font-family: sourcesans;
+src: url('http://localhost/fonts/SourceSansPro-light.ttf')
+}
+
 input {
   -webkit-user-select: text;  /* Allow selection for input elements */
 }
@@ -51,18 +56,26 @@ html[xmlns] .clearfix {
   	bottom: 0px;
 }
 .card {
-	color: black;
+	color: #373435;
 	margin: 0 auto;
-	max-width: 90%;
-	padding: 10px;
-	background-color: white;
-	border:5px solid #e53588;
+	max-width: 96%;
+	padding: 4px;
+	background-color: #e6e7e9;
+	border:2px solid #eb9ba8;
 	font-weight: bold;
 	margin-bottom: 25px;
+	-webkit-box-shadow:  0px 2px 4px 1px rgba(0, 0, 0, .4);
+    box-shadow:  0px 2px 4px 1px rgba(0, 0, 0, .4);
+    font-family: sourcesans;
 }	
 
+p {
+	font-family: sourcesans;
+	color: #373435;
+}
+
 .pink {
-	color: #e53588;
+	color: #eb9ba8;
 }
 .wide {
 	width: 100%;
@@ -78,13 +91,13 @@ h2, h3, h4 {
 	font-family: script;
 }
 .fondo {
-	background-image:url('http://www.niumedia.mx/wp-content/uploads/2013/10/fondo_mobile2.png');
+	background-image:url("/icons/fondo_blanco.jpg");
 	background-position:fixed;
 	height: 100%;
 }
 
 .black {
-	color: black;
+	color: #373435;
 }
 
 .white {
