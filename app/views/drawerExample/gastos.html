@@ -6,9 +6,8 @@
   		<label id="saldo-total" style="font-size:1.5em"></label><br>
   	</div>
 
-
-	  <div class="card">
 <!-- CEREMONIA RELIGIOSA -->
+	  <div class="card">
 		<div id="ceremonia-header">
 	  	<h2>Ceremonia Religiosa</h2>
 	  	</div>
@@ -17,14 +16,15 @@
 		  	<div id="donativo-content" style="clear:both">
 			  	<div id="titulo-donativo">
 			  		<div style="float:left"><h3>Donativo a la iglesia</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-donativo">Abrir</button></div>
+			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-donativo">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-donativo" style="display:none">Cerrar</button></div>
 			  	</div>
-			  	<div id="donativo-specs" style="clear:both;display:none">
+			  	<div id="donativo-specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="don-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="don-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="don-spec-f"></label></div>
 			  	</div>
-			  	<div id="ceremonia-donativo"><!-- style="display:none"-->
+			  	<div id="ceremonia-donativo" style="display:none">
 			  	<table>
 				  	<tr>
 				  		<td><label for="costo-iglesia">Costo</label></td>
@@ -53,16 +53,17 @@
 
 	  	<!-- Musica -->
 	  	<div id="musica-content" style="clear:both">
-			<div id="titulo-musica">
+		  	<div id="titulo-musica">
 		  		<div style="float:left"><h3>Música</h3></div>
-		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-musica">Abrir</button></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-musica">Editar</button>
+		  			<button class="topcoat-button--quiet" id="cerrar-musica" style="display:none">Cerrar</button></div>
 		  	</div>
-		  	<div id="musica-specs" style="clear:both;display:none">
+		  	<div id="musica-specs" style="clear:both;">
 		  		<div style="width:33%;float:left">Costo<br /><label id="mus-spec-c"></label></div>
 		  		<div style="width:33%;float:left">Saldo<br /><label id="mus-spec-s"></label></div>
 		  		<div style="width:33%;float:left">Fecha<br /><label id="mus-spec-f"></label></div>
 		  	</div>
-		  	<div id="ceremonia-musica"><!-- style="display:none"-->
+		  	<div id="ceremonia-musica" style="display:none">
 		  	<table>
 			  	<tr>
 			  		<td><label for="costo-musica">Costo</label></td>
@@ -93,9 +94,16 @@
 		<div id="decoracion-content" style="clear:both">
 			<div id="titulo-decoracion">
 		  		<div style="float:left"><h3>Decoración</h3></div>
-		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-decoracion">Abrir</button></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-decoracion">Editar</button>
+		  			<button class="topcoat-button--quiet" id="cerrar-decoracion" style="display:none">Cerrar</button>
+		  		</div>
+			  	<div id="decoracion-specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="dec-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="dec-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="dec-spec-f"></label></div>
+			  	</div>
 		  	</div>
-		  	<div id="ceremonia-decoracion"><!-- style="display:none"-->
+		  	<div id="ceremonia-decoracion" style="display:none">
 		  	<table>
 			  	<tr>
 			  		<td><label for="costo-decoracion">Costo</label></td>
@@ -126,7 +134,14 @@
 	  	<div id="anillos-content" style="clear:both">
 			<div id="titulo-anillos">
 		  		<div style="float:left"><h3>Anillos, Arras y lazo</h3></div>
-		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-anillos">Abrir</button></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-anillos">Editar</button>
+		  		<button class="topcoat-button--quiet" id="cerrar-anillos" style="display:none">Cerrar</button>
+		  	</div>
+			  	<div id="anillos-specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="ani-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="ani-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="ani-spec-f"></label></div>
+			  	</div>
 		  	</div>
 		  	<div id="ceremonia-anillos" style="display:none">
 		  	<table>
@@ -159,7 +174,14 @@
 	  	<div id="rosario-content" style="clear:both">
 			<div id="titulo-rosario">
 		  		<div style="float:left"><h3>Rosario o lazo</h3></div>
-		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-rosario">Abrir</button></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-rosario">Editar</button>
+		  		<button class="topcoat-button--quiet" id="cerrar-rosario" style="display:none">Cerrar</button>
+		  	</div>
+			  	<div id="rosario-specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="ros-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="ros-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="ros-spec-f"></label></div>
+			  	</div>
 		  	</div>
 		  	<div id="ceremonia-rosario" style="display:none">
 		  	<table>
@@ -192,7 +214,14 @@
 		<div id="biblia-content" style="clear:both">
 			<div id="titulo-biblia">
 		  		<div style="float:left"><h3>Biblia</h3></div>
-		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-biblia">Abrir</button></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-biblia">Editar</button>
+		  		<button class="topcoat-button--quiet" id="cerrar-biblia" style="display:none">Cerrar</button>
+		  	</div>
+			  	<div id="biblia-specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="bib-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="bib-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="bib-spec-f"></label></div>
+			  	</div>
 		  	</div>
 		  	<div id="ceremonia-biblia" style="display:none">
 		  	<table>
@@ -225,7 +254,14 @@
 		<div id="renta-content" style="clear:both">
 			<div id="titulo-renta">
 		  		<div style="float:left"><h3>Renta de auto</h3></div>
-		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-renta">Abrir</button></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-renta">Editar</button>
+		  		<button class="topcoat-button--quiet" id="cerrar-renta" style="display:none">Cerrar</button>
+		  	</div>
+			  	<div id="renta-specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="ren-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="ren-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="ren-spec-f"></label></div>
+			  	</div>
 		  	</div>
 		  	<div id="ceremonia-renta" style="display:none">
 		  	<table>
@@ -258,7 +294,14 @@
 		<div id="ramo-content" style="clear:both">
 			<div id="titulo-ramo">
 		  		<div style="float:left"><h3>Ramo de la Novia</h3></div>
-		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-ramo">Abrir</button></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-ramo">Editar</button>
+		  		<button class="topcoat-button--quiet" id="cerrar-ramo" style="display:none">Cerrar</button>
+		  	</div>
+			  	<div id="ramo-specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="ram-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="ram-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="ram-spec-f"></label></div>
+			  	</div>
 		  	</div>
 		  	<div id="ceremonia-ramo" style="display:none">
 		  	<table>
@@ -291,7 +334,14 @@
 		<div id="recuerdos-content" style="clear:both">
 			<div id="titulo-recuerdos">
 		  		<div style="float:left"><h3>Recuerdos</h3></div>
-		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-recuerdos">Abrir</button></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-recuerdos">Editar</button>
+		  		<button class="topcoat-button--quiet" id="cerrar-recuerdos" style="display:none">Cerrar</button>
+		  	</div>
+			  	<div id="recuerdos-specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="rec-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="rec-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="rec-spec-f"></label></div>
+			  	</div>
 		  	</div>
 		  	<div id="ceremonia-recuerdos" style="display:none">
 		  	<table>
@@ -324,7 +374,14 @@
 	  	<div id="otros1-content" style="clear:both">
 			<div id="titulo-otros1">
 		  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros2" id="concepto-otros2" value="Otros" style="width:150px;"></div>
-		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros1">Abrir</button></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros1">Editar</button>
+		  		<button class="topcoat-button--quiet" id="cerrar-otros1" style="display:none">Cerrar</button>
+		  	</div>
+			  	<div id="otros1-specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="ot1-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="ot1-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="ot1-spec-f"></label></div>
+			  	</div>
 		  	</div>
 		  	<div id="ceremonia-otros1" style="display:none">
 		  	<table>
@@ -357,7 +414,14 @@
 	  	<div id="otros2-content" style="clear:both">
 			<div id="titulo-otros2">
 		  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros2" id="concepto-otros2" value="Otros" style="width:150px;"></div>
-		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros2">Abrir</button></div>
+		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros2">Editar</button>
+		  		<button class="topcoat-button--quiet" id="cerrar-otros2" style="display:none">Cerrar</button>
+		  	</div>
+			  	<div id="otros2-specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="ot2-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="ot2-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="ot2-spec-f"></label></div>
+			  	</div>
 		  	</div>
 		  	<div id="ceremonia-otros2" style="display:none">
 		  	<table>
@@ -414,15 +478,168 @@
 	  <div class="topcoat-button center" id="save-btn">Guardar</div><br>
    </form>
    <script type="text/javascript">
+   var seccion;
    	$(document).ready(function(){
-   		$('#abrir-donativo').on('click',function(){
-			// document.getElementById("ceremonia-donativo").style.display="block";
-			alert('se despliega');
-			location.reload(false);
-		});
+   		function abrirPanel(sec){
+   			switch(sec){
+   				case 'donativo':
+				document.getElementById("ceremonia-donativo").style.display="block";
+				document.getElementById("abrir-donativo").style.display="none";
+				document.getElementById("donativo-specs").style.display="none";
+				document.getElementById("cerrar-donativo").style.display="block";
+				break;
+				case 'musica':
+				document.getElementById("ceremonia-musica").style.display="block";
+				document.getElementById("abrir-musica").style.display="none";
+				document.getElementById("musica-specs").style.display="none";
+				document.getElementById("cerrar-musica").style.display="block";
+				break;
+				case 'decoracion':
+				document.getElementById("ceremonia-decoracion").style.display="block";
+				document.getElementById("abrir-decoracion").style.display="none";
+				document.getElementById("decoracion-specs").style.display="none";
+				document.getElementById("cerrar-decoracion").style.display="block";
+				break;
+				case 'anillos':
+				document.getElementById("ceremonia-anillos").style.display="block";
+				document.getElementById("abrir-anillos").style.display="none";
+				document.getElementById("anillos-specs").style.display="none";
+				document.getElementById("cerrar-anillos").style.display="block";
+				break;
+				case 'rosario':
+				document.getElementById("ceremonia-rosario").style.display="block";
+				document.getElementById("abrir-rosario").style.display="none";
+				document.getElementById("rosario-specs").style.display="none";
+				document.getElementById("cerrar-rosario").style.display="block";
+				break;
+				case 'biblia':
+				document.getElementById("ceremonia-biblia").style.display="block";
+				document.getElementById("abrir-biblia").style.display="none";
+				document.getElementById("biblia-specs").style.display="none";
+				document.getElementById("cerrar-biblia").style.display="block";
+				break;
+				case 'renta':
+				document.getElementById("ceremonia-renta").style.display="block";
+				document.getElementById("abrir-renta").style.display="none";
+				document.getElementById("renta-specs").style.display="none";
+				document.getElementById("cerrar-renta").style.display="block";
+				break;
+				case 'ramo':
+				document.getElementById("ceremonia-ramo").style.display="block";
+				document.getElementById("abrir-ramo").style.display="none";
+				document.getElementById("ramo-specs").style.display="none";
+				document.getElementById("cerrar-ramo").style.display="block";
+				break;
+				case 'recuerdos':
+				document.getElementById("ceremonia-recuerdos").style.display="block";
+				document.getElementById("abrir-recuerdos").style.display="none";
+				document.getElementById("recuerdos-specs").style.display="none";
+				document.getElementById("cerrar-recuerdos").style.display="block";
+				break;
+				case 'otros1':
+				document.getElementById("ceremonia-otros1").style.display="block";
+				document.getElementById("abrir-otros1").style.display="none";
+				document.getElementById("otros1-specs").style.display="none";
+				document.getElementById("cerrar-otros1").style.display="block";
+				break;
+				case 'otros2':
+				document.getElementById("ceremonia-otros2").style.display="block";
+				document.getElementById("abrir-otros2").style.display="none";
+				document.getElementById("otros2-specs").style.display="none";
+				document.getElementById("cerrar-otros2").style.display="block";
+				break;
+			}
+		}
+		function cerrarPanel(sec){
+			switch(sec){
+				case 'donativo':
+				document.getElementById("ceremonia-donativo").style.display="none";
+				document.getElementById("abrir-donativo").style.display="block";
+				document.getElementById("donativo-specs").style.display="block";
+				document.getElementById("cerrar-donativo").style.display="none";
+				break;
+				case 'musica':
+				document.getElementById("ceremonia-musica").style.display="none";
+				document.getElementById("abrir-musica").style.display="block";
+				document.getElementById("musica-specs").style.display="block";
+				document.getElementById("cerrar-musica").style.display="none";
+				break;
+				case 'decoracion':
+				document.getElementById("ceremonia-decoracion").style.display="none";
+				document.getElementById("abrir-decoracion").style.display="block";
+				document.getElementById("decoracion-specs").style.display="block";
+				document.getElementById("cerrar-decoracion").style.display="none";
+				break;
+				case 'anillos':
+				document.getElementById("ceremonia-anillos").style.display="none";
+				document.getElementById("abrir-anillos").style.display="block";
+				document.getElementById("anillos-specs").style.display="block";
+				document.getElementById("cerrar-anillos").style.display="none";
+				break;
+				case 'rosario':
+				document.getElementById("ceremonia-rosario").style.display="none";
+				document.getElementById("abrir-rosario").style.display="block";
+				document.getElementById("rosario-specs").style.display="block";
+				document.getElementById("cerrar-rosario").style.display="none";
+				break;
+				case 'biblia':
+				document.getElementById("ceremonia-biblia").style.display="none";
+				document.getElementById("abrir-biblia").style.display="block";
+				document.getElementById("biblia-specs").style.display="block";
+				document.getElementById("cerrar-biblia").style.display="none";
+				break;
+				case 'renta':
+				document.getElementById("ceremonia-renta").style.display="none";
+				document.getElementById("abrir-renta").style.display="block";
+				document.getElementById("renta-specs").style.display="block";
+				document.getElementById("cerrar-renta").style.display="none";
+				break;
+				case 'ramo':
+				document.getElementById("ceremonia-ramo").style.display="none";
+				document.getElementById("abrir-ramo").style.display="block";
+				document.getElementById("ramo-specs").style.display="block";
+				document.getElementById("cerrar-ramo").style.display="none";
+				break;
+				case 'recuerdos':
+				document.getElementById("ceremonia-recuerdos").style.display="none";
+				document.getElementById("abrir-recuerdos").style.display="block";
+				document.getElementById("recuerdos-specs").style.display="block";
+				document.getElementById("cerrar-recuerdos").style.display="none";
+				break;
+				case 'otros1':
+				document.getElementById("ceremonia-otros1").style.display="none";
+				document.getElementById("abrir-otros1").style.display="block";
+				document.getElementById("otros1-specs").style.display="block";
+				document.getElementById("cerrar-otros1").style.display="none";
+				break;
+				case 'otros2':
+				document.getElementById("ceremonia-otros2").style.display="none";
+				document.getElementById("abrir-otros2").style.display="block";
+				document.getElementById("otros2-specs").style.display="block";
+				document.getElementById("cerrar-otros2").style.display="none";
+				break;
+			}
+		}
+
 		//CEREMONIA IGLESIA
 		//donativos{
-   		$('#ok-iglesia').on('click',function(){
+
+		$('#abrir-donativo').on('click',function(e){
+			seccion='donativo';
+			abrirPanel(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-donativo').on('click',function(e){
+			seccion='donativo';
+			cerrarPanel(seccion);
+			e.preventDefault();
+		});
+
+		$('#ok-iglesia').on('click',function(){
+   			saveIglesia();
+   		});
+
+   		function saveIglesia(){
    			window.localStorage.setItem("costo-iglesia", $("#costo-iglesia").val());//guarda costo
    			window.localStorage.setItem("anticipo-iglesia", $("#anticipo-iglesia").val());//guarda anticipo
 
@@ -448,7 +665,7 @@
    			if(window.localStorage.getItem("monto-iglesia")==window.localStorage.getItem("costo-iglesia")){//Si monto guardado es igual a costo guardado
 	   			document.getElementById("saldo-iglesia").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
 	   		}
-   		});
+   		}
 
 		costoIglesia=window.localStorage.getItem("costo-iglesia");
 		saldoIglesia=window.localStorage.getItem("saldo-iglesia");
@@ -484,7 +701,23 @@
    		//}fin donativos xxx
 
    		//musica{
+
+   		$('#abrir-musica').on('click',function(e){
+			seccion='musica';
+			abrirPanel(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-musica').on('click',function(e){
+			seccion='musica';
+			cerrarPanel(seccion);
+			e.preventDefault();
+		});
+
    		$('#ok-musica').on('click',function(){
+   			saveMusica();
+   		});
+
+		function saveMusica(){
    			window.localStorage.setItem("costo-musica", $("#costo-musica").val());//guarda costo
    			window.localStorage.setItem("anticipo-musica", $("#anticipo-musica").val());//guarda anticipo
 
@@ -501,21 +734,16 @@
 				monto=window.localStorage.getItem("monto-musica");//si anticipo es vacio entonces monto local es igual a monto guardado
 			}
 			
-			if(typeof window.localStorage.getItem('costo-musica')=='object'){
-				saldo=parseInt(window.localStorage.getItem("costo-musica"));
-			}else{
-				saldo=parseInt(window.localStorage.getItem("costo-musica"))-parseInt(monto);
-			}
-			
+			saldo=parseInt(window.localStorage.getItem("costo-musica"))-parseInt(monto);
 			window.localStorage.setItem("monto-musica",monto);//guarda monto
-			window.localStorage.setItem("saldo-musica", saldo);//guarda el saldo
+			window.localStorage.setItem("saldo-musica",saldo);//guarda el saldo
 			window.localStorage.setItem("fecha-musica",$("#fecha-musica").val());//guarda fecha
 			window.localStorage.setItem("init", 1);//guarda init
 			document.getElementById("saldo-musica").innerHTML=""+saldo;//actualiza valor de saldo en pantalla
    			if(window.localStorage.getItem("monto-musica")==window.localStorage.getItem("costo-musica")){//Si monto guardado es igual a costo guardado
 	   			document.getElementById("saldo-musica").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
 	   		}
-   		});
+   		}
 
 		costoMusica=window.localStorage.getItem("costo-musica");
 		saldoMusica=window.localStorage.getItem("saldo-musica");
@@ -549,6 +777,133 @@
 			document.getElementById("saldo-musica").innerHTML=""+(window.localStorage.getItem("costo-musica")-window.localStorage.getItem("monto-musica"));
    		}
 		//}fin musica xxx
+
+		// decoracion {
+			$('#abrir-decoracion').on('click',function(e){
+			seccion='decoracion';
+			abrirPanel(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-decoracion').on('click',function(e){
+			seccion='decoracion';
+			cerrarPanel(seccion);
+			e.preventDefault();
+		});
+
+		// }fin decoracion xxx
+
+		// anillos {
+			$('#abrir-anillos').on('click',function(e){
+			seccion='anillos';
+			abrirPanel(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-anillos').on('click',function(e){
+			seccion='anillos';
+			cerrarPanel(seccion);
+			e.preventDefault();
+		});
+
+		// }fin anillos xxx
+
+		// rosario {
+			$('#abrir-rosario').on('click',function(e){
+			seccion='rosario';
+			abrirPanel(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-rosario').on('click',function(e){
+			seccion='rosario';
+			cerrarPanel(seccion);
+			e.preventDefault();
+		});
+
+		// }fin rosario xxx
+
+		// biblia {
+			$('#abrir-biblia').on('click',function(e){
+			seccion='biblia';
+			abrirPanel(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-biblia').on('click',function(e){
+			seccion='biblia';
+			cerrarPanel(seccion);
+			e.preventDefault();
+		});
+
+		// }fin biblia xxx
+
+		// renta {
+			$('#abrir-renta').on('click',function(e){
+			seccion='renta';
+			abrirPanel(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-renta').on('click',function(e){
+			seccion='renta';
+			cerrarPanel(seccion);
+			e.preventDefault();
+		});
+
+		// }fin renta xxx
+
+		// ramo {
+			$('#abrir-ramo').on('click',function(e){
+			seccion='ramo';
+			abrirPanel(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-ramo').on('click',function(e){
+			seccion='ramo';
+			cerrarPanel(seccion);
+			e.preventDefault();
+		});
+
+		// }fin ramo xxx
+
+		// recuerdos {
+		$('#abrir-recuerdos').on('click',function(e){
+			seccion='recuerdos';
+			abrirPanel(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-recuerdos').on('click',function(e){
+		seccion='recuerdos';
+			cerrarPanel(seccion);
+			e.preventDefault();
+		});
+
+		// }fin recuerdos xxx
+
+		// otros1 {
+		$('#abrir-otros1').on('click',function(e){
+			seccion='otros1';
+			abrirPanel(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-otros1').on('click',function(e){
+			seccion='otros1';
+			cerrarPanel(seccion);
+			e.preventDefault();
+		});
+
+		// }fin otros1 xxx
+
+		// otros2 {
+		$('#abrir-otros2').on('click',function(e){
+			seccion='otros2';
+			abrirPanel(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-otros2').on('click',function(e){
+			seccion='otros2';
+			cerrarPanel(seccion);
+			e.preventDefault();
+		});
+
+		// }fin otros2 xxx
+
 
    		//FIN CEREMONIA IGLESIA XXX
    		//TOTALES GENERAL
