@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-light.css" />
   <link rel="stylesheet" href="/stylesheets/application.css" />
+  <link href='http://localhost/fonts/SourceSansPro-light.ttf' rel='stylesheet' type='text/css'>
 
   <script src="/javascripts/onerror.js"></script>
   <script src="/javascripts/json2.js"></script>
@@ -44,12 +45,12 @@
 			  		<div style="float:left"><h3>Donativo a la iglesia</h3></div>
 			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-donativo">Abrir</button></div>
 			  	</div>
-			  	<div id="donativo-specs" style="clear:both">
+			  	<div id="donativo-specs" style="clear:both;display:none">
 			  		<div style="width:33%;float:left">Costo<br /><label id="don-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="don-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="don-spec-f"></label></div>
 			  	</div>
-			  	<div id="ceremonia-donativo"> <!--style="display:none"-->
+			  	<div id="ceremonia-donativo"><!-- style="display:none"-->
 			  	<table>
 				  	<tr>
 				  		<td><label for="costo-iglesia">Costo</label></td>
@@ -82,12 +83,12 @@
 		  		<div style="float:left"><h3>Música</h3></div>
 		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-musica">Abrir</button></div>
 		  	</div>
-		  	<div id="musica-specs" style="clear:both">
+		  	<div id="musica-specs" style="clear:both;display:none">
 		  		<div style="width:33%;float:left">Costo<br /><label id="mus-spec-c"></label></div>
 		  		<div style="width:33%;float:left">Saldo<br /><label id="mus-spec-s"></label></div>
 		  		<div style="width:33%;float:left">Fecha<br /><label id="mus-spec-f"></label></div>
 		  	</div>
-		  	<div id="ceremonia-musica"> <!--style="display:none"-->
+		  	<div id="ceremonia-musica"><!-- style="display:none"-->
 		  	<table>
 			  	<tr>
 			  		<td><label for="costo-musica">Costo</label></td>
@@ -120,7 +121,7 @@
 		  		<div style="float:left"><h3>Decoración</h3></div>
 		  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-decoracion">Abrir</button></div>
 		  	</div>
-		  	<div id="ceremonia-decoracion" style="display:none">
+		  	<div id="ceremonia-decoracion"><!-- style="display:none"-->
 		  	<table>
 			  	<tr>
 			  		<td><label for="costo-decoracion">Costo</label></td>
@@ -440,9 +441,11 @@
    </form>
    <script type="text/javascript">
    	$(document).ready(function(){
-  //  		$('#abrir-donativo').on('click',function(){
-		// 	document.getElementById("ceremonia-donativo").style.display="block";
-		// });
+   		$('#abrir-donativo').on('click',function(){
+			// document.getElementById("ceremonia-donativo").style.display="block";
+			alert('se despliega');
+			location.reload(false);
+		});
 		//CEREMONIA IGLESIA
 		//donativos{
    		$('#ok-iglesia').on('click',function(){
@@ -462,11 +465,12 @@
 				monto=window.localStorage.getItem("monto-iglesia");//si anticipo es vacio entonces monto local es igual a monto guardado
 			}
 			
+			saldo=parseInt(window.localStorage.getItem("costo-iglesia"))-parseInt(monto);
 			window.localStorage.setItem("monto-iglesia",monto);//guarda monto
-			window.localStorage.setItem("saldo-iglesia", ($("#costo-iglesia").val())-monto);//guarda el saldo
+			window.localStorage.setItem("saldo-iglesia",saldo);//guarda el saldo
 			window.localStorage.setItem("fecha-iglesia",$("#fecha-iglesia").val());//guarda fecha
 			window.localStorage.setItem("init", 1);//guarda init
-			document.getElementById("saldo-iglesia").innerHTML=""+(window.localStorage.getItem("costo-iglesia")-monto);//actualiza valor de saldo en pantalla
+			document.getElementById("saldo-iglesia").innerHTML=""+saldo;//actualiza valor de saldo en pantalla
    			if(window.localStorage.getItem("monto-iglesia")==window.localStorage.getItem("costo-iglesia")){//Si monto guardado es igual a costo guardado
 	   			document.getElementById("saldo-iglesia").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
 	   		}
@@ -523,11 +527,17 @@
 				monto=window.localStorage.getItem("monto-musica");//si anticipo es vacio entonces monto local es igual a monto guardado
 			}
 			
+			if(typeof window.localStorage.getItem('costo-musica')=='object'){
+				saldo=parseInt(window.localStorage.getItem("costo-musica"));
+			}else{
+				saldo=parseInt(window.localStorage.getItem("costo-musica"))-parseInt(monto);
+			}
+			
 			window.localStorage.setItem("monto-musica",monto);//guarda monto
-			window.localStorage.setItem("saldo-musica", ($("#costo-musica").val())-monto);//guarda el saldo
+			window.localStorage.setItem("saldo-musica", saldo);//guarda el saldo
 			window.localStorage.setItem("fecha-musica",$("#fecha-musica").val());//guarda fecha
 			window.localStorage.setItem("init", 1);//guarda init
-			document.getElementById("saldo-musica").innerHTML=""+(window.localStorage.getItem("costo-musica")-monto);//actualiza valor de saldo en pantalla
+			document.getElementById("saldo-musica").innerHTML=""+saldo;//actualiza valor de saldo en pantalla
    			if(window.localStorage.getItem("monto-musica")==window.localStorage.getItem("costo-musica")){//Si monto guardado es igual a costo guardado
 	   			document.getElementById("saldo-musica").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
 	   		}
@@ -569,9 +579,9 @@
    		//FIN CEREMONIA IGLESIA XXX
    		//TOTALES GENERAL
    		costoTotal=parseInt(costoIglesia,10)+parseInt(costoMusica,10);
-   		alert('costo total es: '+costoTotal);
    		saldoTotal=parseInt(saldoIglesia,10)+parseInt(saldoMusica,10);
-   		alert('saldo total es: '+saldoTotal);
+		alert(typeof costoTotal);
+   		alert(typeof saldoTotal);
 
    		if(costoTotal!==null){
    			document.getElementById("costo-total").innerHTML="Costo Total: $"+costoTotal;
@@ -592,6 +602,7 @@
    		}
    		//FIN TOTALES GENERAL XXX
    	});
+
    </script>
 </div>
   
