@@ -9,6 +9,20 @@ providerApp.controller('CeremoniaCtrl', function ($scope, ProviderRestangular) {
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id);
     steroids.layers.push(webView);
   };
+  $scope.fav = function(id){
+      // Fetch all objects from the local JSON (see app/models/provider.js)
+      ProviderRestangular.all('posts?type=ceremonia').getList().then( function(providers) {
+        // Then select the one based on the view's id query parameter
+        json_providers = $.parseJSON(window.localStorage.getItem("misprovedores"));
+        json_providers.ceremonia.push($filter('filter')(providers, {ID: id})[0]);
+        window.localStorage.setItem("misprovedores", JSON.stringify(json_providers));
+      });
+  }
+
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("misprovedores", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=ceremonia').getList();
@@ -29,6 +43,11 @@ providerApp.controller('RecepcionCtrl', function ($scope, ProviderRestangular) {
     steroids.layers.push(webView);
   };
 
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
+
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=recepcion').getList();
 
@@ -48,6 +67,11 @@ providerApp.controller('InvitacionesCtrl', function ($scope, ProviderRestangular
     steroids.layers.push(webView);
   };
 
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
+
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=invitaciones').getList();
 
@@ -66,6 +90,11 @@ providerApp.controller('FloresCtrl', function ($scope, ProviderRestangular) {
     steroids.layers.push(webView);
   };
 
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
+
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=flores').getList();
 
@@ -83,7 +112,10 @@ providerApp.controller('IluminacionCtrl', function ($scope, ProviderRestangular)
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id);
     steroids.layers.push(webView);
   };
-
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=iluminacion').getList();
 
@@ -101,7 +133,10 @@ providerApp.controller('FotosCtrl', function ($scope, ProviderRestangular) {
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id);
     steroids.layers.push(webView);
   };
-
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=foto').getList();
 
@@ -119,7 +154,10 @@ providerApp.controller('AmbientacionCtrl', function ($scope, ProviderRestangular
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id);
     steroids.layers.push(webView);
   };
-
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=ambientacion').getList();
 
@@ -137,7 +175,10 @@ providerApp.controller('ElyEllaCtrl', function ($scope, ProviderRestangular) {
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id);
     steroids.layers.push(webView);
   };
-
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=elyella').getList();
 
@@ -155,9 +196,12 @@ providerApp.controller('MaquillajeCtrl', function ($scope, ProviderRestangular) 
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id);
     steroids.layers.push(webView);
   };
-
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=flores').getList();
+  $scope.providers = ProviderRestangular.all('posts?type=mps').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("Maquillaje, peinado y spa");
@@ -173,7 +217,10 @@ providerApp.controller('LunaCtrl', function ($scope, ProviderRestangular) {
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id);
     steroids.layers.push(webView);
   };
-
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=luna').getList();
 
@@ -191,7 +238,10 @@ providerApp.controller('MesaCtrl', function ($scope, ProviderRestangular) {
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id);
     steroids.layers.push(webView);
   };
-
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=mesa').getList();
 
@@ -209,7 +259,10 @@ providerApp.controller('MusicaCtrl', function ($scope, ProviderRestangular) {
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id);
     steroids.layers.push(webView);
   };
-
+  // Inicializa el json si no hay datos
+  if(window.localStorage.getItem("misprovedores") == null){
+    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
+  }
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=musica').getList();
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>Steroids App</title>
+
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-light.css" />
+  <link rel="stylesheet" href="/stylesheets/application.css" />
+
+  <script src="/appgyver/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+
+  <script src="/components/angular/angular.min.js"></script>
+
+  <script src="/components/underscore/underscore-min.js"></script>
+  <script src="/components/restangular/dist/restangular.min.js"></script>
+
+  <script src="/vendor/hammerjs/hammer.min.js"></script>
+  <script src="/vendor/angular-hammer/angular-hammer.js"></script>
+
+  <script src="/models/models.js"></script>
+
+  <script src="/controllers/provider.js"></script>
+</head>
+<body>
+
+
+  <div ng-app="providerApp">
+
+  <div ng-controller="CeremoniaCtrl">
+    <div class="topcoat-list__container">
+
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" hm-tap="open(provider.ID)" ng-repeat="provider in providers">
+          <h1>{{ provider.title }}</h1>
+          <div>
+          	{{ provider.content }}
+            <a href="#" hm-tap="fav(provider.ID)"></a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
