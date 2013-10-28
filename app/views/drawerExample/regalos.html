@@ -140,4 +140,620 @@
 	</form>
     
 </div>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$("#save-btn").on('click',function(){
+			//Enseres de cocina
+			window.localStorage.setItem("comal", $("#comal").is(':checked'));
+	        window.localStorage.setItem("vaporera", $("#vaporera").is(':checked'));
+	        window.localStorage.setItem("olla", $("#olla").is(':checked'));
+	        window.localStorage.setItem("sartenes", $("#sartenes").is(':checked'));
+	        window.localStorage.setItem("refractarios", $("#refractarios").is(':checked'));
+	        window.localStorage.setItem("bateria", $("#bateria").is(':checked'));
+	        //Cubetería
+	        window.localStorage.setItem("tenedor1", $("#tenedor1").is(':checked'));
+	        window.localStorage.setItem("tenedor2", $("#tenedor2").is(':checked'));
+	        window.localStorage.setItem("tenedor3", $("#tenedor3").is(':checked'));
+	        window.localStorage.setItem("tenedor4", $("#tenedor4").is(':checked'));
+	        window.localStorage.setItem("cuchillo1", $("#cuchillo1").is(':checked'));
+	        window.localStorage.setItem("cuchillo2", $("#cuchillo2").is(':checked'));
+	        window.localStorage.setItem("cuchara1", $("#cuchara1").is(':checked'));
+	        window.localStorage.setItem("cuchara2", $("#cuchara2").is(':checked'));
+	        window.localStorage.setItem("cuchara3", $("#cuchara3").is(':checked'));
+	        //Electrodomésticos
+	        window.localStorage.setItem("micro", $("#micro").is(':checked'));
+	        window.localStorage.setItem("horno", $("#horno").is(':checked'));
+	        window.localStorage.setItem("batidora", $("#batidora").is(':checked'));
+	        window.localStorage.setItem("cafetera", $("#cafetera").is(':checked'));
+	        window.localStorage.setItem("exprimidor", $("#exprimidor").is(':checked'));
+	        window.localStorage.setItem("licuadora", $("#licuadora").is(':checked'));
+	        window.localStorage.setItem("plancha", $("#plancha").is(':checked'));
+	        window.localStorage.setItem("cuchillo3", $("#cuchillo3").is(':checked'));
+	        window.localStorage.setItem("waflera", $("#waflera").is(':checked'));
+	        window.localStorage.setItem("tostador", $("#tostador").is(':checked'));
+	        window.localStorage.setItem("sandwich", $("#sandwich").is(':checked'));
+	        //Cristalería
+	        window.localStorage.setItem("hielera", $("#hielera").is(':checked'));
+	        window.localStorage.setItem("licoreras", $("#licoreras").is(':checked'));
+	        window.localStorage.setItem("ceniceros", $("#ceniceros").is(':checked'));
+	        window.localStorage.setItem("fruteros", $("#fruteros").is(':checked'));
+	        window.localStorage.setItem("floreros", $("#floreros").is(':checked'));
+	        window.localStorage.setItem("lamparas", $("#lamparas").is(':checked'));
+	        window.localStorage.setItem("copas", $("#copas").is(':checked'));
+	        window.localStorage.setItem("copas2", $("#copas2").is(':checked'));
+	        window.localStorage.setItem("champagne", $("#champagne").is(':checked'));
+	        window.localStorage.setItem("agua", $("#agua").is(':checked'));
+	        window.localStorage.setItem("jugo", $("#jugo").is(':checked'));
+	        window.localStorage.setItem("old", $("#old").is(':checked'));
+	        window.localStorage.setItem("tequila", $("#tequila").is(':checked'));
+	        window.localStorage.setItem("hb", $("#hb").is(':checked'));
+	        //Utensilios
+	        window.localStorage.setItem("bascula", $("#bascula").is(':checked'));
+	        window.localStorage.setItem("abrelatas", $("#abrelatas").is(':checked'));
+	        window.localStorage.setItem("tazamed", $("#tazamed").is(':checked'));
+	        window.localStorage.setItem("coladeras", $("#coladeras").is(':checked'));
+	        window.localStorage.setItem("rallador", $("#rallador").is(':checked'));
+	        window.localStorage.setItem("tazones", $("#tazones").is(':checked'));
+	        window.localStorage.setItem("helado", $("#helado").is(':checked'));
+	        window.localStorage.setItem("charola", $("#charola").is(':checked'));
+	        window.localStorage.setItem("rejas", $("#rejas").is(':checked'));
+	        window.localStorage.setItem("juegocuchillos", $("#juegocuchillos").is(':checked'));
+	        window.localStorage.setItem("utensilios", $("#utensilios").is(':checked'));
+	        window.localStorage.setItem("picar", $("#picar").is(':checked'));
+	        window.localStorage.setItem("tijeras", $("#tijeras").is(':checked'));
+	        window.localStorage.setItem("escver", $("#escver").is(':checked'));
+	        window.localStorage.setItem("escplat", $("#escplat").is(':checked'));
+	        window.localStorage.setItem("basura", $("#basura").is(':checked'));
+	        window.localStorage.setItem("especieros", $("#especieros").is(':checked'));
+	        window.localStorage.setItem("madera", $("#madera").is(':checked'));
+	        window.localStorage.setItem("pelapapas", $("#pelapapas").is(':checked'));
+	        //Accesorios
+	        window.localStorage.setItem("cuchillo4", $("#cuchillo4").is(':checked'));
+	        window.localStorage.setItem("cucharon", $("#cucharon").is(':checked'));
+	        window.localStorage.setItem("salseras", $("#salseras").is(':checked'));
+	        window.localStorage.setItem("cuchara4", $("#cuchara4").is(':checked'));
+	        window.localStorage.setItem("servicio", $("#servicio").is(':checked'));
+	        window.localStorage.setItem("charolas", $("#charolas").is(':checked'));
+	        window.localStorage.setItem("canasta", $("#canasta").is(':checked'));
+	        window.localStorage.setItem("platon", $("#platon").is(':checked'));
+	        window.localStorage.setItem("queso", $("#queso").is(':checked'));
+	        window.localStorage.setItem("ensalada", $("#ensalada").is(':checked'));
+	        //Cocina
+	        window.localStorage.setItem("lavadora", $("#lavadora").is(':checked'));
+	        window.localStorage.setItem("secadora", $("#secadora").is(':checked'));
+	        window.localStorage.setItem("aspiradora", $("#aspiradora").is(':checked'));
+	        window.localStorage.setItem("estufa", $("#estufa").is(':checked'));
+	        window.localStorage.setItem("refrigerador", $("#refrigerador").is(':checked'));
+	        window.localStorage.setItem("lavavajillas", $("#lavavajillas").is(':checked'));
+	        //Blancos
+	        window.localStorage.setItem("toallas1", $("#toallas1").is(':checked'));
+	        window.localStorage.setItem("toallas2", $("#toallas2").is(':checked'));
+	        window.localStorage.setItem("toallas3", $("#toallas3").is(':checked'));
+	        window.localStorage.setItem("bascula", $("#bascula").is(':checked'));
+	        window.localStorage.setItem("ropasucia", $("#ropasucia").is(':checked'));
+	        window.localStorage.setItem("tapete", $("#tapete").is(':checked'));
+	        window.localStorage.setItem("basurero2", $("#basurero2").is(':checked'));
+	        window.localStorage.setItem("ganchos", $("#ganchos").is(':checked'));
+	        window.localStorage.setItem("sabanas", $("#sabanas").is(':checked'));
+	        window.localStorage.setItem("edredon", $("#edredon").is(':checked'));
+	        window.localStorage.setItem("rodapie", $("#rodapie").is(':checked'));
+	        window.localStorage.setItem("almohadas", $("#almohadas").is(':checked'));
+	        window.localStorage.setItem("cojines", $("#cojines").is(':checked'));
+	        window.localStorage.setItem("cobertor", $("#cobertor").is(':checked'));
+	        window.localStorage.setItem("cobertor2", $("#cobertor2").is(':checked'));
+	        window.localStorage.setItem("setbanio", $("#setbanio").is(':checked'));
+	        //Mantelería
+	        window.localStorage.setItem("manteles", $("#manteles").is(':checked'));
+	        window.localStorage.setItem("manteles2", $("#manteles2").is(':checked'));
+	        window.localStorage.setItem("servilletas", $("#servilletas").is(':checked'));
+	        window.localStorage.setItem("trapos", $("#trapos").is(':checked'));
+	        window.localStorage.setItem("portavasos", $("#portavasos").is(':checked'));
+	        window.localStorage.setItem("servilleteros", $("#servilleteros").is(':checked'));
+	        window.localStorage.setItem("bases", $("#bases").is(':checked'));
+
+			window.localStorage.setItem("init", 1);
+			alert('Datos almacenados con éxito');
+		});
+		
+		comalVar=window.localStorage.getItem("comal");
+		vaporeraVar=window.localStorage.getItem("vaporera");
+		ollaVar=window.localStorage.getItem("olla");
+		sartenesVar=window.localStorage.getItem("sartenes");
+		refractariosVar=window.localStorage.getItem("refractarios");
+		bateriaVar=window.localStorage.getItem("bateria");
+		//
+		tenedor1Var=window.localStorage.getItem("tenedor1");
+		tenedor2Var=window.localStorage.getItem("tenedor2");
+		tenedor3Var=window.localStorage.getItem("tenedor3");
+		tenedor4Var=window.localStorage.getItem("tenedor4");
+		cuchillo1Var=window.localStorage.getItem("cuchillo1");
+		cuchillo2Var=window.localStorage.getItem("cuchillo2");
+		cuchara1Var=window.localStorage.getItem("cuchara1");
+		cuchara2Var=window.localStorage.getItem("cuchara2");
+		cuchara3Var=window.localStorage.getItem("cuchara3");
+		//
+		microVar=window.localStorage.getItem("micro");
+		hornoVar=window.localStorage.getItem("horno");
+		batidoraVar=window.localStorage.getItem("batidora");
+		cafeteraVar=window.localStorage.getItem("cafetera");
+		exprimidorVar=window.localStorage.getItem("exprimidor");
+		licuadoraVar=window.localStorage.getItem("licuadora");
+		planchaVar=window.localStorage.getItem("plancha");
+		cuchillo3Var=window.localStorage.getItem("cuchillo3");
+		wafleraVar=window.localStorage.getItem("waflera");
+		tostadorVar=window.localStorage.getItem("tostador");
+		sandwichVar=window.localStorage.getItem("sandwich");
+		//
+		hieleraVar=window.localStorage.getItem("hielera");
+		licorerasVar=window.localStorage.getItem("licoreras");
+		cenicerosVar=window.localStorage.getItem("ceniceros");
+		fruterosVar=window.localStorage.getItem("fruteros");
+		florerosVar=window.localStorage.getItem("floreros");
+		lamparasVar=window.localStorage.getItem("lamparas");
+		copasVar=window.localStorage.getItem("copas");
+		copas2Var=window.localStorage.getItem("copas2");
+		champagneVar=window.localStorage.getItem("champagne");
+		aguaVar=window.localStorage.getItem("agua");
+		jugoVar=window.localStorage.getItem("jugo");
+		oldVar=window.localStorage.getItem("old");
+		tequilaVar=window.localStorage.getItem("tequila");
+		hbVar=window.localStorage.getItem("hb");
+		//
+		basculaVar=window.localStorage.getItem("bascula");
+		abrelatasVar=window.localStorage.getItem("abrelatas");
+		tazamedVar=window.localStorage.getItem("tazamed");
+		coladerasVar=window.localStorage.getItem("coladeras");
+		ralladorVar=window.localStorage.getItem("rallador");
+		tazonesVar=window.localStorage.getItem("tazones");
+		heladoVar=window.localStorage.getItem("helado");
+		charolaVar=window.localStorage.getItem("charola");
+		rejasVar=window.localStorage.getItem("rejas");
+		juegocuchillosVar=window.localStorage.getItem("juegocuchillos");
+		utensiliosVar=window.localStorage.getItem("utensilios");
+		picarVar=window.localStorage.getItem("picar");
+		tijerasVar=window.localStorage.getItem("tijeras");
+		escverVar=window.localStorage.getItem("escver");
+		escplatVar=window.localStorage.getItem("escplat");
+		basuraVar=window.localStorage.getItem("basura");
+		especierosVar=window.localStorage.getItem("especieros");
+		maderaVar=window.localStorage.getItem("madera");
+		pelapapasVar=window.localStorage.getItem("pelapapas");
+		//
+		cuchillo4Var=window.localStorage.getItem("cuchillo4");
+		cucharonVar=window.localStorage.getItem("cucharon");
+		salserasVar=window.localStorage.getItem("salseras");
+		cuchara4Var=window.localStorage.getItem("cuchara4");
+		servicioVar=window.localStorage.getItem("servicio");
+		charolasVar=window.localStorage.getItem("charolas");
+		canastaVar=window.localStorage.getItem("canasta");
+		platonVar=window.localStorage.getItem("platon");
+		quesoVar=window.localStorage.getItem("queso");
+		ensaladaVar=window.localStorage.getItem("ensalada");
+		//
+		lavadoraVar=window.localStorage.getItem("lavadora");
+		secadoraVar=window.localStorage.getItem("secadora");
+		aspiradoraVar=window.localStorage.getItem("aspiradora");
+		estufaVar=window.localStorage.getItem("estufa");
+		refrigeradorVar=window.localStorage.getItem("refrigerador");
+		lavavajillasVar=window.localStorage.getItem("lavavajillas");
+		//
+		toallas1Var=window.localStorage.getItem("toallas1");
+		toallas2Var=window.localStorage.getItem("toallas2");
+		toallas3Var=window.localStorage.getItem("toallas3");
+		basculaVar=window.localStorage.getItem("bascula");
+		ropasuciaVar=window.localStorage.getItem("ropasucia");
+		tapeteVar=window.localStorage.getItem("tapete");
+		basurero2Var=window.localStorage.getItem("basurero2");
+		ganchosVar=window.localStorage.getItem("ganchos");
+		sabanasVar=window.localStorage.getItem("sabanas");
+		edredonVar=window.localStorage.getItem("edredon");
+		rodapieVar=window.localStorage.getItem("rodapie");
+		almohadasVar=window.localStorage.getItem("almohadas");
+		cojinesVar=window.localStorage.getItem("cojines");
+		cobertorVar=window.localStorage.getItem("cobertor");
+		cobertor2Var=window.localStorage.getItem("cobertor2");
+		setbanioVar=window.localStorage.getItem("setbanio");
+		//
+		mantelesVar=window.localStorage.getItem("manteles");
+		manteles2Var=window.localStorage.getItem("manteles2");
+		servilletasVar=window.localStorage.getItem("servilletas");
+		traposVar=window.localStorage.getItem("trapos");
+		portavasosVar=window.localStorage.getItem("portavasos");
+		servilleterosVar=window.localStorage.getItem("servilleteros");
+		basesVar=window.localStorage.getItem("bases");
+
+		if((typeof comalVar)!='object'){
+          if(comalVar =='true'){document.getElementById("comal").checked=true;}
+          else{document.getElementById("comal").checked=false;}
+        }
+        if((typeof vaporeraVar)!='object'){
+          if(vaporeraVar =='true'){document.getElementById("vaporera").checked=true;}
+          else{document.getElementById("vaporera").checked=false;}
+        }
+        if((typeof ollaVar)!='object'){
+          if(ollaVar =='true'){document.getElementById("olla").checked=true;}
+          else{document.getElementById("olla").checked=false;}
+        }
+        if((typeof sartenesVar)!='object'){
+          if(sartenesVar =='true'){document.getElementById("sartenes").checked=true;}
+          else{document.getElementById("sartenes").checked=false;}
+        }
+        if((typeof refractariosVar)!='object'){
+          if(refractariosVar =='true'){document.getElementById("refractarios").checked=true;}
+          else{document.getElementById("refractarios").checked=false;}
+        }
+        if((typeof bateriaVar)!='object'){
+          if(bateriaVar =='true'){document.getElementById("bateria").checked=true;}
+          else{document.getElementById("bateria").checked=false;}
+        }
+    //-----------------------------
+        if((typeof tenedor1Var)!='object'){
+          if(tenedor1Var =='true'){document.getElementById("tenedor1").checked=true;}
+          else{document.getElementById("tenedor1").checked=false;}
+        }
+        if((typeof tenedor2Var)!='object'){
+          if(tenedor2Var =='true'){document.getElementById("tenedor2").checked=true;}
+          else{document.getElementById("tenedor2").checked=false;}
+        }
+        if((typeof tenedor3Var)!='object'){
+          if(tenedor3Var =='true'){document.getElementById("tenedor3").checked=true;}
+          else{document.getElementById("tenedor3").checked=false;}
+        }
+        if((typeof tenedor4Var)!='object'){
+          if(tenedor4Var =='true'){document.getElementById("tenedor4").checked=true;}
+          else{document.getElementById("tenedor4").checked=false;}
+        }
+        if((typeof cuchillo1Var)!='object'){
+          if(cuchillo1Var =='true'){document.getElementById("cuchillo1").checked=true;}
+          else{document.getElementById("cuchillo1").checked=false;}
+        }
+        if((typeof cuchillo2Var)!='object'){
+          if(cuchillo2Var =='true'){document.getElementById("cuchillo2").checked=true;}
+          else{document.getElementById("cuchillo2").checked=false;}
+        }
+        if((typeof cuchara1Var)!='object'){
+          if(cuchara1Var =='true'){document.getElementById("cuchara1").checked=true;}
+          else{document.getElementById("cuchara1").checked=false;}
+        }
+        if((typeof cuchara2Var)!='object'){
+          if(cuchara2Var =='true'){document.getElementById("cuchara2").checked=true;}
+          else{document.getElementById("cuchara2").checked=false;}
+        }
+        if((typeof cuchara3Var)!='object'){
+          if(cuchara3Var =='true'){document.getElementById("cuchara3").checked=true;}
+          else{document.getElementById("cuchara3").checked=false;}
+        }
+    //-----------------------------
+        if((typeof microVar)!='object'){
+          if(microVar =='true'){document.getElementById("micro").checked=true;}
+          else{document.getElementById("micro").checked=false;}
+        }
+        if((typeof hornoVar)!='object'){
+          if(hornoVar =='true'){document.getElementById("horno").checked=true;}
+          else{document.getElementById("horno").checked=false;}
+        }
+        if((typeof batidoraVar)!='object'){
+          if(batidoraVar =='true'){document.getElementById("batidora").checked=true;}
+          else{document.getElementById("batidora").checked=false;}
+        }
+        if((typeof cafeteraVar)!='object'){
+          if(cafeteraVar =='true'){document.getElementById("cafetera").checked=true;}
+          else{document.getElementById("cafetera").checked=false;}
+        }
+        if((typeof exprimidorVar)!='object'){
+          if(exprimidorVar =='true'){document.getElementById("exprimidor").checked=true;}
+          else{document.getElementById("exprimidor").checked=false;}
+        }if((typeof licuadoraVar)!='object'){
+          if(licuadoraVar =='true'){document.getElementById("licuadora").checked=true;}
+          else{document.getElementById("licuadora").checked=false;}
+        }
+        if((typeof planchaVar)!='object'){
+          if(planchaVar =='true'){document.getElementById("plancha").checked=true;}
+          else{document.getElementById("plancha").checked=false;}
+        }
+        if((typeof cuchilloVar3)!='object'){
+          if(cuchillo3Var =='true'){document.getElementById("cuchillo3").checked=true;}
+          else{document.getElementById("cuchillo3").checked=false;}
+        }
+        if((typeof wafleraVar)!='object'){
+          if(wafleraVar =='true'){document.getElementById("waflera").checked=true;}
+          else{document.getElementById("waflera").checked=false;}
+        }
+        if((typeof tostadorVar)!='object'){
+          if(tostadorVar =='true'){document.getElementById("tostador").checked=true;}
+          else{document.getElementById("tostador").checked=false;}
+        }
+        if((typeof sandwichVar)!='object'){
+          if(sandwichVar =='true'){document.getElementById("sandwich").checked=true;}
+          else{document.getElementById("sandwich").checked=false;}
+        }
+    //-----------------------------
+        if((typeof hieleraVar)!='object'){
+          if(hieleraVar =='true'){document.getElementById("hielera").checked=true;}
+          else{document.getElementById("hielera").checked=false;}
+        }
+        if((typeof licorerasVar)!='object'){
+          if(licorerasVar =='true'){document.getElementById("licoreras").checked=true;}
+          else{document.getElementById("licoreras").checked=false;}
+        }
+        if((typeof cenicerosVar)!='object'){
+          if(cenicerosVar =='true'){document.getElementById("ceniceros").checked=true;}
+          else{document.getElementById("ceniceros").checked=false;}
+        }
+        if((typeof fruterosVar)!='object'){
+          if(fruterosVar =='true'){document.getElementById("fruteros").checked=true;}
+          else{document.getElementById("fruteros").checked=false;}
+        }if((typeof florerosVar)!='object'){
+          if(florerosVar =='true'){document.getElementById("floreros").checked=true;}
+          else{document.getElementById("floreros").checked=false;}
+        }
+        if((typeof lamparasVar)!='object'){
+          if(lamparasVar =='true'){document.getElementById("lamparas").checked=true;}
+          else{document.getElementById("lamparas").checked=false;}
+        }
+        if((typeof copasVar)!='object'){
+          if(copasVar =='true'){document.getElementById("copas").checked=true;}
+          else{document.getElementById("copas").checked=false;}
+        }
+        if((typeof copas2Var)!='object'){
+          if(copas2Var =='true'){document.getElementById("copas2").checked=true;}
+          else{document.getElementById("copas2").checked=false;}
+        }
+        if((typeof champagneVar)!='object'){
+          if(champagneVar =='true'){document.getElementById("champagne").checked=true;}
+          else{document.getElementById("champagne").checked=false;}
+        }
+        if((typeof aguaVar)!='object'){
+          if(aguaVar =='true'){document.getElementById("agua").checked=true;}
+          else{document.getElementById("agua").checked=false;}
+        }
+        if((typeof jugoVar)!='object'){
+          if(jugoVar =='true'){document.getElementById("jugo").checked=true;}
+          else{document.getElementById("jugo").checked=false;}
+        }
+        if((typeof oldVar)!='object'){
+          if(oldVar =='true'){document.getElementById("old").checked=true;}
+          else{document.getElementById("old").checked=false;}
+        }
+        if((typeof tequilaVar)!='object'){
+          if(tequilaVar =='true'){document.getElementById("tequila").checked=true;}
+          else{document.getElementById("tequila").checked=false;}
+        }
+        if((typeof hbVar)!='object'){
+          if(hbVar =='true'){document.getElementById("hb").checked=true;}
+          else{document.getElementById("hb").checked=false;}
+        }if((typeof basculaVar)!='object'){
+          if(basculaVar =='true'){document.getElementById("bascula").checked=true;}
+          else{document.getElementById("bascula").checked=false;}
+        }
+        if((typeof abrelatasVar)!='object'){
+          if(abrelatasVar =='true'){document.getElementById("abrelatas").checked=true;}
+          else{document.getElementById("abrelatas").checked=false;}
+        }
+        if((typeof tazamedVar)!='object'){
+          if(tazamedVar =='true'){document.getElementById("tazamed").checked=true;}
+          else{document.getElementById("tazamed").checked=false;}
+        }
+        if((typeof coladerasVar)!='object'){
+          if(coladerasVar =='true'){document.getElementById("coladeras").checked=true;}
+          else{document.getElementById("coladeras").checked=false;}
+        }
+        if((typeof ralladorVar)!='object'){
+          if(ralladorVar =='true'){document.getElementById("rallador").checked=true;}
+          else{document.getElementById("rallador").checked=false;}
+        }
+        if((typeof tazonesVar)!='object'){
+          if(tazonesVar =='true'){document.getElementById("tazones").checked=true;}
+          else{document.getElementById("tazones").checked=false;}
+        }
+        if((typeof heladoVar)!='object'){
+          if(heladoVar =='true'){document.getElementById("helado").checked=true;}
+          else{document.getElementById("helado").checked=false;}
+        }
+        if((typeof charolaVar)!='object'){
+          if(charolaVar =='true'){document.getElementById("charola").checked=true;}
+          else{document.getElementById("charola").checked=false;}
+        }
+        if((typeof rejasVar)!='object'){
+          if(rejasVar =='true'){document.getElementById("rejas").checked=true;}
+          else{document.getElementById("rejas").checked=false;}
+        }
+        if((typeof juegocuchillosVar)!='object'){
+          if(juegocuchillosVar =='true'){document.getElementById("juegocuchillos").checked=true;}
+          else{document.getElementById("juegocuchillos").checked=false;}
+        }
+        if((typeof utensiliosVar)!='object'){
+          if(utensiliosVar =='true'){document.getElementById("utensilios").checked=true;}
+          else{document.getElementById("utensilios").checked=false;}
+        }
+        if((typeof picarVar)!='object'){
+          if(picarVar =='true'){document.getElementById("picar").checked=true;}
+          else{document.getElementById("picar").checked=false;}
+        }
+        if((typeof tijerasVar)!='object'){
+          if(tijerasVar =='true'){document.getElementById("tijeras").checked=true;}
+          else{document.getElementById("tijeras").checked=false;}
+        }
+        if((typeof escverVar)!='object'){
+          if(escverVar =='true'){document.getElementById("escver").checked=true;}
+          else{document.getElementById("escver").checked=false;}
+        }
+        if((typeof escplatVar)!='object'){
+          if(escplatVar =='true'){document.getElementById("escplat").checked=true;}
+          else{document.getElementById("escplat").checked=false;}
+        }
+        if((typeof basuraVar)!='object'){
+          if(basuraVar =='true'){document.getElementById("basura").checked=true;}
+          else{document.getElementById("basura").checked=false;}
+        }
+        if((typeof especierosVar)!='object'){
+          if(especierosVar =='true'){document.getElementById("especieros").checked=true;}
+          else{document.getElementById("especieros").checked=false;}
+        }
+        if((typeof maderaVar)!='object'){
+          if(maderaVar =='true'){document.getElementById("madera").checked=true;}
+          else{document.getElementById("madera").checked=false;}
+        }
+        if((typeof pelapapasVar)!='object'){
+          if(pelapapasVar =='true'){document.getElementById("pelapapas").checked=true;}
+          else{document.getElementById("pelapapas").checked=false;}
+        }
+        if((typeof cuchillo4Var)!='object'){
+          if(cuchillo4Var =='true'){document.getElementById("cuchillo4").checked=true;}
+          else{document.getElementById("cuchillo4").checked=false;}
+        }
+        if((typeof cucharonVar)!='object'){
+          if(cucharonVar =='true'){document.getElementById("cucharon").checked=true;}
+          else{document.getElementById("cucharon").checked=false;}
+        }
+        if((typeof salserasVar)!='object'){
+          if(salserasVar =='true'){document.getElementById("salseras").checked=true;}
+          else{document.getElementById("salseras").checked=false;}
+        }
+        if((typeof cuchara4Var)!='object'){
+          if(cuchara4Var =='true'){document.getElementById("cuchara4").checked=true;}
+          else{document.getElementById("cuchara4").checked=false;}
+        }
+        if((typeof servicioVar)!='object'){
+          if(servicioVar =='true'){document.getElementById("servicio").checked=true;}
+          else{document.getElementById("servicio").checked=false;}
+        }
+        if((typeof charolasVar)!='object'){
+          if(charolasVar =='true'){document.getElementById("charolas").checked=true;}
+          else{document.getElementById("charolas").checked=false;}
+        }
+        if((typeof canastaVar)!='object'){
+          if(canastaVar =='true'){document.getElementById("canasta").checked=true;}
+          else{document.getElementById("canasta").checked=false;}
+        }
+        if((typeof platonVar)!='object'){
+          if(platonVar =='true'){document.getElementById("platon").checked=true;}
+          else{document.getElementById("platon").checked=false;}
+        }if((typeof quesoVar)!='object'){
+          if(quesoVar =='true'){document.getElementById("queso").checked=true;}
+          else{document.getElementById("queso").checked=false;}
+        }
+        if((typeof ensaladaVar)!='object'){
+          if(ensaladaVar =='true'){document.getElementById("ensalada").checked=true;}
+          else{document.getElementById("ensalada").checked=false;}
+        }
+        if((typeof lavadoraVar)!='object'){
+          if(lavadoraVar =='true'){document.getElementById("lavadora").checked=true;}
+          else{document.getElementById("lavadora").checked=false;}
+        }
+        if((typeof secadoraVar)!='object'){
+          if(secadoraVar =='true'){document.getElementById("secadora").checked=true;}
+          else{document.getElementById("secadora").checked=false;}
+        }
+        if((typeof aspiradoraVar)!='object'){
+          if(aspiradoraVar =='true'){document.getElementById("aspiradora").checked=true;}
+          else{document.getElementById("aspiradora").checked=false;}
+        }
+        if((typeof estufaVar)!='object'){
+          if(estufaVar =='true'){document.getElementById("estufa").checked=true;}
+          else{document.getElementById("estufa").checked=false;}
+        }
+        if((typeof refrigeradorVar)!='object'){
+          if(refrigeradorVar =='true'){document.getElementById("refrigerador").checked=true;}
+          else{document.getElementById("refrigerador").checked=false;}
+        }
+        if((typeof lavavajillasVar)!='object'){
+          if(lavavajillasVar =='true'){document.getElementById("lavavajillas").checked=true;}
+          else{document.getElementById("lavavajillas").checked=false;}
+        }
+        if((typeof toallas1Var)!='object'){
+          if(toallas1Var =='true'){document.getElementById("toallas1").checked=true;}
+          else{document.getElementById("toallas1").checked=false;}
+        }
+        if((typeof toallas2Var)!='object'){
+          if(toallas2Var =='true'){document.getElementById("toallas2").checked=true;}
+          else{document.getElementById("toallas2").checked=false;}
+        }if((typeof toallas3Var)!='object'){
+          if(toallas3Var =='true'){document.getElementById("toallas3").checked=true;}
+          else{document.getElementById("toallas3").checked=false;}
+        }
+        if((typeof basculaVar)!='object'){
+          if(basculaVar =='true'){document.getElementById("bascula").checked=true;}
+          else{document.getElementById("bascula").checked=false;}
+        }
+        if((typeof ropasuciaVar)!='object'){
+          if(ropasuciaVar =='true'){document.getElementById("ropasucia").checked=true;}
+          else{document.getElementById("ropasucia").checked=false;}
+        }
+        if((typeof tapeteVar)!='object'){
+          if(tapeteVar =='true'){document.getElementById("tapete").checked=true;}
+          else{document.getElementById("tapete").checked=false;}
+        }
+        if((typeof basurero2Var)!='object'){
+          if(basurero2Var =='true'){document.getElementById("basurero2").checked=true;}
+          else{document.getElementById("basurero2").checked=false;}
+        }
+        if((typeof ganchosVar)!='object'){
+          if(ganchosVar =='true'){document.getElementById("ganchos").checked=true;}
+          else{document.getElementById("ganchos").checked=false;}
+        }
+        if((typeof sabanasVar)!='object'){
+          if(sabanasVar =='true'){document.getElementById("sabanas").checked=true;}
+          else{document.getElementById("sabanas").checked=false;}
+        }
+        if((typeof edredonVar)!='object'){
+          if(edredonVar =='true'){document.getElementById("edredon").checked=true;}
+          else{document.getElementById("edredon").checked=false;}
+        }
+        if((typeof rodapieVar)!='object'){
+          if(rodapieVar =='true'){document.getElementById("rodapie").checked=true;}
+          else{document.getElementById("rodapie").checked=false;}
+        }
+        if((typeof almohadasVar)!='object'){
+          if(almohadasVar =='true'){document.getElementById("almohadas").checked=true;}
+          else{document.getElementById("almohadas").checked=false;}
+        }if((typeof cojinesVar)!='object'){
+          if(cojinesVar =='true'){document.getElementById("cojines").checked=true;}
+          else{document.getElementById("cojines").checked=false;}
+        }
+        if((typeof cobertorVar)!='object'){
+          if(cobertorVar =='true'){document.getElementById("cobertor").checked=true;}
+          else{document.getElementById("cobertor").checked=false;}
+        }
+        if((typeof cobertor2Var)!='object'){
+          if(cobertor2Var =='true'){document.getElementById("cobertor2").checked=true;}
+          else{document.getElementById("cobertor2").checked=false;}
+        }
+        if((typeof setbanioVar)!='object'){
+          if(setbanioVar =='true'){document.getElementById("setbanio").checked=true;}
+          else{document.getElementById("setbanio").checked=false;}
+        }
+        if((typeof mantelesVar)!='object'){
+          if(mantelesVar =='true'){document.getElementById("manteles").checked=true;}
+          else{document.getElementById("manteles").checked=false;}
+        }
+        if((typeof manteles2Var)!='object'){
+          if(manteles2Var =='true'){document.getElementById("manteles2").checked=true;}
+          else{document.getElementById("manteles2").checked=false;}
+        }
+        if((typeof servilletasVar)!='object'){
+          if(servilletasVar =='true'){document.getElementById("servilletas").checked=true;}
+          else{document.getElementById("servilletas").checked=false;}
+        }
+         if((typeof traposVar)!='object'){
+          if(traposVar =='true'){document.getElementById("trapos").checked=true;}
+          else{document.getElementById("trapos").checked=false;}
+        }
+        if((typeof portavasosVar)!='object'){
+          if(portavasosVar =='true'){document.getElementById("portavasos").checked=true;}
+          else{document.getElementById("portavasos").checked=false;}
+        }
+        if((typeof servilleterosVar)!='object'){
+          if(servilleterosVar =='true'){document.getElementById("servilleteros").checked=true;}
+          else{document.getElementById("servilleteros").checked=false;}
+        }
+        if((typeof basesVar)!='object'){
+          if(basesVar =='true'){document.getElementById("bases").checked=true;}
+          else{document.getElementById("bases").checked=false;}
+        }
+
+	});
+</script>
+
 

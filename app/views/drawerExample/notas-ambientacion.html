@@ -37,28 +37,267 @@
 	<p>No se te olvide llevar un kit de emergencia el día que te cases, créelo, siempre se utiliza y te saca de mil apuros…<br />
 	¿Qué incluir en el kit? He aquí algunas ideas...</p><br>
 	<h4>--Belleza</h4>
-	<input type="checkbox" class="topcoat-checkbox" name="cepillo" id="cepillo"> desodorante<label for="cepillo"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="spray" id="spray"> perfume<label for="spray"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="sal" id="sal"> costurero<label for="sal"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="crema" id="crema"> set de maquillaje<label for="crema"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="enjuague" id="enjuague"> toallitas húmedas<label for="enjuague"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="chicles" id="chicles"> crema hidratante<label for="chicles"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="tampones" id="tampones"> algodón<label for="tampones"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="pasadores" id="pasadores"> pañuelos<label for="pasadores"></label><br><br>
+	<input type="checkbox" class="topcoat-checkbox" name="desodorante" id="desodorante"> desodorante<label for="desodorante"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="perfume" id="perfume"> perfume<label for="perfume"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="costurero2" id="costurero2"> costurero<label for="costurero"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="maquillaje" id="maquillaje"> set de maquillaje<label for="maquillaje"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="humedas" id="humedas"> toallitas húmedas<label for="humedas"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="hidratante" id="hidratante"> crema hidratante<label for="hidratante"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="algodon" id="algodon"> algodón<label for="algodon"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="panuelo2" id="panuelo2"> pañuelos<label for="panuelo2"></label><br><br>
 	<h4>--Salud</h4>
-	<input type="checkbox" class="topcoat-checkbox" name="lima" id="lima"> antiácidos<label for="lima"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="pepto" id="pepto"> aspirinas<label for="pepto"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="gel" id="gel"> curitas<label for="gel"></label><br><br>
+	<input type="checkbox" class="topcoat-checkbox" name="anti" id="anti"> antiácidos<label for="anti"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="aspi" id="aspi"> aspirinas<label for="aspi"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="curita" id="curita"> curitas<label for="curita"></label><br><br>
 	<h4>--Extras</h4>
-	<input type="checkbox" class="topcoat-checkbox" name="hilo" id="hilo"> flats<label for="hilo"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="panuelo" id="panuelo"> celular<label for="panuelo"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="peine" id="peine"> teléfono de tus proveedores<label for="peine"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="ligas" id="ligas"> lista de pendientes<label for="ligas"></label><br>
-	<input type="checkbox" class="topcoat-checkbox" name="aspirinas" id="aspirinas"> itinerario completo<label for="aspirinas"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="flats" id="flats"> flats<label for="flats"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="celular" id="celular"> celular<label for="celular"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="proveedores" id="proveedores"> teléfono de tus proveedores<label for="proveedores"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="lista" id="lista"> lista de pendientes<label for="lista"></label><br>
+	<input type="checkbox" class="topcoat-checkbox" name="itinerario" id="itinerario"> itinerario completo<label for="itinerario"></label><br>
 	<div class="topcoat-button center" id="save-btn">Guardar</div><br>
 
 	</form>
   </div>
     
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#save-btn").on('click',function(){
+			//Primera columna
+			window.localStorage.setItem("toallas", $("#toallas").is(':checked'));
+	        window.localStorage.setItem("cepillo", $("#cepillo").is(':checked'));
+	        window.localStorage.setItem("spray", $("#spray").is(':checked'));
+	        window.localStorage.setItem("sal", $("#sal").is(':checked'));
+	        window.localStorage.setItem("crema", $("#crema").is(':checked'));
+	        window.localStorage.setItem("enjuague", $("#enjuague").is(':checked'));
+	        window.localStorage.setItem("chicles", $("#chicles").is(':checked'));
+	        window.localStorage.setItem("tampones", $("#tampones").is(':checked'));
+	        window.localStorage.setItem("pasadores", $("#pasadores").is(':checked'));
+	        window.localStorage.setItem("lima", $("#lima").is(':checked'));
+	        window.localStorage.setItem("pepto", $("#pepto").is(':checked'));
+	        //segunda columna
+	        window.localStorage.setItem("gel", $("#gel").is(':checked'));
+	        window.localStorage.setItem("hilo", $("#hilo").is(':checked'));
+	        window.localStorage.setItem("panuelo", $("#panuelo").is(':checked'));
+	        window.localStorage.setItem("peine", $("#peine").is(':checked'));
+	        window.localStorage.setItem("ligas", $("#ligas").is(':checked'));
+	        window.localStorage.setItem("aspirinas", $("#aspirinas").is(':checked'));
+	        window.localStorage.setItem("curitas", $("#curitas").is(':checked'));
+	        window.localStorage.setItem("costurero", $("#costurero").is(':checked'));
+	        window.localStorage.setItem("mentitas", $("#mentitas").is(':checked'));
+	        window.localStorage.setItem("seguritos", $("#seguritos").is(':checked'));
+	        //Belleza
+	        window.localStorage.setItem("desodorante", $("#desodorante").is(':checked'));
+	        window.localStorage.setItem("perfume", $("#perfume").is(':checked'));
+	        window.localStorage.setItem("costurero2", $("#costurero2").is(':checked'));
+	        window.localStorage.setItem("maquillaje", $("#maquillaje").is(':checked'));
+	        window.localStorage.setItem("humedas", $("#humedas").is(':checked'));
+	        window.localStorage.setItem("hidratante", $("#hidratante").is(':checked'));
+	        window.localStorage.setItem("algodon", $("#algodon").is(':checked'));
+	        window.localStorage.setItem("panuelo2", $("#panuelo2").is(':checked'));
+	        //Salud
+	        window.localStorage.setItem("anti", $("#anti").is(':checked'));
+	        window.localStorage.setItem("aspi", $("#aspi").is(':checked'));
+	        window.localStorage.setItem("curita", $("#curita").is(':checked'));
+	        //Extras
+	        window.localStorage.setItem("flats", $("#flats").is(':checked'));
+	        window.localStorage.setItem("celular", $("#celular").is(':checked'));
+	        window.localStorage.setItem("proveedores", $("#proveedores").is(':checked'));
+	        window.localStorage.setItem("lista", $("#lista").is(':checked'));
+	        window.localStorage.setItem("itinerario", $("#itinerario").is(':checked'));
+
+	       window.localStorage.setItem("init", 1);
+	       alert('Datos almacenados con éxito');
+		});
+
+		toallasVar=window.localStorage.getItem("toallas");
+		cepilloVar=window.localStorage.getItem("cepillo");
+		sprayVar=window.localStorage.getItem("spray");
+		salVar=window.localStorage.getItem("sal");
+		cremaVar=window.localStorage.getItem("crema");
+		enjuagueVar=window.localStorage.getItem("enjuague");
+		chiclesVar=window.localStorage.getItem("chicles");
+		tamponesVar=window.localStorage.getItem("tampones");
+		pasadoresVar=window.localStorage.getItem("pasadores");
+		limaVar=window.localStorage.getItem("lima");
+		peptoVar=window.localStorage.getItem("pepto");
+		gelVar=window.localStorage.getItem("gel");
+		hiloVar=window.localStorage.getItem("hilo");
+		panueloVar=window.localStorage.getItem("panuelo");
+		peineVar=window.localStorage.getItem("peine");
+		ligasVar=window.localStorage.getItem("ligas");
+		aspirinasVar=window.localStorage.getItem("aspirinas");
+		curitasVar=window.localStorage.getItem("curitas");
+		costureroVar=window.localStorage.getItem("costurero");
+		mentitasVar=window.localStorage.getItem("mentitas");
+		seguritosVar=window.localStorage.getItem("seguritos");
+		desodoranteVar=window.localStorage.getItem("desodorante");
+		perfumeVar=window.localStorage.getItem("perfume");
+		costurero2Var=window.localStorage.getItem("costurero2");
+		maquillajeVar=window.localStorage.getItem("maquillaje");
+		humedasVar=window.localStorage.getItem("humedas");
+		hidratanteVar=window.localStorage.getItem("hidratante");
+		algodonVar=window.localStorage.getItem("algodon");
+		panuelo2Var=window.localStorage.getItem("panuelo2");
+		antiVar=window.localStorage.getItem("anti");
+		aspiVar=window.localStorage.getItem("aspi");
+		curitaVar=window.localStorage.getItem("curita");
+		flatsVar=window.localStorage.getItem("flats");
+		celularVar=window.localStorage.getItem("celular");
+		proveedoresVar=window.localStorage.getItem("proveedores");
+		listaVar=window.localStorage.getItem("lista");
+		itinerarioVar=window.localStorage.getItem("itinerario");
+
+		if((typeof toallasVar)!='object'){
+          if(toallasVar=='true'){document.getElementById("toallas").checked=true;}
+          else{document.getElementById("toallas").checked= false;}
+        }
+        if((typeof cepilloVar)!='object'){
+          if(cepilloVar=='true'){document.getElementById("cepillo").checked=true;}
+          else{document.getElementById("cepillo").checked= false;}
+        }
+        if((typeof sprayVar)!='object'){
+          if(sprayVar=='true'){document.getElementById("spray").checked=true;}
+          else{document.getElementById("spray").checked= false;}
+        }
+        if((typeof salVar)!='object'){
+          if(salVar=='true'){document.getElementById("sal").checked=true;}
+          else{document.getElementById("sal").checked= false;}
+        }
+        if((typeof cremaVar)!='object'){
+          if(cremaVar=='true'){document.getElementById("crema").checked=true;}
+          else{document.getElementById("crema").checked= false;}
+        }
+        if((typeof enjuagueVar)!='object'){
+          if(enjuagueVar=='true'){document.getElementById("enjuague").checked=true;}
+          else{document.getElementById("enjuague").checked= false;}
+        }
+        if((typeof chiclesVar)!='object'){
+          if(chiclesVar=='true'){document.getElementById("chicles").checked=true;}
+          else{document.getElementById("chicles").checked= false;}
+        }
+        if((typeof tamponesVar)!='object'){
+          if(tamponesVar=='true'){document.getElementById("tampones").checked=true;}
+          else{document.getElementById("tampones").checked= false;}
+        }
+        if((typeof pasadoresVar)!='object'){
+          if(pasadoresVar=='true'){document.getElementById("pasadores").checked=true;}
+          else{document.getElementById("pasadores").checked= false;}
+        }
+        if((typeof limaVar)!='object'){
+          if(limaVar=='true'){document.getElementById("lima").checked=true;}
+          else{document.getElementById("lima").checked= false;}
+        }
+        if((typeof peptoVar)!='object'){
+          if(peptoVar=='true'){document.getElementById("pepto").checked=true;}
+          else{document.getElementById("pepto").checked= false;}
+        }
+        if((typeof gelVar)!='object'){
+          if(gelVar=='true'){document.getElementById("gel").checked=true;}
+          else{document.getElementById("gel").checked= false;}
+        }
+        if((typeof hiloVar)!='object'){
+          if(hiloVar=='true'){document.getElementById("hilo").checked=true;}
+          else{document.getElementById("hilo").checked= false;}
+        }
+        if((typeof panueloVar)!='object'){
+          if(panueloVar=='true'){document.getElementById("panuelo").checked=true;}
+          else{document.getElementById("panuelo").checked= false;}
+        }
+        if((typeof peineVar)!='object'){
+          if(peineVar=='true'){document.getElementById("peine").checked=true;}
+          else{document.getElementById("peine").checked= false;}
+        }
+        if((typeof ligasVar)!='object'){
+          if(ligasVar=='true'){document.getElementById("ligas").checked=true;}
+          else{document.getElementById("ligas").checked= false;}
+        }
+        if((typeof aspirinasVar)!='object'){
+          if(aspirinasVar=='true'){document.getElementById("aspirinas").checked=true;}
+          else{document.getElementById("aspirinas").checked= false;}
+        }
+        if((typeof curitasVar)!='object'){
+          if(curitasVar=='true'){document.getElementById("curitas").checked=true;}
+          else{document.getElementById("curitas").checked= false;}
+        }
+        if((typeof costureroVar)!='object'){
+          if(costureroVar=='true'){document.getElementById("costurero").checked=true;}
+          else{document.getElementById("costurero").checked= false;}
+        }
+        if((typeof mentitasVar)!='object'){
+          if(mentitasVar=='true'){document.getElementById("mentitas").checked=true;}
+          else{document.getElementById("mentitas").checked= false;}
+        }
+        if((typeof seguritosVar)!='object'){
+          if(seguritosVar=='true'){document.getElementById("seguritos").checked=true;}
+          else{document.getElementById("seguritos").checked= false;}
+        }
+        if((typeof desodoranteVar)!='object'){
+          if(desodoranteVar=='true'){document.getElementById("desodorante").checked=true;}
+          else{document.getElementById("desodorante").checked= false;}
+        }
+        if((typeof perfumeVar)!='object'){
+          if(perfumeVar=='true'){document.getElementById("perfume").checked=true;}
+          else{document.getElementById("perfume").checked= false;}
+        }
+        if((typeof costurero2Var)!='object'){
+          if(costurero2Var=='true'){document.getElementById("costurero2").checked=true;}
+          else{document.getElementById("costurero2").checked= false;}
+        }
+        if((typeof maquillajeVar)!='object'){
+          if(maquillajeVar=='true'){document.getElementById("maquillaje").checked=true;}
+          else{document.getElementById("maquillaje").checked= false;}
+        }
+        if((typeof humedasVar)!='object'){
+          if(humedasVar=='true'){document.getElementById("humedas").checked=true;}
+          else{document.getElementById("humedas").checked= false;}
+        }
+        if((typeof hidratanteVar)!='object'){
+          if(hidratanteVar=='true'){document.getElementById("hidratante").checked=true;}
+          else{document.getElementById("hidratante").checked= false;}
+        }
+        if((typeof algodonVar)!='object'){
+          if(algodonVar=='true'){document.getElementById("algodon").checked=true;}
+          else{document.getElementById("algodon").checked= false;}
+        }
+        if((typeof panuelo2Var)!='object'){
+          if(panuelo2Var=='true'){document.getElementById("panuelo2").checked=true;}
+          else{document.getElementById("panuelo2").checked= false;}
+        }
+        if((typeof antiVar)!='object'){
+          if(antiVar=='true'){document.getElementById("anti").checked=true;}
+          else{document.getElementById("anti").checked= false;}
+        }
+        if((typeof aspiVar)!='object'){
+          if(aspiVar=='true'){document.getElementById("aspi").checked=true;}
+          else{document.getElementById("aspi").checked= false;}
+        }
+        if((typeof curitaVar)!='object'){
+          if(curitaVar=='true'){document.getElementById("curita").checked=true;}
+          else{document.getElementById("curita").checked= false;}
+        }
+        if((typeof flatsVar)!='object'){
+          if(flatsVar=='true'){document.getElementById("flats").checked=true;}
+          else{document.getElementById("flats").checked= false;}
+        }
+        if((typeof celularVar)!='object'){
+          if(celularVar=='true'){document.getElementById("celular").checked=true;}
+          else{document.getElementById("celular").checked= false;}
+        }
+        if((typeof proveedoresVar)!='object'){
+          if(proveedoresVar=='true'){document.getElementById("proveedores").checked=true;}
+          else{document.getElementById("proveedores").checked= false;}
+        }
+        if((typeof listaVar)!='object'){
+          if(listaVar=='true'){document.getElementById("lista").checked=true;}
+          else{document.getElementById("lista").checked= false;}
+        }
+        if((typeof itinerarioVar)!='object'){
+          if(itinerarioVar=='true'){document.getElementById("itinerario").checked=true;}
+          else{document.getElementById("itinerario").checked= false;}
+        }
+		
+	});
+</script>
 

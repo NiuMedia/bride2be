@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
   <link rel="stylesheet" href="/stylesheets/application.css" />
+  <link href='http://localhost/fonts/SourceSansPro-light.ttf' rel='stylesheet' type='text/css'>
 
   <script src="/javascripts/onerror.js"></script>
   <script src="/javascripts/json2.js"></script>
@@ -77,7 +78,6 @@
   </form>
   <script type="text/javascript">
       $(document).ready(function(){
-        var flagCB=false;
         $("#save-btn").on("click", function(){
 
           console.log("button 1");
@@ -105,11 +105,9 @@
           window.localStorage.setItem("ids-2", $("#ids-2").is(':checked'));
           window.localStorage.setItem("testigo-1", $("#testigo-1").is(':checked'));
           window.localStorage.setItem("testigo-2", $("#testigo-2").is(':checked'));
-          flagCB=true;
-          window.localStorage.setItem("flagCB",flagCB);
 
           window.localStorage.setItem("init", 1);
-          
+          alert('Datos almacenados con éxito');
         });
 
         //Rellena los datos, segun la informacion guardada
@@ -121,24 +119,120 @@
         $("#pajes").val(window.localStorage.getItem("pajes"));
 
         
-        if (document.getElementById(window.localStorage.getItem("flagCB"))!==null) {
-          console.log("si entra al if maldita sea!")
-          document.getElementById("#solicitud-1").checked= window.localStorage.getItem("solicitud-1");
-          document.getElementById("#solicitud-2").checked= window.localStorage.getItem("solicitud-2");
-          document.getElementById("#acta-1").checked= window.localStorage.getItem("acta-1");
-          document.getElementById("#acta-2").checked= window.localStorage.getItem("acta-2");
-          document.getElementById("#analisis-1").checked= window.localStorage.getItem("analisis-1");
-          document.getElementById("#analisis-2").checked= window.localStorage.getItem("analisis-2");
-          document.getElementById("#salud-1").checked= window.localStorage.getItem("salud-1");
-          document.getElementById("#salud-2").checked= window.localStorage.getItem("salud-2");
-          document.getElementById("#cartilla-1").checked= window.localStorage.getItem("cartilla-1");
-          document.getElementById("#cartilla-2").checked= window.localStorage.getItem("cartilla-2");
-          document.getElementById("#ids-1").checked= window.localStorage.getItem("ids-1");
-          document.getElementById("#ids-2").checked= window.localStorage.getItem("ids-2");
-          document.getElementById("#testigo-1").checked= window.localStorage.getItem("testigo-1");
-          document.getElementById("#testigo-2").checked= window.localStorage.getItem("testigo-2");
-        };
-        
+        solicitud1 = window.localStorage.getItem("solicitud-1")
+        solicitud2 = window.localStorage.getItem("solicitud-2");
+        acta1 = window.localStorage.getItem("acta-1");
+        acta2 = window.localStorage.getItem("acta-2");
+        analisis1 = window.localStorage.getItem("analisis-1");
+        analisis2 = window.localStorage.getItem("analisis-2");
+        salud1 = window.localStorage.getItem("salud-1");
+        salud2 = window.localStorage.getItem("salud-2");
+        cartilla1 = window.localStorage.getItem("cartilla-1");
+        cartilla2 = window.localStorage.getItem("cartilla-2");
+        ids1 = window.localStorage.getItem("ids-1");
+        ids2 = window.localStorage.getItem("ids-2");
+        testigo1 = window.localStorage.getItem("testigo-1");
+        testigo2 = window.localStorage.getItem("testigo-2");
+
+        if((typeof solicitud1)!='object'){
+          if(solicitud1=='true'){
+            document.getElementById("solicitud-1").checked= true;
+          }else{
+            document.getElementById("solicitud-1").checked= false;
+          }
+        }
+        if((typeof solicitud2)!='object'){
+          if(solicitud2=='true'){
+            document.getElementById("solicitud-2").checked= true;
+          }else{
+            document.getElementById("solicitud-2").checked= false;
+          }
+        }
+        if((typeof acta1)!='object'){
+          if(acta1=='true'){
+            document.getElementById("acta-1").checked= true;
+          }else{
+            document.getElementById("acta-1").checked= false;
+          }
+        }
+        if((typeof acta2)!='object'){
+          if(acta2=='true'){
+            document.getElementById("acta-2").checked= true;
+          }else{
+            document.getElementById("acta-2").checked= false;
+          }
+        }
+        if((typeof analisis1)!='object'){
+          if(analisis1=='true'){
+            document.getElementById("analisis-1").checked= true;
+          }else{
+            document.getElementById("analisis-1").checked= false;
+          }
+        }
+        if((typeof analisis2)!='object'){
+          if(analisis2=='true'){
+            document.getElementById("analisis-2").checked= true;
+          }else{
+            document.getElementById("analisis-2").checked= false;
+          }
+        }
+        if((typeof salud1)!='object'){
+          if(salud1=='true'){
+            document.getElementById("salud-1").checked= true;
+          }else{
+            document.getElementById("salud-1").checked= false;
+          }
+        }
+        if((typeof salud2)!='object'){
+          if(salud2=='true'){
+            document.getElementById("salud-2").checked= true;
+          }else{
+            document.getElementById("salud-2").checked= false;
+          }
+        }
+        if((typeof cartilla1)!='object'){
+          if(cartilla1=='true'){
+            document.getElementById("cartilla-1").checked= true;
+          }else{
+            document.getElementById("cartilla-1").checked= false;
+          }
+        }
+        if((typeof cartilla2)!='object'){
+          if(cartilla2=='true'){
+            document.getElementById("cartilla-2").checked= true;
+          }else{
+            document.getElementById("cartilla-2").checked= false;
+          }
+        }
+        if((typeof ids1)!='object'){
+          if(ids1=='true'){
+            document.getElementById("ids-1").checked= true;
+          }else{
+            document.getElementById("ids-1").checked= false;
+          }
+        }
+        if((typeof ids2)!='object'){
+          if(ids2=='true'){
+            document.getElementById("ids-2").checked= true;
+          }else{
+            document.getElementById("ids-2").checked= false;
+          }
+        }
+        if((typeof testigo1)!='object'){
+          if(testigo1=='true'){
+            document.getElementById("testigo-1").checked= true;
+          }else{
+            document.getElementById("testigo-1").checked= false;
+          }
+        }
+        if((typeof testigo2)!='object'){
+          if(testigo2=='true'){
+            document.getElementById("testigo-2").checked= true;
+          }else{
+            document.getElementById("testigo-2").checked= false;
+          }
+        }
+      
 
       });
     </script>

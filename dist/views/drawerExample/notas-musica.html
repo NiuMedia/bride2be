@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
   <link rel="stylesheet" href="/stylesheets/application.css" />
+  <link href='http://localhost/fonts/SourceSansPro-light.ttf' rel='stylesheet' type='text/css'>
 
   <script src="/javascripts/onerror.js"></script>
   <script src="/javascripts/json2.js"></script>
@@ -60,6 +61,7 @@
           window.localStorage.setItem("salida", $("#salida").val());
 
           window.localStorage.setItem("init", 1);
+          alert('Datos almacenados con éxito');
         });
 //Rellena los datos, segun la informacion guardada
         $("#marcha").val(window.localStorage.getItem("marcha"));
