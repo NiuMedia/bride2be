@@ -57,24 +57,24 @@
 			  	<div id="ceremonia-donativo" style="display:none">
 			  	<table>
 				  	<tr>
-				  		<td><label for="costo-iglesia">Costo</label></td>
+				  		<td><label for="costo-donativo">Costo</label></td>
 				  		<td><label>Saldo</label><br/></td>
 				  	</tr>
 				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="costo-iglesia" id="costo-iglesia" style="width:80%"></td>
-						<td><label id="saldo-iglesia" style="width:150px;font-size:1.5em"></label></td>
+				  		<td><input type="tel" class="topcoat-text-input" name="costo-donativo" id="costo-donativo" style="width:80%"></td>
+						<td><label id="saldo-donativo" style="width:150px;font-size:1.5em"></label></td>
 				  	</tr>
 				  	<tr>
-				  		<td><label for="fecha-iglesia">Fecha para<br />liquidación</label></td>
-				  		<td><input type="date" class="topcoat-text-input center" name="fecha-iglesia" id="fecha-iglesia" style="width:99%"></td>
+				  		<td><label for="fecha-donativo">Fecha para<br />liquidación</label></td>
+				  		<td><input type="date" class="topcoat-text-input center" name="fecha-donativo" id="fecha-donativo" style="width:99%"></td>
 				  	</tr>
 				  	<tr>
-				  		<td><label for="anticipo-iglesia">Anticipo</label></td>
+				  		<td><label for="anticipo-donativo">Anticipo</label></td>
 				  		<td></td>
 				  	</tr>
 				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-iglesia" id="anticipo-iglesia" style="width:80%"></td>
-				  		<td><button class="topcoat-button--cta" id="ok-iglesia">Aceptar</button></td>
+				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-donativo" id="anticipo-donativo" style="width:80%"></td>
+				  		<td><button class="topcoat-button--cta" id="ok-donativo">Aceptar</button></td>
 				  	</tr>
 			  	</table>
 			  	</div>
@@ -803,7 +803,7 @@
 
 
 		//donativos{
-		ceremoniaDonativos();
+		ceremoniaDonativo();
 
 		$('#abrir-donativo').on('click',function(e){
 			seccion='donativo';
@@ -816,118 +816,85 @@
 			e.preventDefault();
 		});
 
-		$('#ok-iglesia').on('click',function(e){
+		$('#ok-donativo').on('click',function(e){
    			seccion='donativo';
-   			saveIglesia();
+   			saveDonativo();
    			cerrarPanel(seccion);
    			e.preventDefault();
    		});
 
-   		function saveIglesia(){
+   		function saveDonativo(){
    			//declaración de variables para manejo de datos
    			var costo;
    			var anticipo;
    			var saldo='N/A';
 
-   			window.localStorage.setItem("costo-iglesia", $("#costo-iglesia").val());//guarda costo
-   			costo = window.localStorage.getItem('costo-iglesia');//asigna valor guardado de costo a variable local
-   			anticipo= $("#anticipo-iglesia").val();//asigna valor del campo de anticipo a variable local
-   			alert('anticipo: '+anticipo);
-   			window.localStorage.setItem("fecha-iglesia",$("#fecha-iglesia").val());//guarda fecha
+   			window.localStorage.setItem("costo-donativo", $("#costo-donativo").val());//guarda costo
+   			costo = window.localStorage.getItem('costo-donativo');//asigna valor guardado de costo a variable local
+   			anticipo= $("#anticipo-donativo").val();//asigna valor del campo de anticipo a variable local
+   			window.localStorage.setItem("fecha-donativo",$("#fecha-donativo").val());//guarda fecha
    			
    			if(costo!=''){//si costo es difrente a una cadena vacía...
-				if(typeof window.localStorage.getItem('saldo-iglesia')=='object'){//...y si lo guardado en saldo-iglesia es de tipo object
+				if(typeof window.localStorage.getItem('saldo-donativo')=='object'){//...y si lo guardado en saldo-donativo es de tipo object
 					saldo=costo;//entonces saldo es igual al costo
-					alert(typeof window.localStorage.getItem('saldo-iglesia')+' saldo= '+saldo);
-				}else if(typeof window.localStorage.getItem('saldo-iglesia')=='string'){//...y si lo guardado en saldo-iglesia es de tipo string
-					if(window.localStorage.getItem('saldo-iglesia')==''){//...y si saldo iglesia es igual a cadena vacia
+				}else if(typeof window.localStorage.getItem('saldo-donativo')=='string'){//...y si lo guardado en saldo-donativo es de tipo string
+					if(window.localStorage.getItem('saldo-donativo')==''){//...y si saldo donativo es igual a cadena vacia
 						saldo=costo;//entonces saldo es igual al costo
-						alert(typeof window.localStorage.getItem('saldo-iglesia')+' saldo vacío entonces saldo= '+saldo);
-					}else{//si no, saldo es igual a lo guardado en saldo-iglesia
-						saldo=window.localStorage.getItem('saldo-iglesia');
-						alert(typeof window.localStorage.getItem('saldo-iglesia')+' saldo= '+saldo);
+					}else{//si no, saldo es igual a lo guardado en saldo-donativo
+						saldo=window.localStorage.getItem('saldo-donativo');
 					}
 				}
-
 				if(anticipo!=''){//Si anticipo es diferente a vacío
-	   				window.localStorage.setItem("anticipo-iglesia", anticipo);//guarda anticipo
+	   				window.localStorage.setItem("anticipo-donativo", anticipo);//guarda anticipo
 	   				saldo = parseInt(saldo,10)-parseInt(anticipo,10);//saldo local es igual a costo menos anticipo
-	   				window.localStorage.setItem("saldo-iglesia",saldo);//guarda el saldo
-	   				alert('anticipo es '+anticipo+ ' entonces saldo= '+saldo);
-	   				document.getElementById("saldo-iglesia").innerHTML=""+saldo;//actualiza valor de saldo en pantalla
+	   				window.localStorage.setItem("saldo-donativo",saldo);//guarda el saldo
 				}else{
-					window.localStorage.setItem("saldo-iglesia",saldo);//guarda el saldo
-					document.getElementById("saldo-iglesia").innerHTML=""+saldo;//actualiza valor de saldo en pantalla
-					alert('anticipo está vacío entonces saldo= '+saldo);
+					window.localStorage.setItem("saldo-donativo",saldo);//guarda el saldo
 				}
 			}
 
 			window.localStorage.setItem("init", 1);//guarda init
    			if(saldo=='0'){//Si monto guardado es igual a costo guardado
-	   			document.getElementById("saldo-iglesia").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
+	   			document.getElementById("saldo-donativo").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
 	   		}
-	   		ceremoniaDonativos();
+	   		ceremoniaDonativo();
 	   		calculoCeremonia();
    		}
 
-   		function ceremoniaDonativos(){
-   			costoIglesia=window.localStorage.getItem("costo-iglesia");//costo Iglesia es igual a lo guardado en costo-iglesia
-			saldoIglesia=window.localStorage.getItem("saldo-iglesia");//saldo Iglesia es igual a lo guardado en saldo-iglesia
-			fechaIglesia=window.localStorage.getItem("fecha-iglesia");//fecha Iglesia es igual a lo guardado en fecha-iglesia
-			
-			if(typeof costoIglesia == 'object'){
-				document.getElementById("don-spec-c").innerHTML="N/A";
-				costoIglesia=0;
-			}else if(typeof costoIglesia == 'string'){
-				if(costoIglesia == ''){
-					document.getElementById("don-spec-c").innerHTML="N/A";
-					costoIglesia=0;
-				}else{
-					document.getElementById("don-spec-c").innerHTML=""+costoIglesia;
-				}
-			}
+   		function ceremoniaDonativo(){
+   			costoDonativo=window.localStorage.getItem("costo-donativo");
+			saldoDonativo=window.localStorage.getItem("saldo-donativo");
+			fechaDonativo=window.localStorage.getItem("fecha-donativo");
 
-			if(typeof saldoIglesia == 'object'){
-				document.getElementById("don-spec-s").innerHTML="N/A";
-				saldoIglesia=0;
-			}else if(typeof saldoIglesia == 'string'){
-				if(saldoIglesia == ''){
-					document.getElementById("don-spec-s").innerHTML="N/A";
-					saldoIglesia=0;
-				}else{
-					document.getElementById("don-spec-s").innerHTML=""+saldoIglesia;
-				}
-			}
-
-			if(typeof fechaIglesia == 'object'){
-				document.getElementById("don-spec-f").innerHTML="N/A";
-				fechaIglesia=0;
-			}else if(typeof fechaIglesia == 'string'){
-				if(fechaIglesia == ''){
-					document.getElementById("don-spec-f").innerHTML="N/A";
-					fechaIglesia=0;
-				}else{
-					document.getElementById("don-spec-f").innerHTML=""+fechaIglesia;
-				}
-			}
-
-			$("#costo-iglesia").val(costoIglesia);//muestra el costo guardado del costo.
-	   			
-	   		$("#fecha-iglesia").val(fechaIglesia);//muestra la fecha para liquidación.
-
-	   		$("#anticipo-iglesia").val('');
-
-	   		if(saldoIglesia=='0'){
-	   			document.getElementById("saldo-iglesia").innerHTML="Liquidado!";
-	   		}else if(typeof window.localStorage.getItem("saldo-iglesia")=='object'){
-	   			document.getElementById("saldo-iglesia").innerHTML=" ";
-			}else if(saldoIglesia=='N/A'){
-				document.getElementById("saldo-iglesia").innerHTML="N/A";
+			if(costoDonativo!==null){
+				document.getElementById("don-spec-c").innerHTML=""+costoDonativo;
 			}else{
-				document.getElementById("saldo-iglesia").innerHTML=""+saldoIglesia;
+				document.getElementById("don-spec-c").innerHTML="N/A";
+				costoDonativo=0;
+			}
+			if(saldoDonativo!==null){
+				document.getElementById("don-spec-s").innerHTML=""+saldoDonativo;
+				document.getElementById("saldo-donativo").innerHTML=""+saldoDonativo;
+				if(saldoDonativo == '0'){
+					document.getElementById("don-spec-s").innerHTML="Liquidado!";
+					document.getElementById("saldo-donativo").innerHTML="Liquidado!";
+				}
+			}else{
+				document.getElementById("don-spec-s").innerHTML="N/A";
+				document.getElementById("saldo-donativo").innerHTML="N/A";
+				saldoDonativo=0;
+			}
+			if(fechaDonativo!==null){
+				document.getElementById("don-spec-f").innerHTML=""+fechaDonativo;
+			}else{
+				document.getElementById("don-spec-f").innerHTML="N/A";
+			}
+			if(costoDonativo!='0'){
+	   			$("#costo-donativo").val(costoDonativo);//muestra el costo guardado del costo.
 	   		}
-
-   		}
+	   		$("#fecha-donativo").val(fechaDonativo);//muestra la fecha para liquidación.
+	   		$("#anticipo-donativo").val('');
+	   	}
 		
    		//}fin donativos xxx
 
@@ -961,7 +928,6 @@
    			window.localStorage.setItem("costo-musica", $("#costo-musica").val());//guarda costo
    			costo = window.localStorage.getItem('costo-musica');//asigna valor guardado de costo a variable local
    			anticipo= $("#anticipo-musica").val();//asigna valor del campo de anticipo a variable local
-   			alert('anticipo: '+anticipo);
    			window.localStorage.setItem("fecha-musica",$("#fecha-musica").val());//guarda fecha
    			
    			if(costo!=''){//si costo es difrente a una cadena vacía...
@@ -978,7 +944,6 @@
 	   				window.localStorage.setItem("anticipo-musica", anticipo);//guarda anticipo
 	   				saldo = parseInt(saldo,10)-parseInt(anticipo,10);//saldo local es igual a costo menos anticipo
 	   				window.localStorage.setItem("saldo-musica",saldo);//guarda el saldo
-	   				alert('saldo: '+saldo);
 				}else{
 					window.localStorage.setItem("saldo-musica",saldo);//guarda el saldo
 				}
@@ -1005,12 +970,14 @@
 			}
 			if(saldoMusica!==null){
 				document.getElementById("mus-spec-s").innerHTML=""+saldoMusica;
-				alert('este es el que sale '+saldoMusica);
+				document.getElementById("saldo-musica").innerHTML=""+saldoMusica;
 				if(saldoMusica == '0'){
 					document.getElementById("mus-spec-s").innerHTML="Liquidado!";
+					document.getElementById("saldo-musica").innerHTML="Liquidado!";
 				}
 			}else{
 				document.getElementById("mus-spec-s").innerHTML="N/A";
+				document.getElementById("saldo-musica").innerHTML="N/A";
 				saldoMusica=0;
 			}
 			if(fechaMusica!==null){
@@ -1023,18 +990,7 @@
 	   		}
 	   		$("#fecha-musica").val(fechaMusica);//muestra la fecha para liquidación.
 	   		$("#anticipo-musica").val('');
-
-	   		if(saldoMusica=='0'){
-	   			document.getElementById("saldo-musica").innerHTML="Liquidado!";
-	   		}else if(typeof window.localStorage.getItem("saldo-musica")=='object'){
-	   			document.getElementById("saldo-musica").innerHTML=" ";
-			}else if(saldoMusica=='N/A'){
-				document.getElementById("saldo-musica").innerHTML="N/A";
-			}else{
-				document.getElementById("saldo-musica").innerHTML=""+saldoMusica;
-	   		}
-
-   		}
+		}
 		
 		//}fin musica xxx
 
@@ -1067,7 +1023,6 @@
    			window.localStorage.setItem("costo-decoracion", $("#costo-decoracion").val());//guarda costo
    			costo = window.localStorage.getItem('costo-decoracion');//asigna valor guardado de costo a variable local
    			anticipo= $("#anticipo-decoracion").val();//asigna valor del campo de anticipo a variable local
-   			alert('anticipo: '+anticipo);
    			window.localStorage.setItem("fecha-decoracion",$("#fecha-decoracion").val());//guarda fecha
    			
    			if(costo!=''){//si costo es difrente a una cadena vacía...
@@ -1084,7 +1039,6 @@
 	   				window.localStorage.setItem("anticipo-decoracion", anticipo);//guarda anticipo
 	   				saldo = parseInt(saldo,10)-parseInt(anticipo,10);//saldo local es igual a costo menos anticipo
 	   				window.localStorage.setItem("saldo-decoracion",saldo);//guarda el saldo
-	   				alert('saldo: '+saldo);
 				}else{
 					window.localStorage.setItem("saldo-decoracion",saldo);//guarda el saldo
 				}
@@ -1111,12 +1065,14 @@
 			}
 			if(saldoDecoracion!==null){
 				document.getElementById("dec-spec-s").innerHTML=""+saldoDecoracion;
-				alert('este es el que sale '+saldoDecoracion);
+				document.getElementById("saldo-decoracion").innerHTML=""+saldoDecoracion;
 				if(saldoDecoracion == '0'){
 					document.getElementById("dec-spec-s").innerHTML="Liquidado!";
+					document.getElementById("saldo-decoracion").innerHTML="Liquidado!";
 				}
 			}else{
 				document.getElementById("dec-spec-s").innerHTML="N/A";
+				document.getElementById("saldo-decoracion").innerHTML="N/A";
 				saldoDecoracion=0;
 			}
 			if(fechaDecoracion!==null){
@@ -1129,23 +1085,13 @@
 	   		}
 	   		$("#fecha-decoracion").val(fechaDecoracion);//muestra la fecha para liquidación.
 	   		$("#anticipo-decoracion").val('');
-
-	   		if(saldoDecoracion=='0'){
-	   			document.getElementById("saldo-decoracion").innerHTML="Liquidado!";
-	   		}else if(typeof window.localStorage.getItem("saldo-decoracion")=='object'){
-	   			document.getElementById("saldo-decoracion").innerHTML=" ";
-			}else if(saldoDecoracion=='N/A'){
-				document.getElementById("saldo-decoracion").innerHTML="N/A";
-			}else{
-				document.getElementById("saldo-decoracion").innerHTML=""+saldoDecoracion;
-	   		}
-
-   		}
+		}
 
 		// }fin decoracion xxx
 
 		// anillos {
-			$('#abrir-anillos').on('click',function(e){
+		ceremoniaAnillos();
+		$('#abrir-anillos').on('click',function(e){
 			seccion='anillos';
 			abrirPanel(seccion);
 			e.preventDefault();
@@ -1155,11 +1101,91 @@
 			cerrarPanel(seccion);
 			e.preventDefault();
 		});
+		$('#ok-anillos').on('click',function(e){
+   			seccion='anillos';
+   			saveAnillos();
+   			cerrarPanel(seccion);
+   			e.preventDefault();
+   		});
+
+		function saveAnillos(){
+   			//declaración de variables para manejo de datos
+   			var costo;
+   			var anticipo;
+   			var saldo='N/A';
+
+   			window.localStorage.setItem("costo-anillos", $("#costo-anillos").val());//guarda costo
+   			costo = window.localStorage.getItem('costo-anillos');//asigna valor guardado de costo a variable local
+   			anticipo= $("#anticipo-anillos").val();//asigna valor del campo de anticipo a variable local
+   			window.localStorage.setItem("fecha-anillos",$("#fecha-anillos").val());//guarda fecha
+   			
+   			if(costo!=''){//si costo es difrente a una cadena vacía...
+				if(typeof window.localStorage.getItem('saldo-anillos')=='object'){//...y si lo guardado en saldo-anillos es de tipo object
+					saldo=costo;//entonces saldo es igual al costo
+				}else if(typeof window.localStorage.getItem('saldo-anillos')=='string'){//...y si lo guardado en saldo-anillos es de tipo string
+					if(window.localStorage.getItem('saldo-anillos')==''){//...y si saldo anillos es igual a cadena vacia
+						saldo=costo;//entonces saldo es igual al costo
+					}else{//si no, saldo es igual a lo guardado en saldo-anillos
+						saldo=window.localStorage.getItem('saldo-anillos');
+					}
+				}
+				if(anticipo!=''){//Si anticipo es diferente a vacío
+	   				window.localStorage.setItem("anticipo-anillos", anticipo);//guarda anticipo
+	   				saldo = parseInt(saldo,10)-parseInt(anticipo,10);//saldo local es igual a costo menos anticipo
+	   				window.localStorage.setItem("saldo-anillos",saldo);//guarda el saldo
+				}else{
+					window.localStorage.setItem("saldo-anillos",saldo);//guarda el saldo
+				}
+			}
+
+			window.localStorage.setItem("init", 1);//guarda init
+   			if(saldo=='0'){//Si monto guardado es igual a costo guardado
+	   			document.getElementById("saldo-anillos").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
+	   		}
+	   		ceremoniaAnillos();
+	   		calculoCeremonia();
+   		}
+
+   		function ceremoniaAnillos(){
+   			costoAnillos=window.localStorage.getItem("costo-anillos");
+			saldoAnillos=window.localStorage.getItem("saldo-anillos");
+			fechaAnillos=window.localStorage.getItem("fecha-anillos");
+
+			if(costoAnillos!==null){
+				document.getElementById("ani-spec-c").innerHTML=""+costoAnillos;
+			}else{
+				document.getElementById("ani-spec-c").innerHTML="N/A";
+				costoAnillos=0;
+			}
+			if(saldoAnillos!==null){
+				document.getElementById("ani-spec-s").innerHTML=""+saldoAnillos;
+				document.getElementById("saldo-anillos").innerHTML=""+saldoAnillos;
+				if(saldoAnillos == '0'){
+					document.getElementById("ani-spec-s").innerHTML="Liquidado!";
+					document.getElementById("saldo-anillos").innerHTML="Liquidado!";
+				}
+			}else{
+				document.getElementById("ani-spec-s").innerHTML="N/A";
+				document.getElementById("saldo-anillos").innerHTML="N/A";
+				saldoAnillos=0;
+			}
+			if(fechaAnillos!==null){
+				document.getElementById("ani-spec-f").innerHTML=""+fechaAnillos;
+			}else{
+				document.getElementById("ani-spec-f").innerHTML="N/A";
+			}
+			if(costoAnillos!='0'){
+	   			$("#costo-anillos").val(costoAnillos);//muestra el costo guardado del costo.
+	   		}
+	   		$("#fecha-anillos").val(fechaAnillos);//muestra la fecha para liquidación.
+	   		$("#anticipo-anillos").val('');
+		}
 
 		// }fin anillos xxx
 
 		// rosario {
-			$('#abrir-rosario').on('click',function(e){
+		ceremoniaRosario();
+		$('#abrir-rosario').on('click',function(e){
 			seccion='rosario';
 			abrirPanel(seccion);
 			e.preventDefault();
@@ -1169,11 +1195,91 @@
 			cerrarPanel(seccion);
 			e.preventDefault();
 		});
+		$('#ok-rosario').on('click',function(e){
+   			seccion='rosario';
+   			saveRosario();
+   			cerrarPanel(seccion);
+   			e.preventDefault();
+   		});
+
+		function saveRosario(){
+   			//declaración de variables para manejo de datos
+   			var costo;
+   			var anticipo;
+   			var saldo='N/A';
+
+   			window.localStorage.setItem("costo-rosario", $("#costo-rosario").val());//guarda costo
+   			costo = window.localStorage.getItem('costo-rosario');//asigna valor guardado de costo a variable local
+   			anticipo= $("#anticipo-rosario").val();//asigna valor del campo de anticipo a variable local
+   			window.localStorage.setItem("fecha-rosario",$("#fecha-rosario").val());//guarda fecha
+   			
+   			if(costo!=''){//si costo es difrente a una cadena vacía...
+				if(typeof window.localStorage.getItem('saldo-rosario')=='object'){//...y si lo guardado en saldo-rosario es de tipo object
+					saldo=costo;//entonces saldo es igual al costo
+				}else if(typeof window.localStorage.getItem('saldo-rosario')=='string'){//...y si lo guardado en saldo-rosario es de tipo string
+					if(window.localStorage.getItem('saldo-rosario')==''){//...y si saldo rosario es igual a cadena vacia
+						saldo=costo;//entonces saldo es igual al costo
+					}else{//si no, saldo es igual a lo guardado en saldo-rosario
+						saldo=window.localStorage.getItem('saldo-rosario');
+					}
+				}
+				if(anticipo!=''){//Si anticipo es diferente a vacío
+	   				window.localStorage.setItem("anticipo-rosario", anticipo);//guarda anticipo
+	   				saldo = parseInt(saldo,10)-parseInt(anticipo,10);//saldo local es igual a costo menos anticipo
+	   				window.localStorage.setItem("saldo-rosario",saldo);//guarda el saldo
+				}else{
+					window.localStorage.setItem("saldo-rosario",saldo);//guarda el saldo
+				}
+			}
+
+			window.localStorage.setItem("init", 1);//guarda init
+   			if(saldo=='0'){//Si monto guardado es igual a costo guardado
+	   			document.getElementById("saldo-rosario").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
+	   		}
+	   		ceremoniaRosario();
+	   		calculoCeremonia();
+   		}
+
+   		function ceremoniaRosario(){
+   			costoRosario=window.localStorage.getItem("costo-rosario");
+			saldoRosario=window.localStorage.getItem("saldo-rosario");
+			fechaRosario=window.localStorage.getItem("fecha-rosario");
+
+			if(costoRosario!==null){
+				document.getElementById("ros-spec-c").innerHTML=""+costoRosario;
+			}else{
+				document.getElementById("ros-spec-c").innerHTML="N/A";
+				costoRosario=0;
+			}
+			if(saldoRosario!==null){
+				document.getElementById("ros-spec-s").innerHTML=""+saldoRosario;
+				document.getElementById("saldo-rosario").innerHTML=""+saldoRosario;
+				if(saldoRosario == '0'){
+					document.getElementById("ros-spec-s").innerHTML="Liquidado!";
+					document.getElementById("saldo-rosario").innerHTML="Liquidado!";
+				}
+			}else{
+				document.getElementById("ros-spec-s").innerHTML="N/A";
+				document.getElementById("saldo-rosario").innerHTML="N/A";
+				saldoRosario=0;
+			}
+			if(fechaRosario!==null){
+				document.getElementById("ros-spec-f").innerHTML=""+fechaRosario;
+			}else{
+				document.getElementById("ros-spec-f").innerHTML="N/A";
+			}
+			if(costoRosario!='0'){
+	   			$("#costo-rosario").val(costoRosario);//muestra el costo guardado del costo.
+	   		}
+	   		$("#fecha-rosario").val(fechaRosario);//muestra la fecha para liquidación.
+	   		$("#anticipo-rosario").val('');
+		}
 
 		// }fin rosario xxx
 
 		// biblia {
-			$('#abrir-biblia').on('click',function(e){
+		ceremoniaBiblia();
+		$('#abrir-biblia').on('click',function(e){
 			seccion='biblia';
 			abrirPanel(seccion);
 			e.preventDefault();
@@ -1183,11 +1289,91 @@
 			cerrarPanel(seccion);
 			e.preventDefault();
 		});
+		$('#ok-biblia').on('click',function(e){
+   			seccion='biblia';
+   			saveBiblia();
+   			cerrarPanel(seccion);
+   			e.preventDefault();
+   		});
+
+		function saveBiblia(){
+   			//declaración de variables para manejo de datos
+   			var costo;
+   			var anticipo;
+   			var saldo='N/A';
+
+   			window.localStorage.setItem("costo-biblia", $("#costo-biblia").val());//guarda costo
+   			costo = window.localStorage.getItem('costo-biblia');//asigna valor guardado de costo a variable local
+   			anticipo= $("#anticipo-biblia").val();//asigna valor del campo de anticipo a variable local
+   			window.localStorage.setItem("fecha-biblia",$("#fecha-biblia").val());//guarda fecha
+   			
+   			if(costo!=''){//si costo es difrente a una cadena vacía...
+				if(typeof window.localStorage.getItem('saldo-biblia')=='object'){//...y si lo guardado en saldo-biblia es de tipo object
+					saldo=costo;//entonces saldo es igual al costo
+				}else if(typeof window.localStorage.getItem('saldo-biblia')=='string'){//...y si lo guardado en saldo-biblia es de tipo string
+					if(window.localStorage.getItem('saldo-biblia')==''){//...y si saldo biblia es igual a cadena vacia
+						saldo=costo;//entonces saldo es igual al costo
+					}else{//si no, saldo es igual a lo guardado en saldo-biblia
+						saldo=window.localStorage.getItem('saldo-biblia');
+					}
+				}
+				if(anticipo!=''){//Si anticipo es diferente a vacío
+	   				window.localStorage.setItem("anticipo-biblia", anticipo);//guarda anticipo
+	   				saldo = parseInt(saldo,10)-parseInt(anticipo,10);//saldo local es igual a costo menos anticipo
+	   				window.localStorage.setItem("saldo-biblia",saldo);//guarda el saldo
+				}else{
+					window.localStorage.setItem("saldo-biblia",saldo);//guarda el saldo
+				}
+			}
+
+			window.localStorage.setItem("init", 1);//guarda init
+   			if(saldo=='0'){//Si monto guardado es igual a costo guardado
+	   			document.getElementById("saldo-biblia").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
+	   		}
+	   		ceremoniaBiblia();
+	   		calculoCeremonia();
+   		}
+
+   		function ceremoniaBiblia(){
+   			costoBiblia=window.localStorage.getItem("costo-biblia");
+			saldoBiblia=window.localStorage.getItem("saldo-biblia");
+			fechaBiblia=window.localStorage.getItem("fecha-biblia");
+
+			if(costoBiblia!==null){
+				document.getElementById("bib-spec-c").innerHTML=""+costoBiblia;
+			}else{
+				document.getElementById("bib-spec-c").innerHTML="N/A";
+				costoBiblia=0;
+			}
+			if(saldoBiblia!==null){
+				document.getElementById("bib-spec-s").innerHTML=""+saldoBiblia;
+				document.getElementById("saldo-biblia").innerHTML=""+saldoBiblia;
+				if(saldoBiblia == '0'){
+					document.getElementById("bib-spec-s").innerHTML="Liquidado!";
+					document.getElementById("saldo-biblia").innerHTML="Liquidado!";
+				}
+			}else{
+				document.getElementById("bib-spec-s").innerHTML="N/A";
+				document.getElementById("saldo-biblia").innerHTML="N/A";
+				saldoBiblia=0;
+			}
+			if(fechaBiblia!==null){
+				document.getElementById("bib-spec-f").innerHTML=""+fechaBiblia;
+			}else{
+				document.getElementById("bib-spec-f").innerHTML="N/A";
+			}
+			if(costoBiblia!='0'){
+	   			$("#costo-biblia").val(costoBiblia);//muestra el costo guardado del costo.
+	   		}
+	   		$("#fecha-biblia").val(fechaBiblia);//muestra la fecha para liquidación.
+	   		$("#anticipo-biblia").val('');
+		}
 
 		// }fin biblia xxx
 
 		// renta {
-			$('#abrir-renta').on('click',function(e){
+		ceremoniaRenta();
+		$('#abrir-renta').on('click',function(e){
 			seccion='renta';
 			abrirPanel(seccion);
 			e.preventDefault();
@@ -1197,11 +1383,91 @@
 			cerrarPanel(seccion);
 			e.preventDefault();
 		});
+		$('#ok-renta').on('click',function(e){
+   			seccion='renta';
+   			saveRenta();
+   			cerrarPanel(seccion);
+   			e.preventDefault();
+   		});
+
+		function saveRenta(){
+   			//declaración de variables para manejo de datos
+   			var costo;
+   			var anticipo;
+   			var saldo='N/A';
+
+   			window.localStorage.setItem("costo-renta", $("#costo-renta").val());//guarda costo
+   			costo = window.localStorage.getItem('costo-renta');//asigna valor guardado de costo a variable local
+   			anticipo= $("#anticipo-renta").val();//asigna valor del campo de anticipo a variable local
+   			window.localStorage.setItem("fecha-renta",$("#fecha-renta").val());//guarda fecha
+   			
+   			if(costo!=''){//si costo es difrente a una cadena vacía...
+				if(typeof window.localStorage.getItem('saldo-renta')=='object'){//...y si lo guardado en saldo-renta es de tipo object
+					saldo=costo;//entonces saldo es igual al costo
+				}else if(typeof window.localStorage.getItem('saldo-renta')=='string'){//...y si lo guardado en saldo-renta es de tipo string
+					if(window.localStorage.getItem('saldo-renta')==''){//...y si saldo Renta es igual a cadena vacia
+						saldo=costo;//entonces saldo es igual al costo
+					}else{//si no, saldo es igual a lo guardado en saldo-renta
+						saldo=window.localStorage.getItem('saldo-renta');
+					}
+				}
+				if(anticipo!=''){//Si anticipo es diferente a vacío
+	   				window.localStorage.setItem("anticipo-renta", anticipo);//guarda anticipo
+	   				saldo = parseInt(saldo,10)-parseInt(anticipo,10);//saldo local es igual a costo menos anticipo
+	   				window.localStorage.setItem("saldo-renta",saldo);//guarda el saldo
+				}else{
+					window.localStorage.setItem("saldo-renta",saldo);//guarda el saldo
+				}
+			}
+
+			window.localStorage.setItem("init", 1);//guarda init
+   			if(saldo=='0'){//Si monto guardado es igual a costo guardado
+	   			document.getElementById("saldo-renta").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
+	   		}
+	   		ceremoniaRenta();
+	   		calculoCeremonia();
+   		}
+
+   		function ceremoniaRenta(){
+   			costoRenta=window.localStorage.getItem("costo-renta");
+			saldoRenta=window.localStorage.getItem("saldo-renta");
+			fechaRenta=window.localStorage.getItem("fecha-renta");
+
+			if(costoRenta!==null){
+				document.getElementById("ren-spec-c").innerHTML=""+costoRenta;
+			}else{
+				document.getElementById("ren-spec-c").innerHTML="N/A";
+				costoRenta=0;
+			}
+			if(saldoRenta!==null){
+				document.getElementById("ren-spec-s").innerHTML=""+saldoRenta;
+				document.getElementById("saldo-renta").innerHTML=""+saldoRenta;
+				if(saldoRenta == '0'){
+					document.getElementById("ren-spec-s").innerHTML="Liquidado!";
+					document.getElementById("saldo-renta").innerHTML="Liquidado!";
+				}
+			}else{
+				document.getElementById("ren-spec-s").innerHTML="N/A";
+				document.getElementById("saldo-renta").innerHTML="N/A";
+				saldoRenta=0;
+			}
+			if(fechaRenta!==null){
+				document.getElementById("ren-spec-f").innerHTML=""+fechaRenta;
+			}else{
+				document.getElementById("ren-spec-f").innerHTML="N/A";
+			}
+			if(costoRenta!='0'){
+	   			$("#costo-renta").val(costoRenta);//muestra el costo guardado del costo.
+	   		}
+	   		$("#fecha-renta").val(fechaRenta);//muestra la fecha para liquidación.
+	   		$("#anticipo-renta").val('');
+		}
 
 		// }fin renta xxx
 
 		// ramo {
-			$('#abrir-ramo').on('click',function(e){
+		ceremoniaRamo();
+		$('#abrir-ramo').on('click',function(e){
 			seccion='ramo';
 			abrirPanel(seccion);
 			e.preventDefault();
@@ -1211,10 +1477,90 @@
 			cerrarPanel(seccion);
 			e.preventDefault();
 		});
+		$('#ok-ramo').on('click',function(e){
+   			seccion='ramo';
+   			saveRamo();
+   			cerrarPanel(seccion);
+   			e.preventDefault();
+   		});
+
+		function saveRamo(){
+   			//declaración de variables para manejo de datos
+   			var costo;
+   			var anticipo;
+   			var saldo='N/A';
+
+   			window.localStorage.setItem("costo-ramo", $("#costo-ramo").val());//guarda costo
+   			costo = window.localStorage.getItem('costo-ramo');//asigna valor guardado de costo a variable local
+   			anticipo= $("#anticipo-ramo").val();//asigna valor del campo de anticipo a variable local
+   			window.localStorage.setItem("fecha-ramo",$("#fecha-ramo").val());//guarda fecha
+   			
+   			if(costo!=''){//si costo es difrente a una cadena vacía...
+				if(typeof window.localStorage.getItem('saldo-ramo')=='object'){//...y si lo guardado en saldo-ramo es de tipo object
+					saldo=costo;//entonces saldo es igual al costo
+				}else if(typeof window.localStorage.getItem('saldo-ramo')=='string'){//...y si lo guardado en saldo-ramo es de tipo string
+					if(window.localStorage.getItem('saldo-ramo')==''){//...y si saldo Ramo es igual a cadena vacia
+						saldo=costo;//entonces saldo es igual al costo
+					}else{//si no, saldo es igual a lo guardado en saldo-ramo
+						saldo=window.localStorage.getItem('saldo-ramo');
+					}
+				}
+				if(anticipo!=''){//Si anticipo es diferente a vacío
+	   				window.localStorage.setItem("anticipo-ramo", anticipo);//guarda anticipo
+	   				saldo = parseInt(saldo,10)-parseInt(anticipo,10);//saldo local es igual a costo menos anticipo
+	   				window.localStorage.setItem("saldo-ramo",saldo);//guarda el saldo
+				}else{
+					window.localStorage.setItem("saldo-ramo",saldo);//guarda el saldo
+				}
+			}
+
+			window.localStorage.setItem("init", 1);//guarda init
+   			if(saldo=='0'){//Si monto guardado es igual a costo guardado
+	   			document.getElementById("saldo-ramo").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
+	   		}
+	   		ceremoniaRamo();
+	   		calculoCeremonia();
+   		}
+
+   		function ceremoniaRamo(){
+   			costoRamo=window.localStorage.getItem("costo-ramo");
+			saldoRamo=window.localStorage.getItem("saldo-ramo");
+			fechaRamo=window.localStorage.getItem("fecha-ramo");
+
+			if(costoRamo!==null){
+				document.getElementById("ram-spec-c").innerHTML=""+costoRamo;
+			}else{
+				document.getElementById("ram-spec-c").innerHTML="N/A";
+				costoRamo=0;
+			}
+			if(saldoRamo!==null){
+				document.getElementById("ram-spec-s").innerHTML=""+saldoRamo;
+				document.getElementById("saldo-ramo").innerHTML=""+saldoRamo;
+				if(saldoRamo == '0'){
+					document.getElementById("ram-spec-s").innerHTML="Liquidado!";
+					document.getElementById("saldo-ramo").innerHTML="Liquidado!";
+				}
+			}else{
+				document.getElementById("ram-spec-s").innerHTML="N/A";
+				document.getElementById("saldo-ramo").innerHTML="N/A";
+				saldoRamo=0;
+			}
+			if(fechaRamo!==null){
+				document.getElementById("ram-spec-f").innerHTML=""+fechaRamo;
+			}else{
+				document.getElementById("ram-spec-f").innerHTML="N/A";
+			}
+			if(costoRamo!='0'){
+	   			$("#costo-ramo").val(costoRamo);//muestra el costo guardado del costo.
+	   		}
+	   		$("#fecha-ramo").val(fechaRamo);//muestra la fecha para liquidación.
+	   		$("#anticipo-ramo").val('');
+		}
 
 		// }fin ramo xxx
 
 		// recuerdos {
+		ceremoniaRecuerdos();
 		$('#abrir-recuerdos').on('click',function(e){
 			seccion='recuerdos';
 			abrirPanel(seccion);
@@ -1225,10 +1571,90 @@
 			cerrarPanel(seccion);
 			e.preventDefault();
 		});
+		$('#ok-recuerdos').on('click',function(e){
+   			seccion='recuerdos';
+   			saveRecuerdos();
+   			cerrarPanel(seccion);
+   			e.preventDefault();
+   		});
+
+		function saveRecuerdos(){
+   			//declaración de variables para manejo de datos
+   			var costo;
+   			var anticipo;
+   			var saldo='N/A';
+
+   			window.localStorage.setItem("costo-recuerdos", $("#costo-recuerdos").val());//guarda costo
+   			costo = window.localStorage.getItem('costo-recuerdos');//asigna valor guardado de costo a variable local
+   			anticipo= $("#anticipo-recuerdos").val();//asigna valor del campo de anticipo a variable local
+   			window.localStorage.setItem("fecha-recuerdos",$("#fecha-recuerdos").val());//guarda fecha
+   			
+   			if(costo!=''){//si costo es difrente a una cadena vacía...
+				if(typeof window.localStorage.getItem('saldo-recuerdos')=='object'){//...y si lo guardado en saldo-recuerdos es de tipo object
+					saldo=costo;//entonces saldo es igual al costo
+				}else if(typeof window.localStorage.getItem('saldo-recuerdos')=='string'){//...y si lo guardado en saldo-recuerdos es de tipo string
+					if(window.localStorage.getItem('saldo-recuerdos')==''){//...y si saldo Recuerdos es igual a cadena vacia
+						saldo=costo;//entonces saldo es igual al costo
+					}else{//si no, saldo es igual a lo guardado en saldo-recuerdos
+						saldo=window.localStorage.getItem('saldo-recuerdos');
+					}
+				}
+				if(anticipo!=''){//Si anticipo es diferente a vacío
+	   				window.localStorage.setItem("anticipo-recuerdos", anticipo);//guarda anticipo
+	   				saldo = parseInt(saldo,10)-parseInt(anticipo,10);//saldo local es igual a costo menos anticipo
+	   				window.localStorage.setItem("saldo-recuerdos",saldo);//guarda el saldo
+				}else{
+					window.localStorage.setItem("saldo-recuerdos",saldo);//guarda el saldo
+				}
+			}
+
+			window.localStorage.setItem("init", 1);//guarda init
+   			if(saldo=='0'){//Si monto guardado es igual a costo guardado
+	   			document.getElementById("saldo-recuerdos").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
+	   		}
+	   		ceremoniaRecuerdos();
+	   		calculoCeremonia();
+   		}
+
+   		function ceremoniaRecuerdos(){
+   			costoRecuerdos=window.localStorage.getItem("costo-recuerdos");
+			saldoRecuerdos=window.localStorage.getItem("saldo-recuerdos");
+			fechaRecuerdos=window.localStorage.getItem("fecha-recuerdos");
+
+			if(costoRecuerdos!==null){
+				document.getElementById("rec-spec-c").innerHTML=""+costoRecuerdos;
+			}else{
+				document.getElementById("rec-spec-c").innerHTML="N/A";
+				costoRecuerdos=0;
+			}
+			if(saldoRecuerdos!==null){
+				document.getElementById("rec-spec-s").innerHTML=""+saldoRecuerdos;
+				document.getElementById("saldo-recuerdos").innerHTML=""+saldoRecuerdos;
+				if(saldoRecuerdos == '0'){
+					document.getElementById("rec-spec-s").innerHTML="Liquidado!";
+					document.getElementById("saldo-recuerdos").innerHTML="Liquidado!";
+				}
+			}else{
+				document.getElementById("rec-spec-s").innerHTML="N/A";
+				document.getElementById("saldo-recuerdos").innerHTML="N/A";
+				saldoRecuerdos=0;
+			}
+			if(fechaRecuerdos!==null){
+				document.getElementById("rec-spec-f").innerHTML=""+fechaRecuerdos;
+			}else{
+				document.getElementById("rec-spec-f").innerHTML="N/A";
+			}
+			if(costoRecuerdos!='0'){
+	   			$("#costo-recuerdos").val(costoRecuerdos);//muestra el costo guardado del costo.
+	   		}
+	   		$("#fecha-recuerdos").val(fechaRecuerdos);//muestra la fecha para liquidación.
+	   		$("#anticipo-recuerdos").val('');
+		}
 
 		// }fin recuerdos xxx
 
 		// otros1 {
+		ceremoniaOtros1();
 		$('#abrir-otros1').on('click',function(e){
 			seccion='otros1';
 			abrirPanel(seccion);
@@ -1239,10 +1665,90 @@
 			cerrarPanel(seccion);
 			e.preventDefault();
 		});
+		$('#ok-otros1').on('click',function(e){
+   			seccion='otros1';
+   			saveOtros1();
+   			cerrarPanel(seccion);
+   			e.preventDefault();
+   		});
+
+		function saveOtros1(){
+   			//declaración de variables para manejo de datos
+   			var costo;
+   			var anticipo;
+   			var saldo='N/A';
+
+   			window.localStorage.setItem("costo-otros1", $("#costo-otros1").val());//guarda costo
+   			costo = window.localStorage.getItem('costo-otros1');//asigna valor guardado de costo a variable local
+   			anticipo= $("#anticipo-otros1").val();//asigna valor del campo de anticipo a variable local
+   			window.localStorage.setItem("fecha-otros1",$("#fecha-otros1").val());//guarda fecha
+   			
+   			if(costo!=''){//si costo es difrente a una cadena vacía...
+				if(typeof window.localStorage.getItem('saldo-otros1')=='object'){//...y si lo guardado en saldo-otros1 es de tipo object
+					saldo=costo;//entonces saldo es igual al costo
+				}else if(typeof window.localStorage.getItem('saldo-otros1')=='string'){//...y si lo guardado en saldo-otros1 es de tipo string
+					if(window.localStorage.getItem('saldo-otros1')==''){//...y si saldo Otros1 es igual a cadena vacia
+						saldo=costo;//entonces saldo es igual al costo
+					}else{//si no, saldo es igual a lo guardado en saldo-otros1
+						saldo=window.localStorage.getItem('saldo-otros1');
+					}
+				}
+				if(anticipo!=''){//Si anticipo es diferente a vacío
+	   				window.localStorage.setItem("anticipo-otros1", anticipo);//guarda anticipo
+	   				saldo = parseInt(saldo,10)-parseInt(anticipo,10);//saldo local es igual a costo menos anticipo
+	   				window.localStorage.setItem("saldo-otros1",saldo);//guarda el saldo
+				}else{
+					window.localStorage.setItem("saldo-otros1",saldo);//guarda el saldo
+				}
+			}
+
+			window.localStorage.setItem("init", 1);//guarda init
+   			if(saldo=='0'){//Si monto guardado es igual a costo guardado
+	   			document.getElementById("saldo-otros1").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
+	   		}
+	   		ceremoniaOtros1();
+	   		calculoCeremonia();
+   		}
+
+   		function ceremoniaOtros1(){
+   			costoOtros1=window.localStorage.getItem("costo-otros1");
+			saldoOtros1=window.localStorage.getItem("saldo-otros1");
+			fechaOtros1=window.localStorage.getItem("fecha-otros1");
+
+			if(costoOtros1!==null){
+				document.getElementById("ot1-spec-c").innerHTML=""+costoOtros1;
+			}else{
+				document.getElementById("ot1-spec-c").innerHTML="N/A";
+				costoOtros1=0;
+			}
+			if(saldoOtros1!==null){
+				document.getElementById("ot1-spec-s").innerHTML=""+saldoOtros1;
+				document.getElementById("saldo-otros1").innerHTML=""+saldoOtros1;
+				if(saldoOtros1 == '0'){
+					document.getElementById("ot1-spec-s").innerHTML="Liquidado!";
+					document.getElementById("saldo-otros1").innerHTML="Liquidado!";
+				}
+			}else{
+				document.getElementById("ot1-spec-s").innerHTML="N/A";
+				document.getElementById("saldo-otros1").innerHTML="N/A";
+				saldoOtros1=0;
+			}
+			if(fechaOtros1!==null){
+				document.getElementById("ot1-spec-f").innerHTML=""+fechaOtros1;
+			}else{
+				document.getElementById("ot1-spec-f").innerHTML="N/A";
+			}
+			if(costoOtros1!='0'){
+	   			$("#costo-otros1").val(costoOtros1);//muestra el costo guardado del costo.
+	   		}
+	   		$("#fecha-otros1").val(fechaOtros1);//muestra la fecha para liquidación.
+	   		$("#anticipo-otros1").val('');
+		}
 
 		// }fin otros1 xxx
 
 		// otros2 {
+		ceremoniaOtros2();
 		$('#abrir-otros2').on('click',function(e){
 			seccion='otros2';
 			abrirPanel(seccion);
@@ -1253,17 +1759,96 @@
 			cerrarPanel(seccion);
 			e.preventDefault();
 		});
+		$('#ok-otros2').on('click',function(e){
+   			seccion='otros2';
+   			saveOtros2();
+   			cerrarPanel(seccion);
+   			e.preventDefault();
+   		});
+
+		function saveOtros2(){
+   			//declaración de variables para manejo de datos
+   			var costo;
+   			var anticipo;
+   			var saldo='N/A';
+
+   			window.localStorage.setItem("costo-otros2", $("#costo-otros2").val());//guarda costo
+   			costo = window.localStorage.getItem('costo-otros2');//asigna valor guardado de costo a variable local
+   			anticipo= $("#anticipo-otros2").val();//asigna valor del campo de anticipo a variable local
+   			window.localStorage.setItem("fecha-otros2",$("#fecha-otros2").val());//guarda fecha
+   			
+   			if(costo!=''){//si costo es difrente a una cadena vacía...
+				if(typeof window.localStorage.getItem('saldo-otros2')=='object'){//...y si lo guardado en saldo-otros2 es de tipo object
+					saldo=costo;//entonces saldo es igual al costo
+				}else if(typeof window.localStorage.getItem('saldo-otros2')=='string'){//...y si lo guardado en saldo-otros2 es de tipo string
+					if(window.localStorage.getItem('saldo-otros2')==''){//...y si saldo Otros2 es igual a cadena vacia
+						saldo=costo;//entonces saldo es igual al costo
+					}else{//si no, saldo es igual a lo guardado en saldo-otros2
+						saldo=window.localStorage.getItem('saldo-otros2');
+					}
+				}
+				if(anticipo!=''){//Si anticipo es diferente a vacío
+	   				window.localStorage.setItem("anticipo-otros2", anticipo);//guarda anticipo
+	   				saldo = parseInt(saldo,20)-parseInt(anticipo,20);//saldo local es igual a costo menos anticipo
+	   				window.localStorage.setItem("saldo-otros2",saldo);//guarda el saldo
+				}else{
+					window.localStorage.setItem("saldo-otros2",saldo);//guarda el saldo
+				}
+			}
+
+			window.localStorage.setItem("init", 2);//guarda init
+   			if(saldo=='0'){//Si monto guardado es igual a costo guardado
+	   			document.getElementById("saldo-otros2").innerHTML="Liquidado!";//se muestra en pantalla como liquidado
+	   		}
+	   		ceremoniaOtros2();
+	   		calculoCeremonia();
+   		}
+
+   		function ceremoniaOtros2(){
+   			costoOtros2=window.localStorage.getItem("costo-otros2");
+			saldoOtros2=window.localStorage.getItem("saldo-otros2");
+			fechaOtros2=window.localStorage.getItem("fecha-otros2");
+
+			if(costoOtros2!==null){
+				document.getElementById("ot2-spec-c").innerHTML=""+costoOtros2;
+			}else{
+				document.getElementById("ot2-spec-c").innerHTML="N/A";
+				costoOtros2=0;
+			}
+			if(saldoOtros2!==null){
+				document.getElementById("ot2-spec-s").innerHTML=""+saldoOtros2;
+				document.getElementById("saldo-otros2").innerHTML=""+saldoOtros2;
+				if(saldoOtros2 == '0'){
+					document.getElementById("ot2-spec-s").innerHTML="Liquidado!";
+					document.getElementById("saldo-otros2").innerHTML="Liquidado!";
+				}
+			}else{
+				document.getElementById("ot2-spec-s").innerHTML="N/A";
+				document.getElementById("saldo-otros2").innerHTML="N/A";
+				saldoOtros2=0;
+			}
+			if(fechaOtros2!==null){
+				document.getElementById("ot2-spec-f").innerHTML=""+fechaOtros2;
+			}else{
+				document.getElementById("ot2-spec-f").innerHTML="N/A";
+			}
+			if(costoOtros2!='0'){
+	   			$("#costo-otros2").val(costoOtros2);//muestra el costo guardado del costo.
+	   		}
+	   		$("#fecha-otros2").val(fechaOtros2);//muestra la fecha para liquidación.
+	   		$("#anticipo-otros2").val('');
+		}
 
 		// }fin otros2 xxx
 		function calculoCeremonia(){
-		//costo iglesia
-	   		if(typeof window.localStorage.getItem('costo-iglesia')=='object'){//si lo que hay guardado en costo-iglesia es de tipo objeto
-	   			costoIglesia='0';//entonces costoIglesia es igual a 0
-	   		}else if(typeof window.localStorage.getItem('costo-iglesia')=='string'){//pero si lo que hay en costo-iglesia es de tipo string...
-	   			if(window.localStorage.getItem('costo-iglesia')==''){//...y es igual a vacío
-	   				costoIglesia='0';//entonces costoIglesia tambien es igual a 0
-	   			}else{//para todos los demás casos de costo-iglesia
-	   				costoIglesia=parseInt(window.localStorage.getItem('costo-iglesia'),10);//costoIglesia es igual a lo guardado en costo-iglesia.
+		//costo donativo
+	   		if(typeof window.localStorage.getItem('costo-donativo')=='object'){//si lo que hay guardado en costo-donativo es de tipo objeto
+	   			costoDonativo='0';//entonces costoDonativo es igual a 0
+	   		}else if(typeof window.localStorage.getItem('costo-donativo')=='string'){//pero si lo que hay en costo-donativo es de tipo string...
+	   			if(window.localStorage.getItem('costo-donativo')==''){//...y es igual a vacío
+	   				costoDonativo='0';//entonces costoDonativo tambien es igual a 0
+	   			}else{//para todos los demás casos de costo-donativo
+	   				costoDonativo=parseInt(window.localStorage.getItem('costo-donativo'),10);//costoDonativo es igual a lo guardado en costo-donativo.
 	   			}
 	   		}
 	   	//costo musica
@@ -1286,16 +1871,86 @@
 		   			costoDecoracion=parseInt(window.localStorage.getItem('costo-decoracion'),10);
 		   		}
 		   	}
-	   	//saldo iglesia
-	   		if(typeof window.localStorage.getItem('saldo-iglesia')=='object'){//si lo que hay guardado en saldo-iglesia es de tipo objeto
-	   			saldoIglesia='0';//entonces saldo-iglesia es igual a 0
-	   		}else if(typeof window.localStorage.getItem('saldo-iglesia')=='string'){//pero si lo que hay en saldo-iglesia es de tipo string...
-	   			if(window.localStorage.getItem('saldo-iglesia')==''){//...y es igual a vacío
-	   				saldoIglesia='0';//entonces saldo musica tambien es igual a 0
-	   			}else if(window.localStorage.getItem('saldo-iglesia')=='N/A'){
-	   				saldoIglesia='0';
-	   			}else{//para todos los demás casos de saldo-iglesia
-	   				saldoIglesia=window.localStorage.getItem('saldo-iglesia');//saldoIglesia es igual a lo guardado en saldo-iglesia.
+		//costo anillos
+	   		if(typeof window.localStorage.getItem('costo-anillos')=='object'){
+	   			costoAnillos='0';
+	   		}else if(typeof window.localStorage.getItem('costo-anillos')=='string'){
+	   			if(window.localStorage.getItem('costo-anillos')==''){
+	   				costoAnillos='0';
+	   			}else{
+		   			costoAnillos=parseInt(window.localStorage.getItem('costo-anillos'),10);
+		   		}
+		   	}
+		//costo rosario
+	   		if(typeof window.localStorage.getItem('costo-rosario')=='object'){
+	   			costoRosario='0';
+	   		}else if(typeof window.localStorage.getItem('costo-rosario')=='string'){
+	   			if(window.localStorage.getItem('costo-rosario')==''){
+	   				costoRosario='0';
+	   			}else{
+		   			costoRosario=parseInt(window.localStorage.getItem('costo-rosario'),10);
+		   		}
+		   	}
+		//costo Biblia
+	   		if(typeof window.localStorage.getItem('costo-biblia')=='object'){
+	   			costoBiblia='0';
+	   		}else if(typeof window.localStorage.getItem('costo-biblia')=='string'){
+	   			if(window.localStorage.getItem('costo-biblia')==''){
+	   				costoBiblia='0';
+	   			}else{
+		   			costoBiblia=parseInt(window.localStorage.getItem('costo-biblia'),10);
+		   		}
+		   	}
+		//costo Renta
+	   		if(typeof window.localStorage.getItem('costo-renta')=='object'){
+	   			costoRenta='0';
+	   		}else if(typeof window.localStorage.getItem('costo-renta')=='string'){
+	   			if(window.localStorage.getItem('costo-renta')==''){
+	   				costoRenta='0';
+	   			}else{
+		   			costoRenta=parseInt(window.localStorage.getItem('costo-renta'),10);
+		   		}
+		   	}
+		//costo Recuerdos
+	   		if(typeof window.localStorage.getItem('costo-recuerdos')=='object'){
+	   			costoRecuerdos='0';
+	   		}else if(typeof window.localStorage.getItem('costo-recuerdos')=='string'){
+	   			if(window.localStorage.getItem('costo-recuerdos')==''){
+	   				costoRecuerdos='0';
+	   			}else{
+		   			costoRecuerdos=parseInt(window.localStorage.getItem('costo-recuerdos'),10);
+		   		}
+		   	}
+		//costo Otros1
+	   		if(typeof window.localStorage.getItem('costo-otros1')=='object'){
+	   			costoOtros1='0';
+	   		}else if(typeof window.localStorage.getItem('costo-otros1')=='string'){
+	   			if(window.localStorage.getItem('costo-otros1')==''){
+	   				costoOtros1='0';
+	   			}else{
+		   			costoOtros1=parseInt(window.localStorage.getItem('costo-otros1'),10);
+		   		}
+		   	}
+		//costo Otros2
+	   		if(typeof window.localStorage.getItem('costo-otros2')=='object'){
+	   			costoOtros2='0';
+	   		}else if(typeof window.localStorage.getItem('costo-otros2')=='string'){
+	   			if(window.localStorage.getItem('costo-otros2')==''){
+	   				costoOtros2='0';
+	   			}else{
+		   			costoOtros2=parseInt(window.localStorage.getItem('costo-otros2'),10);
+		   		}
+		   	}
+	   	//saldo donativo
+	   		if(typeof window.localStorage.getItem('saldo-donativo')=='object'){//si lo que hay guardado en saldo-donativo es de tipo objeto
+	   			saldoDonativo='0';//entonces saldo-donativo es igual a 0
+	   		}else if(typeof window.localStorage.getItem('saldo-donativo')=='string'){//pero si lo que hay en saldo-donativo es de tipo string...
+	   			if(window.localStorage.getItem('saldo-donativo')==''){//...y es igual a vacío
+	   				saldoDonativo='0';//entonces saldo donativo tambien es igual a 0
+	   			}else if(window.localStorage.getItem('saldo-donativo')=='N/A'){
+	   				saldoDonativo='0';
+	   			}else{//para todos los demás casos de saldo-donativo
+	   				saldoDonativo=window.localStorage.getItem('saldo-donativo');//saldodonativo es igual a lo guardado en saldo-donativo.
 	   			}
 	   		}
 	   	//saldo musica
@@ -1322,9 +1977,93 @@
 	   				saldoDecoracion=window.localStorage.getItem('saldo-decoracion');//saldoDecoracion es igual a lo guardado en saldo-decoracion.
 	   			}
 	   		}
+	   	//saldo anillos
+	   		if(typeof window.localStorage.getItem('saldo-anillos')=='object'){//si lo que hay guardado en saldo-anillos es de tipo objeto
+	   			saldoAnillos='0';//entonces saldo-anillos es igual a 0
+	   		}else if(typeof window.localStorage.getItem('saldo-anillos')=='string'){//pero si lo que hay en saldo-anillos es de tipo string...
+	   			if(window.localStorage.getItem('saldo-anillos')==''){//...y es igual a vacío
+	   				saldoAnillos='0';//entonces saldo anillos tambien es igual a 0
+	   			}else if(window.localStorage.getItem('saldo-anillos')=='N/A'){
+	   				saldoAnillos='0';
+	   			}else{//para todos los demás casos de saldo-anillos
+	   				saldoAnillos=window.localStorage.getItem('saldo-anillos');//saldoAnillos es igual a lo guardado en saldo-anillos.
+	   			}
+	   		}
+	   	//saldo rosario
+	   		if(typeof window.localStorage.getItem('saldo-rosario')=='object'){//si lo que hay guardado en saldo-rosario es de tipo objeto
+	   			saldoRosario='0';//entonces saldo-rosario es igual a 0
+	   		}else if(typeof window.localStorage.getItem('saldo-rosario')=='string'){//pero si lo que hay en saldo-rosario es de tipo string...
+	   			if(window.localStorage.getItem('saldo-rosario')==''){//...y es igual a vacío
+	   				saldoRosario='0';//entonces saldo rosario tambien es igual a 0
+	   			}else if(window.localStorage.getItem('saldo-rosario')=='N/A'){
+	   				saldoRosario='0';
+	   			}else{//para todos los demás casos de saldo-rosario
+	   				saldoRosario=window.localStorage.getItem('saldo-rosario');//saldoRosario es igual a lo guardado en saldo-rosario.
+	   			}
+	   		}
+	   	//saldo Biblia
+	   		if(typeof window.localStorage.getItem('saldo-biblia')=='object'){//si lo que hay guardado en saldo-biblia es de tipo objeto
+	   			saldoBiblia='0';//entonces saldo-biblia es igual a 0
+	   		}else if(typeof window.localStorage.getItem('saldo-biblia')=='string'){//pero si lo que hay en saldo-biblia es de tipo string...
+	   			if(window.localStorage.getItem('saldo-biblia')==''){//...y es igual a vacío
+	   				saldoBiblia='0';//entonces saldo Biblia tambien es igual a 0
+	   			}else if(window.localStorage.getItem('saldo-biblia')=='N/A'){
+	   				saldoBiblia='0';
+	   			}else{//para todos los demás casos de saldo-biblia
+	   				saldoBiblia=window.localStorage.getItem('saldo-biblia');//saldoRosario es igual a lo guardado en saldo-biblia.
+	   			}
+	   		}
+	   	//saldo Renta
+	   		if(typeof window.localStorage.getItem('saldo-renta')=='object'){//si lo que hay guardado en saldo-renta es de tipo objeto
+	   			saldoRenta='0';//entonces saldo-renta es igual a 0
+	   		}else if(typeof window.localStorage.getItem('saldo-renta')=='string'){//pero si lo que hay en saldo-renta es de tipo string...
+	   			if(window.localStorage.getItem('saldo-renta')==''){//...y es igual a vacío
+	   				saldoRenta='0';//entonces saldo Renta tambien es igual a 0
+	   			}else if(window.localStorage.getItem('saldo-renta')=='N/A'){
+	   				saldoRenta='0';
+	   			}else{//para todos los demás casos de saldo-renta
+	   				saldoRenta=window.localStorage.getItem('saldo-renta');//saldoRosario es igual a lo guardado en saldo-renta.
+	   			}
+	   		}
+	   	//saldo Recuerdos
+	   		if(typeof window.localStorage.getItem('saldo-recuerdos')=='object'){//si lo que hay guardado en saldo-recuerdos es de tipo objeto
+	   			saldoRecuerdos='0';//entonces saldo-recuerdos es igual a 0
+	   		}else if(typeof window.localStorage.getItem('saldo-recuerdos')=='string'){//pero si lo que hay en saldo-recuerdos es de tipo string...
+	   			if(window.localStorage.getItem('saldo-recuerdos')==''){//...y es igual a vacío
+	   				saldoRecuerdos='0';//entonces saldo Recuerdos tambien es igual a 0
+	   			}else if(window.localStorage.getItem('saldo-recuerdos')=='N/A'){
+	   				saldoRecuerdos='0';
+	   			}else{//para todos los demás casos de saldo-recuerdos
+	   				saldoRecuerdos=window.localStorage.getItem('saldo-recuerdos');//saldoRosario es igual a lo guardado en saldo-recuerdos.
+	   			}
+	   		}
+	   	//saldo Otros1
+	   		if(typeof window.localStorage.getItem('saldo-otros1')=='object'){//si lo que hay guardado en saldo-otros1 es de tipo objeto
+	   			saldoOtros1='0';//entonces saldo-otros1 es igual a 0
+	   		}else if(typeof window.localStorage.getItem('saldo-otros1')=='string'){//pero si lo que hay en saldo-otros1 es de tipo string...
+	   			if(window.localStorage.getItem('saldo-otros1')==''){//...y es igual a vacío
+	   				saldoOtros1='0';//entonces saldo Otros1 tambien es igual a 0
+	   			}else if(window.localStorage.getItem('saldo-otros1')=='N/A'){
+	   				saldoOtros1='0';
+	   			}else{//para todos los demás casos de saldo-otros1
+	   				saldoOtros1=window.localStorage.getItem('saldo-otros1');//saldoRosario es igual a lo guardado en saldo-otros1.
+	   			}
+	   		}
+	   	//saldo Otros2
+	   		if(typeof window.localStorage.getItem('saldo-otros2')=='object'){//si lo que hay guardado en saldo-otros2 es de tipo objeto
+	   			saldoOtros2='0';//entonces saldo-otros2 es igual a 0
+	   		}else if(typeof window.localStorage.getItem('saldo-otros2')=='string'){//pero si lo que hay en saldo-otros2 es de tipo string...
+	   			if(window.localStorage.getItem('saldo-otros2')==''){//...y es igual a vacío
+	   				saldoOtros2='0';//entonces saldo Otros2 tambien es igual a 0
+	   			}else if(window.localStorage.getItem('saldo-otros2')=='N/A'){
+	   				saldoOtros2='0';
+	   			}else{//para todos los demás casos de saldo-otros2
+	   				saldoOtros2=window.localStorage.getItem('saldo-otros2');//saldoRosario es igual a lo guardado en saldo-otros2.
+	   			}
+	   		}
 
-	   		costoTotalCeremonia=parseInt(costoIglesia,10)+parseInt(costoMusica,10)+parseInt(costoDecoracion,10);
-	   		saldoTotalCeremonia=parseInt(saldoIglesia,10)+parseInt(saldoMusica,10)+parseInt(saldoDecoracion,10);
+	   		costoTotalCeremonia=parseInt(costoDonativo,10)+parseInt(costoMusica,10)+parseInt(costoDecoracion,10)+parseInt(costoAnillos,10)+parseInt(costoRosario,10)+parseInt(costoBiblia,10)+parseInt(costoRenta,10)+parseInt(costoRecuerdos,10)+parseInt(costoOtros1,10)+parseInt(costoOtros2,10);
+	   		saldoTotalCeremonia=parseInt(saldoDonativo,10)+parseInt(saldoMusica,10)+parseInt(saldoDecoracion,10)+parseInt(saldoAnillos,10)+parseInt(saldoRosario,10)+parseInt(saldoBiblia,10)+parseInt(saldoRenta,10)+parseInt(saldoRecuerdos,10)+parseInt(saldoOtros1,10)+parseInt(saldoOtros2,10);
 
 	   		if(costoTotalCeremonia!==null){
 	   			document.getElementById("costo-total-ceremonia").innerHTML="Costo: $"+costoTotalCeremonia;
@@ -1335,8 +2074,6 @@
 
 	   		if(saldoTotalCeremonia===null){
 	   			document.getElementById("saldo-total-ceremonia").innerHTML="Saldo: $0";
-	   		// }else if(saldoTotalCeremonia==costoTotalCeremonia){
-	   		// 	document.getElementById("saldo-total-ceremonia").innerHTML="Saldo: Liquidado!";
 			}else{
 				if(saldoTotalCeremonia==costoTotalCeremonia){//si saldoTotalCeremonia es igual a costoTotalCeremonia...
 					if(costoTotalCeremonia==0){//...y costoTotalCeremonia es igual a 0
@@ -1345,6 +2082,7 @@
 					window.localStorage.setItem('saldo-total-ceremonia',saldoTotalCeremonia);
 				}else if(saldoTotalCeremonia==0){//si saldoTotalCeremonia es igual a 0
 						document.getElementById("saldo-total-ceremonia").innerHTML="Saldo: Liquidado!";//entonces saldo: liquidado!
+						window.localStorage.setItem('saldo-total-ceremonia',saldoTotalCeremonia);
 				}else{//si saldoTotalCeremonia es diferente de costoTotalCeremonia
 					document.getElementById("saldo-total-ceremonia").innerHTML="Saldo: $"+saldoTotalCeremonia;// saldo: saldoTotalCeremonia
 					window.localStorage.setItem('saldo-total-ceremonia',saldoTotalCeremonia);
@@ -1383,7 +2121,7 @@
 
    	//TOTALES GENERAL
    	function calculoGeneral(){
-   	//costo iglesia
+   	//costo ceremonia
    		if(typeof window.localStorage.getItem('costo-total-ceremonia')=='object'){//si lo que hay guardado en costo-total-ceremonia es de tipo objeto
    			costoTotalCeremonia='0';//entonces costoTotalCeremonia es igual a 0
    		}else if(typeof window.localStorage.getItem('costo-total-ceremonia')=='string'){//pero si lo que hay en costo-total-ceremonia es de tipo string...
@@ -1393,7 +2131,7 @@
    				costoTotalCeremonia=parseInt(window.localStorage.getItem('costo-total-ceremonia'),10);//costoTotalCeremonia es igual a lo guardado en costo-total-ceremonia.
    			}
    		}
-   	//saldo iglesia
+   	//saldo ceremonia
    		if(typeof window.localStorage.getItem('saldo-total-ceremonia')=='object'){//si lo que hay guardado en saldo-total-ceremonia es de tipo objeto
    			saldoTotalCeremonia='0';//entonces saldo-total-ceremonia es igual a 0
    		}else if(typeof window.localStorage.getItem('saldo-total-ceremonia')=='string'){//pero si lo que hay en saldo-total-ceremonia es de tipo string...
