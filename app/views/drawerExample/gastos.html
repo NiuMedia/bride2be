@@ -455,12 +455,14 @@
 		  	</div>
 		  	<br>
 	  	</div><!-- cont-ceremonia -->
-	  	<label id="costo-total-ceremonia">Costo:</label>
-		<label id="saldo-total-ceremonia">Saldo:</label>
+	  	<div id="costo-semitotal" style="clear:both">
+	  		<label id="costo-total-ceremonia">Costo:</label>
+			<label id="saldo-total-ceremonia">Saldo:</label>
+	  	</div>
 	</div>
 <!-- END card CEREMONIA RELIGIOSA -->
 <!-- CEREMONIA CIVIL -->
-	  <div class="card">
+	<div class="card">
 	  	<div id="civil-header" style="clear:both;">
 			<div id="titulo-civil" style="float:left"><h2>Ceremonia Civil</h2></div>
 			<div id="btn-civil" style="float:right;clear:right;">
@@ -468,9 +470,290 @@
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-civil" style="display:none"><img src="/icons/br_up.png" width="32px"></button>
 			</div>
 	  	</div>
-	  	<label id="costo-total-civil">Costo:</label>
-		<label id="saldo-total-civil">Saldo:</label>
-	  </div>
+	  	<div id="cont-civil" style="display:none">
+	  		<!-- derecho -->
+		  	<div id="civil-content" style="clear:both">
+			  	<div id="titulo-civil">
+			  		<div style="float:left"><h3>Pago de Derechos</h3></div>
+			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-civil">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-civil" style="display:none">Cerrar</button></div>
+			  	</div>
+			  	<div id="civil-specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="civ-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="civ-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="civ-spec-f"></label></div>
+			  	</div>
+			  	<div id="ceremonia-civil" style="display:none">
+			  	<table>
+				  	<tr>
+				  		<td><label for="costo-civil">Costo</label></td>
+				  		<td><label>Saldo</label><br/></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="costo-civil" id="costo-civil" style="width:80%"></td>
+						<td><label id="saldo-civil" style="width:150px;font-size:1.5em"></label></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="fecha-civil">Fecha para<br />liquidación</label></td>
+				  		<td><input type="date" class="topcoat-text-input center" name="fecha-civil" id="fecha-civil" style="width:99%"></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="anticipo-civil">Anticipo</label></td>
+				  		<td></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-civil" id="anticipo-civil" style="width:80%"></td>
+				  		<td><button class="topcoat-button--cta" id="ok-civil">Aceptar</button></td>
+				  	</tr>
+			  	</table>
+			  	</div>
+			  	<br><br>
+		  	</div>
+
+		  	<!-- Juez -->
+		  	<div id="juez-content" style="clear:both">
+			  	<div id="titulo-juez">
+			  		<div style="float:left"><h3>Juez (si es a domicilio)</h3></div>
+			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-juez">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-juez" style="display:none">Cerrar</button></div>
+			  	</div>
+			  	<div id="juez-specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="jue-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="jue-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="jue-spec-f"></label></div>
+			  	</div>
+			  	<div id="ceremonia-juez" style="display:none">
+			  	<table>
+				  	<tr>
+				  		<td><label for="costo-juez">Costo</label></td>
+				  		<td><label>Saldo</label><br/></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="costo-juez" id="costo-juez" style="width:80%"></td>
+						<td><label id="saldo-juez" style="width:150px;font-size:1.5em"></label></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="fecha-juez">Fecha para<br />liquidación</label></td>
+				  		<td><input type="date" class="topcoat-text-input center" name="fecha-juez" id="fecha-juez" style="width:99%"></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="anticipo-juez">Anticipo</label></td>
+				  		<td></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-juez" id="anticipo-juez" style="width:80%"></td>
+				  		<td><button class="topcoat-button--cta" id="ok-juez">Aceptar</button></td>
+				  	</tr>
+			  	</table>
+			  	</div>
+			  	<br><br>
+		  	</div>
+
+		  	<!-- Atuendo -->
+			<div id="atuendo-content" style="clear:both">
+				<div id="titulo-atuendo">
+			  		<div style="float:left"><h3>Atuendo para la ocasión</h3></div>
+			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-atuendo">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-atuendo" style="display:none">Cerrar</button>
+			  		</div>
+				  	<div id="atuendo-specs" style="clear:both;">
+				  		<div style="width:33%;float:left">Costo<br /><label id="atu-spec-c"></label></div>
+				  		<div style="width:33%;float:left">Saldo<br /><label id="atu-spec-s"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="atu-spec-f"></label></div>
+				  	</div>
+			  	</div>
+			  	<div id="ceremonia-atuendo" style="display:none">
+			  	<table>
+				  	<tr>
+				  		<td><label for="costo-atuendo">Costo</label></td>
+				  		<td><label>Saldo</label><br/></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="costo-atuendo" id="costo-atuendo" style="width:80%"></td>
+						<td><label id="saldo-atuendo" style="width:150px;font-size:1.5em"></label></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="fecha-atuendo">Fecha para<br />liquidación</label></td>
+				  		<td><input type="date" class="topcoat-text-input center" name="fecha-atuendo" id="fecha-atuendo" style="width:99%"></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="anticipo-atuendo">Anticipo</label></td>
+				  		<td></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-atuendo" id="anticipo-atuendo" style="width:80%"></td>
+				  		<td><button class="topcoat-button--cta" id="ok-atuendo">Aceptar</button></td>
+				  	</tr>
+			  	</table>
+			  	</div>
+			  	<br><br>
+		  	</div>
+
+		  	<!-- Analisis -->
+		  	<div id="analisis-content" style="clear:both">
+				<div id="titulo-analisis">
+			  		<div style="float:left"><h3>Análisis prenupciales</h3></div>
+			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-analisis">Editar</button>
+			  		<button class="topcoat-button--quiet" id="cerrar-analisis" style="display:none">Cerrar</button>
+			  	</div>
+				  	<div id="analisis-specs" style="clear:both;">
+				  		<div style="width:33%;float:left">Costo<br /><label id="ana-spec-c"></label></div>
+				  		<div style="width:33%;float:left">Saldo<br /><label id="ana-spec-s"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="ana-spec-f"></label></div>
+				  	</div>
+			  	</div>
+			  	<div id="ceremonia-analisis" style="display:none">
+			  	<table>
+				  	<tr>
+				  		<td><label for="costo-analisis">Costo</label></td>
+				  		<td><label>Saldo</label><br/></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="costo-analisis" id="costo-analisis" style="width:80%"></td>
+						<td><label id="saldo-analisis" style="width:150px;font-size:1.5em"></label></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="fecha-analisis">Fecha para<br />liquidación</label></td>
+				  		<td><input type="date" class="topcoat-text-input center" name="fecha-analisis" id="fecha-analisis" style="width:99%"></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="anticipo-analisis">Anticipo</label></td>
+				  		<td></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-analisis" id="anticipo-analisis" style="width:80%"></td>
+				  		<td><button class="topcoat-button--cta" id="ok-analisis">Aceptar</button></td>
+				  	</tr>
+			  	</table>
+			  	</div>
+			  	<br><br>
+		  	</div>
+
+		  	<!-- Fotografía -->
+		  	<div id="foto-content" style="clear:both">
+				<div id="titulo-foto">
+			  		<div style="float:left"><h3>Fotografía</h3></div>
+			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-foto">Editar</button>
+			  		<button class="topcoat-button--quiet" id="cerrar-foto" style="display:none">Cerrar</button>
+			  	</div>
+				  	<div id="foto-specs" style="clear:both;">
+				  		<div style="width:33%;float:left">Costo<br /><label id="fot-spec-c"></label></div>
+				  		<div style="width:33%;float:left">Saldo<br /><label id="fot-spec-s"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="fot-spec-f"></label></div>
+				  	</div>
+			  	</div>
+			  	<div id="ceremonia-foto" style="display:none">
+			  	<table>
+				  	<tr>
+				  		<td><label for="costo-foto">Costo</label></td>
+				  		<td><label>Saldo</label><br/></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="costo-foto" id="costo-foto" style="width:80%"></td>
+						<td><label id="saldo-foto" style="width:150px;font-size:1.5em"></label></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="fecha-foto">Fecha para<br />liquidación</label></td>
+				  		<td><input type="date" class="topcoat-text-input center" name="fecha-foto" id="fecha-foto" style="width:99%"></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="anticipo-foto">Anticipo</label></td>
+				  		<td></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-foto" id="anticipo-foto" style="width:80%"></td>
+				  		<td><button class="topcoat-button--cta" id="ok-foto">Aceptar</button></td>
+				  	</tr>
+			  	</table>
+			  	</div>
+			  	<br><br>
+		  	</div>
+	  	<!-- Otros3 -->
+		  	<div id="otros3-content" style="clear:both">
+				<div id="titulo-otros3">
+			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros2" id="concepto-otros2" value="Otros" style="width:150px;"></div>
+			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros3">Editar</button>
+			  		<button class="topcoat-button--quiet" id="cerrar-otros3" style="display:none">Cerrar</button>
+			  	</div>
+				  	<div id="otros3-specs" style="clear:both;">
+				  		<div style="width:33%;float:left">Costo<br /><label id="ot1-spec-c"></label></div>
+				  		<div style="width:33%;float:left">Saldo<br /><label id="ot1-spec-s"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="ot1-spec-f"></label></div>
+				  	</div>
+			  	</div>
+			  	<div id="ceremonia-otros3" style="display:none">
+			  	<table>
+				  	<tr>
+				  		<td><label for="costo-otros3">Costo</label></td>
+				  		<td><label>Saldo</label><br/></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="costo-otros3" id="costo-otros3" style="width:80%"></td>
+						<td><label id="saldo-otros3" style="width:150px;font-size:1.5em"></label></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="fecha-otros3">Fecha para<br />liquidación</label></td>
+				  		<td><input type="date" class="topcoat-text-input center" name="fecha-otros3" id="fecha-otros3" style="width:99%"></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="anticipo-otros3">Anticipo</label></td>
+				  		<td></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-otros3" id="anticipo-otros3" style="width:80%"></td>
+				  		<td><button class="topcoat-button--cta" id="ok-otros3">Aceptar</button></td>
+				  	</tr>
+			  	</table>
+			  	</div>
+			  	<br><br>
+		  	</div>
+			
+			<!-- Otros4 -->
+		  	<div id="otros4-content" style="clear:both">
+				<div id="titulo-otros4">
+			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros4" id="concepto-otros4" value="Otros" style="width:150px;"></div>
+			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros4">Editar</button>
+			  		<button class="topcoat-button--quiet" id="cerrar-otros4" style="display:none">Cerrar</button>
+			  	</div>
+				  	<div id="otros4-specs" style="clear:both;">
+				  		<div style="width:33%;float:left">Costo<br /><label id="ot2-spec-c"></label></div>
+				  		<div style="width:33%;float:left">Saldo<br /><label id="ot2-spec-s"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="ot2-spec-f"></label></div>
+				  	</div>
+			  	</div>
+			  	<div id="ceremonia-otros4" style="display:none">
+			  	<table>
+				  	<tr>
+				  		<td><label for="costo-otros4">Costo</label></td>
+				  		<td><label>Saldo</label><br/></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="costo-otros4" id="costo-otros4" style="width:80%"></td>
+						<td><label id="saldo-otros4" style="width:150px;font-size:1.5em"></label></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="fecha-otros4">Fecha para<br />liquidación</label></td>
+				  		<td><input type="date" class="topcoat-text-input center" name="fecha-otros4" id="fecha-otros4" style="width:99%"></td>
+				  	</tr>
+				  	<tr>
+				  		<td><label for="anticipo-otros4">Anticipo</label></td>
+				  		<td></td>
+				  	</tr>
+				  	<tr>
+				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-otros4" id="anticipo-otros4" style="width:80%"></td>
+				  		<td><button class="topcoat-button--cta" id="ok-otros4">Aceptar</button></td>
+				  	</tr>
+			  	</table>
+			  	</div>
+			  	<br><br>
+		  	</div>
+		  	<br>
+		</div>
+	  	<div id="costo-semitotal" style="clear:both">
+		  	<label id="costo-total-civil">Costo:</label>
+			<label id="saldo-total-civil">Saldo:</label>
+		</div>
+	</div>
 <!-- END card CEREMONIA CIVIL -->
 <!-- RECEPCION -->
 	  <div class="card">
@@ -482,8 +765,10 @@
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-recepcion" style="display:none"><img src="/icons/br_up.png" width="32px"></button>
 			</div>
 	  	</div>
-	  	<label id="costo-total-recepcion">Costo:</label>
-		<label id="saldo-total-recepcion">Saldo:</label>
+	  	<div id="costo-semitotal" style="clear:both">
+		  	<label id="costo-total-recepcion">Costo:</label>
+			<label id="saldo-total-recepcion">Saldo:</label>
+		</div>
 	  </div>
 <!-- END card RECEPCION -->
 	  <div class="card">
@@ -494,8 +779,10 @@
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-novio" style="display:none"><img src="/icons/br_up.png" width="32px"></button>
 			</div>
 	  	</div>
-	  	<label id="costo-total-novio">Costo:</label>
-		<label id="saldo-total-novio">Saldo:</label>
+	  	<div id="costo-semitotal" style="clear:both">
+		  	<label id="costo-total-novio">Costo:</label>
+			<label id="saldo-total-novio">Saldo:</label>
+		</div>
 	  </div>
 <!-- END card RECEPCION -->
 <!-- NOVIA -->
@@ -507,8 +794,10 @@
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-novia" style="display:none"><img src="/icons/br_up.png" width="32px"></button>
 			</div>
 	  	</div>
-	  	<label id="costo-total-novia">Costo:</label>
-		<label id="saldo-total-novia">Saldo:</label>
+	  	<div id="costo-semitotal" style="clear:both">
+		  	<label id="costo-total-novia">Costo:</label>
+			<label id="saldo-total-novia">Saldo:</label>
+		</div>
 	  </div>
 <!-- END card NOVIA-->
 <!-- LUNA DE MIEL -->
@@ -520,8 +809,10 @@
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-luna" style="display:none"><img src="/icons/br_up.png" width="32px"></button>
 			</div>
 	  	</div>
-	  	<label id="costo-total-luna">Costo:</label>
-		<label id="saldo-total-luna">Saldo:</label>
+	  	<div id="costo-semitotal" style="clear:both">
+		  	<label id="costo-total-luna">Costo:</label>
+			<label id="saldo-total-luna">Saldo:</label>
+		</div>
 	  </div>
 <!-- END card LUNA DE MIEL -->
 <!-- LA NUEVA CASA -->
@@ -533,8 +824,10 @@
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-casa" style="display:none"><img src="/icons/br_up.png" width="32px"></button>
 			</div>
 	  	</div>
-	  	<label id="costo-total-casa">Costo:</label>
-		<label id="saldo-total-casa">Saldo:</label>
+	  	<div id="costo-semitotal" style="clear:both">
+		  	<label id="costo-total-casa">Costo:</label>
+			<label id="saldo-total-casa">Saldo:</label>
+		</div>
 	  </div>
 <!-- END card LA NUEVA CASA -->
    </form>
@@ -544,222 +837,26 @@
    	$(document).ready(function(){
    		calculoGeneral();
    		function abrirSeccion(sec){
-   			switch(sec){
-   				case 'ceremonia':
-				document.getElementById("cont-ceremonia").style.display="block";
-				document.getElementById("abrir-ceremonia").style.display="none";
-				document.getElementById("cerrar-ceremonia").style.display="block";
-				break;
-				case 'civil':
-				document.getElementById("cont-civil").style.display="block";
-				document.getElementById("abrir-civil").style.display="none";
-				document.getElementById("cerrar-civil").style.display="block";
-				break;
-				case 'recepcion':
-				document.getElementById("cont-recepcion").style.display="block";
-				document.getElementById("abrir-recepcion").style.display="none";
-				document.getElementById("cerrar-recepcion").style.display="block";
-				break;
-				case 'novio':
-				document.getElementById("cont-novio").style.display="block";
-				document.getElementById("abrir-novio").style.display="none";
-				document.getElementById("cerrar-novio").style.display="block";
-				break;
-				case 'novia':
-				document.getElementById("cont-novia").style.display="block";
-				document.getElementById("abrir-novia").style.display="none";
-				document.getElementById("cerrar-novia").style.display="block";
-				break;
-				case 'luna':
-				document.getElementById("cont-luna").style.display="block";
-				document.getElementById("abrir-luna").style.display="none";
-				document.getElementById("cerrar-luna").style.display="block";
-				break;
-				case 'casa':
-				document.getElementById("cont-casa").style.display="block";
-				document.getElementById("abrir-casa").style.display="none";
-				document.getElementById("cerrar-casa").style.display="block";
-				break;
-   			}
+			document.getElementById("cont-"+sec+"").style.display="block";
+			document.getElementById("abrir-"+sec+"").style.display="none";
+			document.getElementById("cerrar-"+sec+"").style.display="block";
    		}
    		function cerrarSeccion(sec){
-			switch(sec){
-				case 'ceremonia':
-				document.getElementById("cont-ceremonia").style.display="none";
-				document.getElementById("abrir-ceremonia").style.display="block";
-				document.getElementById("cerrar-ceremonia").style.display="none";
-				break;
-				case 'civil':
-				document.getElementById("cont-civil").style.display="none";
-				document.getElementById("abrir-civil").style.display="block";
-				document.getElementById("cerrar-civil").style.display="none";
-				break;
-				case 'recepcion':
-				document.getElementById("cont-recepcion").style.display="none";
-				document.getElementById("abrir-recepcion").style.display="block";
-				document.getElementById("cerrar-recepcion").style.display="none";
-				break;
-				case 'novio':
-				document.getElementById("cont-novio").style.display="none";
-				document.getElementById("abrir-novio").style.display="block";
-				document.getElementById("cerrar-novio").style.display="none";
-				break;
-				case 'novia':
-				document.getElementById("cont-novia").style.display="none";
-				document.getElementById("abrir-novia").style.display="block";
-				document.getElementById("cerrar-novia").style.display="none";
-				break;
-				case 'luna':
-				document.getElementById("cont-luna").style.display="none";
-				document.getElementById("abrir-luna").style.display="block";
-				document.getElementById("cerrar-luna").style.display="none";
-				break;
-				case 'casa':
-				document.getElementById("cont-casa").style.display="none";
-				document.getElementById("abrir-casa").style.display="block";
-				document.getElementById("cerrar-casa").style.display="none";
-				break;
-			}
+			document.getElementById("cont-"+sec+"").style.display="none";
+			document.getElementById("abrir-"+sec+"").style.display="block";
+			document.getElementById("cerrar-"+sec+"").style.display="none";
    		}
    		function abrirPanel(sec){
-   			switch(sec){
-   				case 'donativo':
-				document.getElementById("ceremonia-donativo").style.display="block";
-				document.getElementById("abrir-donativo").style.display="none";
-				document.getElementById("donativo-specs").style.display="none";
-				document.getElementById("cerrar-donativo").style.display="block";
-				break;
-				case 'musica':
-				document.getElementById("ceremonia-musica").style.display="block";
-				document.getElementById("abrir-musica").style.display="none";
-				document.getElementById("musica-specs").style.display="none";
-				document.getElementById("cerrar-musica").style.display="block";
-				break;
-				case 'decoracion':
-				document.getElementById("ceremonia-decoracion").style.display="block";
-				document.getElementById("abrir-decoracion").style.display="none";
-				document.getElementById("decoracion-specs").style.display="none";
-				document.getElementById("cerrar-decoracion").style.display="block";
-				break;
-				case 'anillos':
-				document.getElementById("ceremonia-anillos").style.display="block";
-				document.getElementById("abrir-anillos").style.display="none";
-				document.getElementById("anillos-specs").style.display="none";
-				document.getElementById("cerrar-anillos").style.display="block";
-				break;
-				case 'rosario':
-				document.getElementById("ceremonia-rosario").style.display="block";
-				document.getElementById("abrir-rosario").style.display="none";
-				document.getElementById("rosario-specs").style.display="none";
-				document.getElementById("cerrar-rosario").style.display="block";
-				break;
-				case 'biblia':
-				document.getElementById("ceremonia-biblia").style.display="block";
-				document.getElementById("abrir-biblia").style.display="none";
-				document.getElementById("biblia-specs").style.display="none";
-				document.getElementById("cerrar-biblia").style.display="block";
-				break;
-				case 'renta':
-				document.getElementById("ceremonia-renta").style.display="block";
-				document.getElementById("abrir-renta").style.display="none";
-				document.getElementById("renta-specs").style.display="none";
-				document.getElementById("cerrar-renta").style.display="block";
-				break;
-				case 'ramo':
-				document.getElementById("ceremonia-ramo").style.display="block";
-				document.getElementById("abrir-ramo").style.display="none";
-				document.getElementById("ramo-specs").style.display="none";
-				document.getElementById("cerrar-ramo").style.display="block";
-				break;
-				case 'recuerdos':
-				document.getElementById("ceremonia-recuerdos").style.display="block";
-				document.getElementById("abrir-recuerdos").style.display="none";
-				document.getElementById("recuerdos-specs").style.display="none";
-				document.getElementById("cerrar-recuerdos").style.display="block";
-				break;
-				case 'otros1':
-				document.getElementById("ceremonia-otros1").style.display="block";
-				document.getElementById("abrir-otros1").style.display="none";
-				document.getElementById("otros1-specs").style.display="none";
-				document.getElementById("cerrar-otros1").style.display="block";
-				break;
-				case 'otros2':
-				document.getElementById("ceremonia-otros2").style.display="block";
-				document.getElementById("abrir-otros2").style.display="none";
-				document.getElementById("otros2-specs").style.display="none";
-				document.getElementById("cerrar-otros2").style.display="block";
-				break;
-			}
+			document.getElementById("ceremonia-"+sec+"").style.display="block";
+			document.getElementById("abrir-"+sec+"").style.display="none";
+			document.getElementById(""+sec+"-specs").style.display="none";
+			document.getElementById("cerrar-"+sec+"").style.display="block";
 		}
 		function cerrarPanel(sec){
-			switch(sec){
-				case 'donativo':
-				document.getElementById("ceremonia-donativo").style.display="none";
-				document.getElementById("abrir-donativo").style.display="block";
-				document.getElementById("donativo-specs").style.display="block";
-				document.getElementById("cerrar-donativo").style.display="none";
-				break;
-				case 'musica':
-				document.getElementById("ceremonia-musica").style.display="none";
-				document.getElementById("abrir-musica").style.display="block";
-				document.getElementById("musica-specs").style.display="block";
-				document.getElementById("cerrar-musica").style.display="none";
-				break;
-				case 'decoracion':
-				document.getElementById("ceremonia-decoracion").style.display="none";
-				document.getElementById("abrir-decoracion").style.display="block";
-				document.getElementById("decoracion-specs").style.display="block";
-				document.getElementById("cerrar-decoracion").style.display="none";
-				break;
-				case 'anillos':
-				document.getElementById("ceremonia-anillos").style.display="none";
-				document.getElementById("abrir-anillos").style.display="block";
-				document.getElementById("anillos-specs").style.display="block";
-				document.getElementById("cerrar-anillos").style.display="none";
-				break;
-				case 'rosario':
-				document.getElementById("ceremonia-rosario").style.display="none";
-				document.getElementById("abrir-rosario").style.display="block";
-				document.getElementById("rosario-specs").style.display="block";
-				document.getElementById("cerrar-rosario").style.display="none";
-				break;
-				case 'biblia':
-				document.getElementById("ceremonia-biblia").style.display="none";
-				document.getElementById("abrir-biblia").style.display="block";
-				document.getElementById("biblia-specs").style.display="block";
-				document.getElementById("cerrar-biblia").style.display="none";
-				break;
-				case 'renta':
-				document.getElementById("ceremonia-renta").style.display="none";
-				document.getElementById("abrir-renta").style.display="block";
-				document.getElementById("renta-specs").style.display="block";
-				document.getElementById("cerrar-renta").style.display="none";
-				break;
-				case 'ramo':
-				document.getElementById("ceremonia-ramo").style.display="none";
-				document.getElementById("abrir-ramo").style.display="block";
-				document.getElementById("ramo-specs").style.display="block";
-				document.getElementById("cerrar-ramo").style.display="none";
-				break;
-				case 'recuerdos':
-				document.getElementById("ceremonia-recuerdos").style.display="none";
-				document.getElementById("abrir-recuerdos").style.display="block";
-				document.getElementById("recuerdos-specs").style.display="block";
-				document.getElementById("cerrar-recuerdos").style.display="none";
-				break;
-				case 'otros1':
-				document.getElementById("ceremonia-otros1").style.display="none";
-				document.getElementById("abrir-otros1").style.display="block";
-				document.getElementById("otros1-specs").style.display="block";
-				document.getElementById("cerrar-otros1").style.display="none";
-				break;
-				case 'otros2':
-				document.getElementById("ceremonia-otros2").style.display="none";
-				document.getElementById("abrir-otros2").style.display="block";
-				document.getElementById("otros2-specs").style.display="block";
-				document.getElementById("cerrar-otros2").style.display="none";
-				break;
-			}
+			document.getElementById("ceremonia-"+sec+"").style.display="none";
+			document.getElementById("abrir-"+sec+"").style.display="block";
+			document.getElementById(""+sec+"-specs").style.display="block";
+			document.getElementById("cerrar-"+sec+"").style.display="none";
 		}
 
 		//CEREMONIA IGLESIA
@@ -2068,26 +2165,86 @@
 	//FIN CEREMONIA IGLESIA XXX
 
 	//CEREMONIA CIVIL
+		$('#abrir-civil').on('click',function(e){
+			seccion='civil';
+			abrirSeccion(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-civil').on('click',function(e){
+			seccion='civil';
+			cerrarSeccion(seccion);
+			e.preventDefault();
+		});
 
 	//FIN CEREMONIA CIVIL XXX
 
 	//RECEPCION
+		$('#abrir-recepcion').on('click',function(e){
+			seccion='recepcion';
+			abrirSeccion(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-recepcion').on('click',function(e){
+			seccion='recepcion';
+			cerrarSeccion(seccion);
+			e.preventDefault();
+		});
 
 	//FIN RECEPCION XXX
 
 	//NOVIO
+		$('#abrir-novio').on('click',function(e){
+			seccion='novio';
+			abrirSeccion(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-novio').on('click',function(e){
+			seccion='novio';
+			cerrarSeccion(seccion);
+			e.preventDefault();
+		});
 
 	//FIN NOVIO XXX
 
 	//NOVIA
+		$('#abrir-novia').on('click',function(e){
+			seccion='novia';
+			abrirSeccion(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-novia').on('click',function(e){
+			seccion='novia';
+			cerrarSeccion(seccion);
+			e.preventDefault();
+		});
 
 	//FIN NOVIA XXX
 
 	//LUNA DE MIEL
+		$('#abrir-luna').on('click',function(e){
+			seccion='luna';
+			abrirSeccion(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-luna').on('click',function(e){
+			seccion='luna';
+			cerrarSeccion(seccion);
+			e.preventDefault();
+		});
 
 	//FIN LUNA DE MIEL XXX
 
 	//LA NUEVA CASA
+		$('#abrir-casa').on('click',function(e){
+			seccion='casa';
+			abrirSeccion(seccion);
+			e.preventDefault();
+		});
+		$('#cerrar-casa').on('click',function(e){
+			seccion='casa';
+			cerrarSeccion(seccion);
+			e.preventDefault();
+		});
 
 	//FIN LA NUEVA CASA XXX
 
