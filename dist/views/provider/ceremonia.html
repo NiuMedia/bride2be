@@ -32,10 +32,11 @@
     <div class="topcoat-list__container">
 
       <ul class="topcoat-list">
-        <li class="topcoat-list__item" hm-tap="open(provider.ID)" ng-repeat="provider in providers">
+        <li class="topcoat-list__item" ng-repeat="provider in providers">
           <h1>{{ provider.title }}</h1>
           <div>
           	{{ provider.content }}
+            <a href="" hm-tap="fav(provider.ID)">fav me</a>
           </div>
         </li>
       </ul>

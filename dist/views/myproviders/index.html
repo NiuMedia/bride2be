@@ -30,14 +30,136 @@
 
   <div ng-controller="IndexCtrl">
     <div class="topcoat-list__container">
-
+      <h1>Ceremonias religiosa y civil</h1>
       <ul class="topcoat-list">
-      	<h2>Cremonia</h2>
         <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.ceremonia">
-        	<h3>{{ myproviders.title }}</h3>
+        	<h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
         </li>
       </ul>
-
+    </div>
+    <div class="topcoat-list__container">
+      <h1>Recepciones y Banquetes</h1>
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.recepcion">
+          <h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="topcoat-list__container">
+      <h1>Invitaciones</h1>
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.invitaciones">
+          <h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="topcoat-list__container">
+      <h1>Música</h1>
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.musica">
+          <h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="topcoat-list__container">
+      <h1>Flores, Decoración y Coordinación</h1>
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.flores">
+          <h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="topcoat-list__container">
+      <h1>Iluminaciones y mobiliario</h1>
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.iluminacion">
+          <h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="topcoat-list__container">
+      <h1>Fotos y videos</h1>
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.foto">
+          <h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="topcoat-list__container">
+      <h1>Ambientacion y más</h1>
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.ambientacion">
+          <h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="topcoat-list__container">
+      <h1>El y ella</h1>
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.elyella">
+          <h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="topcoat-list__container">
+      <h1>Maquillaje, peinado y spa</h1>
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.mps">
+          <h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="topcoat-list__container">
+      <h1>Luna de miel</h1>
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.luna">
+          <h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="topcoat-list__container">
+      <h1>Mesa de regalos y hogar</h1>
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.mesa">
+          <h2>{{ myproviders.title }}</h2>
+          <div>
+            {{ myproviders.content }}
+          </div>
+        </li>
+      </ul>
     </div>
 
   </div>

@@ -17,7 +17,7 @@ providerApp.controller('CeremoniaCtrl', function ($scope, ProviderRestangular) {
         json_providers.ceremonia.push($filter('filter')(providers, {ID: id})[0]);
         window.localStorage.setItem("misprovedores", JSON.stringify(json_providers));
       });
-  }
+  };
 
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
