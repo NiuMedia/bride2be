@@ -38,4 +38,6 @@
   //   right: [drawerButton]
   // });
 
-  steroids.view.navigationBar.show("Bride2Be");
+  steroids.view.navigationBar.show({
+    titleImagePath:"http://localhost/images/logo.png"}
+  );

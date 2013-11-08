@@ -8,7 +8,7 @@
 #
 # to create a cloud-deployed build of your app.
 
-steroids.config.name = "My New Application"
+steroids.config.name = "Bride2be"
 
 # -- Location: steroids.config.location --
 # Defines the location of the HTML document that Steroids will load when your app starts.
@@ -75,13 +75,13 @@ steroids.config.location = "http://localhost/views/drawerExample/home.html"
 # steroids.config.tabBar.tabTitleShadowColor = ""
 # steroids.config.tabBar.selectedTabTintColor = ""
 
-steroids.config.navigationBar.tintColor = "#000000"
-steroids.config.navigationBar.titleColor = "#ffffff"
+steroids.config.navigationBar.tintColor = "#FFD1E9"
+steroids.config.navigationBar.titleColor = "#000000"
 steroids.config.navigationBar.titleShadowColor = "#000000"
 
 steroids.config.navigationBar.buttonTintColor = "#363636"
-steroids.config.navigationBar.buttonTitleColor = "#ffffff"
-steroids.config.navigationBar.buttonShadowColor = "#000000"
+steroids.config.navigationBar.buttonTitleColor = "#000000"
+steroids.config.navigationBar.buttonShadowColor = "#444444"
 
 #
 # Loading screen color is used by Android only, on the background of loading.png
@@ -99,6 +99,7 @@ steroids.config.loadingScreen.tintColor = "#262626"
 # Default: false
 
 steroids.config.statusBar.enabled = true
+steroids.config.statusBar.style = "black"
 
 # -- Editor --
 # The Steroids console (shown when "$ steroids connect" is running) commands 'editor' and 'e' run the given command with the given arguments. The arguments are always given as an array.
