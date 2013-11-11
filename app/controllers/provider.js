@@ -11,6 +11,9 @@ providerApp.controller('CeremoniaCtrl', function ($scope, ProviderRestangular) {
   };
   $scope.fav = function(id){
       // Fetch all objects from the local JSON (see app/models/provider.js)
+      Handlebars.registerHelper('unescape', function(string) {
+        return unescape(string);
+      });
       ProviderRestangular.all('posts?type=ceremonia').getList().then( function(providers) {
         // Then select the one based on the view's id query parameter
         json_providers = $.parseJSON(window.localStorage.getItem("misprovedores"));

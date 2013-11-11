@@ -35,7 +35,7 @@
         <li class="topcoat-list__item" ng-repeat="provider in providers">
           <h1>{{ provider.title }}</h1>
           <div>
-          	{{ provider.content }}
+          	{{unescape provider.content }}
             <a href="" hm-tap="fav(provider.ID)">fav me</a>
           </div>
         </li>
