@@ -67,7 +67,6 @@ if ( typeof angular == 'undefined' ) {
 	return;
 };
 
-
 var module = angular.module('ProviderModel', ['restangular']);
 
 module.factory('ProviderRestangular', function(Restangular) {
@@ -76,14 +75,17 @@ module.factory('ProviderRestangular', function(Restangular) {
 
   	// URL base para los provedores 
     RestangularConfigurer.setBaseUrl('http://bride2be.com.mx/wp-json.php/');
-    /*RestangularConfigurer.setResponseExtractor(function(response, operation, what, url){
+    /*RestangularConfigurer.setResponseInterceptor(function(response, operation, what, url){
 
-    	var newResponse;
-    	if (operation === "getList") {
-    		newResponse = response.posts;
-    	}
+    	if (operation == "getList") {
+        for(x in response){
+          str = response[x].content;
+          str_unscaped = unescape(str);
+          response[x].content = str_unscaped;
+        }
+      }
 
-    	return newResponse;
+    	return response;
     });*/
 
   });

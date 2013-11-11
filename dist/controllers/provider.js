@@ -1,4 +1,22 @@
-var providerApp = angular.module('providerApp', ['ProviderModel', 'hmTouchevents']);
+var providerApp = angular.module('providerApp', ['ProviderModel', 'hmTouchevents']).filter('unescape', function(){
+  return function(string){
+    return string.replace("\\", "");
+  }
+});
+
+
+providerApp.factory('providersService', function(){
+  var myProvidersService = {};
+  json_guest = $.parseJSON(window.localStorage.getItem("misprovedores"));
+
+  myProvidersService.addProvider = function(invitado){
+    json_guest.ceremonia.push(invitado.provedor);
+    window.localStorage.setItem("invitados", JSON.stringify(json_guest));
+  }
+
+  return myProvidersService;
+
+});
 
 // Index: http://localhost/views/provider/index.html
 
@@ -9,20 +27,11 @@ providerApp.controller('CeremoniaCtrl', function ($scope, ProviderRestangular) {
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id);
     steroids.layers.push(webView);
   };
-  $scope.fav = function(id){
-      // Fetch all objects from the local JSON (see app/models/provider.js)
-      ProviderRestangular.all('posts?type=ceremonia').getList().then( function(providers) {
-        // Then select the one based on the view's id query parameter
-        json_providers = $.parseJSON(window.localStorage.getItem("misprovedores"));
-        json_providers.ceremonia.push($filter('filter')(providers, {ID: id})[0]);
-        window.localStorage.setItem("misprovedores", JSON.stringify(json_providers));
-      });
-  }
 
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("misprovedores", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('posts?type=ceremonia').getList();
@@ -273,7 +282,20 @@ providerApp.controller('MusicaCtrl', function ($scope, ProviderRestangular) {
 
 // Show: http://localhost/views/provider/show.html?id=<id>
 
-providerApp.controller('ShowCtrl', function ($scope, $filter, ProviderRestangular) {
+providerApp.controller('ShowCtrl', function ($scope, $filter, ProviderRestangular, providersService) {
+
+  $scope.fav = function(id){
+      // Fetch all objects from the local JSON (see app/models/provider.js)
+
+      ProviderRestangular.one('posts/'+id).getList().then(function(post){
+        console.log(post);
+        alert(post);
+      });
+  };
+
+  $scope.providersService = providersService;
+
+  $scope.newMyProvider = {};
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
   ProviderRestangular.all('posts?type=ceremonia').getList().then( function(providers) {
