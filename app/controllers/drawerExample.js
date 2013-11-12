@@ -12,8 +12,9 @@
   var leftDrawer = new steroids.views.WebView("/views/drawerExample/drawer.html");
 
   leftDrawer.preload({},{
-    onSuccess: initGesture  // When the view has loaded, enable finger tracking
-  });
+     onSuccess: initGesture  // When the view has loaded, enable finger tracking
+    }
+  );
 
   function initGesture() {
     steroids.drawers.enableGesture(leftDrawer);
@@ -30,21 +31,28 @@
   var drawerButtonClose = new steroids.buttons.NavigationBarButton();
   drawerButtonClose.title = "Cerrar";
 
-  // drawerButton.onTap = function (){
-  //   steroids.drawers.show(leftDrawer);
-  //   steroids.view.navigationBar.setButtons({
-  //     right: [drawerButtonClose]
-  //   });
-  // };
+  drawerButton.onTap = function (){
+    steroids.drawers.show(leftDrawer);
+    steroids.view.navigationBar.setButtons({
+      left: [drawerButtonClose]
+    });
+  };
 
-  // drawerButtonClose.onTap = function(){
-  //   steroids.view.navigationBar.setButtons({
-  //     right: [drawerButton]
-  //   });
-  // };
+  drawerButtonClose.onTap = function(){
+    steroids.view.navigationBar.setButtons({
+      left: [drawerButton]
+    });
+  };
 
-  // steroids.view.navigationBar.setButtons({
-  //   right: [drawerButton]
-  // });
+  steroids.view.navigationBar.setButtons({
+    left: [drawerButton]
+  }, {
+  onSuccess: function() {
+    alert("Buttons set!");
+  },
+  onFailure: function() {
+    alert("Failed to set buttons.");
+  }
+});
 
   
