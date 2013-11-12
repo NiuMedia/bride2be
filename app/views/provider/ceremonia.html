@@ -1,11 +1,13 @@
 <div ng-app="providerApp">
 
-  <div ng-controller="CeremoniaCtrl">
+  <div id="provider-list" ng-controller="CeremoniaCtrl">
     <div class="topcoat-list__container">
 
       <ul class="topcoat-list">
         <li class="topcoat-list__item" hm-tap="open(provider.ID)" ng-repeat="provider in providers">
-          <div class="proverdor" ng-bind-html-unsafe="provider.content">
+          <div class="proverdor">
+            <h1>{{provider.title}}</h1>
+            <img src="{{provider.logo}}" class="provider-logo"/></h1>
           </div>
         </li>
       </ul>

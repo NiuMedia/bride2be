@@ -14,7 +14,7 @@ module.factory('ProviderRestangular', function(Restangular) {
   return Restangular.withConfig(function(RestangularConfigurer) {
 
   	// URL base para los provedores 
-    RestangularConfigurer.setBaseUrl('http://bride2be.com.mx/wp-json.php/');
+    RestangularConfigurer.setBaseUrl('http://bride2be.com.mx/api/proveedores/');
     /*RestangularConfigurer.setResponseInterceptor(function(response, operation, what, url){
 
     	if (operation == "getList") {

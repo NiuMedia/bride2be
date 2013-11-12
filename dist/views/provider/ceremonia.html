@@ -28,19 +28,12 @@
 
   <div ng-app="providerApp">
 
-  <div ng-controller="CeremoniaCtrl">
+  <div id="provider-list" ng-controller="CeremoniaCtrl">
     <div class="topcoat-list__container">
 
       <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="provider in providers">
-          <h1>{{ provider.title }}</h1>
-<<<<<<< HEAD
-          <div ng-bind-html-unsafe="provider.content">
-=======
-          <div>
-          	{{ provider.content }}
-            <a href="" hm-tap="fav(provider.ID)">fav me</a>
->>>>>>> 2a1d69f160cbce3f232ea475d6b3b5043f7d5ac4
+        <li class="topcoat-list__item" hm-tap="open(provider.ID)" ng-repeat="provider in providers">
+          <div class="proverdor" ng-bind-html-unsafe="provider.content">
           </div>
         </li>
       </ul>

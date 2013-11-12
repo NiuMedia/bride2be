@@ -126,3 +126,19 @@ li {
 	vertical-align:middle;
 	margin:0 10px 5px 0;
 }
+
+#provider-list .proverdor .provider-logo{
+	width: 100%;
+}
+#provider-list .proverdor .provider-image{
+	display: none;
+}
+#provider-list .proverdor .provider-address{
+	display: none;
+}
+#provider-list .proverdor .provider-phone{
+	display: none;
+}
+#provider-list .proverdor .provider-facebook{
+	display: none;
+}

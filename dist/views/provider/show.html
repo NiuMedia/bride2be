@@ -30,8 +30,7 @@
 
   <div ng-controller="ShowCtrl">
     <div class="content-padded">
-      <h1>{{provider.title}}</h1>
-      <div>{{provider.content}}</div>
+      <div ng-bind-html-unsafe="provider.content"></div>
       <input ng-model="newMyProvider.provedor" value="{{provider}}" type="hidden" name="provider" >
       <a href="#" ng-click="providersService.addProvider(newMyProvider); newGuest = {}">Añadir a favoritos</a>
     </div>
