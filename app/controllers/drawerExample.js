@@ -1,3 +1,12 @@
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+    titleImagePath: "logo.png",
+    relativeTo: "/" + steroids.app.path + "/images/"
+  });
+  });
+  
+
+
   // Initialize the left drawer
 
   var leftDrawer = new steroids.views.WebView("/views/drawerExample/drawer.html");
@@ -38,6 +47,4 @@
   //   right: [drawerButton]
   // });
 
-  steroids.view.navigationBar.show({
-    titleImagePath:"http://localhost/images/logo.png"}
-  );
+  
