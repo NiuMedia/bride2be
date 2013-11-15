@@ -1,7 +1,7 @@
 var providerApp = angular.module('providerApp', ['ProviderModel', 'hmTouchevents']);
 
 
-providerApp.factory('providersService', function(){
+/*providerApp.factory('providersService', function(){
   var myProvidersService = {};
   json_guest = $.parseJSON(window.localStorage.getItem("misprovedores"));
 
@@ -12,7 +12,7 @@ providerApp.factory('providersService', function(){
 
   return myProvidersService;
 
-});
+});*/
 
 // Index: http://localhost/views/provider/index.html
 
@@ -285,12 +285,16 @@ providerApp.controller('ShowCtrl', function ($scope, $filter, ProviderRestangula
   //$scope.newMyProvider = {};
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  ProviderRestangular.all('get_ceremonia/').getList().then( function(providers) {
+  /*ProviderRestangular.all('get_ceremonia/').getList().then( function(providers) {
     // Then select the one based on the view's id query parameter
     $scope.provider = $filter('filter')(providers, {id: steroids.view.params['id']})[0];
-  });
+  });*/
+
+  alert(steroids.view.params['id']);
+
+  $scope.provider = ProviderRestangular.oneUrl('provedor','http://bride2be.com.mx/api/proveedores/single/?id='+steroids.view.params['id']).get();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Provider: " + steroids.view.params.id );
+  steroids.view.navigationBar.show("");
 
 });

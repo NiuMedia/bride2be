@@ -75,18 +75,18 @@ module.factory('ProviderRestangular', function(Restangular) {
 
   	// URL base para los provedores 
     RestangularConfigurer.setBaseUrl('http://bride2be.com.mx/api/proveedores/');
-    /*RestangularConfigurer.setResponseInterceptor(function(response, operation, what, url){
+    RestangularConfigurer.setResponseInterceptor(function(response, operation, what, url){
 
-    	if (operation == "getList") {
-        for(x in response){
-          str = response[x].content;
-          str_unscaped = unescape(str);
-          response[x].content = str_unscaped;
-        }
+      alert(what);
+
+      if(url == "http://bride2be.com.mx/api/proveedores/get_ceremonia/"){
+        return response.ceremonia;
+      }else if(url == "http://bride2be.com.mx/api/proveedores/get_recepcion/"){
+        return response.recepcion;
       }
 
     	return response;
-    });*/
+    });
 
   });
 
