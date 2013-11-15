@@ -27,88 +27,312 @@
   <div class="content-padded">
   <h1>Agenda</h1>
   <div class="card">
-  	<h2>1 año antes</h2>
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda1" id="cbAgenda1"><label for="cbAgenda1">Fijar la fecha de tu boda.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda2" id="cbAgenda2"><label for="cbAgenda2">Comenzar a decidir y fijar el registo civil.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda3" id="cbAgenda3"><label for="cbAgenda3">Ir pensando el tipo de ceremonia y lugar donde podría ser.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda4" id="cbAgenda4"><label for="cbAgenda4">Ir viendo donde van a vivir.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda5" id="cbAgenda5"><label for="cbAgenda5">Elegir testigos y padrinos. ¡Comunícaselos!</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda6" id="cbAgenda6"><label for="cbAgenda6">Elaborar el presupuesto general, definir que va a pagar cada uno de los dos.</label><br />
+    <div id="titulo-1ano" class="card-titles">
+      <div style="float:left"><h2>1 año antes</h2></div>
+      <div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-contId1"><img src="/icons/br_down.png" width="32px"></button>
+      <button class="topcoat-button--quiet" id="cerrar-contId1" style="display:none"><img src="/icons/br_up.png" width="32px"></button></div>
+    </div>
+    <div class="cbCont" id="contId1" style="display:none;clear:both">
+      <div class="cbSingle">
+        <div class="cbSingle-left">
+          <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda1" id="cbAgenda1">
+        </div>
+        <div class="cbSingle-center">
+          <label class="topcoat-checkbox" for="cbAgenda1">Fijar la fecha de tu boda.</label>
+        </div>
+        <div class="cbSingle-right">
+          <a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a>
+        </div>
+      </div>
+      <div class="cbSingle">
+        <div class="cbSingle-left">
+          <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda2" id="cbAgenda2">
+        </div>
+        <div class="cbSingle-center">
+          <label class="topcoat-checkbox" for="cbAgenda2">Comenzar a decidir y fijar el registo civil.</label>
+        </div>
+        <div class="cbSingle-right">
+          <a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a>
+        </div>
+      </div>
+      <div class="cbSingle">
+        <div class="cbSingle-left">
+          <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda3" id="cbAgenda3">
+        </div>
+        <div class="cbSingle-center">
+          <label class="topcoat-checkbox" for="cbAgenda3">Ir pensando el tipo de ceremonia y lugar donde podría ser.</label>
+        </div>
+        <div class="cbSingle-right">
+          <a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a>
+        </div>
+      </div>
+      <div class="cbSingle">
+        <div class="cbSingle-left">
+          <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda4" id="cbAgenda4">
+        </div>
+        <div class="cbSingle-center">
+          <label class="topcoat-checkbox" for="cbAgenda4">Ir viendo donde van a vivir.</label>
+        </div>
+        <div class="cbSingle-right">
+          <a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a>
+        </div>
+      </div>
+      <div class="cbSingle">
+        <div class="cbSingle-left">
+          <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda5" id="cbAgenda5">
+        </div>
+        <div class="cbSingle-center">
+          <label class="topcoat-checkbox" for="cbAgenda5">Elegir testigos y padrinos. ¡Comunícaselos!</label>
+        </div>
+        <div class="cbSingle-right">
+          <a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a>
+        </div>
+      </div>
+      <div class="cbSingle">
+        <div class="cbSingle-left">
+          <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda6" id="cbAgenda6">
+        </div>
+        <div class="cbSingle-center">
+          <label class="topcoat-checkbox" for="cbAgenda6">Elaborar el presupuesto general, definir que va a pagar cada uno de los dos.</label>
+        </div>
+        <div class="cbSingle-right">
+          <a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a>
+        </div>
+      </div>
+    </div>
+  	
   </div>
+
   <div class="card">
-  	<h2>9 meses antes</h2>
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda7" id="cbAgenda7"><label for="cbAgenda7">Reservar la iglesia.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda8" id="cbAgenda8"><label for="cbAgenda8">Darle seguimiento a la busqueda, compra o renta del nuevo hogar.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda9" id="cbAgenda9"><label for="cbAgenda9">Elegir y reservar el salón.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda10" id="cbAgenda10"><label for="cbAgenda10">Hacer la lista de invitados, revisarla varias veces para no olvidar a nadie, siempre teniendo en cuenta tu presupuesto.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda11" id="cbAgenda11"><label for="cbAgenda11">Ver si el salón elegido cuenta con el servicio del banquete, de no ser así ir pidiendo presupuestos e informes.</label><br />
+    <div id="titulo-9meses" class="card-titles">
+      <div style="float:left"><h2>9 meses antes</h2></div>
+      <div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-contId2"><img src="/icons/br_down.png" width="32px"></button>
+      <button class="topcoat-button--quiet" id="cerrar-contId2" style="display:none"><img src="/icons/br_up.png" width="32px"></button></div>
+    </div>
+    <div class="cbCont" id="contId2" style="display:none;clear:both">
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda7" id="cbAgenda7"><label class="topcoat-checkbox" for="cbAgenda7">Reservar la iglesia.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda8" id="cbAgenda8"><label class="topcoat-checkbox" for="cbAgenda8">Darle seguimiento a la busqueda, compra o renta del nuevo hogar.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda9" id="cbAgenda9"><label class="topcoat-checkbox" for="cbAgenda9">Elegir y reservar el salón.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda10" id="cbAgenda10"><label class="topcoat-checkbox" for="cbAgenda10">Hacer la lista de invitados, revisarla varias veces para no olvidar a nadie, siempre teniendo en cuenta tu presupuesto.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda11" id="cbAgenda11"><label class="topcoat-checkbox" for="cbAgenda11">Ver si el salón elegido cuenta con el servicio del banquete, de no ser así ir pidiendo presupuestos e informes.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+    </div>
+  	
   </div>
+
   <div class="card">
-  	<h2>6 meses antes</h2>
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda12" id="cbAgenda12"><label for="cbAgenda12">Comenzar a ver el vestido y todo lo relacionado con el mismo.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda13" id="cbAgenda13"><label for="cbAgenda13">Ver posible destino de la luna de miel.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda14" id="cbAgenda14"><label for="cbAgenda14">Decidir Dj o grupo musical, así como contratar video y fotografía.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda15" id="cbAgenda15"><label for="cbAgenda15">Ver quien se engargará de la decoración del lugar.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda16" id="cbAgenda16"><label for="cbAgenda16">Probar banquetes y elegir.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda17" id="cbAgenda17"><label for="cbAgenda17">Ver que hace falta para el nuevo hogar.</label><br />
+    <div id="titulo-6meses" class="card-titles">
+      <div style="float:left"><h2>6 meses antes</h2></div>
+      <div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-contId3"><img src="/icons/br_down.png" width="32px"></button>
+      <button class="topcoat-button--quiet" id="cerrar-contId3" style="display:none"><img src="/icons/br_up.png" width="32px"></button></div>
+    </div>
+    <div class="cbCont" id="contId3" style="display:none;clear:both">
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda12" id="cbAgenda12"><label class="topcoat-checkbox" for="cbAgenda12">Comenzar a ver el vestido y todo lo relacionado con el mismo.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda13" id="cbAgenda13"><label class="topcoat-checkbox" for="cbAgenda13">Ver posible destino de la luna de miel.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda14" id="cbAgenda14"><label class="topcoat-checkbox" for="cbAgenda14">Decidir Dj o grupo musical, así como contratar video y fotografía.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda15" id="cbAgenda15"><label class="topcoat-checkbox" for="cbAgenda15">Ver quien se engargará de la decoración del lugar.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda16" id="cbAgenda16"><label class="topcoat-checkbox" for="cbAgenda16">Probar banquetes y elegir.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda17" id="cbAgenda17"><label class="topcoat-checkbox" for="cbAgenda17">Ver que hace falta para el nuevo hogar.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+    </div>
+  	
   </div>
+
   <div class="card">
-  	<h2>4 meses antes</h2>
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda18" id="cbAgenda18"><label for="cbAgenda18">Hacer lista de regalos y registrarte en algunas tiendas.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda19" id="cbAgenda19"><label for="cbAgenda19">Reservar pasajes y todo lo relacionado con la luna de miel.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda20" id="cbAgenda20"><label for="cbAgenda20">Averiguar sobre los estudios y cursos pre-matrimoniales.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda21" id="cbAgenda21"><label for="cbAgenda21">Buscar vestido para la boda civil y buscar el traje del novio.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda22" id="cbAgenda22"><label for="cbAgenda22">Supervisar como va el vestido de la novia.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda23" id="cbAgenda23"><label for="cbAgenda23">Mandar hacer las invitaciones.</label><br />
+    <div id="titulo-4meses" class="card-titles">
+      <div style="float:left"><h2>4 meses antes</h2></div>
+      <div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-contId4"><img src="/icons/br_down.png" width="32px"></button>
+      <button class="topcoat-button--quiet" id="cerrar-contId4" style="display:none"><img src="/icons/br_up.png" width="32px"></button>
+      </div>
+    </div>
+    <div class="cbCont" id="contId4" style="display:none;clear:both">
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda18" id="cbAgenda18"><label class="topcoat-checkbox" for="cbAgenda18">Hacer lista de regalos y registrarte en algunas tiendas.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda19" id="cbAgenda19"><label class="topcoat-checkbox" for="cbAgenda19">Reservar pasajes y todo lo relacionado con la luna de miel.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda20" id="cbAgenda20"><label class="topcoat-checkbox" for="cbAgenda20">Averiguar sobre los estudios y cursos pre-matrimoniales.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda21" id="cbAgenda21"><label class="topcoat-checkbox" for="cbAgenda21">Buscar vestido para la boda civil y buscar el traje del novio.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda22" id="cbAgenda22"><label class="topcoat-checkbox" for="cbAgenda22">Supervisar como va el vestido de la novia.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda23" id="cbAgenda23"><label class="topcoat-checkbox" for="cbAgenda23">Mandar hacer las invitaciones.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+    </div>
+  	
   </div>
+
   <div class="card">
-  	<h2>2 meses antes</h2>
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda24" id="cbAgenda24"><label for="cbAgenda24">Mandar invitaciones a foráneos.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda25" id="cbAgenda25"><label for="cbAgenda25">Decidir estilista, tocado y maquillista.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda26" id="cbAgenda26"><label for="cbAgenda26">Encargar los anillos.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda27" id="cbAgenda27"><label for="cbAgenda27">Ver todo lo relacionado con la luna de miel: documentación, pasaportes, visas, etc.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda28" id="cbAgenda28"><label for="cbAgenda28">Hacer la reservación del hotel de la noche de bodas.</label><br />
+    <div id="titulo-2meses" class="card-titles">
+      <div style="float:left"><h2>2 meses antes</h2></div>
+      <div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-contId5"><img src="/icons/br_down.png" width="32px"></button>
+      <button class="topcoat-button--quiet" id="cerrar-contId5" style="display:none"><img src="/icons/br_up.png" width="32px"></button>
+      </div>
+    </div>
+    <div class="cbCont" id="contId5" style="display:none;clear:both">
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda24" id="cbAgenda24"><label class="topcoat-checkbox" for="cbAgenda24">Mandar invitaciones a foráneos.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda25" id="cbAgenda25"><label class="topcoat-checkbox" for="cbAgenda25">Decidir estilista, tocado y maquillista.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda26" id="cbAgenda26"><label class="topcoat-checkbox" for="cbAgenda26">Encargar los anillos.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda27" id="cbAgenda27"><label class="topcoat-checkbox" for="cbAgenda27">Ver todo lo relacionado con la luna de miel: documentación, pasaportes, visas, etc.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda28" id="cbAgenda28"><label class="topcoat-checkbox" for="cbAgenda28">Hacer la reservación del hotel de la noche de bodas.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      </div>
+  	
   </div>
+
   <div class="card">
-  	<h2>1 mes antes</h2>
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda29" id="cbAgenda29"><label for="cbAgenda29">Tener los anillos listos.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda30" id="cbAgenda30"><label for="cbAgenda30">Prueba de maquillaje.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda31" id="cbAgenda31"><label for="cbAgenda31">Ver arreglos de la casa nueva.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda32" id="cbAgenda32"><label for="cbAgenda32">Terminar de repartir las invitaciones.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda33" id="cbAgenda33"><label for="cbAgenda33">Decidir los últimos detalles para la ceremonia.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda34" id="cbAgenda34"><label for="cbAgenda34">Confirmar reservación del lugar y el banquete.</label><br />
+    <div id="titulo-1mes" class="card-titles">
+      <div style="float:left"><h2>1 mes antes</h2></div>
+      <div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-contId6"><img src="/icons/br_down.png" width="32px"></button>
+      <button class="topcoat-button--quiet" id="cerrar-contId6" style="display:none"><img src="/icons/br_up.png" width="32px"></button>
+      </div>
+    </div>
+    <div class="cbCont" id="contId6" style="display:none;clear:both">
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda29" id="cbAgenda29"><label class="topcoat-checkbox" for="cbAgenda29">Tener los anillos listos.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda30" id="cbAgenda30"><label class="topcoat-checkbox" for="cbAgenda30">Prueba de maquillaje.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda31" id="cbAgenda31"><label class="topcoat-checkbox" for="cbAgenda31">Ver arreglos de la casa nueva.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda32" id="cbAgenda32"><label class="topcoat-checkbox" for="cbAgenda32">Terminar de repartir las invitaciones.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda33" id="cbAgenda33"><label class="topcoat-checkbox" for="cbAgenda33">Decidir los últimos detalles para la ceremonia.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda34" id="cbAgenda34"><label class="topcoat-checkbox" for="cbAgenda34">Confirmar reservación del lugar y el banquete.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+    </div>
+  	
   </div>
+
   <div class="card">
-  	<h2>2 semanas antes</h2>
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda35" id="cbAgenda35"><label for="cbAgenda35">Última prueba del vestido.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda36" id="cbAgenda36"><label for="cbAgenda36">Confirmar todas las reservaciones de la luna de miel.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda37" id="cbAgenda37"><label for="cbAgenda37">Supervisar que todos los servicios estén contratados.</label><br />
+    <div id="titulo-2semanas" class="card-titles">
+      <div style="float:left"><h2>2 semanas antes</h2></div>
+      <div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-contId7"><img src="/icons/br_down.png" width="32px"></button>
+      <button class="topcoat-button--quiet" id="cerrar-contId7" style="display:none"><img src="/icons/br_up.png" width="32px"></button>
+      </div>
+    </div>
+    <div class="cbCont" id="contId7" style="display:none;clear:both">
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda35" id="cbAgenda35"><label class="topcoat-checkbox" for="cbAgenda35">Última prueba del vestido.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda36" id="cbAgenda36"><label class="topcoat-checkbox" for="cbAgenda36">Confirmar todas las reservaciones de la luna de miel.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda37" id="cbAgenda37"><label class="topcoat-checkbox" for="cbAgenda37">Supervisar que todos los servicios estén contratados.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+    </div>
+  	
   </div>
+
   <div class="card">
-  	<h2>4 días antes</h2>
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda38" id="cbAgenda38"><label for="cbAgenda38">Hacer maletas.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda39" id="cbAgenda39"><label for="cbAgenda39">Confirmar horarios con estilista, modista, peinado, tocado y modista.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda40" id="cbAgenda40"><label for="cbAgenda40">Confirmar la presencia de los invitados.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda41" id="cbAgenda41"><label for="cbAgenda41">Confirmar la reservación del hotel para la luna de miel.</label><br />
-  	<input type="checkbox" class="topcoat-checkbox" name="cbAgenda42" id="cbAgenda42"><label for="cbAgenda42">Confirmar que todo esté listo para la recepción.</label><br />
+    <div id="titulo-4dias" class="card-titles">
+      <div style="float:left"><h2>4 días antes</h2></div>
+      <div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-contId8"><img src="/icons/br_down.png" width="32px"></button>
+      <button class="topcoat-button--quiet" id="cerrar-contId8" style="display:none"><img src="/icons/br_up.png" width="32px"></button>
+      </div>
+    </div>
+    <div class="cbCont" id="contId8" style="display:none;clear:both">
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda38" id="cbAgenda38"><label class="topcoat-checkbox" for="cbAgenda38">Hacer maletas.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda39" id="cbAgenda39"><label class="topcoat-checkbox" for="cbAgenda39">Confirmar horarios con estilista, modista, peinado, tocado y modista.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda40" id="cbAgenda40"><label class="topcoat-checkbox" for="cbAgenda40">Confirmar la presencia de los invitados.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda41" id="cbAgenda41"><label class="topcoat-checkbox" for="cbAgenda41">Confirmar la reservación del hotel para la luna de miel.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+      <input type="checkbox" class="topcoat-checkbox__checkmark" name="cbAgenda42" id="cbAgenda42"><label class="topcoat-checkbox" for="cbAgenda42">Confirmar que todo esté listo para la recepción.</label><a class="topcoat-icon-button--quiet btn-agenda" href="calshow://"><img src="/icons/icon_agenda-dark.png" class="agenda-imagen" width="20" height="20"/></a><br />
+    </div>
+  	
   </div>
+
   <div class="card">
-  	<h2>El Gran Día</h2>
+    <div class="card-titles">
+    	<h2>El Gran Día</h2>
+    </div>
+
   	<p>Empezar a relajarse para poder disfrutar de ese día tan especial que llevó tanto tiempo para preparar.<br>
   		¡Sonríe en todo momento! ¡Estarás llena de flashes!</p>
-  </div>
-  <div class="topcoat-button center" id="save-btn">Guardar</div><br>
+  </d
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("#save-btn").on('click',function(){
-			for (var i=1; i<=42; i++){
-			  window.localStorage.setItem("cbAgenda"+i+"", $("#cbAgenda"+i+"").is(':checked'));
-			}
+    function abrirSeccion(sec){
+      document.getElementById("contId"+sec+"").style.display="block";
+      document.getElementById("abrir-contId"+sec+"").style.display="none";
+      document.getElementById("cerrar-contId"+sec+"").style.display="block";
+      }
+    function cerrarSeccion(sec){
+      document.getElementById("contId"+sec+"").style.display="none";
+      document.getElementById("abrir-contId"+sec+"").style.display="block";
+      document.getElementById("cerrar-contId"+sec+"").style.display="none";
+      }
 
-			window.localStorage.setItem("init", 1);
-			alert('Datos almacenados con éxito');
-		});
+    $('#abrir-contId1').on('click',function(e){
+      seccion='1';
+      abrirSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#abrir-contId2').on('click',function(e){
+      seccion='2';
+      abrirSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#abrir-contId3').on('click',function(e){
+      seccion='3';
+      abrirSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#abrir-contId4').on('click',function(e){
+      seccion='4';
+      abrirSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#abrir-contId5').on('click',function(e){
+      seccion='5';
+      abrirSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#abrir-contId6').on('click',function(e){
+      seccion='6';
+      abrirSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#abrir-contId7').on('click',function(e){
+      seccion='7';
+      abrirSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#abrir-contId8').on('click',function(e){
+      seccion='8';
+      abrirSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#cerrar-contId1').on('click',function(e){
+      seccion='1';
+      cerrarSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#cerrar-contId2').on('click',function(e){
+      seccion='2';
+      cerrarSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#cerrar-contId3').on('click',function(e){
+      seccion='3';
+      cerrarSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#cerrar-contId4').on('click',function(e){
+      seccion='4';
+      cerrarSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#cerrar-contId5').on('click',function(e){
+      seccion='5';
+      cerrarSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#cerrar-contId6').on('click',function(e){
+      seccion='6';
+      cerrarSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#cerrar-contId7').on('click',function(e){
+      seccion='7';
+      cerrarSeccion(seccion);
+      e.preventDefault();
+    });
+    $('#cerrar-contId8').on('click',function(e){
+      seccion='8';
+      cerrarSeccion(seccion);
+      e.preventDefault();
+    });
+
+    function guardarTodo(){
+      for (var i=1; i<=42; i++){
+        window.localStorage.setItem("cbAgenda"+i+"", $("#cbAgenda"+i+"").is(':checked'));
+      }
+
+      window.localStorage.setItem("init", 1);
+      alert('Datos almacenados con éxito');
+    }
+
 
 		for (var i=1; i<=42; i++){
 			gralVar=window.localStorage.getItem("cbAgenda"+i+"");
@@ -118,7 +342,26 @@
 	        }
 		}
 
+    var guardarButton = new steroids.buttons.NavigationBarButton();
+    guardarButton.title = "Guardar";
+
+    guardarButton.onTap = function (){
+      guardarTodo();
+    };
+
+    steroids.view.navigationBar.setButtons({
+      right: [guardarButton]
+    // }, {
+    // onSuccess: function() {
+    //   alert("Buttons set!");
+    // },
+    // onFailure: function() {
+    //   alert("Failed to set buttons.");
+    // }
+  });
+
 	});
+
 </script>
 
 

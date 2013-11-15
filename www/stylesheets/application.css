@@ -49,6 +49,7 @@ html[xmlns] .clearfix {
 }
 .center-element{
 	margin: 0 auto;
+	position: relative;
 	width: 50%;
 }
 #add-guest{
@@ -56,9 +57,13 @@ html[xmlns] .clearfix {
   	bottom: 0px;
 }
 .card {
+	overflow: hidden;
+	height:auto;
+	clear: both;
+	position: relative;
 	color: #373435;
 	margin: 0 auto;
-	max-width: 96%;
+	width: 96%;
 	padding: 4px;
 	background-color: #fbdce2;
 	border:4px solid white;
@@ -141,4 +146,34 @@ li {
 }
 #provider-list .proverdor .provider-facebook{
 	display: none;
+}
+.btn-agenda{;
+	float:right;
+}
+.cbSingle{
+	clear:both;
+	margin-bottom: 1em;
+	position: relative;
+}
+.cbSingle-left{
+	width:15%;
+	float:left;
+}
+.cbSingle-center{
+	width:63%;
+	float:left;
+}
+.cbSingle-right{
+	width:20%;
+	float: right;
+}
+.topcoat-checkbox__checkmark {
+	margin: 5px;
+}
+.card-titles{
+	background-color: #D57BAE;
+	position: relative;
+	padding-left: 5px;
+	margin: -4px;
+	height:40px;
 }
