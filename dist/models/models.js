@@ -77,8 +77,6 @@ module.factory('ProviderRestangular', function(Restangular) {
     RestangularConfigurer.setBaseUrl('http://bride2be.com.mx/api/proveedores/');
     RestangularConfigurer.setResponseInterceptor(function(response, operation, what, url){
 
-      alert(what);
-
       if(url == "http://bride2be.com.mx/api/proveedores/get_ceremonia/"){
         return response.ceremonia;
       }else if(url == "http://bride2be.com.mx/api/proveedores/get_recepcion/"){

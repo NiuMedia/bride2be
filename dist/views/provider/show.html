@@ -31,10 +31,15 @@
   <div ng-controller="ShowCtrl">
     <div class="content-padded">
       <div>
+        <img style="width:100%" src="{{provider.fotos}}" class="provider-logo"/>
       	<h1>{{provider.title}}</h1>
-        <img src="{{provider.logo}}" class="provider-logo"/></h1>
+      	<p>{{provider.direccion}}</p>
+      	<p>{{provider.phone}}</p>
+      	<a href="{{provider.facebook}}">Facebook</a><br/>
+      	<a href="{{provider.facebook}}">Twitter</a><br/>
+      	<a href="tel:{{provider.phone}}">Llamar</a><br/>
+      	<a href="#">Añadir a favoritos</a>
       </div>
-      <a href="#">Añadir a favoritos</a>
     </div>
 
   </div>
