@@ -54,7 +54,7 @@ providerApp.controller('RecepcionCtrl', function ($scope, ProviderRestangular) {
   }
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=recepcion').getList();
+  $scope.providers = ProviderRestangular.all('get_recepcion/').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("Recepción y Banquetes");
@@ -78,7 +78,7 @@ providerApp.controller('InvitacionesCtrl', function ($scope, ProviderRestangular
   }
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=invitaciones').getList();
+  $scope.providers = ProviderRestangular.all('get_invitacion/').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("Invitaciones");
@@ -101,7 +101,7 @@ providerApp.controller('FloresCtrl', function ($scope, ProviderRestangular) {
   }
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=flores').getList();
+  $scope.providers = ProviderRestangular.all('get_flores/').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("Flores, Decoración y Coordinación");
@@ -122,7 +122,7 @@ providerApp.controller('IluminacionCtrl', function ($scope, ProviderRestangular)
     window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
   }
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=iluminacion').getList();
+  $scope.providers = ProviderRestangular.all('get_iluminacion/').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("Iluminación y mobiliario");
@@ -143,7 +143,7 @@ providerApp.controller('FotosCtrl', function ($scope, ProviderRestangular) {
     window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
   }
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=foto').getList();
+  $scope.providers = ProviderRestangular.all('get_fotos/').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("Foto y video");
@@ -164,7 +164,7 @@ providerApp.controller('AmbientacionCtrl', function ($scope, ProviderRestangular
     window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
   }
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=ambientacion').getList();
+  $scope.providers = ProviderRestangular.all('get_ambientacion/').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("Ambientacion y más");
@@ -185,7 +185,7 @@ providerApp.controller('ElyEllaCtrl', function ($scope, ProviderRestangular) {
     window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
   }
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=elyella').getList();
+  $scope.providers = ProviderRestangular.all('get_elyella/').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("El y ella");
@@ -206,7 +206,7 @@ providerApp.controller('MaquillajeCtrl', function ($scope, ProviderRestangular) 
     window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
   }
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=mps').getList();
+  $scope.providers = ProviderRestangular.all('get_maquillaje/').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("Maquillaje, peinado y spa");
@@ -227,7 +227,7 @@ providerApp.controller('LunaCtrl', function ($scope, ProviderRestangular) {
     window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
   }
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=luna').getList();
+  $scope.providers = ProviderRestangular.all('get_luna/').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("Luna de miel");
@@ -248,7 +248,7 @@ providerApp.controller('MesaCtrl', function ($scope, ProviderRestangular) {
     window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
   }
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=mesa').getList();
+  $scope.providers = ProviderRestangular.all('get_mesa/').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("Mesa de regalos y hogar");
@@ -269,7 +269,7 @@ providerApp.controller('MusicaCtrl', function ($scope, ProviderRestangular) {
     window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
   }
   // Fetch all objects from the local JSON (see app/models/provider.js)
-  $scope.providers = ProviderRestangular.all('posts?type=musica').getList();
+  $scope.providers = ProviderRestangular.all('get_musica/').getList();
 
   // -- Native navigation
   steroids.view.navigationBar.show("Música");
