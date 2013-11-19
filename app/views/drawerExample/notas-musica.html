@@ -1,14 +1,11 @@
 <div class="content-padded fondo">
-  <div id="banner">
-    <center>
-    <div id="texto">
-      <h2><span class="black" style="font-size: 26px; margin: 0 auto;" id="dias">Notas: Música</span></h2>
+  <div class="notes-titles center">
+      <h2>Notas: Música</h2>
     </div>
-    </center>
-  </div>
+  
   <div class="card">
-  	<h2>La música para la ceremonia</h2>
-  	<p>La música más emotiva de toda tu boda la debes tener en tu ceremonia religiosa, por eso antes de contratar al grupo de cuerdas, te recomendamos escucharlos en la iglesia en un evento previo a tu boda, para así evitar sorpresas.</p>
+  	<div class="card-titles"><h2>La música para la ceremonia</h2></div>
+  	<div class="cbCont"><p>La música más emotiva de toda tu boda la debes tener en tu ceremonia religiosa, por eso antes de contratar al grupo de cuerdas, te recomendamos escucharlos en la iglesia en un evento previo a tu boda, para así evitar sorpresas.</p>
   	<br />
 
   	<form>
@@ -27,22 +24,11 @@
   		<label for"salida">SALIDA <em>Para este feliz momento la música debe ser alegre y de lo más emotiva.</em></label>
   		<input type="text" class="topcoat-text-input center wide" name="salida" id="salida"><br><br>
   		<div class="topcoat-button center" id="save-btn">Guardar</div><br>
-  	</form>
+  	</form></div>
   </div>
   <script type="text/javascript">
   	$(document).ready(function(){
-        $("#save-btn").on("click", function(){
-          window.localStorage.setItem("marcha", $("#marcha").val());
-          window.localStorage.setItem("aleluya", $("#aleluya").val());
-          window.localStorage.setItem("ofertorio", $("#ofertorio").val());
-          window.localStorage.setItem("santo", $("#santo").val());
-          window.localStorage.setItem("comunion", $("#comunion").val());
-          window.localStorage.setItem("ramo", $("#ramo").val());
-          window.localStorage.setItem("salida", $("#salida").val());
-
-          window.localStorage.setItem("init", 1);
-          alert('Datos almacenados con éxito');
-        });
+        
 //Rellena los datos, segun la informacion guardada
         $("#marcha").val(window.localStorage.getItem("marcha"));
         $("#aleluya").val(window.localStorage.getItem("aleluya"));
@@ -51,6 +37,31 @@
         $("#comunion").val(window.localStorage.getItem("comunion"));
         $("#ramo").val(window.localStorage.getItem("ramo"));
         $("#salida").val(window.localStorage.getItem("salida"));
+
+    function guardarTodo(){
+      window.localStorage.setItem("marcha", $("#marcha").val());
+      window.localStorage.setItem("aleluya", $("#aleluya").val());
+      window.localStorage.setItem("ofertorio", $("#ofertorio").val());
+      window.localStorage.setItem("santo", $("#santo").val());
+      window.localStorage.setItem("comunion", $("#comunion").val());
+      window.localStorage.setItem("ramo", $("#ramo").val());
+      window.localStorage.setItem("salida", $("#salida").val());
+
+      window.localStorage.setItem("init", 1);
+      alert('Datos almacenados con éxito');
+    }
+
+
+    var guardarButton = new steroids.buttons.NavigationBarButton();
+    guardarButton.title = "Guardar";
+
+    guardarButton.onTap = function (){
+      guardarTodo();
+    };
+
+    steroids.view.navigationBar.setButtons({
+      right: [guardarButton]
+  });
 
       });
   </script>

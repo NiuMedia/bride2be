@@ -46,13 +46,12 @@
         <label for="fecha">Fecha de la Boda</label><br>
         <input type="date" class="topcoat-text-input center wide black" name="fecha" id="fecha"><br><br>
         <center><img id="foto" class="picture" src=""/></center><br>
-        <div class="topcoat-button center full" id="getPic-btn">Seleccionar Portada</div><br><br>
-        <div class="topcoat-button center" id="save-btn">Guardar</div><br>
+        <div class="topcoat-button center full" id="getPic-btn">Seleccionar Portada</div><br>
       </form>
       <script type="text/javascript">
         $(document).ready(function(){
           rellenarInfo();
-          $("#save-btn").on("click", function(){
+          function guardarTodo(){
             window.localStorage.setItem("novio", $("#novio").val());
             window.localStorage.setItem("novia", $("#novia").val());
             window.localStorage.setItem("lugar", $("#lugar").val());
@@ -64,7 +63,7 @@
             webView = new steroids.views.WebView("http://localhost/views/drawerExample/home.html");
             steroids.layers.push(webView);
             
-          });
+          }
 
           $("#getPic-btn").on("click", function(){
             navigator.camera.getPicture( function(imageData){
@@ -90,6 +89,17 @@
         function cambiarfoto(){
           $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
         }
+
+        var guardarButton = new steroids.buttons.NavigationBarButton();
+    guardarButton.title = "Guardar";
+
+    guardarButton.onTap = function (){
+      guardarTodo();
+    };
+
+    steroids.view.navigationBar.setButtons({
+      right: [guardarButton]
+    });
         });
       </script>
   </div>    
