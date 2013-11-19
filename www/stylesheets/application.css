@@ -185,6 +185,27 @@ li {
 	margin: -4px;
 	height:40px;
 }
+.notes-titles{
+	background-color: #CC99FF;
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	height:40px;
+	clear:both;
+	margin:-10px;
+}
+.tips-titles{
+	background-color: #FF66B2;
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	height:40px;
+	clear:both;
+	margin:-10px;
+}
+
 .img-up-down{
 	width:24px;
 }
