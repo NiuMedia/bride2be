@@ -1,18 +1,19 @@
 var providerApp = angular.module('providerApp', ['ProviderModel', 'hmTouchevents']);
 
 
-/*providerApp.factory('providersService', function(){
+providerApp.factory('providersService', function(){
   var myProvidersService = {};
-  json_guest = $.parseJSON(window.localStorage.getItem("misprovedores"));
+  var misProvedoresJSON = JSON.parse(window.localStorage.getItem("misprovedores"));
 
   myProvidersService.addProvider = function(invitado){
-    json_guest.ceremonia.push(invitado.provedor);
-    window.localStorage.setItem("invitados", JSON.stringify(json_guest));
+    alert(JSON.stringify(invitado.p));
+    misProvedoresJSON.ceremonia.push(invitado);
+    window.localStorage.setItem("misprovedores", JSON.stringify(misProvedoresJSON));
   }
 
   return myProvidersService;
 
-});*/
+});
 
 // Index: http://localhost/views/provider/index.html
 
@@ -50,8 +51,9 @@ providerApp.controller('RecepcionCtrl', function ($scope, ProviderRestangular) {
 
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
+
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_recepcion/').getList();
@@ -74,8 +76,9 @@ providerApp.controller('InvitacionesCtrl', function ($scope, ProviderRestangular
 
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
+
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_invitacion/').getList();
@@ -97,8 +100,8 @@ providerApp.controller('FloresCtrl', function ($scope, ProviderRestangular) {
 
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_flores/').getList();
@@ -119,8 +122,9 @@ providerApp.controller('IluminacionCtrl', function ($scope, ProviderRestangular)
   };
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
+
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_iluminacion/').getList();
 
@@ -140,8 +144,9 @@ providerApp.controller('FotosCtrl', function ($scope, ProviderRestangular) {
   };
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
+
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_fotos/').getList();
 
@@ -161,8 +166,9 @@ providerApp.controller('AmbientacionCtrl', function ($scope, ProviderRestangular
   };
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
+
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_ambientacion/').getList();
 
@@ -182,8 +188,9 @@ providerApp.controller('ElyEllaCtrl', function ($scope, ProviderRestangular) {
   };
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
+
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_elyella/').getList();
 
@@ -203,8 +210,9 @@ providerApp.controller('MaquillajeCtrl', function ($scope, ProviderRestangular) 
   };
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
+
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_maquillaje/').getList();
 
@@ -224,8 +232,9 @@ providerApp.controller('LunaCtrl', function ($scope, ProviderRestangular) {
   };
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
+
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_luna/').getList();
 
@@ -245,8 +254,9 @@ providerApp.controller('MesaCtrl', function ($scope, ProviderRestangular) {
   };
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
+
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_mesa/').getList();
 
@@ -266,8 +276,9 @@ providerApp.controller('MusicaCtrl', function ($scope, ProviderRestangular) {
   };
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
-    window.localStorage.setItem("invitados", "{\"ceremonia\":[], \"recepcion\":[], \"invitaciones\":[], \"flores\":[], \"iluminacion\":[], \"foto\":[], \"ambientacion\": [], \"elyella\": [], \"mps\":[], \"luna\":[], \"mesa\":[], \"musica\": []}");
-  }
+    window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
+  };
+
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_musica/').getList();
 
@@ -278,11 +289,11 @@ providerApp.controller('MusicaCtrl', function ($scope, ProviderRestangular) {
 
 // Show: http://localhost/views/provider/show.html?id=<id>
 
-providerApp.controller('ShowCtrl', function ($scope, $filter, ProviderRestangular) {
+providerApp.controller('ShowCtrl', function ($scope, $filter, ProviderRestangular, providersService) {
 
-  //$scope.providersService = providersService;
+  $scope.providersService = providersService;
 
-  //$scope.newMyProvider = {};
+  $scope.newMyProvider = {};
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
   ProviderRestangular.all('get_ceremonia/').getList().then( function(providers) {

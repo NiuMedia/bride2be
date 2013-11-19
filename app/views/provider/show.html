@@ -10,7 +10,8 @@
       	<a href="{{provider.facebook}}">Facebook</a><br/>
       	<a href="{{provider.facebook}}">Twitter</a><br/>
       	<a href="tel:{{provider.phone}}">Llamar</a><br/>
-      	<a href="#">Añadir a favoritos</a>
+        <input ng-model="newMyProvider" type="hidden" value='{{provider}}'>
+      	<a href="" hm-tap="providersService.addProvider(newMyProvider)">Añadir a favoritos</a>
       </div>
     </div>
 
