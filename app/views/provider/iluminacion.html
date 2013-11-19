@@ -2,13 +2,10 @@
 
   <div ng-controller="IluminacionCtrl">
     <div class="topcoat-list__container">
-
       <ul class="topcoat-list">
-        <li class="topcoat-list__item" hm-tap="open(provider.ID)" ng-repeat="provider in providers">
+        <li class="topcoat-list__item" hm-tap="open(provider.id)" ng-repeat="provider in providers">
+          <img src="{{provider.logo}}" style="width:100%">
           <h1>{{ provider.title }}</h1>
-          <div>
-          	{{ provider.content }}
-          </div>
         </li>
       </ul>
 

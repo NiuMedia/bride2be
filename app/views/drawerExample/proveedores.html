@@ -2,52 +2,97 @@
   <h1>Proveedores</h1>
     <div class="tarjetas">
       <h2>Ceremonia Religiosa y Civil</h2>
-      
-      
+      <a id="ceremonia" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
     <div class="tarjetas">
       <h2>Recepción y Banquetes</h2>
-      
+      <a id="recepcion" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
     <div class="tarjetas">
       <h2>Invitaciones</h2>
-      
+      <a id="invitaciones" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
     <div class="tarjetas">
       <h2>Música</h2>      
-      
+      <a id="musica" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
     <div class="tarjetas">
-      <h2>Flores, Decoración y Coordinación</h2>      
-      
+      <h2>Flores, Decoración y Coordinación</h2>     
+      <a id="flores" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
     <div class="tarjetas">
-      <h2>Iluminación y mobiliario</h2>      
-      
+      <h2>Iluminación y mobiliario</h2>  
+      <a id="iluminacion" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
     <div class="tarjetas">
       <h2>Foto y video</h2>      
-      
+      <a id="foto" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
     <div class="tarjetas">
-      <h2>Ambientacion y más</h2>      
-      
+      <h2>Ambientacion y más</h2>     
+      <a id="ambientacion" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
     <div class="tarjetas">
       <h2>El y ella</h2>      
-      
+      <a id="elyella" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
     <div class="tarjetas">
       <h2>Maquillaje, peinado y spa</h2>      
-      
+      <a id="mps" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
     <div class="tarjetas">
       <h2>Luna de miel</h2>      
-      
+      <a id="luna" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
     <div class="tarjetas">
-      <h2>Mesa de regalos y hogar</h2>      
-      
+      <h2>Mesa de regalos y hogar</h2>   
+      <a id="mesa" class="btn topcoat-button--large" href="">Mostrar todos</a>
     </div>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".btn").on("click", function(event){
+          switch($(event.target).attr("id")){
+            case "ceremonia":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/ceremonia.html");
+            break;
+            case "recepcion":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/recepcion.html");
+            break;
+            case "invitaciones":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/invitaciones.html");
+            break;
+            case "musica":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/musica.html");
+            break;
+            case "flores":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/flores.html");
+            break;
+            case "iluminacion":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/iluminacion.html");
+            break;
+            case "foto":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/foto.html");
+            break;
+            case "ambientacion":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/ambientacion.html");
+            break;
+            case "elyella":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/elyella.html");
+            break;
+            case "mps":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/maquillaje.html");
+            break;
+            case "luna":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/luna.html");
+            break;
+            case "mesa":
+              var providersView = new steroids.views.WebView("http://localhost/views/provider/mesa.html");
+            break;
+          }
+          steroids.layers.push(providersView);
+        });
+      });
+    </script>
 </div>
 
