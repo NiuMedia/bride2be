@@ -15,21 +15,23 @@
 <!-- CEREMONIA RELIGIOSA -->
 	<div class="card">
 		<div id="ceremonia-header" class="card-titles" style="clear:both;">
-			<div id="titulo-ceremonia" style="float:left"><h2>Ceremonia Religiosa</h2></div>
+			<div  id="titulo-ceremonia" style="float:left"><h2>Ceremonia Religiosa</h2></div>
 			<div id="btn-ceremonia" style="float:right;clear:right;">
 				<button class="topcoat-icon-button--quiet" id="abrir-ceremonia"><img src="/icons/br_down.png" class="img-up-down"></span></button>
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-ceremonia" style="display:none"><img src="/icons/br_up.png" class="img-up-down"></button>
 			</div>
 	  	</div>
-	  	<div id="cont-ceremonia" style="display:none">
+	  	<div id="cont-ceremonia" class="cbCont" style="display:none">
 	  		<!-- Donativo -->
-		  	<div id="donativo-content" style="clear:both">
-			  	<div id="titulo-donativo">
-			  		<div style="float:left"><h3>Donativo a la iglesia</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-donativo">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-donativo" style="display:none">Cerrar</button></div>
+		  	<div id="donativo-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-donativo">
+			  		<div style="float:left" class="gastos-subs"><h3>Donativo a la iglesia</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-donativo">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-donativo" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="donativo-specs" style="clear:both;">
+			  	<div id="donativo-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="donativo-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="donativo-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="donativo-spec-f"></label></div>
@@ -58,17 +60,16 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Musica -->
-		  	<div id="musica-content" style="clear:both">
-			  	<div id="titulo-musica">
-			  		<div style="float:left"><h3>Música</h3></div>
+		  	<div id="musica-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-musica">
+			  		<div style="float:left" class="gastos-subs"><h3>Música</h3></div>
 			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-musica">Editar</button>
 			  			<button class="topcoat-button--quiet" id="cerrar-musica" style="display:none">Cerrar</button></div>
 			  	</div>
-			  	<div id="musica-specs" style="clear:both;">
+			  	<div id="musica-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="musica-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="musica-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="musica-spec-f"></label></div>
@@ -97,21 +98,20 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Decoracion -->
-			<div id="decoracion-content" style="clear:both">
-				<div id="titulo-decoracion">
-			  		<div style="float:left"><h3>Decoración</h3></div>
+			<div id="decoracion-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-decoracion">
+			  		<div style="float:left" class="gastos-subs"><h3>Decoración</h3></div>
 			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-decoracion">Editar</button>
 			  			<button class="topcoat-button--quiet" id="cerrar-decoracion" style="display:none">Cerrar</button>
 			  		</div>
-				  	<div id="decoracion-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="decoracion-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="decoracion-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="decoracion-spec-f"></label></div>
-				  	</div>
+			  	</div>
+			  	<div id="decoracion-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="decoracion-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="decoracion-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="decoracion-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-decoracion" style="display:none">
 			  	<table>
@@ -137,61 +137,61 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Anillos -->
-		  	<div id="anillos-content" style="clear:both">
-				<div id="titulo-anillos">
-			  		<div style="float:left"><h3>Anillos, Arras y lazo</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-anillos">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-anillos" style="display:none">Cerrar</button>
+		  	<div id="anillos-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-anillos">
+			  		<div style="float:left" class="gastos-subs"><h3>Anillos, Arras y lazo</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-anillos">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-anillos" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="anillos-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="anillos-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="anillos-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="anillos-spec-f"></label></div>
-				  	</div>
+			  	<div id="anillos-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="anillos-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="anillos-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="anillos-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-anillos" style="display:none">
-			  	<table>
-				  	<tr>
-				  		<td><label for="costo-anillos">Costo</label></td>
-				  		<td><label>Saldo</label><br/></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="costo-anillos" id="costo-anillos" style="width:80%"></td>
-						<td><label id="saldo-anillos" style="width:150px;font-size:1.5em"></label></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="fecha-anillos">Fecha para<br />liquidación</label></td>
-				  		<td><input type="date" class="topcoat-text-input center" name="fecha-anillos" id="fecha-anillos" style="width:99%"></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="anticipo-anillos">Anticipo</label></td>
-				  		<td></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-anillos" id="anticipo-anillos" style="width:80%"></td>
-				  		<td><button class="topcoat-button--cta" id="ok-anillos">Aceptar</button></td>
-				  	</tr>
-			  	</table>
+				  	<table>
+					  	<tr>
+					  		<td><label for="costo-anillos">Costo</label></td>
+					  		<td><label>Saldo</label><br/></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="costo-anillos" id="costo-anillos" style="width:80%"></td>
+							<td><label id="saldo-anillos" style="width:150px;font-size:1.5em"></label></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="fecha-anillos">Fecha para<br />liquidación</label></td>
+					  		<td><input type="date" class="topcoat-text-input center" name="fecha-anillos" id="fecha-anillos" style="width:99%"></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="anticipo-anillos">Anticipo</label></td>
+					  		<td></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="anticipo-anillos" id="anticipo-anillos" style="width:80%"></td>
+					  		<td><button class="topcoat-button--cta" id="ok-anillos">Aceptar</button></td>
+					  	</tr>
+				  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Rosario -->
-		  	<div id="rosario-content" style="clear:both">
-				<div id="titulo-rosario">
-			  		<div style="float:left"><h3>Rosario o lazo</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-rosario">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-rosario" style="display:none">Cerrar</button>
+		  	<div id="rosario-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-rosario">
+			  		<div style="float:left" class="gastos-subs"><h3>Rosario o lazo</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-rosario">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-rosario" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="rosario-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="rosario-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="rosario-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="rosario-spec-f"></label></div>
-				  	</div>
+			  	<div id="rosario-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="rosario-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="rosario-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="rosario-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-rosario" style="display:none">
 			  	<table>
@@ -217,61 +217,61 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Biblia -->
-			<div id="biblia-content" style="clear:both">
-				<div id="titulo-biblia">
-			  		<div style="float:left"><h3>Biblia</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-biblia">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-biblia" style="display:none">Cerrar</button>
+			<div id="biblia-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-biblia">
+			  		<div style="float:left" class="gastos-subs"><h3>Biblia</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-biblia">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-biblia" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="biblia-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="biblia-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="biblia-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="biblia-spec-f"></label></div>
-				  	</div>
+			  	<div id="biblia-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="biblia-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="biblia-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="biblia-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-biblia" style="display:none">
-			  	<table>
-				  	<tr>
-				  		<td><label for="costo-biblia">Costo</label></td>
-				  		<td><label>Saldo</label><br/></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="costo-biblia" id="costo-biblia" style="width:80%"></td>
-						<td><label id="saldo-biblia" style="width:150px;font-size:1.5em"></label></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="fecha-biblia">Fecha para<br />liquidación</label></td>
-				  		<td><input type="date" class="topcoat-text-input center" name="fecha-biblia" id="fecha-biblia" style="width:99%"></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="anticipo-biblia">Anticipo</label></td>
-				  		<td></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-biblia" id="anticipo-biblia" style="width:80%"></td>
-				  		<td><button class="topcoat-button--cta" id="ok-biblia">Aceptar</button></td>
-				  	</tr>
-			  	</table>
+				  	<table>
+					  	<tr>
+					  		<td><label for="costo-biblia">Costo</label></td>
+					  		<td><label>Saldo</label><br/></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="costo-biblia" id="costo-biblia" style="width:80%"></td>
+							<td><label id="saldo-biblia" style="width:150px;font-size:1.5em"></label></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="fecha-biblia">Fecha para<br />liquidación</label></td>
+					  		<td><input type="date" class="topcoat-text-input center" name="fecha-biblia" id="fecha-biblia" style="width:99%"></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="anticipo-biblia">Anticipo</label></td>
+					  		<td></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="anticipo-biblia" id="anticipo-biblia" style="width:80%"></td>
+					  		<td><button class="topcoat-button--cta" id="ok-biblia">Aceptar</button></td>
+					  	</tr>
+				  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Renta de auto -->
-			<div id="renta-content" style="clear:both">
-				<div id="titulo-renta">
-			  		<div style="float:left"><h3>Renta de auto</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-renta">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-renta" style="display:none">Cerrar</button>
+			<div id="renta-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-renta">
+			  		<div style="float:left" class="gastos-subs"><h3>Renta de auto</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-renta">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-renta" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="renta-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="renta-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="renta-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="renta-spec-f"></label></div>
-				  	</div>
+			  	<div id="renta-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="renta-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="renta-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="renta-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-renta" style="display:none">
 			  	<table>
@@ -297,101 +297,101 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Ramo -->
-			<div id="ramo-content" style="clear:both">
-				<div id="titulo-ramo">
-			  		<div style="float:left"><h3>Ramo de la Novia</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-ramo">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-ramo" style="display:none">Cerrar</button>
+			<div id="ramo-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-ramo">
+			  		<div style="float:left" class="gastos-subs"><h3>Ramo de la Novia</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-ramo">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-ramo" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="ramo-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="ramo-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="ramo-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="ramo-spec-f"></label></div>
-				  	</div>
+			  	<div id="ramo-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="ramo-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="ramo-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="ramo-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-ramo" style="display:none">
-			  	<table>
-				  	<tr>
-				  		<td><label for="costo-ramo">Costo</label></td>
-				  		<td><label>Saldo</label><br/></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="costo-ramo" id="costo-ramo" style="width:80%"></td>
-						<td><label id="saldo-ramo" style="width:150px;font-size:1.5em"></label></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="fecha-ramo">Fecha para<br />liquidación</label></td>
-				  		<td><input type="date" class="topcoat-text-input center" name="fecha-ramo" id="fecha-ramo" style="width:99%"></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="anticipo-ramo">Anticipo</label></td>
-				  		<td></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-ramo" id="anticipo-ramo" style="width:80%"></td>
-				  		<td><button class="topcoat-button--cta" id="ok-ramo">Aceptar</button></td>
-				  	</tr>
-			  	</table>
+				  	<table>
+					  	<tr>
+					  		<td><label for="costo-ramo">Costo</label></td>
+					  		<td><label>Saldo</label><br/></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="costo-ramo" id="costo-ramo" style="width:80%"></td>
+							<td><label id="saldo-ramo" style="width:150px;font-size:1.5em"></label></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="fecha-ramo">Fecha para<br />liquidación</label></td>
+					  		<td><input type="date" class="topcoat-text-input center" name="fecha-ramo" id="fecha-ramo" style="width:99%"></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="anticipo-ramo">Anticipo</label></td>
+					  		<td></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="anticipo-ramo" id="anticipo-ramo" style="width:80%"></td>
+					  		<td><button class="topcoat-button--cta" id="ok-ramo">Aceptar</button></td>
+					  	</tr>
+				  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Recuerdos -->
-			<div id="recuerdos-content" style="clear:both">
-				<div id="titulo-recuerdos">
-			  		<div style="float:left"><h3>Recuerdos</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-recuerdos">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-recuerdos" style="display:none">Cerrar</button>
+			<div id="recuerdos-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-recuerdos">
+			  		<div style="float:left" class="gastos-subs"><h3>Recuerdos</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-recuerdos">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-recuerdos" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="recuerdos-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="recuerdos-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="recuerdos-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="recuerdos-spec-f"></label></div>
-				  	</div>
+			  	<div id="recuerdos-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="recuerdos-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="recuerdos-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="recuerdos-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-recuerdos" style="display:none">
-			  	<table>
-				  	<tr>
-				  		<td><label for="costo-recuerdos">Costo</label></td>
-				  		<td><label>Saldo</label><br/></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="costo-recuerdos" id="costo-recuerdos" style="width:80%"></td>
-						<td><label id="saldo-recuerdos" style="width:150px;font-size:1.5em"></label></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="fecha-recuerdos">Fecha para<br />liquidación</label></td>
-				  		<td><input type="date" class="topcoat-text-input center" name="fecha-recuerdos" id="fecha-recuerdos" style="width:99%"></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="anticipo-recuerdos">Anticipo</label></td>
-				  		<td></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-recuerdos" id="anticipo-recuerdos" style="width:80%"></td>
-				  		<td><button class="topcoat-button--cta" id="ok-recuerdos">Aceptar</button></td>
-				  	</tr>
-			  	</table>
+				  	<table>
+					  	<tr>
+					  		<td><label for="costo-recuerdos">Costo</label></td>
+					  		<td><label>Saldo</label><br/></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="costo-recuerdos" id="costo-recuerdos" style="width:80%"></td>
+							<td><label id="saldo-recuerdos" style="width:150px;font-size:1.5em"></label></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="fecha-recuerdos">Fecha para<br />liquidación</label></td>
+					  		<td><input type="date" class="topcoat-text-input center" name="fecha-recuerdos" id="fecha-recuerdos" style="width:99%"></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="anticipo-recuerdos">Anticipo</label></td>
+					  		<td></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="anticipo-recuerdos" id="anticipo-recuerdos" style="width:80%"></td>
+					  		<td><button class="topcoat-button--cta" id="ok-recuerdos">Aceptar</button></td>
+					  	</tr>
+				  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 			
 			<!-- Otros1 -->
-		  	<div id="otros1-content" style="clear:both">
-				<div id="titulo-otros1">
+		  	<div id="otros1-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-otros1">
 			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros1" id="concepto-otros1" value="Otros" style="width:150px;"></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros1">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-otros1" style="display:none">Cerrar</button>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-otros1">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-otros1" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="otros1-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="otros1-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="otros1-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="otros1-spec-f"></label></div>
-				  	</div>
+			  	<div id="otros1-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="otros1-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="otros1-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="otros1-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-otros1" style="display:none">
 			  	<table>
@@ -417,21 +417,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 			
 			<!-- Otros2 -->
-		  	<div id="otros2-content" style="clear:both">
-				<div id="titulo-otros2">
+		  	<div id="otros2-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-otros2">
 			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros2" id="concepto-otros2" value="Otros" style="width:150px;"></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros2">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-otros2" style="display:none">Cerrar</button>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-otros2">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-otros2" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="otros2-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="otros2-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="otros2-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="otros2-spec-f"></label></div>
-				  	</div>
+			  	<div id="otros2-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="otros2-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="otros2-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="otros2-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-otros2" style="display:none">
 			  	<table>
@@ -457,11 +457,10 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 		  	<br>
 	  	</div><!-- cont-ceremonia -->
-	  	<div id="costo-semitotal" style="clear:both">
+	  	<div id="costo-semitotal" class="cbCont" style="clear:both">
 	  		<label id="costo-total-ceremonia">Costo:</label>
 			<label id="saldo-total-ceremonia">Saldo:</label>
 	  	</div>
@@ -475,142 +474,146 @@
 <!-- CEREMONIA CIVIL -->
 	<div class="card">
 	  	<div id="civil-header" class="card-titles" style="clear:both;">
-			<div id="titulo-civil" style="float:left"><h2>Ceremonia Civil</h2></div>
+			<div  id="titulo-civil" style="float:left"><h2>Ceremonia Civil</h2></div>
 			<div id="btn-civil" style="float:right;clear:right;">
 				<button class="topcoat-icon-button--quiet" id="abrir-civil"><img src="/icons/br_down.png" class="img-up-down"></span></button>
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-civil" style="display:none"><img src="/icons/br_up.png" class="img-up-down"></button>
 			</div>
 	  	</div>
-	  	<div id="cont-civil" style="display:none">
+	  	<div class="cbCont" id="cont-civil" style="display:none">
 	  		<!-- derecho -->
-		  	<div id="derecho-content" style="clear:both">
-			  	<div id="titulo-derecho">
-			  		<div style="float:left"><h3>Pago de Derechos</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-derecho">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-derecho" style="display:none">Cerrar</button></div>
-			  	</div>
-			  	<div id="derecho-specs" style="clear:both;">
+		  	<div id="derecho-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-derecho">
+				  	<div style="float:left" class="gastos-subs"><h3>Pago de Derechos</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-derecho">Editar</button>
+				  		<button class="topcoat-button--quiet" id="cerrar-derecho" style="display:none">Cerrar</button>
+				  	</div>
+		  		</div>
+				<div id="derecho-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="derecho-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="derecho-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="derecho-spec-f"></label></div>
 			  	</div>
-			  	<div id="ceremonia-derecho" style="display:none">
-			  	<table>
-				  	<tr>
-				  		<td><label for="costo-derecho">Costo</label></td>
-				  		<td><label>Saldo</label><br/></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="costo-derecho" id="costo-derecho" style="width:80%"></td>
-						<td><label id="saldo-derecho" style="width:150px;font-size:1.5em"></label></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="fecha-derecho">Fecha para<br />liquidación</label></td>
-				  		<td><input type="date" class="topcoat-text-input center" name="fecha-derecho" id="fecha-derecho" style="width:99%"></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="anticipo-derecho">Anticipo</label></td>
-				  		<td></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-derecho" id="anticipo-derecho" style="width:80%"></td>
-				  		<td><button class="topcoat-button--cta" id="ok-derecho">Aceptar</button></td>
-				  	</tr>
-			  	</table>
-			  	</div>
-			  	<br><br>
-		  	</div>
+				<div id="ceremonia-derecho" style="display:none">
+				  	<table>
+					  	<tr>
+					  		<td><label for="costo-derecho">Costo</label></td>
+					  		<td><label>Saldo</label><br/></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="costo-derecho" id="costo-derecho" style="width:80%"></td>
+							<td><label id="saldo-derecho" style="width:150px;font-size:1.5em"></label></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="fecha-derecho">Fecha para<br />liquidación</label></td>
+					  		<td><input type="date" class="topcoat-text-input center" name="fecha-derecho" id="fecha-derecho" style="width:99%"></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="anticipo-derecho">Anticipo</label></td>
+					  		<td></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="anticipo-derecho" id="anticipo-derecho" style="width:80%"></td>
+					  		<td><button class="topcoat-button--cta" id="ok-derecho">Aceptar</button></td>
+					  	</tr>
+				  	</table>
+				</div>
+			</div>
 
 		  	<!-- Juez -->
-		  	<div id="juez-content" style="clear:both">
-			  	<div id="titulo-juez">
-			  		<div style="float:left"><h3>Juez (si es a domicilio)</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-juez">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-juez" style="display:none">Cerrar</button></div>
-			  	</div>
-			  	<div id="juez-specs" style="clear:both;">
+		  	<div id="juez-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-juez">
+			  		<div style="float:left" class="gastos-subs"><h3>Juez (si es a domicilio)</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-juez">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-juez" style="display:none">Cerrar</button>
+			  		</div>
+		  		</div>
+			  	<div id="juez-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="juez-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="juez-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="juez-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-juez" style="display:none">
-			  	<table>
-				  	<tr>
-				  		<td><label for="costo-juez">Costo</label></td>
-				  		<td><label>Saldo</label><br/></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="costo-juez" id="costo-juez" style="width:80%"></td>
-						<td><label id="saldo-juez" style="width:150px;font-size:1.5em"></label></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="fecha-juez">Fecha para<br />liquidación</label></td>
-				  		<td><input type="date" class="topcoat-text-input center" name="fecha-juez" id="fecha-juez" style="width:99%"></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="anticipo-juez">Anticipo</label></td>
-				  		<td></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-juez" id="anticipo-juez" style="width:80%"></td>
-				  		<td><button class="topcoat-button--cta" id="ok-juez">Aceptar</button></td>
-				  	</tr>
-			  	</table>
+				  	<table>
+					  	<tr>
+					  		<td><label for="costo-juez">Costo</label></td>
+					  		<td><label>Saldo</label><br/></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="costo-juez" id="costo-juez" style="width:80%"></td>
+							<td><label id="saldo-juez" style="width:150px;font-size:1.5em"></label></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="fecha-juez">Fecha para<br />liquidación</label></td>
+					  		<td><input type="date" class="topcoat-text-input center" name="fecha-juez" id="fecha-juez" style="width:99%"></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="anticipo-juez">Anticipo</label></td>
+					  		<td></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="anticipo-juez" id="anticipo-juez" style="width:80%"></td>
+					  		<td><button class="topcoat-button--cta" id="ok-juez">Aceptar</button></td>
+					  	</tr>
+				  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Atuendo -->
-			<div id="atuendo-content" style="clear:both">
-				<div id="titulo-atuendo">
-			  		<div style="float:left"><h3>Atuendo para la ocasión</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-atuendo">Editar</button>
+			<div id="atuendo-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-atuendo">
+			  		<div style="float:left" class="gastos-subs"><h3>Atuendo para la ocasión</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-atuendo">Editar</button>
 			  			<button class="topcoat-button--quiet" id="cerrar-atuendo" style="display:none">Cerrar</button>
-			  		</div>
-				  	<div id="atuendo-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="atuendo-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="atuendo-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="atuendo-spec-f"></label></div>
-				  	</div>
+		  			</div>
+		  		</div>
+			  	<div id="atuendo-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="atuendo-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="atuendo-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="atuendo-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-atuendo" style="display:none">
-			  	<table>
-				  	<tr>
-				  		<td><label for="costo-atuendo">Costo</label></td>
-				  		<td><label>Saldo</label><br/></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="costo-atuendo" id="costo-atuendo" style="width:80%"></td>
-						<td><label id="saldo-atuendo" style="width:150px;font-size:1.5em"></label></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="fecha-atuendo">Fecha para<br />liquidación</label></td>
-				  		<td><input type="date" class="topcoat-text-input center" name="fecha-atuendo" id="fecha-atuendo" style="width:99%"></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="anticipo-atuendo">Anticipo</label></td>
-				  		<td></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-atuendo" id="anticipo-atuendo" style="width:80%"></td>
-				  		<td><button class="topcoat-button--cta" id="ok-atuendo">Aceptar</button></td>
-				  	</tr>
-			  	</table>
+				  	<table>
+					  	<tr>
+					  		<td><label for="costo-atuendo">Costo</label></td>
+					  		<td><label>Saldo</label><br/></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="costo-atuendo" id="costo-atuendo" style="width:80%"></td>
+							<td><label id="saldo-atuendo" style="width:150px;font-size:1.5em"></label></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="fecha-atuendo">Fecha para<br />liquidación</label></td>
+					  		<td><input type="date" class="topcoat-text-input center" name="fecha-atuendo" id="fecha-atuendo" style="width:99%"></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="anticipo-atuendo">Anticipo</label></td>
+					  		<td></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="anticipo-atuendo" id="anticipo-atuendo" style="width:80%"></td>
+					  		<td><button class="topcoat-button--cta" id="ok-atuendo">Aceptar</button></td>
+					  	</tr>
+				  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Analisis -->
-		  	<div id="analisis-content" style="clear:both">
-				<div id="titulo-analisis">
-			  		<div style="float:left"><h3>Análisis prenupciales</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-analisis">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-analisis" style="display:none">Cerrar</button>
+		  	<div id="analisis-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-analisis">
+			  		<div style="float:left" class="gastos-subs"><h3>Análisis prenupciales</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-analisis">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-analisis" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="analisis-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="analisis-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="analisis-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="analisis-spec-f"></label></div>
+			  	<div id="analisis-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="analisis-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="analisis-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="analisis-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-analisis" style="display:none">
@@ -637,20 +640,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Fotografía -->
-		  	<div id="foto-content" style="clear:both">
-				<div id="titulo-foto">
-			  		<div style="float:left"><h3>Fotografía</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-foto">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-foto" style="display:none">Cerrar</button>
+		  	<div id="foto-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-foto">
+			  		<div style="float:left" class="gastos-subs"><h3>Fotografía</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-foto">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-foto" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="foto-specs" style="clear:both;">
+				  	<div id="foto-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="foto-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="foto-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="foto-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="foto-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-foto" style="display:none">
@@ -677,19 +681,20 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 	  	<!-- Otros3 -->
-		  	<div id="otros3-content" style="clear:both">
-				<div id="titulo-otros3">
+		  	<div id="otros3-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-otros3">
 			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros3" id="concepto-otros3" value="Otros" style="width:150px;"></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros3">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-otros3" style="display:none">Cerrar</button>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-otros3">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-otros3" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="otros3-specs" style="clear:both;">
+				  	<div id="otros3-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="otros3-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="otros3-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="otros3-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="otros3-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-otros3" style="display:none">
@@ -716,20 +721,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 			
 			<!-- Otros4 -->
-		  	<div id="otros4-content" style="clear:both">
-				<div id="titulo-otros4">
+		  	<div id="otros4-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-otros4">
 			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros4" id="concepto-otros4" value="Otros" style="width:150px;"></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros4">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-otros4" style="display:none">Cerrar</button>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-otros4">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-otros4" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="otros4-specs" style="clear:both;">
+				  	<div id="otros4-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="otros4-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="otros4-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="otros4-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="otros4-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-otros4" style="display:none">
@@ -756,11 +762,10 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 		  	<br>
 		</div>
-	  	<div id="costo-semitotal" style="clear:both">
+	  	<div id="costo-semitotal" class="cbCont" style="clear:both">
 		  	<label id="costo-total-civil">Costo:</label>
 			<label id="saldo-total-civil">Saldo:</label>
 		</div>
@@ -775,21 +780,23 @@
 	  <div class="card">
 	  	
 	  	<div id="recepcion-header" class="card-titles" style="clear:both;">
-			<div id="titulo-recepcion" style="float:left"><h2>Recepción</h2></div>
+			<div  id="titulo-recepcion" style="float:left"><h2>Recepción</h2></div>
 			<div id="btn-recepcion" style="float:right;clear:right;">
 				<button class="topcoat-icon-button--quiet" id="abrir-recepcion"><img src="/icons/br_down.png" class="img-up-down"></span></button>
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-recepcion" style="display:none"><img src="/icons/br_up.png" class="img-up-down"></button>
 			</div>
 	  	</div>
-	  	<div id="cont-recepcion" style="display:none">
+	  	<div class="cbCont" id="cont-recepcion" style="display:none">
 	  		<!-- salon -->
-		  	<div id="salon-content" style="clear:both">
-			  	<div id="titulo-salon">
-			  		<div style="float:left"><h3>Renta de salón</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-salon">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-salon" style="display:none">Cerrar</button></div>
+		  	<div id="salon-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-salon">
+			  		<div style="float:left" class="gastos-subs"><h3>Renta de salón</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-salon">Editar</button>
+				  		<button class="topcoat-button--quiet" id="cerrar-salon" style="display:none">Cerrar</button>
+				  	</div>
 			  	</div>
-			  	<div id="salon-specs" style="clear:both;">
+			  	<div id="salon-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="salon-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="salon-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="salon-spec-f"></label></div>
@@ -818,17 +825,18 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- banquete -->
-		  	<div id="banquete-content" style="clear:both">
-			  	<div id="titulo-banquete">
-			  		<div style="float:left"><h3>Banquete</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-banquete">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-banquete" style="display:none">Cerrar</button></div>
+		  	<div id="banquete-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-banquete">
+			  		<div style="float:left" class="gastos-subs"><h3>Banquete</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-banquete">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-banquete" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="banquete-specs" style="clear:both;">
+			  	<div id="banquete-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="banquete-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="banquete-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="banquete-spec-f"></label></div>
@@ -857,20 +865,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- bebida -->
-			<div id="bebida-content" style="clear:both">
-				<div id="titulo-bebida">
-			  		<div style="float:left"><h3>Bebidas</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-bebida">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-bebida" style="display:none">Cerrar</button>
+			<div id="bebida-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-bebida">
+			  		<div style="float:left" class="gastos-subs"><h3>Bebidas</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-bebida">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-bebida" style="display:none">Cerrar</button>
+			  			</div>
 			  		</div>
-				  	<div id="bebida-specs" style="clear:both;">
+				  	<div id="bebida-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="bebida-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="bebida-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="bebida-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="bebida-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-bebida" style="display:none">
@@ -897,20 +906,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- musica2 -->
-		  	<div id="musica2-content" style="clear:both">
-				<div id="titulo-musica2">
-			  		<div style="float:left"><h3>Música</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-musica2">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-musica2" style="display:none">Cerrar</button>
+		  	<div id="musica2-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-musica2">
+			  		<div style="float:left" class="gastos-subs"><h3>Música</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-musica2">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-musica2" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="musica2-specs" style="clear:both;">
+				  	<div id="musica2-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="musica2-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="musica2-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="musica2-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="musica2-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-musica2" style="display:none">
@@ -937,20 +947,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Decoración2 -->
-		  	<div id="decoracion2-content" style="clear:both">
-				<div id="titulo-decoracion2">
-			  		<div style="float:left"><h3>Decoración</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-decoracion2">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-decoracion2" style="display:none">Cerrar</button>
+		  	<div id="decoracion2-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-decoracion2">
+			  		<div style="float:left" class="gastos-subs"><h3>Decoración</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-decoracion2">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-decoracion2" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="decoracion2-specs" style="clear:both;">
+				  	<div id="decoracion2-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="decoracion2-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="decoracion2-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="decoracion2-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="decoracion2-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-decoracion2" style="display:none">
@@ -977,16 +988,17 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 		  	<!-- iluminacion -->
-		  	<div id="iluminacion-content" style="clear:both">
-			  	<div id="titulo-iluminacion">
-			  		<div style="float:left"><h3>Iluminación</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-iluminacion">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-iluminacion" style="display:none">Cerrar</button></div>
+		  	<div id="iluminacion-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-iluminacion">
+			  		<div style="float:left" class="gastos-subs"><h3>Iluminación</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-iluminacion">Editar</button>
+				  		<button class="topcoat-button--quiet" id="cerrar-iluminacion" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="iluminacion-specs" style="clear:both;">
+			  	<div id="iluminacion-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="iluminacion-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="iluminacion-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="iluminacion-spec-f"></label></div>
@@ -1015,17 +1027,18 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- pirotecnia -->
-		  	<div id="pirotecnia-content" style="clear:both">
-			  	<div id="titulo-pirotecnia">
-			  		<div style="float:left"><h3>Pirotécnia</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-pirotecnia">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-pirotecnia" style="display:none">Cerrar</button></div>
+		  	<div id="pirotecnia-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-pirotecnia">
+			  		<div style="float:left" class="gastos-subs"><h3>Pirotécnia</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-pirotecnia">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-pirotecnia" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="pirotecnia-specs" style="clear:both;">
+			  	<div id="pirotecnia-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="pirotecnia-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="pirotecnia-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="pirotecnia-spec-f"></label></div>
@@ -1054,21 +1067,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Recuerdos2 -->
-			<div id="recuerdos2-content" style="clear:both">
-				<div id="titulo-recuerdos2">
-			  		<div style="float:left"><h3>Recuerdos</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-recuerdos2">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-recuerdos2" style="display:none">Cerrar</button>
+			<div id="recuerdos2-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-recuerdos2">
+			  		<div style="float:left" class="gastos-subs"><h3>Recuerdos</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-recuerdos2">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-recuerdos2" style="display:none">Cerrar</button>
+			  			</div>
 			  		</div>
-				  	<div id="recuerdos2-specs" style="clear:both;">
+				  	<div id="recuerdos2-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="recuerdos2-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="recuerdos2-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="recuerdos2-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-recuerdos2" style="display:none">
 			  	<table>
@@ -1094,16 +1107,17 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 		  	<!-- foto2 -->
-		  	<div id="foto2-content" style="clear:both">
-			  	<div id="titulo-foto2">
-			  		<div style="float:left"><h3>Fotos y Vídeo</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-foto2">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-foto2" style="display:none">Cerrar</button></div>
+		  	<div id="foto2-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-foto2">
+			  		<div style="float:left" class="gastos-subs"><h3>Fotos y Vídeo</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-foto2">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-foto2" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="foto2-specs" style="clear:both;">
+			  	<div id="foto2-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="foto2-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="foto2-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="foto2-spec-f"></label></div>
@@ -1132,21 +1146,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- torna -->
-			<div id="torna-content" style="clear:both">
-				<div id="titulo-torna">
-			  		<div style="float:left"><h3>Tornaboda</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-torna">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-torna" style="display:none">Cerrar</button>
+			<div id="torna-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-torna">
+			  		<div style="float:left" class="gastos-subs"><h3>Tornaboda</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-torna">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-torna" style="display:none">Cerrar</button>
+			  			</div>
 			  		</div>
-				  	<div id="torna-specs" style="clear:both;">
+				  	<div id="torna-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="torna-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="torna-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="torna-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-torna" style="display:none">
 			  	<table>
@@ -1172,20 +1186,20 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 	  	<!-- Otros5 -->
-		  	<div id="otros5-content" style="clear:both">
-				<div id="titulo-otros5">
+		  	<div id="otros5-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-otros5">
 			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros5" id="concepto-otros5" value="Otros" style="width:150px;"></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros5">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-otros5" style="display:none">Cerrar</button>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-otros5">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-otros5" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="otros5-specs" style="clear:both;">
+				  	<div id="otros5-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="otros5-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="otros5-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="otros5-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-otros5" style="display:none">
 			  	<table>
@@ -1211,51 +1225,49 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 			
 			<!-- Otros6 -->
-		  	<div id="otros6-content" style="clear:both">
-				<div id="titulo-otros6">
+		  	<div id="otros6-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-otros6">
 			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros6" id="concepto-otros6" value="Otros" style="width:150px;"></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros6">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-otros6" style="display:none">Cerrar</button>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-otros6">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-otros6" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="otros6-specs" style="clear:both;">
-				  		<div style="width:33%;float:left">Costo<br /><label id="otros6-spec-c"></label></div>
-				  		<div style="width:33%;float:left">Saldo<br /><label id="otros6-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="otros6-spec-f"></label></div>
-				  	</div>
+			  	<div id="otros6-specs" class="specs" style="clear:both;">
+			  		<div style="width:33%;float:left">Costo<br /><label id="otros6-spec-c"></label></div>
+			  		<div style="width:33%;float:left">Saldo<br /><label id="otros6-spec-s"></label></div>
+			  		<div style="width:33%;float:left">Fecha<br /><label id="otros6-spec-f"></label></div>
 			  	</div>
 			  	<div id="ceremonia-otros6" style="display:none">
-			  	<table>
-				  	<tr>
-				  		<td><label for="costo-otros6">Costo</label></td>
-				  		<td><label>Saldo</label><br/></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="costo-otros6" id="costo-otros6" style="width:80%"></td>
-						<td><label id="saldo-otros6" style="width:150px;font-size:1.5em"></label></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="fecha-otros6">Fecha para<br />liquidación</label></td>
-				  		<td><input type="date" class="topcoat-text-input center" name="fecha-otros6" id="fecha-otros6" style="width:99%"></td>
-				  	</tr>
-				  	<tr>
-				  		<td><label for="anticipo-otros6">Anticipo</label></td>
-				  		<td></td>
-				  	</tr>
-				  	<tr>
-				  		<td><input type="tel" class="topcoat-text-input" name="anticipo-otros6" id="anticipo-otros6" style="width:80%"></td>
-				  		<td><button class="topcoat-button--cta" id="ok-otros6">Aceptar</button></td>
-				  	</tr>
-			  	</table>
+				  	<table>
+					  	<tr>
+					  		<td><label for="costo-otros6">Costo</label></td>
+					  		<td><label>Saldo</label><br/></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="costo-otros6" id="costo-otros6" style="width:80%"></td>
+							<td><label id="saldo-otros6" style="width:150px;font-size:1.5em"></label></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="fecha-otros6">Fecha para<br />liquidación</label></td>
+					  		<td><input type="date" class="topcoat-text-input center" name="fecha-otros6" id="fecha-otros6" style="width:99%"></td>
+					  	</tr>
+					  	<tr>
+					  		<td><label for="anticipo-otros6">Anticipo</label></td>
+					  		<td></td>
+					  	</tr>
+					  	<tr>
+					  		<td><input type="tel" class="topcoat-text-input" name="anticipo-otros6" id="anticipo-otros6" style="width:80%"></td>
+					  		<td><button class="topcoat-button--cta" id="ok-otros6">Aceptar</button></td>
+					  	</tr>
+				  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
-		  	<br>
 		</div>
-	  	<div id="costo-semitotal" style="clear:both">
+	  	<div id="costo-semitotal" class="cbCont" style="clear:both">
 		  	<label id="costo-total-recepcion">Costo:</label>
 			<label id="saldo-total-recepcion">Saldo:</label>
 		</div>
@@ -1269,21 +1281,23 @@
 <!-- NOVIO -->
 	  <div class="card">
 	  	<div id="novio-header" class="card-titles" style="clear:both;">
-			<div id="titulo-novio" style="float:left"><h2>Novio</h2></div>
+			<div  id="titulo-novio" style="float:left"><h2>Novio</h2></div>
 			<div id="btn-novio" style="float:right;clear:right;">
 				<button class="topcoat-icon-button--quiet" id="abrir-novio"><img src="/icons/br_down.png" class="img-up-down"></span></button>
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-novio" style="display:none"><img src="/icons/br_up.png" class="img-up-down"></button>
 			</div>
 	  	</div>
-	  	<div id="cont-novio" style="display:none">
+	  	<div class="cbCont" id="cont-novio" style="display:none">
 	  		<!-- traje -->
-		  	<div id="traje-content" style="clear:both">
-			  	<div id="titulo-traje">
-			  		<div style="float:left"><h3>Compra/alquiler traje</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-traje">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-traje" style="display:none">Cerrar</button></div>
+		  	<div id="traje-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-traje">
+			  		<div style="float:left" class="gastos-subs"><h3>Compra/alquiler traje</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-traje">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-traje" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="traje-specs" style="clear:both;">
+			  	<div id="traje-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="traje-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="traje-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="traje-spec-f"></label></div>
@@ -1312,17 +1326,18 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- camisa -->
-		  	<div id="camisa-content" style="clear:both">
-			  	<div id="titulo-camisa">
-			  		<div style="float:left"><h3>Camisa</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-camisa">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-camisa" style="display:none">Cerrar</button></div>
+		  	<div id="camisa-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-camisa">
+			  		<div style="float:left" class="gastos-subs"><h3>Camisa</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-camisa">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-camisa" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="camisa-specs" style="clear:both;">
+			  	<div id="camisa-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="camisa-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="camisa-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="camisa-spec-f"></label></div>
@@ -1351,21 +1366,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- mancuernillas -->
-			<div id="mancuernillas-content" style="clear:both">
-				<div id="titulo-mancuernillas">
-			  		<div style="float:left"><h3>Mancuernillas</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-mancuernillas">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-mancuernillas" style="display:none">Cerrar</button>
+			<div id="mancuernillas-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-mancuernillas">
+			  		<div style="float:left" class="gastos-subs"><h3>Mancuernillas</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-mancuernillas">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-mancuernillas" style="display:none">Cerrar</button>
+			  			</div>
 			  		</div>
-				  	<div id="mancuernillas-specs" style="clear:both;">
+				  	<div id="mancuernillas-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="mancuernillas-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="mancuernillas-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="mancuernillas-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-mancuernillas" style="display:none">
 			  	<table>
@@ -1391,21 +1406,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- interior -->
-		  	<div id="interior-content" style="clear:both">
-				<div id="titulo-interior">
-			  		<div style="float:left"><h3>Ropa Interios</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-interior">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-interior" style="display:none">Cerrar</button>
+		  	<div id="interior-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-interior">
+			  		<div style="float:left" class="gastos-subs"><h3>Ropa Interios</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-interior">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-interior" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="interior-specs" style="clear:both;">
+				  	<div id="interior-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="interior-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="interior-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="interior-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-interior" style="display:none">
 			  	<table>
@@ -1431,21 +1446,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- zapatos -->
-		  	<div id="zapatos-content" style="clear:both">
-				<div id="titulo-zapatos">
-			  		<div style="float:left"><h3>Zapatos</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-zapatos">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-zapatos" style="display:none">Cerrar</button>
+		  	<div id="zapatos-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-zapatos">
+			  		<div style="float:left" class="gastos-subs"><h3>Zapatos</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-zapatos">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-zapatos" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="zapatos-specs" style="clear:both;">
+				  	<div id="zapatos-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="zapatos-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="zapatos-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="zapatos-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-zapatos" style="display:none">
 			  	<table>
@@ -1471,21 +1486,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- peluqueria -->
-			<div id="peluqueria-content" style="clear:both">
-				<div id="titulo-peluqueria">
-			  		<div style="float:left"><h3>Peluquería</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-peluqueria">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-peluqueria" style="display:none">Cerrar</button>
+			<div id="peluqueria-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-peluqueria">
+			  		<div style="float:left" class="gastos-subs"><h3>Peluquería</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-peluqueria">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-peluqueria" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="peluqueria-specs" style="clear:both;">
+				  	<div id="peluqueria-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="peluqueria-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="peluqueria-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="peluqueria-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-peluqueria" style="display:none">
 			  	<table>
@@ -1511,21 +1526,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Spa -->
-			<div id="spa-content" style="clear:both">
-				<div id="titulo-spa">
-			  		<div style="float:left"><h3>Spa</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-spa">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-spa" style="display:none">Cerrar</button>
+			<div id="spa-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-spa">
+			  		<div style="float:left" class="gastos-subs"><h3>Spa</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-spa">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-spa" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="spa-specs" style="clear:both;">
+				  	<div id="spa-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="spa-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="spa-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="spa-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-spa" style="display:none">
 			  	<table>
@@ -1551,21 +1566,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 			<!-- Otros7 -->
-		  	<div id="otros7-content" style="clear:both">
-				<div id="titulo-otros7">
+		  	<div id="otros7-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-otros7">
 			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros7" id="concepto-otros7" value="Otros" style="width:150px;"></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros7">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-otros7" style="display:none">Cerrar</button>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-otros7">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-otros7" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="otros7-specs" style="clear:both;">
+				  	<div id="otros7-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="otros7-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="otros7-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="otros7-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-otros7" style="display:none">
 			  	<table>
@@ -1591,11 +1606,10 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 		  	<br>
 	  	</div><!-- cont-novio -->
-	  	<div id="costo-semitotal" style="clear:both">
+	  	<div id="costo-semitotal" class="cbCont" style="clear:both">
 		  	<label id="costo-total-novio">Costo:</label>
 			<label id="saldo-total-novio">Saldo:</label>
 		</div>
@@ -1609,21 +1623,23 @@
 <!-- NOVIA -->
 	  <div class="card">
 	  	<div id="novia-header" class="card-titles" style="clear:both;">
-			<div id="titulo-novia" style="float:left"><h2>Novia</h2></div>
+			<div  id="titulo-novia" style="float:left"><h2>Novia</h2></div>
 			<div id="btn-novia" style="float:right;clear:right;">
 				<button class="topcoat-icon-button--quiet" id="abrir-novia"><img src="/icons/br_down.png" class="img-up-down"></span></button>
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-novia" style="display:none"><img src="/icons/br_up.png" class="img-up-down"></button>
 			</div>
 	  	</div>
-	  	<div id="cont-novia" style="display:none">
+	  	<div class="cbCont" id="cont-novia" style="display:none">
 	  		<!-- vestido -->
-		  	<div id="vestido-content" style="clear:both">
-			  	<div id="titulo-vestido">
-			  		<div style="float:left"><h3>Vestido</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-vestido">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-vestido" style="display:none">Cerrar</button></div>
+		  	<div id="vestido-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-vestido">
+			  		<div style="float:left" class="gastos-subs"><h3>Vestido</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-vestido">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-vestido" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="vestido-specs" style="clear:both;">
+			  	<div id="vestido-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="vestido-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="vestido-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="vestido-spec-f"></label></div>
@@ -1652,17 +1668,18 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- tocado -->
-		  	<div id="tocado-content" style="clear:both">
-			  	<div id="titulo-tocado">
-			  		<div style="float:left"><h3>Tocado</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-tocado">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-tocado" style="display:none">Cerrar</button></div>
+		  	<div id="tocado-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-tocado">
+			  		<div style="float:left" class="gastos-subs"><h3>Tocado</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-tocado">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-tocado" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="tocado-specs" style="clear:both;">
+			  	<div id="tocado-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="tocado-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="tocado-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="tocado-spec-f"></label></div>
@@ -1691,21 +1708,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- ramo2 -->
-			<div id="ramo2-content" style="clear:both">
-				<div id="titulo-ramo2">
-			  		<div style="float:left"><h3>Ramo</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-ramo2">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-ramo2" style="display:none">Cerrar</button>
+			<div id="ramo2-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-ramo2">
+			  		<div style="float:left" class="gastos-subs"><h3>Ramo</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-ramo2">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-ramo2" style="display:none">Cerrar</button>
+			  			</div>
 			  		</div>
-				  	<div id="ramo2-specs" style="clear:both;">
+				  	<div id="ramo2-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="ramo2-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="ramo2-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="ramo2-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-ramo2" style="display:none">
 			  	<table>
@@ -1731,21 +1748,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- velo -->
-		  	<div id="velo-content" style="clear:both">
-				<div id="titulo-velo">
-			  		<div style="float:left"><h3>Velo</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-velo">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-velo" style="display:none">Cerrar</button>
+		  	<div id="velo-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-velo">
+			  		<div style="float:left" class="gastos-subs"><h3>Velo</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-velo">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-velo" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="velo-specs" style="clear:both;">
+				  	<div id="velo-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="velo-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="velo-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="velo-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-velo" style="display:none">
 			  	<table>
@@ -1771,20 +1788,20 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 		  	<!-- lenceria -->
-		  	<div id="lenceria-content" style="clear:both">
-				<div id="titulo-lenceria">
-			  		<div style="float:left"><h3>Lencería</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-lenceria">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-lenceria" style="display:none">Cerrar</button>
+		  	<div id="lenceria-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-lenceria">
+			  		<div style="float:left" class="gastos-subs"><h3>Lencería</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-lenceria">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-lenceria" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="lenceria-specs" style="clear:both;">
+				  	<div id="lenceria-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="lenceria-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="lenceria-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="lenceria-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-lenceria" style="display:none">
 			  	<table>
@@ -1810,21 +1827,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- tenis -->
-		  	<div id="tenis-content" style="clear:both">
-				<div id="titulo-tenis">
-			  		<div style="float:left"><h3>tenis / tenis</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-tenis">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-tenis" style="display:none">Cerrar</button>
+		  	<div id="tenis-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-tenis">
+			  		<div style="float:left" class="gastos-subs"><h3>tenis / tenis</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-tenis">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-tenis" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="tenis-specs" style="clear:both;">
+				  	<div id="tenis-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="tenis-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="tenis-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="tenis-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-tenis" style="display:none">
 			  	<table>
@@ -1850,21 +1867,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- estilista -->
-			<div id="estilista-content" style="clear:both">
-				<div id="titulo-estilista">
-			  		<div style="float:left"><h3>Estilista</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-estilista">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-estilista" style="display:none">Cerrar</button>
+			<div id="estilista-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-estilista">
+			  		<div style="float:left" class="gastos-subs"><h3>Estilista</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-estilista">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-estilista" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="estilista-specs" style="clear:both;">
+				  	<div id="estilista-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="estilista-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="estilista-spec-s"></label></div>
 				  		<div style="width:33%;float:left">Fecha<br /><label id="estilista-spec-f"></label></div>
-				  	</div>
 			  	</div>
 			  	<div id="ceremonia-estilista" style="display:none">
 			  	<table>
@@ -1890,20 +1907,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- maquillista -->
-			<div id="maquillista-content" style="clear:both">
-				<div id="titulo-maquillista">
-			  		<div style="float:left"><h3>Maquillista</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-maquillista">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-maquillista" style="display:none">Cerrar</button>
+			<div id="maquillista-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-maquillista">
+			  		<div style="float:left" class="gastos-subs"><h3>Maquillista</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-maquillista">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-maquillista" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="maquillista-specs" style="clear:both;">
+				  	<div id="maquillista-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="maquillista-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="maquillista-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="maquillista-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="maquillista-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-maquillista" style="display:none">
@@ -1930,20 +1948,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- unas -->
-			<div id="unas-content" style="clear:both">
-				<div id="titulo-unas">
-			  		<div style="float:left"><h3>Uñas</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-unas">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-unas" style="display:none">Cerrar</button>
+			<div id="unas-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-unas">
+			  		<div style="float:left" class="gastos-subs"><h3>Uñas</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-unas">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-unas" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="unas-specs" style="clear:both;">
+				  	<div id="unas-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="unas-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="unas-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="unas-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="unas-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-unas" style="display:none">
@@ -1970,20 +1989,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- Spa2 -->
-			<div id="spa2-content" style="clear:both">
-				<div id="titulo-spa2">
-			  		<div style="float:left"><h3>Spa</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-spa2">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-spa2" style="display:none">Cerrar</button>
+			<div id="spa2-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-spa2">
+			  		<div style="float:left" class="gastos-subs"><h3>Spa</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-spa2">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-spa2" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="spa2-specs" style="clear:both;">
+				  	<div id="spa2-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="spa2-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="spa2-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="spa2-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="spa2-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-spa2" style="display:none">
@@ -2010,20 +2030,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 			<!-- Otros8 -->
-		  	<div id="otros8-content" style="clear:both">
-				<div id="titulo-otros8">
+		  	<div id="otros8-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-otros8">
 			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros8" id="concepto-otros8" value="Otros" style="width:150px;"></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros8">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-otros8" style="display:none">Cerrar</button>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-otros8">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-otros8" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="otros8-specs" style="clear:both;">
+				  	<div id="otros8-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="otros8-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="otros8-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="otros8-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="otros8-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-otros8" style="display:none">
@@ -2050,11 +2071,10 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 		  	<br>
 	  	</div><!-- cont-novio -->
-	  	<div id="costo-semitotal" style="clear:both">
+	  	<div id="costo-semitotal" class="cbCont" style="clear:both">
 		  	<label id="costo-total-novia">Costo:</label>
 			<label id="saldo-total-novia">Saldo:</label>
 		</div>
@@ -2068,21 +2088,23 @@
 <!-- LUNA DE MIEL -->
 	  <div class="card">
 	  	<div id="luna-header" class="card-titles" style="clear:both;">
-			<div id="titulo-luna" style="float:left"><h2>Luna de Miel</h2></div>
+			<div  id="titulo-luna" style="float:left"><h2>Luna de Miel</h2></div>
 			<div id="btn-luna" style="float:right;clear:right;">
 				<button class="topcoat-icon-button--quiet" id="abrir-luna"><img src="/icons/br_down.png" class="img-up-down"></span></button>
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-luna" style="display:none"><img src="/icons/br_up.png" class="img-up-down"></button>
 			</div>
 	  	</div>
-	  	<div id="cont-luna" style="display:none">
+	  	<div class="cbCont" id="cont-luna" style="display:none">
 	  		<!-- Donativo -->
-		  	<div id="transporte-content" style="clear:both">
-			  	<div id="titulo-transporte">
-			  		<div style="float:left"><h3>Transporte</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-transporte">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-transporte" style="display:none">Cerrar</button></div>
+		  	<div id="transporte-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-transporte">
+			  		<div style="float:left" class="gastos-subs"><h3>Transporte</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-transporte">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-transporte" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="transporte-specs" style="clear:both;">
+			  	<div id="transporte-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="transporte-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="transporte-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="transporte-spec-f"></label></div>
@@ -2111,17 +2133,18 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- hospedaje -->
-		  	<div id="hospedaje-content" style="clear:both">
-			  	<div id="titulo-hospedaje">
-			  		<div style="float:left"><h3>Hospedaje</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-hospedaje">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-hospedaje" style="display:none">Cerrar</button></div>
+		  	<div id="hospedaje-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-hospedaje">
+			  		<div style="float:left" class="gastos-subs"><h3>Hospedaje</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-hospedaje">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-hospedaje" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="hospedaje-specs" style="clear:both;">
+			  	<div id="hospedaje-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="hospedaje-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="hospedaje-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="hospedaje-spec-f"></label></div>
@@ -2150,20 +2173,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- comidas -->
-			<div id="comidas-content" style="clear:both">
-				<div id="titulo-comidas">
-			  		<div style="float:left"><h3>Comidas</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-comidas">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-comidas" style="display:none">Cerrar</button>
+			<div id="comidas-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-comidas">
+			  		<div style="float:left" class="gastos-subs"><h3>Comidas</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-comidas">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-comidas" style="display:none">Cerrar</button>
+			  			</div>
 			  		</div>
-				  	<div id="comidas-specs" style="clear:both;">
+				  	<div id="comidas-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="comidas-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="comidas-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="comidas-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="comidas-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-comidas" style="display:none">
@@ -2190,20 +2214,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- diversion -->
-		  	<div id="diversion-content" style="clear:both">
-				<div id="titulo-diversion">
-			  		<div style="float:left"><h3>Diversión</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-diversion">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-diversion" style="display:none">Cerrar</button>
+		  	<div id="diversion-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-diversion">
+			  		<div style="float:left" class="gastos-subs"><h3>Diversión</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-diversion">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-diversion" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="diversion-specs" style="clear:both;">
+				  	<div id="diversion-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="diversion-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="diversion-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="diversion-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="diversion-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-diversion" style="display:none">
@@ -2230,20 +2255,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- compras -->
-		  	<div id="compras-content" style="clear:both">
-				<div id="titulo-compras">
-			  		<div style="float:left"><h3>Compras</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-compras">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-compras" style="display:none">Cerrar</button>
+		  	<div id="compras-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-compras">
+			  		<div style="float:left" class="gastos-subs"><h3>Compras</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-compras">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-compras" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="compras-specs" style="clear:both;">
+				  	<div id="compras-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="compras-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="compras-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="compras-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="compras-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-compras" style="display:none">
@@ -2270,20 +2296,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- renta2 -->
-			<div id="renta2-content" style="clear:both">
-				<div id="titulo-renta2">
-			  		<div style="float:left"><h3>Renta de aunto</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-renta2">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-renta2" style="display:none">Cerrar</button>
+			<div id="renta2-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-renta2">
+			  		<div style="float:left" class="gastos-subs"><h3>Renta de aunto</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-renta2">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-renta2" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="renta2-specs" style="clear:both;">
+				  	<div id="renta2-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="renta2-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="renta2-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="renta2-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="renta2-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-renta2" style="display:none">
@@ -2310,20 +2337,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- propina -->
-			<div id="propina-content" style="clear:both">
-				<div id="titulo-propina">
-			  		<div style="float:left"><h3>Propinas</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-propina">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-propina" style="display:none">Cerrar</button>
+			<div id="propina-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-propina">
+			  		<div style="float:left" class="gastos-subs"><h3>Propinas</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-propina">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-propina" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="propina-specs" style="clear:both;">
+				  	<div id="propina-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="propina-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="propina-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="propina-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="propina-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-propina" style="display:none">
@@ -2350,20 +2378,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- visa -->
-			<div id="visa-content" style="clear:both">
-				<div id="titulo-visa">
-			  		<div style="float:left"><h3>Pagos visa y/o pasaporte</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-visa">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-visa" style="display:none">Cerrar</button>
+			<div id="visa-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-visa">
+			  		<div style="float:left" class="gastos-subs"><h3>Pagos visa y/o pasaporte</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-visa">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-visa" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="visa-specs" style="clear:both;">
+				  	<div id="visa-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="visa-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="visa-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="visa-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="visa-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-visa" style="display:none">
@@ -2390,20 +2419,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 			
 			<!-- Otros9 -->
-		  	<div id="otros9-content" style="clear:both">
-				<div id="titulo-otros9">
+		  	<div id="otros9-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-otros9">
 			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros9" id="concepto-otros9" value="Otros" style="width:150px;"></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros9">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-otros9" style="display:none">Cerrar</button>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-otros9">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-otros9" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="otros9-specs" style="clear:both;">
+				  	<div id="otros9-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="otros9-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="otros9-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="otros9-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="otros9-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-otros9" style="display:none">
@@ -2430,11 +2460,10 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 		  	<br>
 	  	</div><!-- cont-luna -->
-	  	<div id="costo-semitotal" style="clear:both">
+	  	<div id="costo-semitotal" class="cbCont" style="clear:both">
 		  	<label id="costo-total-luna">Costo:</label>
 			<label id="saldo-total-luna">Saldo:</label>
 		</div>
@@ -2448,22 +2477,24 @@
 <!-- LA NUEVA CASA -->
 	  <div class="card">
 	  	<div id="casa-header" class="card-titles" style="clear:both;">
-			<div id="titulo-casa" style="float:left"><h2>La nueva casa</h2></div>
+			<div  id="titulo-casa" style="float:left"><h2>La nueva casa</h2></div>
 			<div id="btn-casa" style="float:right;clear:right;">
 				<button class="topcoat-icon-button--quiet" id="abrir-casa"><img src="/icons/br_down.png" class="img-up-down"></span></button>
 			  	<button class="topcoat-icon-button--quiet" id="cerrar-casa" style="display:none"><img src="/icons/br_up.png" class="img-up-down"></button>
 			</div>
 	  	</div>
-			<div id="cont-casa" style="display:none">
+			<div class="cbCont" id="cont-casa" style="display:none">
 
 	  		<!-- alquiler -->
-		  	<div id="alquiler-content" style="clear:both">
-			  	<div id="titulo-alquiler">
-			  		<div style="float:left"><h3>Alquiler o enganche</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-alquiler">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-alquiler" style="display:none">Cerrar</button></div>
+		  	<div id="alquiler-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-alquiler">
+			  		<div style="float:left" class="gastos-subs"><h3>Alquiler o enganche</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-alquiler">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-alquiler" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="alquiler-specs" style="clear:both;">
+			  	<div id="alquiler-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="alquiler-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="alquiler-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="alquiler-spec-f"></label></div>
@@ -2492,17 +2523,18 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- reparacion -->
-		  	<div id="reparacion-content" style="clear:both">
-			  	<div id="titulo-reparacion">
-			  		<div style="float:left"><h3>Reparaciones</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-reparacion">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-reparacion" style="display:none">Cerrar</button></div>
+		  	<div id="reparacion-content" class="cbCont" style="clear:both">
+			  	<div class="gastos-titulos-c" id="titulo-reparacion">
+			  		<div style="float:left" class="gastos-subs"><h3>Reparaciones</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-reparacion">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-reparacion" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-			  	<div id="reparacion-specs" style="clear:both;">
+			  	<div id="reparacion-specs" class="specs" style="clear:both;">
 			  		<div style="width:33%;float:left">Costo<br /><label id="reparacion-spec-c"></label></div>
 			  		<div style="width:33%;float:left">Saldo<br /><label id="reparacion-spec-s"></label></div>
 			  		<div style="width:33%;float:left">Fecha<br /><label id="reparacion-spec-f"></label></div>
@@ -2531,20 +2563,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- instalacion -->
-			<div id="instalacion-content" style="clear:both">
-				<div id="titulo-instalacion">
-			  		<div style="float:left"><h3>Instalaciones(luz, agua, tel. gas)</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-instalacion">Editar</button>
-			  			<button class="topcoat-button--quiet" id="cerrar-instalacion" style="display:none">Cerrar</button>
+			<div id="instalacion-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-instalacion">
+			  		<div style="float:left" class="gastos-subs"><h3>Instalaciones(luz, agua, tel. gas)</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-instalacion">Editar</button>
+				  			<button class="topcoat-button--quiet" id="cerrar-instalacion" style="display:none">Cerrar</button>
+			  			</div>
 			  		</div>
-				  	<div id="instalacion-specs" style="clear:both;">
+				  	<div id="instalacion-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="instalacion-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="instalacion-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="instalacion-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="instalacion-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-instalacion" style="display:none">
@@ -2571,20 +2604,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- cortinas -->
-		  	<div id="cortinas-content" style="clear:both">
-				<div id="titulo-cortinas">
-			  		<div style="float:left"><h3>Cortinas</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-cortinas">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-cortinas" style="display:none">Cerrar</button>
+		  	<div id="cortinas-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-cortinas">
+			  		<div style="float:left" class="gastos-subs"><h3>Cortinas</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-cortinas">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-cortinas" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="cortinas-specs" style="clear:both;">
+				  	<div id="cortinas-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="cortinas-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="cortinas-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="cortinas-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="cortinas-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-cortinas" style="display:none">
@@ -2611,20 +2645,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- muebles -->
-		  	<div id="muebles-content" style="clear:both">
-				<div id="titulo-muebles">
-			  		<div style="float:left"><h3>Muebles</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-muebles">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-muebles" style="display:none">Cerrar</button>
+		  	<div id="muebles-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-muebles">
+			  		<div style="float:left" class="gastos-subs"><h3>Muebles</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-muebles">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-muebles" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="muebles-specs" style="clear:both;">
+				  	<div id="muebles-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="muebles-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="muebles-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="muebles-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="muebles-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-muebles" style="display:none">
@@ -2651,20 +2686,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 		  	<!-- decoracion3 -->
-			<div id="decoracion3-content" style="clear:both">
-				<div id="titulo-decoracion3">
-			  		<div style="float:left"><h3>Decoración</h3></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-decoracion3">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-decoracion3" style="display:none">Cerrar</button>
+			<div id="decoracion3-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-decoracion3">
+			  		<div style="float:left" class="gastos-subs"><h3>Decoración</h3></div>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-decoracion3">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-decoracion3" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="decoracion3-specs" style="clear:both;">
+				  	<div id="decoracion3-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="decoracion3-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="decoracion3-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="decoracion3-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="decoracion3-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-decoracion3" style="display:none">
@@ -2691,20 +2727,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 
 			<!-- Otros10 -->
-		  	<div id="otros10-content" style="clear:both">
-				<div id="titulo-otros10">
+		  	<div id="otros10-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-otros10">
 			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros10" id="concepto-otros10" value="Otros" style="width:150px;"></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros10">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-otros10" style="display:none">Cerrar</button>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-otros10">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-otros10" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="otros10-specs" style="clear:both;">
+				  	<div id="otros10-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="otros10-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="otros10-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="otros10-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="otros10-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-otros10" style="display:none">
@@ -2731,20 +2768,21 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 			
 			<!-- Otros11 -->
-		  	<div id="otros11-content" style="clear:both">
-				<div id="titulo-otros11">
+		  	<div id="otros11-content" class="cbCont" style="clear:both">
+				<div class="gastos-titulos-c" id="titulo-otros11">
 			  		<div style="float:left"><input type="text" class="topcoat-text-input" name="concepto-otros11" id="concepto-otros11" value="Otros" style="width:150px;"></div>
-			  		<div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-otros11">Editar</button>
-			  		<button class="topcoat-button--quiet" id="cerrar-otros11" style="display:none">Cerrar</button>
+			  		<div style="float:right;clear:right;">
+			  			<button class="topcoat-button--quiet" id="abrir-otros11">Editar</button>
+			  			<button class="topcoat-button--quiet" id="cerrar-otros11" style="display:none">Cerrar</button>
+			  		</div>
 			  	</div>
-				  	<div id="otros11-specs" style="clear:both;">
+				  	<div id="otros11-specs" class="specs" style="clear:both;">
 				  		<div style="width:33%;float:left">Costo<br /><label id="otros11-spec-c"></label></div>
 				  		<div style="width:33%;float:left">Saldo<br /><label id="otros11-spec-s"></label></div>
-				  		<div style="width:33%;float:left">Fecha<br /><label id="otros11-spec-f"></label></div>
+				  		<div style="width:33%;float:left">Fecha<br /><label id="otros11-spec-f"></label>
 				  	</div>
 			  	</div>
 			  	<div id="ceremonia-otros11" style="display:none">
@@ -2771,11 +2809,10 @@
 				  	</tr>
 			  	</table>
 			  	</div>
-			  	<br><br>
 		  	</div>
 		  	<br>
 	  	</div><!-- cont-ceremonia -->
-	  	<div id="costo-semitotal" style="clear:both">
+	  	<div id="costo-semitotal" class="cbCont"  style="clear:both">
 		  	<label id="costo-total-casa">Costo:</label>
 			<label id="saldo-total-casa">Saldo:</label>
 		</div>
@@ -2919,13 +2956,11 @@
 
 		//CEREMONIA IGLESIA
 		$('#abrir-ceremonia').on('click',function(e){
-			seccion='ceremonia';
-			abrirSeccion(seccion);
+			abrirSeccion('ceremonia');
 			e.preventDefault();
 		});
 		$('#cerrar-ceremonia').on('click',function(e){
-			seccion='ceremonia';
-			cerrarSeccion(seccion);
+			cerrarSeccion('ceremonia');
 			e.preventDefault();
 		});
 
@@ -2933,21 +2968,17 @@
 		//donativo{
 		cargaInfo('donativo','ceremonia');
 		$('#abrir-donativo').on('click',function(e){
-			seccion='donativo';
-			abrirPanel(seccion);
+			abrirPanel('donativo');
 			e.preventDefault();
 		});
 		$('#cerrar-donativo').on('click',function(e){
-			seccion='donativo';
-			cerrarPanel(seccion);
+			cerrarPanel('donativo');
 			e.preventDefault();
 		});
 
 		$('#ok-donativo').on('click',function(e){
-   			seccion='donativo';
-   			apartado='ceremonia';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('donativo','ceremonia');
+   			cerrarPanel('donativo');
    			e.preventDefault();
    		});
 		
@@ -2956,21 +2987,17 @@
    		//musica{
    		cargaInfo('musica','ceremonia');
 		$('#abrir-musica').on('click',function(e){
-			seccion='musica';
-			abrirPanel(seccion);
+			abrirPanel('musica');
 			e.preventDefault();
 		});
 		$('#cerrar-musica').on('click',function(e){
-			seccion='musica';
-			cerrarPanel(seccion);
+			cerrarPanel('musica');
 			e.preventDefault();
 		});
 
    		$('#ok-musica').on('click',function(e){
-   			seccion='musica';
-   			apartado='ceremonia';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('musica','ceremonia');
+   			cerrarPanel('musica');
    			e.preventDefault();
    		});
 		
@@ -2979,21 +3006,17 @@
 		// decoracion {
 		cargaInfo('decoracion','ceremonia');
 		$('#abrir-decoracion').on('click',function(e){
-			seccion='decoracion';
-			abrirPanel(seccion);
+			abrirPanel('decoracion');
 			e.preventDefault();
 		});
 		$('#cerrar-decoracion').on('click',function(e){
-			seccion='decoracion';
-			cerrarPanel(seccion);
+			cerrarPanel('decoracion');
 			e.preventDefault();
 		});
 
 		$('#ok-decoracion').on('click',function(e){
-   			seccion='decoracion';
-   			apartado='ceremonia';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('decoracion','ceremonia');
+   			cerrarPanel('decoracion');
    			e.preventDefault();
    		});
 
@@ -3002,20 +3025,16 @@
 		// anillos {
 		cargaInfo('anillos','ceremonia');
 		$('#abrir-anillos').on('click',function(e){
-			seccion='anillos';
-			abrirPanel(seccion);
+			abrirPanel('anillos');
 			e.preventDefault();
 		});
 		$('#cerrar-anillos').on('click',function(e){
-			seccion='anillos';
-			cerrarPanel(seccion);
+			cerrarPanel('anillos');
 			e.preventDefault();
 		});
 		$('#ok-anillos').on('click',function(e){
-   			seccion='anillos';
-   			apartado='ceremonia';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('anillos','ceremonia');
+   			cerrarPanel('anillos');
    			e.preventDefault();
    		});
 
@@ -3024,20 +3043,16 @@
 		// rosario {
 		cargaInfo('rosario','ceremonia');
 		$('#abrir-rosario').on('click',function(e){
-			seccion='rosario';
-			abrirPanel(seccion);
+			abrirPanel('rosario');
 			e.preventDefault();
 		});
 		$('#cerrar-rosario').on('click',function(e){
-			seccion='rosario';
-			cerrarPanel(seccion);
+			cerrarPanel('rosario');
 			e.preventDefault();
 		});
 		$('#ok-rosario').on('click',function(e){
-   			seccion='rosario';
-   			apartado='ceremonia';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('rosario','ceremonia');
+   			cerrarPanel('rosario');
    			e.preventDefault();
    		});
 
@@ -3046,20 +3061,16 @@
 		// biblia {
 		cargaInfo('biblia','ceremonia');
 		$('#abrir-biblia').on('click',function(e){
-			seccion='biblia';
-			abrirPanel(seccion);
+			abrirPanel('biblia');
 			e.preventDefault();
 		});
 		$('#cerrar-biblia').on('click',function(e){
-			seccion='biblia';
-			cerrarPanel(seccion);
+			cerrarPanel('biblia');
 			e.preventDefault();
 		});
 		$('#ok-biblia').on('click',function(e){
-   			seccion='biblia';
-   			apartado='ceremonia';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('biblia','ceremonia');
+   			cerrarPanel('biblia');
    			e.preventDefault();
    		});
 
@@ -3068,20 +3079,16 @@
 		// renta {
 		cargaInfo('renta','ceremonia');
 		$('#abrir-renta').on('click',function(e){
-			seccion='renta';
-			abrirPanel(seccion);
+			abrirPanel('renta');
 			e.preventDefault();
 		});
 		$('#cerrar-renta').on('click',function(e){
-			seccion='renta';
-			cerrarPanel(seccion);
+			cerrarPanel('renta');
 			e.preventDefault();
 		});
 		$('#ok-renta').on('click',function(e){
-   			seccion='renta';
-   			apartado='ceremonia';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('renta','ceremonia');
+   			cerrarPanel('renta');
    			e.preventDefault();
    		});
 
@@ -3090,20 +3097,16 @@
 		// ramo {
 		cargaInfo('ramo','ceremonia');
 		$('#abrir-ramo').on('click',function(e){
-			seccion='ramo';
-			abrirPanel(seccion);
+			abrirPanel('ramo');
 			e.preventDefault();
 		});
 		$('#cerrar-ramo').on('click',function(e){
-			seccion='ramo';
-			cerrarPanel(seccion);
+			cerrarPanel('ramo');
 			e.preventDefault();
 		});
 		$('#ok-ramo').on('click',function(e){
-   			seccion='ramo';
-   			apartado='ceremonia';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('ramo','ceremonia');
+   			cerrarPanel('ramo');
    			e.preventDefault();
    		});
 
@@ -3112,20 +3115,16 @@
 		// recuerdos {
 		cargaInfo('recuerdos','ceremonia');
 		$('#abrir-recuerdos').on('click',function(e){
-			seccion='recuerdos';
-			abrirPanel(seccion);
+			abrirPanel('recuerdos');
 			e.preventDefault();
 		});
 		$('#cerrar-recuerdos').on('click',function(e){
-		seccion='recuerdos';
-			cerrarPanel(seccion);
+			cerrarPanel('recuerdos');
 			e.preventDefault();
 		});
 		$('#ok-recuerdos').on('click',function(e){
-   			seccion='recuerdos';
-   			apartado='ceremonia';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('recuerdos','ceremonia');
+   			cerrarPanel('recuerdos');
    			e.preventDefault();
    		});
 
@@ -3134,20 +3133,16 @@
 		// otros1 {
 		cargaInfo('otros1','ceremonia');
 		$('#abrir-otros1').on('click',function(e){
-			seccion='otros1';
-			abrirPanel(seccion);
+			abrirPanel('otros1');
 			e.preventDefault();
 		});
 		$('#cerrar-otros1').on('click',function(e){
-			seccion='otros1';
-			cerrarPanel(seccion);
+			cerrarPanel('otros1');
 			e.preventDefault();
 		});
 		$('#ok-otros1').on('click',function(e){
-   			seccion='otros1';
-   			apartado='ceremonia';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('otros1','ceremonia');
+   			cerrarPanel('otros1');
    			e.preventDefault();
    		});
 
@@ -3156,20 +3151,16 @@
 		// otros2 {
 		cargaInfo('otros2','ceremonia');
 		$('#abrir-otros2').on('click',function(e){
-			seccion='otros2';
-			abrirPanel(seccion);
+			abrirPanel('otros2');
 			e.preventDefault();
 		});
 		$('#cerrar-otros2').on('click',function(e){
-			seccion='otros2';
-			cerrarPanel(seccion);
+			cerrarPanel('otros2');
 			e.preventDefault();
 		});
 		$('#ok-otros2').on('click',function(e){
-   			seccion='otros2';
-   			apartado='ceremonia';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('otros2','ceremonia');
+   			cerrarPanel('otros2');
    			e.preventDefault();
    		});
 
@@ -3430,32 +3421,26 @@
 
 	//CEREMONIA CIVIL
 		$('#abrir-civil').on('click',function(e){
-			seccion='civil';
-			abrirSeccion(seccion);
+			abrirSeccion('civil');
 			e.preventDefault();
 		});
 		$('#cerrar-civil').on('click',function(e){
-			seccion='civil';
-			cerrarSeccion(seccion);
+			cerrarSeccion('civil');
 			e.preventDefault();
 		});
 	// derecho
 		cargaInfo('derecho','civil');
 		$('#abrir-derecho').on('click',function(e){
-			seccion='derecho';
-			abrirPanel(seccion);
+			abrirPanel('derecho');
 			e.preventDefault();
 		});
 		$('#cerrar-derecho').on('click',function(e){
-			seccion='derecho';
-			cerrarPanel(seccion);
+			cerrarPanel('derecho');
 			e.preventDefault();
 		});
 		$('#ok-derecho').on('click',function(e){
-   			seccion='derecho';
-   			apartado='civil';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('derecho','civil');
+   			cerrarPanel('derecho');
    			e.preventDefault();
    		});
 
@@ -3464,20 +3449,16 @@
 	// juez
 		cargaInfo('juez','civil');
 		$('#abrir-juez').on('click',function(e){
-			seccion='juez';
-			abrirPanel(seccion);
+			abrirPanel('juez');
 			e.preventDefault();
 		});
 		$('#cerrar-juez').on('click',function(e){
-			seccion='juez';
-			cerrarPanel(seccion);
+			cerrarPanel('juez');
 			e.preventDefault();
 		});
 		$('#ok-juez').on('click',function(e){
-   			seccion='juez';
-   			apartado='civil';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('juez','civil');
+   			cerrarPanel('juez');
    			e.preventDefault();
    		});
 
@@ -3486,20 +3467,16 @@
 		// atuendo
 		cargaInfo('atuendo','civil');
 		$('#abrir-atuendo').on('click',function(e){
-			seccion='atuendo';
-			abrirPanel(seccion);
+			abrirPanel('atuendo');
 			e.preventDefault();
 		});
 		$('#cerrar-atuendo').on('click',function(e){
-			seccion='atuendo';
-			cerrarPanel(seccion);
+			cerrarPanel('atuendo');
 			e.preventDefault();
 		});
 		$('#ok-atuendo').on('click',function(e){
-   			seccion='atuendo';
-   			apartado='civil';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('atuendo','civil');
+   			cerrarPanel('atuendo');
    			e.preventDefault();
    		});
 
@@ -3508,20 +3485,16 @@
 		// analisis
 		cargaInfo('analisis','civil');
 		$('#abrir-analisis').on('click',function(e){
-			seccion='analisis';
-			abrirPanel(seccion);
+			abrirPanel('analisis');
 			e.preventDefault();
 		});
 		$('#cerrar-analisis').on('click',function(e){
-			seccion='analisis';
-			cerrarPanel(seccion);
+			cerrarPanel('analisis');
 			e.preventDefault();
 		});
 		$('#ok-analisis').on('click',function(e){
-   			seccion='analisis';
-   			apartado='civil';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('analisis','civil');
+   			cerrarPanel('analisis');
    			e.preventDefault();
    		});
 
@@ -3530,20 +3503,16 @@
 		// foto
 		cargaInfo('foto','civil');
 		$('#abrir-foto').on('click',function(e){
-			seccion='foto';
-			abrirPanel(seccion);
+			abrirPanel('foto');
 			e.preventDefault();
 		});
 		$('#cerrar-foto').on('click',function(e){
-		seccion='foto';
-			cerrarPanel(seccion);
+			cerrarPanel('foto');
 			e.preventDefault();
 		});
 		$('#ok-foto').on('click',function(e){
-   			seccion='foto';
-   			apartado='civil';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('foto','civil');
+   			cerrarPanel('foto');
    			e.preventDefault();
    		});
 
@@ -3552,20 +3521,16 @@
 		// otros3
 		cargaInfo('otros3','civil');
 		$('#abrir-otros3').on('click',function(e){
-			seccion='otros3';
-			abrirPanel(seccion);
+			abrirPanel('otros3');
 			e.preventDefault();
 		});
 		$('#cerrar-otros3').on('click',function(e){
-			seccion='otros3';
-			cerrarPanel(seccion);
+			cerrarPanel('otros3');
 			e.preventDefault();
 		});
 		$('#ok-otros3').on('click',function(e){
-   			seccion='otros3';
-   			apartado='civil';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('otros3','civil');
+   			cerrarPanel('otros3');
    			e.preventDefault();
    		});
 
@@ -3574,20 +3539,16 @@
 		// otros4
 		cargaInfo('otros4','civil');
 		$('#abrir-otros4').on('click',function(e){
-			seccion='otros4';
-			abrirPanel(seccion);
+			abrirPanel('otros4');
 			e.preventDefault();
 		});
 		$('#cerrar-otros4').on('click',function(e){
-			seccion='otros4';
-			cerrarPanel(seccion);
+			cerrarPanel('otros4');
 			e.preventDefault();
 		});
 		$('#ok-otros4').on('click',function(e){
-   			seccion='otros4';
-   			apartado='civil';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('otros4','civil');
+   			cerrarPanel('otros4');
    			e.preventDefault();
    		});
 
@@ -3783,34 +3744,28 @@
 
 	//RECEPCION
 		$('#abrir-recepcion').on('click',function(e){
-			seccion='recepcion';
-			abrirSeccion(seccion);
+			abrirSeccion('recepcion');
 			e.preventDefault();
 		});
 		$('#cerrar-recepcion').on('click',function(e){
-			seccion='recepcion';
-			cerrarSeccion(seccion);
+			cerrarSeccion('recepcion');
 			e.preventDefault();
 		});
 
 		//renta de salon{
 		cargaInfo('salon','recepcion');
 		$('#abrir-salon').on('click',function(e){
-			seccion='salon';
-			abrirPanel(seccion);
+			abrirPanel('salon');
 			e.preventDefault();
 		});
 		$('#cerrar-salon').on('click',function(e){
-			seccion='salon';
-			cerrarPanel(seccion);
+			cerrarPanel('salon');
 			e.preventDefault();
 		});
 
 		$('#ok-salon').on('click',function(e){
-   			seccion='salon';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('salon','recepcion');
+   			cerrarPanel('salon');
    			e.preventDefault();
    		});
 		
@@ -3819,21 +3774,17 @@
    		//banquete{
    		cargaInfo('banquete','recepcion');
 		$('#abrir-banquete').on('click',function(e){
-			seccion='banquete';
-			abrirPanel(seccion);
+			abrirPanel('banquete');
 			e.preventDefault();
 		});
 		$('#cerrar-banquete').on('click',function(e){
-			seccion='banquete';
-			cerrarPanel(seccion);
+			cerrarPanel('banquete');
 			e.preventDefault();
 		});
 
    		$('#ok-banquete').on('click',function(e){
-   			seccion='banquete';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('banquete','recepcion');
+   			cerrarPanel('banquete');
    			e.preventDefault();
    		});
 		
@@ -3842,21 +3793,17 @@
 		// bebida {
 		cargaInfo('bebida','recepcion');
 		$('#abrir-bebida').on('click',function(e){
-			seccion='bebida';
-			abrirPanel(seccion);
+			abrirPanel('bebida');
 			e.preventDefault();
 		});
 		$('#cerrar-bebida').on('click',function(e){
-			seccion='bebida';
-			cerrarPanel(seccion);
+			cerrarPanel('bebida');
 			e.preventDefault();
 		});
 
 		$('#ok-bebida').on('click',function(e){
-   			seccion='bebida';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('bebida','recepcion');
+   			cerrarPanel('bebida');
    			e.preventDefault();
    		});
 
@@ -3865,20 +3812,16 @@
 		// musica2 {
 		cargaInfo('musica2','recepcion');
 		$('#abrir-musica2').on('click',function(e){
-			seccion='musica2';
-			abrirPanel(seccion);
+			abrirPanel('musica2');
 			e.preventDefault();
 		});
 		$('#cerrar-musica2').on('click',function(e){
-			seccion='musica2';
-			cerrarPanel(seccion);
+			cerrarPanel('musica2');
 			e.preventDefault();
 		});
 		$('#ok-musica2').on('click',function(e){
-   			seccion='musica2';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('musica2','recepcion');
+   			cerrarPanel('musica2');
    			e.preventDefault();
    		});
 
@@ -3887,20 +3830,16 @@
 		// decoracion2 {
 		cargaInfo('decoracion2','recepcion');
 		$('#abrir-decoracion2').on('click',function(e){
-			seccion='decoracion2';
-			abrirPanel(seccion);
+			abrirPanel('decoracion2');
 			e.preventDefault();
 		});
 		$('#cerrar-decoracion2').on('click',function(e){
-			seccion='decoracion2';
-			cerrarPanel(seccion);
+			cerrarPanel('decoracion2');
 			e.preventDefault();
 		});
 		$('#ok-decoracion2').on('click',function(e){
-   			seccion='decoracion2';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('decoracion2','recepcion');
+   			cerrarPanel('decoracion2');
    			e.preventDefault();
    		});
 
@@ -3909,20 +3848,16 @@
 		// iluminacion {
 		cargaInfo('iluminacion','recepcion');
 		$('#abrir-iluminacion').on('click',function(e){
-			seccion='iluminacion';
-			abrirPanel(seccion);
+			abrirPanel('iluminacion');
 			e.preventDefault();
 		});
 		$('#cerrar-iluminacion').on('click',function(e){
-			seccion='iluminacion';
-			cerrarPanel(seccion);
+			cerrarPanel('iluminacion');
 			e.preventDefault();
 		});
 		$('#ok-iluminacion').on('click',function(e){
-   			seccion='iluminacion';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('iluminacion','recepcion');
+   			cerrarPanel('iluminacion');
    			e.preventDefault();
    		});
 
@@ -3931,20 +3866,16 @@
 		// pirotecnia {
 		cargaInfo('pirotecnia','recepcion');
 		$('#abrir-pirotecnia').on('click',function(e){
-			seccion='pirotecnia';
-			abrirPanel(seccion);
+			abrirPanel('pirotecnia');
 			e.preventDefault();
 		});
 		$('#cerrar-pirotecnia').on('click',function(e){
-			seccion='pirotecnia';
-			cerrarPanel(seccion);
+			cerrarPanel('pirotecnia');
 			e.preventDefault();
 		});
 		$('#ok-pirotecnia').on('click',function(e){
-   			seccion='pirotecnia';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('pirotecnia','recepcion');
+   			cerrarPanel('pirotecnia');
    			e.preventDefault();
    		});
 
@@ -3953,20 +3884,16 @@
 		// recuerdos2 {
 		cargaInfo('recuerdos2','recepcion');
 		$('#abrir-recuerdos2').on('click',function(e){
-			seccion='recuerdos2';
-			abrirPanel(seccion);
+			abrirPanel('recuerdos2');
 			e.preventDefault();
 		});
 		$('#cerrar-recuerdos2').on('click',function(e){
-		seccion='recuerdos2';
-			cerrarPanel(seccion);
+			cerrarPanel('recuerdos2');
 			e.preventDefault();
 		});
 		$('#ok-recuerdos2').on('click',function(e){
-   			seccion='recuerdos2';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('recuerdos2','recepcion');
+   			cerrarPanel('recuerdos2');
    			e.preventDefault();
    		});
 
@@ -3975,20 +3902,16 @@
 		// foto2 {
 		cargaInfo('foto2','recepcion');
 		$('#abrir-foto2').on('click',function(e){
-			seccion='foto2';
-			abrirPanel(seccion);
+			abrirPanel('foto2');
 			e.preventDefault();
 		});
 		$('#cerrar-foto2').on('click',function(e){
-			seccion='foto2';
-			cerrarPanel(seccion);
+			cerrarPanel('foto2');
 			e.preventDefault();
 		});
 		$('#ok-foto2').on('click',function(e){
-   			seccion='foto2';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('foto2','recepcion');
+   			cerrarPanel('foto2');
    			e.preventDefault();
    		});
 
@@ -3997,20 +3920,16 @@
 		// torna {
 		cargaInfo('torna','recepcion');
 		$('#abrir-torna').on('click',function(e){
-			seccion='torna';
-			abrirPanel(seccion);
+			abrirPanel('torna');
 			e.preventDefault();
 		});
 		$('#cerrar-torna').on('click',function(e){
-			seccion='torna';
-			cerrarPanel(seccion);
+			cerrarPanel('torna');
 			e.preventDefault();
 		});
 		$('#ok-torna').on('click',function(e){
-   			seccion='torna';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('torna','recepcion');
+   			cerrarPanel('torna');
    			e.preventDefault();
    		});
 
@@ -4019,20 +3938,16 @@
 		// otros5 {
 		cargaInfo('otros5','recepcion');
 		$('#abrir-otros5').on('click',function(e){
-			seccion='otros5';
-			abrirPanel(seccion);
+			abrirPanel('otros5');
 			e.preventDefault();
 		});
 		$('#cerrar-otros5').on('click',function(e){
-			seccion='otros5';
-			cerrarPanel(seccion);
+			cerrarPanel('otros5');
 			e.preventDefault();
 		});
 		$('#ok-otros5').on('click',function(e){
-   			seccion='otros5';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('otros5',recepcion);
+   			cerrarPanel('otros5');
    			e.preventDefault();
    		});
 
@@ -4041,20 +3956,16 @@
 		// otros6 {
 		cargaInfo('otros6','recepcion');
 		$('#abrir-otros6').on('click',function(e){
-			seccion='otros6';
-			abrirPanel(seccion);
+			abrirPanel('otros6');
 			e.preventDefault();
 		});
 		$('#cerrar-otros6').on('click',function(e){
-			seccion='otros6';
-			cerrarPanel(seccion);
+			cerrarPanel('otros6');
 			e.preventDefault();
 		});
 		$('#ok-otros6').on('click',function(e){
-   			seccion='otros6';
-   			apartado='recepcion';
-   			saveChanges(seccion,apartado);
-   			cerrarPanel(seccion);
+   			saveChanges('otros6','recepcion');
+   			cerrarPanel('otros6');
    			e.preventDefault();
    		});
 
@@ -5939,9 +5850,9 @@
 	   		}else if(typeof window.localStorage.getItem('costo-alquiler')=='string'){//pero si lo que hay en costo-alquiler es de tipo string...
 	   			if(window.localStorage.getItem('costo-alquiler')==''){//...y es igual a vacío
 	   				costoAlquiler='0';//entonces costoAlquiler tambien es igual a 0
-	   			}else{//para todos los demás casos de costo-alquiler
+				}else{//para todos los demás casos de costo-alquiler
 	   				costoAlquiler=parseInt(window.localStorage.getItem('costo-alquiler'),10);//costoAlquiler es igual a lo guardado en costo-alquiler.
-	   			}
+				}
 	   		}
 	   	//costo reparacion
 	   		if(typeof window.localStorage.getItem('costo-reparacion')=='object'){
@@ -6014,27 +5925,27 @@
 		   		}
 		   	}
 	   	//saldo traje
-	   		if(typeof window.localStorage.getItem('saldo-traje')=='object'){//si lo que hay guardado en saldo-traje es de tipo objeto
-	   			saldoAlquiler='0';//entonces saldo-traje es igual a 0
-	   		}else if(typeof window.localStorage.getItem('saldo-traje')=='string'){//pero si lo que hay en saldo-traje es de tipo string...
-	   			if(window.localStorage.getItem('saldo-traje')==''){//...y es igual a vacío
+	   		if(typeof window.localStorage.getItem('saldo-alquiler')=='object'){//si lo que hay guardado en saldo-alquiler es de tipo objeto
+	   			saldoAlquiler='0';//entonces saldo-alquiler es igual a 0
+	   		}else if(typeof window.localStorage.getItem('saldo-alquiler')=='string'){//pero si lo que hay en saldo-alquiler es de tipo string...
+	   			if(window.localStorage.getItem('saldo-alquiler')==''){//...y es igual a vacío
 	   				saldoAlquiler='0';//entonces saldo traje tambien es igual a 0
-	   			}else if(window.localStorage.getItem('saldo-traje')=='N/A'){
+	   			}else if(window.localStorage.getItem('saldo-alquiler')=='N/A'){
 	   				saldoAlquiler='0';
-	   			}else{//para todos los demás casos de saldo-traje
-	   				saldoAlquiler=window.localStorage.getItem('saldo-traje');//saldoAlquiler es igual a lo guardado en saldo-traje.
+	   			}else{//para todos los demás casos de saldo-alquiler
+	   				saldoAlquiler=window.localStorage.getItem('saldo-alquiler');//saldoAlquiler es igual a lo guardado en saldo-alquiler.
 	   			}
 	   		}
 	   	//saldo camisa
-	   		if(typeof window.localStorage.getItem('saldo-camisa')=='object'){//si lo que hay guardado en saldo-camisa es de tipo objeto
-	   			saldoReparacion='0';//entonces saldo-camisa es igual a 0
-	   		}else if(typeof window.localStorage.getItem('saldo-camisa')=='string'){//pero si lo que hay en saldo-camisa es de tipo string...
-	   			if(window.localStorage.getItem('saldo-camisa')==''){//...y es igual a vacío
+	   		if(typeof window.localStorage.getItem('saldo-reparacion')=='object'){//si lo que hay guardado en saldo-reparacion es de tipo objeto
+	   			saldoReparacion='0';//entonces saldo-reparacion es igual a 0
+	   		}else if(typeof window.localStorage.getItem('saldo-reparacion')=='string'){//pero si lo que hay en saldo-reparacion es de tipo string...
+	   			if(window.localStorage.getItem('saldo-reparacion')==''){//...y es igual a vacío
 	   				saldoReparacion='0';//entonces saldo camisa tambien es igual a 0
-	   			}else if(window.localStorage.getItem('saldo-camisa')=='N/A'){
+	   			}else if(window.localStorage.getItem('saldo-reparacion')=='N/A'){
 	   				saldoReparacion='0';
-	   			}else{//para todos los demás casos de saldo-camisa
-	   				saldoReparacion=window.localStorage.getItem('saldo-camisa');//saldoReparacion es igual a lo guardado en saldo-camisa.
+	   			}else{//para todos los demás casos de saldo-reparacion
+	   				saldoReparacion=window.localStorage.getItem('saldo-reparacion');//saldoReparacion es igual a lo guardado en saldo-reparacion.
 	   			}
 	   		}
 	   	//saldo instalacion
