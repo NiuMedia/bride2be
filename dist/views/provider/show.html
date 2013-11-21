@@ -38,16 +38,7 @@
       	<a href="{{provider.facebook}}">Facebook</a><br/>
       	<a href="{{provider.facebook}}">Twitter</a><br/>
       	<a href="tel:{{provider.phone}}">Llamar</a><br/>
-      	<a href="" id="addFav">Añadir a favoritos</a>
-        <script type="text/javascript">
-          $(document).ready(function(){
-              $("#addFav").on("tap", function(){
-                invitadoJSONString = JSON.parse('{{provider}}');
-                alert(invitadoJSONString);
-                providersService.addProvider(invitadoJSONString);
-              });
-          });
-        </script>
+      	<a href="" hm-tap="providersService.addProvider(provider.id)">Añadir a favoritos</a>
       </div>
     </div>
 
