@@ -4,7 +4,7 @@
   <meta charset="utf8">
   <title>Steroids App</title>
 
-  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-light.css" />
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
   <link rel="stylesheet" href="/stylesheets/application.css" />
 
   <script src="/appgyver/cordova.js"></script>
@@ -26,12 +26,12 @@
 <body>
 
 
-  <div ng-app="providerApp">
+  <div ng-app="providerApp" class="content-padded fondo">
 
   <div ng-controller="AmbientacionCtrl">
-    <div class="topcoat-list__container">
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" hm-tap="open(provider.id)" ng-repeat="provider in providers">
+    <div class="topcoat-list__container center">
+      <ul class="topcoat-list center">
+        <li class="topcoat-list__item center" hm-tap="open(provider.id)" ng-repeat="provider in providers">
           <img src="{{provider.logo}}" style="width:100%">
           <h1>{{ provider.title }}</h1>
         </li>
