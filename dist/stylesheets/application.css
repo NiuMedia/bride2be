@@ -175,6 +175,16 @@ li {
 	width:15%;
 	float: right;
 }
+.prov-left{
+	width:50%;
+	float:left;
+	padding: 5px;
+}
+.prov-right{
+	width:50%;	
+	float:right;
+	padding: 5px;
+}
 .topcoat-checkbox__checkmark {
 	margin: 5px;
 }
@@ -246,4 +256,14 @@ padding-left: 6px;
 	margin: -4px;
 	margin-bottom:5px;
 	color:white;
+}
+#facebook-btn{
+	background-color: #035FD5;
+}
+#llamada-btn{
+	background-color: #D57BAE;
+}
+#favoritos-btn{
+	border: 1px solid #6B6325 !important;
+	background-color: #288EDF;
 }

@@ -1,16 +1,35 @@
 <div ng-app="providerApp">
 
   <div ng-controller="ShowCtrl">
-    <div class="content-padded">
+    <div class="content-padded fondo">
       <div>
-        <img style="width:100%" src="{{provider.fotos}}" class="provider-logo"/>
-      	<h1>{{provider.title}}</h1>
-      	<p>{{provider.direccion}}</p>
-      	<p>{{provider.phone}}</p>
-      	<a href="{{provider.facebook}}">Facebook</a><br/>
-      	<a href="{{provider.facebook}}">Twitter</a><br/>
-      	<a href="tel:{{provider.phone}}">Llamar</a><br/>
-      	<a href="" hm-tap="providersService.addProvider(provider.id)">Añadir a favoritos</a>
+        <div class="tips-titles center">
+            <h1>{{ provider.title }}</h1>
+        </div>
+        <div class="card">
+          <p>{{provider.direccion}}</p>
+          <p>{{provider.phone}}</p>
+          <div class="cbCont">
+            <div class="cbSingle">
+              <div class="prov-left">
+                <button class="topcoat-button--cta" id="facebook-btn" href="{{provider.facebook}}">Facebook</button><br/>
+              </div>
+              <div class="prov-right">
+                <button class="topcoat-button--cta" id="twitter-btn" href="{{provider.facebook}}">Twitter</button><br/>
+              </div>
+            </div>
+            <div class="cbSingle">
+              <div class="prov-left">
+                <button class="topcoat-button--cta" id="llamada-btn" href="tel:{{provider.phone}}">Llamar</button><br/>
+              </div>
+              <div class="prov-right">
+                <button class="topcoat-button--cta" id="favoritos-btn" href="" hm-tap="providersService.addProvider(provider.id)">Añadir a favoritos</button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      	<img style="width:100%" src="{{provider.fotos}}" class="provider-logo"/>
       </div>
     </div>
 

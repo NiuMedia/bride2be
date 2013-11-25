@@ -6,7 +6,6 @@
 
   <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
   <link rel="stylesheet" href="/stylesheets/application.css" />
-  <link href='http://localhost/fonts/SourceSansPro-light.ttf' rel='stylesheet' type='text/css'>
 
   <script src="/javascripts/onerror.js"></script>
   <script src="/javascripts/json2.js"></script>
@@ -810,7 +809,7 @@
 
   <div class="card">
     <div id="titulo-1semana" class="card-titles">
-      <div style="float:left"><h2>4 días antes</h2></div>
+      <div style="float:left"><h2>1 semana antes</h2></div>
       <div style="float:right;clear:right;"><button class="topcoat-button--quiet" id="abrir-contId8"><img src="/icons/br_down.png" class="img-up-down"></button>
       <button class="topcoat-button--quiet" id="cerrar-contId8" style="display:none"><img src="/icons/br_up.png" class="img-up-down"></button>
       </div>
@@ -1001,7 +1000,7 @@
     });
 
     function guardarTodo(){
-      for (var i=1; i<=42; i++){
+      for (var i=1; i<=65; i++){
         window.localStorage.setItem("cbAgenda"+i+"", $("#cbAgenda"+i+"").is(':checked'));
       }
 
@@ -1010,7 +1009,7 @@
     }
 
 
-		for (var i=1; i<=42; i++){
+		for (var i=1; i<=65; i++){
 			gralVar=window.localStorage.getItem("cbAgenda"+i+"");
 			if((typeof gralVar)!='object'){
 	          if(gralVar =='true'){document.getElementById("cbAgenda"+i+"").checked=true;}
