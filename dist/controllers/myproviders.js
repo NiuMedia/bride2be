@@ -11,8 +11,11 @@ myprovidersApp.controller('IndexCtrl', function ($scope) {
     steroids.layers.push(webView);
   };
 
+  alert("Hola");
   // Fetch all objects from the local JSON (see app/models/myproviders.js)
-  $scope.myproviderss = $.parseJSON(window.localStorage.getItem("misprovedores"));
+  $scope.myproviderss = JSON.parse(window.localStorage.getItem("misprovedores"));
+  alert("Hola 2");
+  alert($scope.myproviderss);
 
   // -- Native navigation
   steroids.view.navigationBar.show("Mis Provedores");

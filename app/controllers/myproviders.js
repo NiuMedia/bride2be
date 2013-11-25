@@ -12,8 +12,8 @@ myprovidersApp.controller('IndexCtrl', function ($scope) {
   };
 
   // Fetch all objects from the local JSON (see app/models/myproviders.js)
-  $scope.myproviderss = $.parseJSON(window.localStorage.getItem("misprovedores"));
-
+  $scope.myproviderss = JSON.parse(window.localStorage.getItem("misprovedores"));
+  
   // -- Native navigation
   steroids.view.navigationBar.show("Mis Provedores");
 
