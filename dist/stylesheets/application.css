@@ -206,7 +206,7 @@ li {
 	clear:both;
 	margin:-10px;
 	border-bottom:4px solid white;
--webkit-box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, .4);
+	-webkit-box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, .4);
     box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, .4);
 	margin-bottom: 1em;
 	overflow: hidden;
@@ -219,7 +219,7 @@ li {
 	padding-left: 10px;
 	clear:both;
 	border-bottom:4px solid white;
--webkit-box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, .4);
+	-webkit-box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, .4);
     box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, .4);
 	margin:-10px;
 	margin-bottom: 1em;
@@ -249,14 +249,15 @@ li {
 .gastos-titulos-c{
 	background-color: rgba(0,0,0,0.5);
 	overflow: hidden;
-position: relative;
-padding-top: 2px;
-padding-bottom: 2px;
-padding-left: 6px;
+	position: relative;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 6px;
 	margin: -4px;
 	margin-bottom:5px;
 	color:white;
 }
+<<<<<<< HEAD
 #facebook-btn{
 	background-color: #035FD5;
 }
@@ -266,4 +267,29 @@ padding-left: 6px;
 #favoritos-btn{
 	border: 1px solid #6B6325 !important;
 	background-color: #288EDF;
+}
+
+.topcoat-button{
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:1px solid #e0c3c9;
+	padding:9px 18px;
+	text-decoration:none;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #ffffff), color-stop(100%, #fbdce3) );
+	background-color:#ffffff;
+	color:#666666;
+	display:inline-block;
+	text-shadow:1px 1px 0px #ffffff;
+ 	-webkit-box-shadow:inset 1px 1px 0px 0px #ffffff;
+ 	text-align: center;
+ 	font-size: 20px;
+}
+
+.b100{
+	width:100%;
+
+}
+
+.b50{
+	width:49.3%;
 }
