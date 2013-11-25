@@ -265,8 +265,13 @@ li {
 }
 #favoritos-btn{
 	border: 1px solid #6B6325 !important;
+<<<<<<< HEAD
 	background-color: #A69B33 !important;
 }
+=======
+	background-color: #288EDF;
+=======
+>>>>>>> f50d8969a21ee3f83ef4c0011ed55d4a569e82f4
 
 .topcoat-button{
 	-webkit-border-radius:8px;
@@ -291,4 +296,5 @@ li {
 
 .b50{
 	width:49.3%;
+>>>>>>> 20176382be182f7cb311c819dc2e9f7f27e71048
 }
