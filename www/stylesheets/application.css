@@ -257,7 +257,6 @@ li {
 	margin-bottom:5px;
 	color:white;
 }
-<<<<<<< HEAD
 #facebook-btn{
 	background-color: #035FD5;
 }
@@ -266,8 +265,8 @@ li {
 }
 #favoritos-btn{
 	border: 1px solid #6B6325 !important;
-	background-color: #288EDF;
-=======
+	background-color: #A69B33 !important;
+}
 
 .topcoat-button{
 	-webkit-border-radius:8px;
@@ -292,5 +291,4 @@ li {
 
 .b50{
 	width:49.3%;
->>>>>>> 20176382be182f7cb311c819dc2e9f7f27e71048
 }

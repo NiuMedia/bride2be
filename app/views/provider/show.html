@@ -7,29 +7,23 @@
             <h1>{{ provider.title }}</h1>
         </div>
         <div class="card">
+          <img style="width:100%" src="{{provider.fotos}}" class="provider-logo"/>
           <p>{{provider.direccion}}</p>
           <p>{{provider.phone}}</p>
           <div class="cbCont">
             <div class="cbSingle">
-              <div class="prov-left">
-                <button class="topcoat-button--cta" id="facebook-btn" href="{{provider.facebook}}">Facebook</button><br/>
-              </div>
-              <div class="prov-right">
-                <button class="topcoat-button--cta" id="twitter-btn" href="{{provider.facebook}}">Twitter</button><br/>
-              </div>
+                <button class="topcoat-button--cta b50" id="facebook-btn" href="{{provider.facebook}}">Facebook</button>
+                <button class="topcoat-button--cta b50" id="twitter-btn" href="{{provider.facebook}}">Twitter</button>
             </div>
-            <div class="cbSingle">
-              <div class="prov-left">
-                <button class="topcoat-button--cta" id="llamada-btn" href="tel:{{provider.phone}}">Llamar</button><br/>
-              </div>
-              <div class="prov-right">
-                <button class="topcoat-button--cta" id="favoritos-btn" href="" hm-tap="providersService.addProvider(provider.id)">Añadir a favoritos</button>
-              </div>
+            <div class="cbCont">
+                <button class="topcoat-button--cta b100" id="llamada-btn" href="tel:{{provider.phone}}">Llamar</button>
+            </div>
+            <div class="cbCont">
+              <button class="topcoat-button--cta b100" id="favoritos-btn" href="" hm-tap="providersService.addProvider(provider.id)">Añadir a favoritos</button>
             </div>
           </div>
           
         </div>
-      	<img style="width:100%" src="{{provider.fotos}}" class="provider-logo"/>
       </div>
     </div>
 
