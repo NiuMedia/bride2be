@@ -4,7 +4,7 @@
   <meta charset="utf8">
   <title>Steroids App</title>
 
-  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-light.css" />
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
   <link rel="stylesheet" href="/stylesheets/application.css" />
 
   <script src="/appgyver/cordova.js"></script>
@@ -27,28 +27,18 @@
 <body>
 
 
-  <div class="content-padded" ng-app="invitadosApp" ng-controller="NewCtrl">
-	<h1>Añadir invitado</h1>
-	<label for="nombre">Nombre</label><br/>
-	<input ng-model="newGuest.nombre" type="text" name="nombre" id="nombre" class="topcoat-text-input"><br/>
-	<label for="numero">Numero de personas</label><br/>
-	<input ng-model="newGuest.invitados"  type="number" name="numero" class="topcoat-text-input" id="numero"><br/>
-	<label class="topcoat-checkbox">
-  		<input ng-model="newGuest.confirmado" type="checkbox" id="confirmado">
-  		<div class="topcoat-checkbox__checkmark"></div>
-  		Confirmado
-	</label><br/>
-	<label class="topcoat-checkbox">
-  		<input ng-model="newGuest.regalo" type="checkbox" id="regalo">
-  		<div class="topcoat-checkbox__checkmark"></div>
-  		Envió regalo
-	</label><br/>
-	<label class="topcoat-checkbox">
-  		<input ng-model="newGuest.tarjeta" type="checkbox" id="tarjeta">
-  		<div class="topcoat-checkbox__checkmark"></div>
-  		Tarjeta de agradecimiento
-	</label><br/>
-	<div class="topcoat-button" hm-tap="invitadoServ.addInvitado(newGuest); newGuest = {}; returnToList();">Guardar invitado</div>
+  <div class="content-padded fondo" ng-app="invitadosApp" ng-controller="NewCtrl">
+	<div class="tips-titles center"><h2>Añadir invitado</h2></div>
+	<div class="card">
+		<label for="nombre">Nombre</label><br/>
+		<input ng-model="newGuest.nombre" type="text" name="nombre" id="nombre" class="topcoat-text-input"><br/>
+		<label for="numero">Numero de personas</label><br/>
+		<input ng-model="newGuest.invitados"  type="number" name="numero" class="topcoat-text-input" id="numero"><br/>
+		<input ng-model="newGuest.confirmado" type="checkbox" class="topcoat-checkbox__checkmark" name="confirmado" id="confirmado"><label for="confirmado">Confirmado</label><br>
+        <input ng-model="newGuest.regalo" type="checkbox" class="topcoat-checkbox__checkmark" name="regalo" id="regalo"><label for="regalo">Envió Regalo</label><br>
+        <input ng-model="newGuest.tarjeta" type="checkbox" class="topcoat-checkbox__checkmark" name="tarjeta" id="tarjeta"><label for="tarjeta">Tarjeta de agradecimiento</label><br>
+		<div class="topcoat-button" hm-tap="invitadoServ.addInvitado(newGuest); newGuest = {}; returnToList();">Guardar invitado</div>
+	</div>
 </div>
 
 

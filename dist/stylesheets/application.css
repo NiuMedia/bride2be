@@ -283,6 +283,13 @@ li {
  	text-align: center;
  	font-size: 20px;
 }
+.special-list{
+	border: 1px solid #ffffff;
+	background-color: rgba(213, 123, 174, 0.8);
+}
+.special-list h3, .special-list label, .special-list p{
+	color: white;
+}
 
 .b100{
 	width:100%;
