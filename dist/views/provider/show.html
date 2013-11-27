@@ -26,35 +26,29 @@
 <body>
 
 
-  <div ng-app="providerApp">
+  <div ng-app="providerApp" class="content-padded fondo">
 
   <div ng-controller="ShowCtrl">
-    <div class="content-padded fondo">
-      <div>
-        <div class="tips-titles center">
-            <h1>{{ provider.title }}</h1>
+    <div class="tips-titles center">
+        <h1>{{ provider.title }}</h1>
+    </div>
+    <div class="card">
+      <img style="width:100%" src="{{provider.fotos}}" class="provider-logo"/>
+      <p>{{provider.direccion}}</p>
+      <p>{{provider.phone}}</p>
+      <div class="cbCont">
+        <div class="cbSingle">
+            <button class="topcoat-button--cta b50" id="facebook-btn" href="{{provider.facebook}}">Facebook</button>
+            <button class="topcoat-button--cta b50" id="twitter-btn" href="{{provider.facebook}}">Twitter</button>
         </div>
-        <div class="card">
-          <img style="width:100%" src="{{provider.fotos}}" class="provider-logo"/>
-          <p>{{provider.direccion}}</p>
-          <p>{{provider.phone}}</p>
-          <div class="cbCont">
-            <div class="cbSingle">
-                <button class="topcoat-button--cta b50" id="facebook-btn" href="{{provider.facebook}}">Facebook</button>
-                <button class="topcoat-button--cta b50" id="twitter-btn" href="{{provider.facebook}}">Twitter</button>
-            </div>
-            <div class="cbCont">
-                <button class="topcoat-button--cta b100" id="llamada-btn" href="tel:{{provider.phone}}">Llamar</button>
-            </div>
-            <div class="cbCont">
-              <button class="topcoat-button--cta b100" id="favoritos-btn" href="" hm-tap="providersService.addProvider(provider.id)">Añadir a favoritos</button>
-            </div>
-          </div>
-          
+        <div class="cbCont">
+            <button class="topcoat-button--cta b100" id="llamada-btn" href="tel:{{provider.phone}}">Llamar</button>
+        </div>
+        <div class="cbCont">
+          <button class="topcoat-button--cta b100" id="favoritos-btn" href="" hm-tap="providersService.addProvider(provider.id)">Añadir a favoritos</button>
         </div>
       </div>
     </div>
-
   </div>
 
 </div>

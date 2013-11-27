@@ -37,8 +37,6 @@ invitadosApp.factory('invitadoService', function(){
 
 invitadosApp.controller('IndexCtrl', function ($scope) {
 
-  $scope.$apply();
-
   // Helper function for opening new webviews
   $scope.open = function(id) {
     webView = new steroids.views.WebView("/views/invitados/show.html?id="+id);
@@ -73,7 +71,7 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
     adduserButton.title = "Nuevo";
 
     adduserButton.onTap = function (){
-      alert('le puchaste al boton de añadir usuario')
+      alert('le puchaste al boton de añadir usuario');
     };
 
     steroids.view.navigationBar.setButtons({
@@ -98,8 +96,6 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
 // Show: http://localhost/views/invitados/show.html?id=<id>
 
 invitadosApp.controller('ShowCtrl', function ($scope, invitadoService) {
-
-  $scope.$apply();
 
   $scope.returnToList = function(){
     guestsRetunView = new steroids.views.WebView("/views/invitados/index.html");
@@ -148,7 +144,6 @@ invitadosApp.controller('ShowCtrl', function ($scope, invitadoService) {
 
 
 invitadosApp.controller('NewCtrl', function ($scope, invitadoService) {
-  $scope.$apply();
 
   $scope.returnToList = function(){
     guestsRetunView = new steroids.views.WebView("/views/invitados/index.html");
