@@ -37,6 +37,8 @@ invitadosApp.factory('invitadoService', function(){
 
 invitadosApp.controller('IndexCtrl', function ($scope) {
 
+  $scope.$apply();
+
   // Helper function for opening new webviews
   $scope.open = function(id) {
     webView = new steroids.views.WebView("/views/invitados/show.html?id="+id);
@@ -60,7 +62,35 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
   $scope.invitados = json_guest.invitados;
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Invitados");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
+
+  var adduserButton = new steroids.buttons.NavigationBarButton();
+    adduserButton.title = "Nuevo";
+
+    adduserButton.onTap = function (){
+      alert('le puchaste al boton de añadir usuario')
+    };
+
+    steroids.view.navigationBar.setButtons({
+      right: [adduserButton]
+    });
+
+  // var adduserButton = new steroids.buttons.NavigationBarButton();
+  //   adduserButton.imagePath =  "/" + steroids.app.path + "/icons/adduser.png";
+
+  //   adduserButton.onTap = function() { 
+  //       alert("puchaste a nuevo usuario"); 
+  //   };
+
+  //   steroids.view.navigationBar.setButtons({
+  //       right: [adduserButton]
+  //   });
+
 
 });
 
@@ -68,6 +98,8 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
 // Show: http://localhost/views/invitados/show.html?id=<id>
 
 invitadosApp.controller('ShowCtrl', function ($scope, invitadoService) {
+
+  $scope.$apply();
 
   $scope.returnToList = function(){
     guestsRetunView = new steroids.views.WebView("/views/invitados/index.html");
@@ -92,12 +124,31 @@ invitadosApp.controller('ShowCtrl', function ($scope, invitadoService) {
   };
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Invitado: " + $scope.invitado.nombre );
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+
+  });
+
+    var guardarButton = new steroids.buttons.NavigationBarButton();
+    guardarButton.title = "Guardar";
+
+    guardarButton.onTap = function (){
+      $scope.returnToList();
+      alert('le puchaste al boton')
+    };
+
+    steroids.view.navigationBar.setButtons({
+      right: [guardarButton]
+    });
 
 });
 
 
 invitadosApp.controller('NewCtrl', function ($scope, invitadoService) {
+  $scope.$apply();
 
   $scope.returnToList = function(){
     guestsRetunView = new steroids.views.WebView("/views/invitados/index.html");
@@ -111,7 +162,27 @@ invitadosApp.controller('NewCtrl', function ($scope, invitadoService) {
 
   $scope.invitadoServ = invitadoService;
 
+
+
   // -- Native navigation
-  steroids.view.navigationBar.show("Nuevo invitado");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
+
+    var guardarButton = new steroids.buttons.NavigationBarButton();
+    guardarButton.title = "Guardar";
+
+    guardarButton.onTap = function (){
+      $scope.returnToList();
+      alert('le puchaste al boton')
+    };
+
+    steroids.view.navigationBar.setButtons({
+      right: [guardarButton]
+    });
+
 
 });
