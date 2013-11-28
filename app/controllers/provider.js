@@ -13,44 +13,128 @@ providerApp.factory('providersService', ['$http', function(http){
 
         switch(steroids.view.params['tipo']){
           case 'ceremonia':
-            misProvedoresJSON.ceremonia.push(data.result);
+            for(x in misProvedoresJSON.ceremonia){
+              if(misProvedoresJSON.ceremonia[x].title != data.result.title){
+                misProvedoresJSON.ceremonia.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'recepcion':
-            misProvedoresJSON.recepcion.push(data.result);
+            for(x in misProvedoresJSON.recepcion){
+              if(misProvedoresJSON.recepcion[x].title != data.result.title){
+                misProvedoresJSON.recepcion.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'invitaciones':
-            misProvedoresJSON.invitaciones.push(data.result);
+            for(x in misProvedoresJSON.invitaciones){
+              if(misProvedoresJSON.invitaciones[x].title != data.result.title){
+                misProvedoresJSON.invitaciones.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'flores':
-            misProvedoresJSON.flores.push(data.result);
+            for(x in misProvedoresJSON.flores){
+              if(misProvedoresJSON.flores[x].title != data.result.title){
+                misProvedoresJSON.flores.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'iluminacion':
-            misProvedoresJSON.iluminacion.push(data.result);
+            for(x in misProvedoresJSON.iluminacion){
+              if(misProvedoresJSON.iluminacion[x].title != data.result.title){
+                misProvedoresJSON.iluminacion.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'fotos':
-            misProvedoresJSON.foto.push(data.result);
+            for(x in misProvedoresJSON.foto){
+              if(misProvedoresJSON.foto[x].title != data.result.title){
+                misProvedoresJSON.foto.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'ambientacion':
-            misProvedoresJSON.ambientacion.push(data.result);
+            for(x in misProvedoresJSON.ambientacion){
+              if(misProvedoresJSON.ambientacion[x].title != data.result.title){
+                misProvedoresJSON.ambientacion.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'elyella':
-            misProvedoresJSON.elyella.push(data.result);
+            for(x in misProvedoresJSON.elyella){
+              if(misProvedoresJSON.elyella[x].title != data.result.title){
+                misProvedoresJSON.elyella.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'maquillaje':
-            misProvedoresJSON.mps.push(data.result);
+            for(x in misProvedoresJSON.mps){
+              if(misProvedoresJSON.mps[x].title != data.result.title){
+                misProvedoresJSON.mps.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'luna':
-            misProvedoresJSON.luna.push(data.result);
+            for(x in misProvedoresJSON.luna){
+              if(misProvedoresJSON.luna[x].title != data.result.title){
+                misProvedoresJSON.luna.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'mesa':
-            misProvedoresJSON.mesa.push(data.result);
+            for(x in misProvedoresJSON.mesa){
+              if(misProvedoresJSON.mesa[x].title != data.result.title){
+                misProvedoresJSON.mesa.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'musica':
-            misProvedoresJSON.musica.push(data.result);
+            for(x in misProvedoresJSON.musica){
+              if(misProvedoresJSON.musica[x].title != data.result.title){
+                misProvedoresJSON.musica.push(data.result);
+                alert("Provedor insertado correctamente");
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
+            
           break;
         }
         window.localStorage.setItem("misprovedores", JSON.stringify(misProvedoresJSON));
-        alert("Provedor insertado correctamente");
       }).
       error(function(data, status, headers, config) {
         alert("Error: " + data);

@@ -13,7 +13,13 @@ providerApp.factory('providersService', ['$http', function(http){
 
         switch(steroids.view.params['tipo']){
           case 'ceremonia':
-            misProvedoresJSON.ceremonia.push(data.result);
+            for(x in misProvedoresJSON.ceremonia){
+              if(misProvedoresJSON.ceremonia[x].title != data.result.title){
+                misProvedoresJSON.ceremonia.push(data.result);
+              }else{
+                alert("Provedor ya añadido");
+              }
+            }
           break;
           case 'recepcion':
             misProvedoresJSON.recepcion.push(data.result);
