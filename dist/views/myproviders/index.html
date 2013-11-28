@@ -26,14 +26,21 @@
 <body>
 
 
-  <div ng-app="myprovidersApp">
+  <div ng-app="myprovidersApp" class="content-padded fondo">
+  <div id="banner">
+    <center>
+    <div id="texto">
+      <h2><span class="black" style="font-size: 26px; margin: 0 auto;" id="dias">Mis Proveedores</span></h2>
+    </div>
+    </center>
+  </div>
 
   <div ng-controller="IndexCtrl">
-    <div class="topcoat-list__container">
-      <h1>Ceremonias religiosa y civil</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.ceremonia">
-        	<h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>Ceremonia religiosa y civil</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.ceremonia">
+        	<h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
@@ -42,11 +49,11 @@
         </li>
       </ul>
     </div>
-    <div class="topcoat-list__container">
-      <h1>Recepciones y Banquetes</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.recepcion">
-          <h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>Recepciones y Banquetes</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.recepcion">
+          <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
@@ -55,11 +62,11 @@
         </li>
       </ul>
     </div>
-    <div class="topcoat-list__container">
-      <h1>Invitaciones</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.invitaciones">
-          <h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>Invitaciones</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.invitaciones">
+          <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
@@ -68,11 +75,11 @@
         </li>
       </ul>
     </div>
-    <div class="topcoat-list__container">
-      <h1>Música</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.musica">
-          <h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>Música</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.musica">
+          <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
@@ -81,11 +88,11 @@
         </li>
       </ul>
     </div>
-    <div class="topcoat-list__container">
-      <h1>Flores, Decoración y Coordinación</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.flores">
-          <h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>Flores, Decoración y Coordinación</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.flores">
+          <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
@@ -94,11 +101,11 @@
         </li>
       </ul>
     </div>
-    <div class="topcoat-list__container">
-      <h1>Iluminaciones y mobiliario</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.iluminacion">
-          <h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>Iluminaciones y mobiliario</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.iluminacion">
+          <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
@@ -107,11 +114,11 @@
         </li>
       </ul>
     </div>
-    <div class="topcoat-list__container">
-      <h1>Fotos y videos</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.foto">
-          <h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>Fotos y videos</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.foto">
+          <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
@@ -120,11 +127,11 @@
         </li>
       </ul>
     </div>
-    <div class="topcoat-list__container">
-      <h1>Ambientacion y más</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.ambientacion">
-          <h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>Ambientacion y más</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.ambientacion">
+          <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
@@ -133,11 +140,11 @@
         </li>
       </ul>
     </div>
-    <div class="topcoat-list__container">
-      <h1>El y ella</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.elyella">
-          <h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>El y ella</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.elyella">
+          <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
@@ -146,11 +153,11 @@
         </li>
       </ul>
     </div>
-    <div class="topcoat-list__container">
-      <h1>Maquillaje, peinado y spa</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.mps">
-          <h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>Maquillaje, peinado y spa</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.mps">
+          <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
@@ -159,11 +166,11 @@
         </li>
       </ul>
     </div>
-    <div class="topcoat-list__container">
-      <h1>Luna de miel</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.luna">
-          <h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>Luna de miel</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.luna">
+          <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
@@ -172,11 +179,11 @@
         </li>
       </ul>
     </div>
-    <div class="topcoat-list__container">
-      <h1>Mesa de regalos y hogar</h1>
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item" ng-repeat="myproviders in myproviderss.mesa">
-          <h2>{{ myproviders.title }}</h2>
+    <div class="topcoat-list__container card">
+      <div class="card-titles"><h2>Mesa de regalos y hogar</h2></div>
+      <ul class="topcoat-list cbCont">
+        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.mesa">
+          <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>

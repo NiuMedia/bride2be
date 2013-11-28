@@ -15,7 +15,12 @@ myprovidersApp.controller('IndexCtrl', function ($scope) {
   $scope.myproviderss = JSON.parse(window.localStorage.getItem("misprovedores"));
   
   // -- Native navigation
-  steroids.view.navigationBar.show("Mis Provedores");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -31,6 +36,11 @@ myprovidersApp.controller('ShowCtrl', function ($scope, $filter) {
   });
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Myproviders: " + steroids.view.params.id );
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });

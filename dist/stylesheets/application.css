@@ -287,7 +287,7 @@ li {
 	border: 1px solid #ffffff;
 	background-color: rgba(213, 123, 174, 0.8);
 }
-.special-list h3, .special-list label, .special-list p{
+.special-list h3, .special-list label, .special-list p,.special-list h1, .special-list h2{
 	color: white;
 }
 

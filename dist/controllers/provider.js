@@ -86,7 +86,12 @@ providerApp.controller('CeremoniaCtrl', function ($scope, ProviderRestangular) {
   $scope.providers = ProviderRestangular.all('get_ceremonia/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Ceremonia Religiosa y Civil");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -111,7 +116,12 @@ providerApp.controller('RecepcionCtrl', function ($scope, ProviderRestangular) {
   $scope.providers = ProviderRestangular.all('get_recepcion/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Recepción y Banquetes");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -136,7 +146,12 @@ providerApp.controller('InvitacionesCtrl', function ($scope, ProviderRestangular
   $scope.providers = ProviderRestangular.all('get_invitacion/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Invitaciones");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -159,7 +174,12 @@ providerApp.controller('FloresCtrl', function ($scope, ProviderRestangular) {
   $scope.providers = ProviderRestangular.all('get_flores/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Flores, Decoración y Coordinación");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -181,7 +201,12 @@ providerApp.controller('IluminacionCtrl', function ($scope, ProviderRestangular)
   $scope.providers = ProviderRestangular.all('get_iluminacion/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Iluminación y mobiliario");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -203,7 +228,12 @@ providerApp.controller('FotosCtrl', function ($scope, ProviderRestangular) {
   $scope.providers = ProviderRestangular.all('get_fotos/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Foto y video");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -225,7 +255,12 @@ providerApp.controller('AmbientacionCtrl', function ($scope, ProviderRestangular
   $scope.providers = ProviderRestangular.all('get_ambientacion/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Ambientacion y más");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -247,7 +282,12 @@ providerApp.controller('ElyEllaCtrl', function ($scope, ProviderRestangular) {
   $scope.providers = ProviderRestangular.all('get_elyella/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("El y ella");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -269,7 +309,12 @@ providerApp.controller('MaquillajeCtrl', function ($scope, ProviderRestangular) 
   $scope.providers = ProviderRestangular.all('get_maquillaje/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Maquillaje, peinado y spa");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -291,7 +336,12 @@ providerApp.controller('LunaCtrl', function ($scope, ProviderRestangular) {
   $scope.providers = ProviderRestangular.all('get_luna/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Luna de miel");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -313,7 +363,12 @@ providerApp.controller('MesaCtrl', function ($scope, ProviderRestangular) {
   $scope.providers = ProviderRestangular.all('get_mesa/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Mesa de regalos y hogar");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -335,7 +390,12 @@ providerApp.controller('MusicaCtrl', function ($scope, ProviderRestangular) {
   $scope.providers = ProviderRestangular.all('get_musica/').getList();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("Música");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });
 
@@ -440,6 +500,11 @@ providerApp.controller('ShowCtrl', function ($scope, $filter, ProviderRestangula
   //$scope.provider = ProviderRestangular.oneUrl('provedor','http://bride2be.com.mx/api/proveedores/single/?id='+steroids.view.params['id']).get();
 
   // -- Native navigation
-  steroids.view.navigationBar.show("");
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
 
 });

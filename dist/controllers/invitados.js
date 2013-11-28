@@ -71,7 +71,7 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
     adduserButton.title = "Nuevo";
 
     adduserButton.onTap = function (){
-      alert('le puchaste al boton de añadir usuario')
+      alert('le puchaste al boton de añadir usuario');
     };
 
     steroids.view.navigationBar.setButtons({
