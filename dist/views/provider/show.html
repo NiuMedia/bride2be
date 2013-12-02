@@ -38,11 +38,18 @@
       <p>{{provider.phone}}</p>
       <div class="cbCont">
         <div class="cbSingle">
-            <button class="topcoat-button--cta b50" id="facebook-btn" href="{{provider.facebook}}">Facebook</button>
-            <button class="topcoat-button--cta b50" id="twitter-btn" href="{{provider.facebook}}">Twitter</button>
-        </div>
-        <div class="cbCont">
-            <button class="topcoat-button--cta b100" id="llamada-btn" href="tel:{{provider.phone}}">Llamar</button>
+            <button class="topcoat-icon-button provs-btn-first" id="facebook-btn" href="{{provider.facebook}}">
+              <span class="topcoat-icon" id="facebook-btn-int"></span>
+            </button>
+            <button class="topcoat-icon-button provs-btn" id="twitter-btn" href="{{provider.twitter}}">
+              <span class="topcoat-icon" id="twitter-btn-int"></span>
+            </button>
+            <button class="topcoat-icon-button provs-btn" id="phone-btn" href="{{provider.phone}}">
+              <span class="topcoat-icon" id="phone-btn-int"></span>
+            </button>
+            <button class="topcoat-icon-button provs-btn-last" id="fav-btn" href="" hm-tap="providersService.addProvider(provider.id)">
+              <span class="topcoat-icon" id="fav-btn-int"></span>
+            </button>
         </div>
         <div class="cbCont">
           <button class="topcoat-button--cta b100" id="favoritos-btn" href="" hm-tap="providersService.addProvider(provider.id)">Añadir a favoritos</button>

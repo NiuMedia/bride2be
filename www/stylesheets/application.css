@@ -73,7 +73,11 @@ html[xmlns] .clearfix {
 	-webkit-box-shadow:  0px 2px 4px 1px rgba(0, 0, 0, .4);
     box-shadow:  0px 2px 4px 1px rgba(0, 0, 0, .4);
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300; 
+    font-weight: 300;
+    text-decoration: none;
+}
+a{
+	text-decoration: none;
 }	
 
 p {
@@ -260,14 +264,39 @@ li {
 #facebook-btn{
 	background-color: #035FD5;
 }
-#llamada-btn{
-	background-color: #D57BAE;
+#facebook-btn-int{
+	background: url('/icons/facebook.png');
 }
-#favoritos-btn{
-	border: 1px solid #6B6325 !important;
-	background-color: #A69B33 !important;
+#twitter-btn{
+	background-color: #10C6DE;
+}
+#twitter-btn-int{
+	background: url('/icons/twitter.png');
 }
 
+#phone-btn{
+	background-color: #10DE21;
+}
+#phone-btn-int{
+	background: url('/icons/phone.png');
+}
+#fav-btn{
+	background-color: #DE10B8;
+}
+#fav-btn-int{
+	background: url('/icons/fav.png');
+	background-repeat: no-repeat;
+}
+.provs-btn{
+	margin-right:21px;
+}
+.provs-btn-last{
+	margin-right:0px;
+}
+.provs-btn-first{
+	margin-right:21px;
+	margin-left: 4px;
+}
 .topcoat-button{
 	-webkit-border-radius:8px;
 	border-radius:8px;
@@ -283,12 +312,20 @@ li {
  	text-align: center;
  	font-size: 20px;
 }
+
+.topcoat-list__container {
+border-top: 1px solid #B57B99;
+background-color: rgba(0,0,0,0);
+}
+
 .special-list{
-	border: 1px solid #ffffff;
-	background-color: rgba(213, 123, 174, 0.8);
+	border: 1px solid #B57B99;
+	/*background-color: rgba(213, 123, 174, 0.8);*/
+	background-color:#fbdce2;
+	margin-bottom: 5px;
 }
 .special-list h3, .special-list label, .special-list p,.special-list h1, .special-list h2{
-	color: white;
+	color: #333;
 }
 
 .b100{
