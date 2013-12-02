@@ -8,9 +8,9 @@
   </div>
 
   <div ng-controller="IndexCtrl">
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>Ceremonia religiosa y civil</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__container cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.ceremonia">
         	<h3>{{ myproviders.title }}</h3>
           <div>
@@ -22,9 +22,9 @@
       </ul>
       <button id="ceremonia" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
     </div>
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>Recepciones y Banquetes</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__containers cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.recepcion">
           <h3>{{ myproviders.title }}</h3>
           <div>
@@ -36,9 +36,9 @@
       </ul>
       <button id="recepcion" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
     </div>
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>Invitaciones</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__container cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.invitaciones">
           <h3>{{ myproviders.title }}</h3>
           <div>
@@ -50,9 +50,9 @@
       </ul>
       <button id="invitaciones" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
     </div>
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>Música</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__container cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.musica">
           <h3>{{ myproviders.title }}</h3>
           <div>
@@ -64,9 +64,9 @@
       </ul>
       <button id="musica" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
     </div>
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>Flores, Decoración y Coordinación</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__container cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.flores">
           <h3>{{ myproviders.title }}</h3>
           <div>
@@ -78,9 +78,9 @@
       </ul>
       <button id="flores" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
     </div>
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>Iluminaciones y mobiliario</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__container cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.iluminacion">
           <h3>{{ myproviders.title }}</h3>
           <div>
@@ -92,9 +92,9 @@
       </ul>
       <button id="iluminacion" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
     </div>
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>Fotos y videos</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__container cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.foto">
           <h3>{{ myproviders.title }}</h3>
           <div>
@@ -106,9 +106,9 @@
       </ul>
       <button id="foto" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
     </div>
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>Ambientacion y más</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__container cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.ambientacion">
           <h3>{{ myproviders.title }}</h3>
           <div>
@@ -120,9 +120,9 @@
       </ul>
       <button id="ambientacion" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
     </div>
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>El y ella</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__container cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.elyella">
           <h3>{{ myproviders.title }}</h3>
           <div>
@@ -134,9 +134,9 @@
       </ul>
       <button id="elyella" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
     </div>
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>Maquillaje, peinado y spa</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__container cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.mps">
           <h3>{{ myproviders.title }}</h3>
           <div>
@@ -148,9 +148,9 @@
       </ul>
       <button id="mps" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
     </div>
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>Luna de miel</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__container cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.luna">
           <h3>{{ myproviders.title }}</h3>
           <div>
@@ -162,9 +162,9 @@
       </ul>
       <button id="luna" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
     </div>
-    <div class="topcoat-list__container card">
+    <div class="topcoat-list card">
       <div class="card-titles"><h2>Mesa de regalos y hogar</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list__container cbCont">
         <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.mesa">
           <h3>{{ myproviders.title }}</h3>
           <div>
