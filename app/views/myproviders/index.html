@@ -11,156 +11,168 @@
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>Ceremonia religiosa y civil</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.ceremonia">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.ceremonia">
         	<h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 0)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>Recepciones y Banquetes</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.recepcion">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.recepcion">
           <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 1)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>Invitaciones</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.invitaciones">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.invitaciones">
           <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 2)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>Música</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.musica">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.musica">
           <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 3)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>Flores, Decoración y Coordinación</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.flores">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.flores">
           <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 4)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>Iluminaciones y mobiliario</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.iluminacion">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.iluminacion">
           <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 5)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>Fotos y videos</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.foto">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.foto">
           <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 6)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>Ambientacion y más</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.ambientacion">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.ambientacion">
           <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 7)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>El y ella</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.elyella">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.elyella">
           <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 8)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>Maquillaje, peinado y spa</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.mps">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.mps">
           <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 9)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>Luna de miel</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.luna">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.luna">
           <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 10)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
     <div class="topcoat-list__container card">
       <div class="card-titles"><h2>Mesa de regalos y hogar</h2></div>
       <ul class="topcoat-list cbCont">
-        <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="myproviders in myproviderss.mesa">
+        <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.mesa">
           <h3>{{ myproviders.title }}</h3>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
             <p>{{ myproviders.email }}</p>
           </div>
+          <a hm-tap="open(myproviders.title, 11)" href="">Eliminar</a>
         </li>
       </ul>
     </div>
