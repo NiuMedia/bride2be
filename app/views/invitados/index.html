@@ -7,9 +7,9 @@
       </center>
     </div>
     <div ng-controller="IndexCtrl">
-      <div class="topcoat-list__container">
+      <div class="topcoat-list card">
 
-        <ul class="topcoat-list" id="lista-invitados">
+        <ul class="topcoat-list__container" id="lista-invitados">
           <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="invitado in invitados">
             <h3>{{ invitado.nombre }}</h3>
             <label>Personas: {{ invitado.invitados }}</label><br>
