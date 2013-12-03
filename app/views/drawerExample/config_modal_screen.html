@@ -20,7 +20,6 @@
         </select><br><br>
         <label for="fecha">Fecha de la Boda</label><br>
         <input type="date" class="topcoat-text-input center wide black" name="fecha" id="fecha"><br><br>
-        <div class="topcoat-button center full" id="getPic-btn">Seleccionar Portada</div><br><br>
         <div class="topcoat-button center" id="save-btn">Guardar</div><br>
       </form>
     <script type="text/javascript">
@@ -34,18 +33,6 @@
           window.localStorage.setItem("init", 1);
 
           steroids.modal.hide();
-        });
-
-        $("#getPic-btn").on("click", function(){
-          navigator.camera.getPicture( function(imageData){
-            window.localStorage.setItem("foto", imageData);
-          }, function(msg){
-            alert(msg);
-          }, {
-            sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
-            destinationType : Camera.DestinationType.DATA_URL,
-            correctOrientation: true
-          });
         });
 
         //Rellena los datos, segun la informacion guardada
