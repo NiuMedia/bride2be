@@ -13,124 +13,185 @@ providerApp.factory('providersService', ['$http', function(http){
 
         switch(steroids.view.params['tipo']){
           case 'ceremonia':
-            for(x in misProvedoresJSON.ceremonia){
-              if(misProvedoresJSON.ceremonia[x].title != data.result.title){
-                misProvedoresJSON.ceremonia.push(data.result);
-                alert("Provedor insertado correctamente");
-              }else{
-                alert("Provedor ya añadido");
+            if (typeof misProvedoresJSON.ceremonia=='object'){
+              misProvedoresJSON.ceremonia.push(data.result);
+              alert("Proveedor insertado correctamente");
+            }else{
+              for(x in misProvedoresJSON.ceremonia){
+                alert('estoy en un for :3');
+                if(misProvedoresJSON.ceremonia[x].title != data.result.title){
+                  misProvedoresJSON.ceremonia.push(data.result);
+                  alert("Proveedor insertado correctamente");
+                }else{
+                  alert("Proveedor ya añadido");
+                }
               }
             }
           break;
           case 'recepcion':
+          if (typeof misProvedoresJSON.recepcion=='object'){
+              misProvedoresJSON.recepcion.push(data.result);
+              alert("Proveedor insertado correctamente");
+            }else{
             for(x in misProvedoresJSON.recepcion){
               if(misProvedoresJSON.recepcion[x].title != data.result.title){
                 misProvedoresJSON.recepcion.push(data.result);
-                alert("Provedor insertado correctamente");
+                alert("Proveedor insertado correctamente");
               }else{
-                alert("Provedor ya añadido");
+                alert("Proveedor ya añadido");
               }
             }
+          }
           break;
           case 'invitaciones':
+          if (typeof misProvedoresJSON.invitaciones=='object'){
+              misProvedoresJSON.invitaciones.push(data.result);
+              alert("Provedor insertado correctamente");
+            }else{
             for(x in misProvedoresJSON.invitaciones){
               if(misProvedoresJSON.invitaciones[x].title != data.result.title){
                 misProvedoresJSON.invitaciones.push(data.result);
-                alert("Provedor insertado correctamente");
+                alert("Proveedor insertado correctamente");
               }else{
-                alert("Provedor ya añadido");
+                alert("Proveedor ya añadido");
               }
             }
+          }
           break;
           case 'flores':
+          if (typeof misProvedoresJSON.flores=='object'){
+              misProvedoresJSON.flores.push(data.result);
+              alert("Provedor insertado correctamente");
+            }else{
             for(x in misProvedoresJSON.flores){
               if(misProvedoresJSON.flores[x].title != data.result.title){
                 misProvedoresJSON.flores.push(data.result);
-                alert("Provedor insertado correctamente");
+                alert("Proveedor insertado correctamente");
               }else{
-                alert("Provedor ya añadido");
+                alert("Proveedor ya añadido");
               }
             }
+          }
           break;
           case 'iluminacion':
+          if (typeof misProvedoresJSON.iluminacion=='object'){
+              misProvedoresJSON.iluminacion.push(data.result);
+              alert("Provedor insertado correctamente");
+            }else{
             for(x in misProvedoresJSON.iluminacion){
               if(misProvedoresJSON.iluminacion[x].title != data.result.title){
                 misProvedoresJSON.iluminacion.push(data.result);
-                alert("Provedor insertado correctamente");
+                alert("Proveedor insertado correctamente");
               }else{
-                alert("Provedor ya añadido");
+                alert("Proveedor ya añadido");
               }
             }
+          }
           break;
           case 'fotos':
+          if (typeof misProvedoresJSON.fotos=='object'){
+              misProvedoresJSON.fotos.push(data.result);
+              alert("Provedor insertado correctamente");
+            }else{
             for(x in misProvedoresJSON.foto){
               if(misProvedoresJSON.foto[x].title != data.result.title){
                 misProvedoresJSON.foto.push(data.result);
-                alert("Provedor insertado correctamente");
+                alert("Proveedor insertado correctamente");
               }else{
-                alert("Provedor ya añadido");
+                alert("Proveedor ya añadido");
               }
             }
+          }
           break;
           case 'ambientacion':
+          if (typeof misProvedoresJSON.ambientacion=='object'){
+              misProvedoresJSON.ambientacion.push(data.result);
+              alert("Provedor insertado correctamente");
+            }else{
             for(x in misProvedoresJSON.ambientacion){
               if(misProvedoresJSON.ambientacion[x].title != data.result.title){
                 misProvedoresJSON.ambientacion.push(data.result);
-                alert("Provedor insertado correctamente");
+                alert("Proveedor insertado correctamente");
               }else{
-                alert("Provedor ya añadido");
+                alert("Proveedor ya añadido");
               }
             }
+          }
           break;
           case 'elyella':
+          if (typeof misProvedoresJSON.elyella=='object'){
+              misProvedoresJSON.elyella.push(data.result);
+              alert("Provedor insertado correctamente");
+            }else{
             for(x in misProvedoresJSON.elyella){
               if(misProvedoresJSON.elyella[x].title != data.result.title){
                 misProvedoresJSON.elyella.push(data.result);
-                alert("Provedor insertado correctamente");
+                alert("Proveedor insertado correctamente");
               }else{
-                alert("Provedor ya añadido");
+                alert("Proveedor ya añadido");
               }
             }
+          }
           break;
           case 'maquillaje':
+          if (typeof misProvedoresJSON.maquillaje=='object'){
+              misProvedoresJSON.maquillaje.push(data.result);
+              alert("Provedor insertado correctamente");
+            }else{
             for(x in misProvedoresJSON.mps){
               if(misProvedoresJSON.mps[x].title != data.result.title){
                 misProvedoresJSON.mps.push(data.result);
-                alert("Provedor insertado correctamente");
+                alert("Proveedor insertado correctamente");
               }else{
-                alert("Provedor ya añadido");
+                alert("Proveedor ya añadido");
               }
             }
+          }
           break;
           case 'luna':
+          if (typeof misProvedoresJSON.luna=='object'){
+              misProvedoresJSON.luna.push(data.result);
+              alert("Provedor insertado correctamente");
+            }else{
             for(x in misProvedoresJSON.luna){
               if(misProvedoresJSON.luna[x].title != data.result.title){
                 misProvedoresJSON.luna.push(data.result);
-                alert("Provedor insertado correctamente");
+                alert("Proveedor insertado correctamente");
               }else{
-                alert("Provedor ya añadido");
+                alert("Proveedor ya añadido");
               }
             }
+          }
           break;
           case 'mesa':
+          if (typeof misProvedoresJSON.mesa=='object'){
+              misProvedoresJSON.mesa.push(data.result);
+              alert("Provedor insertado correctamente");
+            }else{
             for(x in misProvedoresJSON.mesa){
               if(misProvedoresJSON.mesa[x].title != data.result.title){
                 misProvedoresJSON.mesa.push(data.result);
-                alert("Provedor insertado correctamente");
+                alert("Proveedor insertado correctamente");
               }else{
-                alert("Provedor ya añadido");
+                alert("Proveedor ya añadido");
               }
             }
+          }
           break;
           case 'musica':
+          if (typeof misProvedoresJSON.musica=='object'){
+              misProvedoresJSON.musica.push(data.result);
+              alert("Provedor insertado correctamente");
+            }else{
             for(x in misProvedoresJSON.musica){
               if(misProvedoresJSON.musica[x].title != data.result.title){
                 misProvedoresJSON.musica.push(data.result);
-                alert("Provedor insertado correctamente");
+                alert("Proveedor insertado correctamente");
               }else{
-                alert("Provedor ya añadido");
+                alert("Proveedor ya añadido");
               }
             }
+          }
             
           break;
         }
