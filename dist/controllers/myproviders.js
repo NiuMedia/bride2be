@@ -9,96 +9,190 @@ myprovidersApp.controller('IndexCtrl', function ($scope) {
   $scope.open = function(title, type) {
 
     misprovedores = JSON.parse(window.localStorage.getItem("misprovedores"));
+    var myProvidersView = new steroids.views.WebView("http://localhost/views/myproviders/index.html");
 
     switch(type){
       case 0:
         for(x in misprovedores.ceremonia){
           if(misprovedores.ceremonia[x].title == title){
-            misprovedores.ceremonia.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.ceremonia.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
       case 1:
         for(x in misprovedores.recepcion){
           if(misprovedores.recepcion[x].title == title){
-            misprovedores.recepcion.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.recepcion.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
       case 2:
         for(x in misprovedores.invitaciones){
           if(misprovedores.invitaciones[x].title == title){
-            misprovedores.invitaciones.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.invitaciones.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
       case 3:
         for(x in misprovedores.musica){
           if(misprovedores.musica[x].title == title){
-            misprovedores.musica.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.musica.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
       case 4:
         for(x in misprovedores.flores){
           if(misprovedores.flores[x].title == title){
-            misprovedores.flores.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.flores.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
       case 5:
         for(x in misprovedores.iluminacion){
           if(misprovedores.iluminacion[x].title == title){
-            misprovedores.iluminacion.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.iluminacion.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
       case 6:
         for(x in misprovedores.foto){
           if(misprovedores.foto[x].title == title){
-            misprovedores.foto.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.foto.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
       case 7:
         for(x in misprovedores.ambientacion){
           if(misprovedores.ambientacion[x].title == title){
-            misprovedores.ambientacion.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.ambientacion.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
       case 8:
         for(x in misprovedores.elyella){
           if(misprovedores.elyella[x].title == title){
-            misprovedores.elyella.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.elyella.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
       case 9:
         for(x in misprovedores.mps){
           if(misprovedores.mps[x].title == title){
-            misprovedores.mps.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.mps.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
       case 10:
         for(x in misprovedores.luna){
           if(misprovedores.luna[x].title == title){
-            misprovedores.luna.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.luna.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
       case 11:
         for(x in misprovedores.mesa){
           if(misprovedores.mesa[x].title == title){
-            misprovedores.mesa.splice(x, 1);
+            var r=confirm("¿Segura que quieres eliminar a este proveedor?");
+            if (r==true){
+              misprovedores.mesa.splice(x, 1);
+              window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+              steroids.layers.push(myProvidersView);
+              }
+            else{
+              
+            }
           }
         }
       break;
     }
-    window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-    var myProvidersView = new steroids.views.WebView("http://localhost/views/myproviders/index.html");
-    steroids.layers.push(myProvidersView);
   };
 
   // Fetch all objects from the local JSON (see app/models/myproviders.js)

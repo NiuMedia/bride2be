@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
   <link rel="stylesheet" href="/stylesheets/application.css" />
 
-  <script src="/appgyver/cordova.js"></script>
+  <script src="http://localhost/cordova.js"></script>
   <script src="/components/steroids-js/steroids.js"></script>
 
 
@@ -47,12 +47,12 @@
             <button class="topcoat-icon-button provs-btn" id="phone-btn" href="{{provider.phone}}">
               <span class="topcoat-icon" id="phone-btn-int"></span>
             </button>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{provider.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
             <button class="topcoat-icon-button provs-btn-last" id="fav-btn" href="" hm-tap="providersService.addProvider(provider.id)">
               <span class="topcoat-icon" id="fav-btn-int"></span>
             </button>
-        </div>
-        <div class="cbCont">
-          <button class="topcoat-button--cta b100" id="favoritos-btn" href="" hm-tap="providersService.addProvider(provider.id)">Añadir a favoritos</button>
         </div>
       </div>
     </div>

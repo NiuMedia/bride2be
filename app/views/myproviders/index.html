@@ -6,187 +6,270 @@
     </div>
     </center>
   </div>
-
+<!-- ceremonia -->
   <div ng-controller="IndexCtrl">
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>Ceremonia religiosa y civil</h2></div>
+      <div class="card-titles center"><h2>Ceremonia religiosa y civil</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.ceremonia">
         	<h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 0)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 0)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="ceremonia" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="ceremonia" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
+<!-- recepcion -->
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>Recepciones y Banquetes</h2></div>
+      <div class="card-titles center"><h2>Recepciones y Banquetes</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.recepcion">
           <h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 1)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 1)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="recepcion" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="recepcion" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
+<!-- invitacioes -->
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>Invitaciones</h2></div>
+      <div class="card-titles center"><h2>Invitaciones</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.invitaciones">
           <h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 2)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 2)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="invitaciones" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="invitaciones" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
+<!-- musica -->
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>Música</h2></div>
+      <div class="card-titles center"><h2>Música</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.musica">
           <h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 3)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 3)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="musica" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="musica" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
+<!-- flores -->
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>Flores, Decoración y Coordinación</h2></div>
+      <div class="card-titles center"><h2>Flores, Decoración y Coordinación</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.flores">
           <h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 4)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 4)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="flores" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="flores" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
+<!-- iluminacion -->
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>Iluminaciones y mobiliario</h2></div>
+      <div class="card-titles center"><h2>Iluminación y mobiliario</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.iluminacion">
           <h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 5)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 5)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="iluminacion" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="iluminacion" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
+<!-- foto -->
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>Fotos y videos</h2></div>
+      <div class="card-titles center"><h2>Fotos y videos</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.foto">
           <h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 6)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 6)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="foto" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="foto" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
+<!-- ambientacion -->
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>Ambientacion y más</h2></div>
+      <div class="card-titles center"><h2>Ambientacion y más</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.ambientacion">
           <h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 7)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 7)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="ambientacion" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="ambientacion" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
+<!-- el y ella -->
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>El y ella</h2></div>
+      <div class="card-titles center"><h2>El y ella</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.elyella">
           <h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 8)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 8)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="elyella" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="elyella" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
+<!-- maquillaje -->
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>Maquillaje, peinado y spa</h2></div>
+      <div class="card-titles center"><h2>Maquillaje, peinado y spa</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.mps">
           <h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 9)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 9)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="mps" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="mps" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
+<!-- luna -->
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>Luna de miel</h2></div>
+      <div class="card-titles center"><h2>Luna de miel</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.luna">
           <h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 10)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 10)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="luna" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="luna" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
+<!-- regalos -->
     <div class="topcoat-list card">
-      <div class="card-titles"><h2>Mesa de regalos y hogar</h2></div>
+      <div class="card-titles center"><h2>Mesa de regalos y hogar</h2></div>
       <ul class="topcoat-list cbCont">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.mesa">
           <h3>{{ myproviders.title }}</h3>
+          <button class="topcoat-icon-button provs-btn" hm-tap="open(myproviders.title, 11)" id="delete-btn" href="">
+            <span class="topcoat-icon" id="delete-btn-int"></span>
+          </button>
           <div>
             <p>{{ myproviders.direccion }}</p>
             <p>{{ myproviders.phone }}</p>
-            <p>{{ myproviders.email }}</p>
+            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{myproviders.email}}">
+              <span class="topcoat-icon" id="mail-btn-int"></span>
+            </button>
+            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           </div>
           <a hm-tap="open(myproviders.title, 11)" href="">Eliminar</a>
         </li>
       </ul>
-      <button id="mesa" class="btn topcoat-button b100" href="">Añadir Proveedor</button>
+      <div class="cbCont center"><button id="mesa" class="btn topcoat-button b100" href="">Añadir Proveedor</button></div>
     </div>
 
   </div>

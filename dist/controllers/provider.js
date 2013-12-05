@@ -13,7 +13,8 @@ providerApp.factory('providersService', ['$http', function(http){
 
         switch(steroids.view.params['tipo']){
           case 'ceremonia':
-            if (typeof misProvedoresJSON.ceremonia=='object'){
+          alert(misProvedoresJSON.ceremonia )
+            if (misProvedoresJSON.ceremonia==''){
               misProvedoresJSON.ceremonia.push(data.result);
               alert("Proveedor insertado correctamente");
             }else{
