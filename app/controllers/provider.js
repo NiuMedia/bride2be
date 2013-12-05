@@ -13,13 +13,11 @@ providerApp.factory('providersService', ['$http', function(http){
 
         switch(steroids.view.params['tipo']){
           case 'ceremonia':
-          alert(misProvedoresJSON.ceremonia )
             if (misProvedoresJSON.ceremonia==''){
               misProvedoresJSON.ceremonia.push(data.result);
               alert("Proveedor insertado correctamente");
             }else{
               for(x in misProvedoresJSON.ceremonia){
-                alert('estoy en un for :3');
                 if(misProvedoresJSON.ceremonia[x].title != data.result.title){
                   misProvedoresJSON.ceremonia.push(data.result);
                   alert("Proveedor insertado correctamente");
@@ -30,7 +28,7 @@ providerApp.factory('providersService', ['$http', function(http){
             }
           break;
           case 'recepcion':
-          if (typeof misProvedoresJSON.recepcion=='object'){
+          if (misProvedoresJSON.recepcion==''){
               misProvedoresJSON.recepcion.push(data.result);
               alert("Proveedor insertado correctamente");
             }else{
@@ -45,7 +43,7 @@ providerApp.factory('providersService', ['$http', function(http){
           }
           break;
           case 'invitaciones':
-          if (typeof misProvedoresJSON.invitaciones=='object'){
+          if (misProvedoresJSON.invitaciones==''){
               misProvedoresJSON.invitaciones.push(data.result);
               alert("Provedor insertado correctamente");
             }else{
@@ -60,7 +58,7 @@ providerApp.factory('providersService', ['$http', function(http){
           }
           break;
           case 'flores':
-          if (typeof misProvedoresJSON.flores=='object'){
+          if (misProvedoresJSON.flores==''){
               misProvedoresJSON.flores.push(data.result);
               alert("Provedor insertado correctamente");
             }else{
@@ -75,7 +73,7 @@ providerApp.factory('providersService', ['$http', function(http){
           }
           break;
           case 'iluminacion':
-          if (typeof misProvedoresJSON.iluminacion=='object'){
+          if (misProvedoresJSON.iluminacion==''){
               misProvedoresJSON.iluminacion.push(data.result);
               alert("Provedor insertado correctamente");
             }else{
@@ -90,7 +88,7 @@ providerApp.factory('providersService', ['$http', function(http){
           }
           break;
           case 'fotos':
-          if (typeof misProvedoresJSON.fotos=='object'){
+          if (misProvedoresJSON.fotos==''){
               misProvedoresJSON.fotos.push(data.result);
               alert("Provedor insertado correctamente");
             }else{
@@ -105,7 +103,7 @@ providerApp.factory('providersService', ['$http', function(http){
           }
           break;
           case 'ambientacion':
-          if (typeof misProvedoresJSON.ambientacion=='object'){
+          if (misProvedoresJSON.ambientacion==''){
               misProvedoresJSON.ambientacion.push(data.result);
               alert("Provedor insertado correctamente");
             }else{
@@ -120,7 +118,7 @@ providerApp.factory('providersService', ['$http', function(http){
           }
           break;
           case 'elyella':
-          if (typeof misProvedoresJSON.elyella=='object'){
+          if (misProvedoresJSON.elyella==''){
               misProvedoresJSON.elyella.push(data.result);
               alert("Provedor insertado correctamente");
             }else{
@@ -135,7 +133,7 @@ providerApp.factory('providersService', ['$http', function(http){
           }
           break;
           case 'maquillaje':
-          if (typeof misProvedoresJSON.maquillaje=='object'){
+          if (misProvedoresJSON.maquillaje==''){
               misProvedoresJSON.maquillaje.push(data.result);
               alert("Provedor insertado correctamente");
             }else{
@@ -150,7 +148,7 @@ providerApp.factory('providersService', ['$http', function(http){
           }
           break;
           case 'luna':
-          if (typeof misProvedoresJSON.luna=='object'){
+          if (misProvedoresJSON.luna==''){
               misProvedoresJSON.luna.push(data.result);
               alert("Provedor insertado correctamente");
             }else{
@@ -165,7 +163,7 @@ providerApp.factory('providersService', ['$http', function(http){
           }
           break;
           case 'mesa':
-          if (typeof misProvedoresJSON.mesa=='object'){
+          if (misProvedoresJSON.mesa==''){
               misProvedoresJSON.mesa.push(data.result);
               alert("Provedor insertado correctamente");
             }else{
@@ -180,7 +178,7 @@ providerApp.factory('providersService', ['$http', function(http){
           }
           break;
           case 'musica':
-          if (typeof misProvedoresJSON.musica=='object'){
+          if (misProvedoresJSON.musica==''){
               misProvedoresJSON.musica.push(data.result);
               alert("Provedor insertado correctamente");
             }else{

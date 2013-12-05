@@ -22,6 +22,7 @@ input {
 
 .content-padded {
   padding: 10px;
+  min-height: 480px;
 }
 .guest-action{
 	width: 20%;
@@ -281,7 +282,7 @@ li {
 	background: url('/icons/phone.png');
 }
 #mail-btn{
-	background-color: #DE10B8;
+	background-color: #ED6B00;
 }
 #mail-btn-int{
 	background: url('/icons/mail.png');
@@ -304,14 +305,14 @@ li {
 	background-repeat: no-repeat;
 }
 .provs-btn{
-	margin-right:15px;
+	margin-right:4px;
 }
 .provs-btn-last{
 	margin-right:0px;
 }
 .provs-btn-first{
-	margin-right:15px;
-	margin-left: 4px;
+	margin-right:4px;
+	margin-left: 2px;
 }
 .topcoat-button{
 	-webkit-border-radius:8px;
