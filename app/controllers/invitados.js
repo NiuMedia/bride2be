@@ -37,6 +37,38 @@ invitadosApp.factory('invitadoService', function(){
 
 invitadosApp.controller('IndexCtrl', function ($scope) {
 
+  // -- Native navigation
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  
+
+  var adduserButton = new steroids.buttons.NavigationBarButton();
+    adduserButton.title = "Nuevo";
+
+    adduserButton.onTap = function (){
+      webView = new steroids.views.WebView("/views/invitados/new.html");
+    steroids.layers.push(webView);
+    };
+
+    steroids.view.navigationBar.setButtons({
+      right: [adduserButton]
+    });
+  });
+
+  // var adduserButton = new steroids.buttons.NavigationBarButton();
+  //   adduserButton.imagePath =  "/" + steroids.app.path + "/icons/adduser.png";
+
+  //   adduserButton.onTap = function() { 
+  //       alert("puchaste a nuevo usuario"); 
+  //   };
+
+  //   steroids.view.navigationBar.setButtons({
+  //       right: [adduserButton]
+  //   });
+
   // Helper function for opening new webviews
   $scope.open = function(id) {
     webView = new steroids.views.WebView("/views/invitados/show.html?id="+id);
@@ -59,35 +91,7 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
   // Obtiene todos los invitados y los coloca en la variable de invitados 
   $scope.invitados = json_guest.invitados;
 
-  // -- Native navigation
-  steroids.on('ready', function() {
-    steroids.view.navigationBar.show({
-      titleImagePath: "logo.png",
-      relativeTo: "/" + steroids.app.path + "/images/"
-    });
-  });
-
-  var adduserButton = new steroids.buttons.NavigationBarButton();
-    adduserButton.title = "Nuevo";
-
-    adduserButton.onTap = function (){
-      alert('le puchaste al boton de añadir usuario');
-    };
-
-    steroids.view.navigationBar.setButtons({
-      right: [adduserButton]
-    });
-
-  // var adduserButton = new steroids.buttons.NavigationBarButton();
-  //   adduserButton.imagePath =  "/" + steroids.app.path + "/icons/adduser.png";
-
-  //   adduserButton.onTap = function() { 
-  //       alert("puchaste a nuevo usuario"); 
-  //   };
-
-  //   steroids.view.navigationBar.setButtons({
-  //       right: [adduserButton]
-  //   });
+  
 
 
 });
@@ -128,17 +132,19 @@ invitadosApp.controller('ShowCtrl', function ($scope, invitadoService) {
 
   });
 
-    var guardarButton = new steroids.buttons.NavigationBarButton();
-    guardarButton.title = "Guardar";
+    // var guardarButton = new steroids.buttons.NavigationBarButton();
+    // guardarButton.title = "Guardar";
 
-    guardarButton.onTap = function (){
-      $scope.returnToList();
-      alert('le puchaste al boton')
-    };
+    // guardarButton.onTap = function (){
+    //   // invitadoServ.updateInvitado(index, newGuest);
+    //   // newGuest = {};
+    //   $scope.returnToList();
+    //   alert('le puchaste al boton');
+    // };
 
-    steroids.view.navigationBar.setButtons({
-      right: [guardarButton]
-    });
+    // steroids.view.navigationBar.setButtons({
+    //   right: [guardarButton]
+    // });
 
 });
 
@@ -153,11 +159,7 @@ invitadosApp.controller('NewCtrl', function ($scope, invitadoService) {
 
   $scope.newGuest = {};
 
-
-
   $scope.invitadoServ = invitadoService;
-
-
 
   // -- Native navigation
   steroids.on('ready', function() {
@@ -167,17 +169,18 @@ invitadosApp.controller('NewCtrl', function ($scope, invitadoService) {
     });
   });
 
-    var guardarButton = new steroids.buttons.NavigationBarButton();
-    guardarButton.title = "Guardar";
+    // var guardarButtonNew = new steroids.buttons.NavigationBarButton();
+    // guardarButtonNew.title = "Guardar";
 
-    guardarButton.onTap = function (){
-      $scope.returnToList();
-      alert('le puchaste al boton')
-    };
+    // guardarButtonNew.onTap = function (){
+    //   //$scope.invitadoServ.addInvitado(newGuest);
+    //   //$scope.newGuest = {};
+    //   $scope.returnToList();
+    //   alert('boton presionado');
+    // };
 
-    steroids.view.navigationBar.setButtons({
-      right: [guardarButton]
-    });
-
+    // steroids.view.navigationBar.setButtons({
+    //   right: [guardarButtonNew]
+    // });
 
 });

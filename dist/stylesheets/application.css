@@ -288,13 +288,13 @@ li {
 	background: url('/icons/mail.png');
 	background-repeat: no-repeat;
 }
-#delete-btn{
+/*#delete-btn{
 	background-color: #ff0000;
-}
+}*/
 #delete-btn-int{
 	height: 32px;
 	width:32px;
-	background: url('/icons/delete.png');
+	background: url('/icons/delete_dark.png');
 	background-repeat: no-repeat;
 }
 #fav-btn{

@@ -1,12 +1,44 @@
 var myprovidersApp = angular.module('myprovidersApp', ['hmTouchevents']);
 
+myprovidersApp.factory('misProveedoresService', function(){
+  var myMisProveedoresService = {};
+  json_guest = $.parseJSON(window.localStorage.getItem("misProveedores"));
+
+  myMisProveedoresService.addMiProveedor = function(miProveedor){
+    json_guest.misProveedores.push(miProveedor);
+    window.localStorage.setItem("misProveedores", JSON.stringify(json_guest));
+
+  };
+
+  myMisProveedoresService.removeMiProveedor = function(index){
+    json_guest.misProveedores.splice(index, 1);
+    window.localStorage.setItem("misProveedores", JSON.stringify(json_guest));
+  };
+
+  myMisProveedoresService.updateMiProveedor = function(index, newMiProveedor){
+    miProveedor = json_guest.misProveedores[index];
+
+    miProveedor.nombre = newMiProveedor.nombre;
+    miProveedor.direccion = newMiProveedor.direccion;
+    miProveedor.telefono = newMiProveedor.telefono;
+    miProveedor.telefono2 = newMiProveedor.telefono2;
+    miProveedor.email = newMiProveedor.email;
+
+    json_guest.misProveedores[index] = miProveedor;
+
+    window.localStorage.setItem("misProveedores", JSON.stringify(json_guest));
+  };
+
+  return myMisProveedoresService;
+
+});
 
 // Index: http://localhost/views/myproviders/index.html
 
 myprovidersApp.controller('IndexCtrl', function ($scope) {
 
   // Helper function for opening new webviews
-  $scope.open = function(title, type) {
+  $scope.delete = function(title, type) {
 
     misprovedores = JSON.parse(window.localStorage.getItem("misprovedores"));
     var myProvidersView = new steroids.views.WebView("http://localhost/views/myproviders/index.html");
@@ -226,5 +258,41 @@ myprovidersApp.controller('ShowCtrl', function ($scope, $filter) {
       relativeTo: "/" + steroids.app.path + "/images/"
     });
   });
+
+});
+
+myprovidersApp.controller('NewCtrl', function ($scope, misProveedoresService) {
+
+  $scope.returnToList = function(){
+    guestsRetunView = new steroids.views.WebView("/views/myproviders/index.html");
+    steroids.layers.push({view:guestsRetunView});
+    steroids.layers.popAll();
+  };
+invitado
+  $scope.newGuest = {};
+
+  $scope.misProveedoresServ = misProveedoresService;
+
+  // -- Native navigation
+  steroids.on('ready', function() {
+    steroids.view.navigationBar.show({
+      titleImagePath: "logo.png",
+      relativeTo: "/" + steroids.app.path + "/images/"
+    });
+  });
+
+    // var guardarButtonNew = new steroids.buttons.NavigationBarButton();
+    // guardarButtonNew.title = "Guardar";
+
+    // guardarButtonNew.onTap = function (){
+    //   //$scope.invitadoServ.addInvitado(newGuest);
+    //   //$scope.newGuest = {};
+    //   $scope.returnToList();
+    //   alert('boton presionado');
+    // };
+
+    // steroids.view.navigationBar.setButtons({
+    //   right: [guardarButtonNew]
+    // });
 
 });
