@@ -43,10 +43,41 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
       titleImagePath: "logo.png",
       relativeTo: "/" + steroids.app.path + "/images/"
     });
+
+  //Navigation Bar--
+      var imageButton = new steroids.buttons.NavigationBarButton();
+      
+      //DRAWER--
+      var googleView = new steroids.views.WebView( { location: "http://localhost/views/drawerExample/drawer.html" } );
+
+      var myAnimation = new steroids.Animation({
+        transition: "fade",
+        duration: 0.7,
+        curve: "linear"
+      });
+
+      function showDrawer() {
+        steroids.drawers.show( {
+          view: googleView,
+          edge: steroids.screen.edges.LEFT,
+          keepLoading: true,
+          animation: myAnimation
+        });
+      };
+
+      googleView.preload();
+
+      //--DRAWER
+
+      imageButton.imagePath = "/icons/drawer.png"
+      imageButton.onTap = function() {
+        showDrawer();
+      }
+    //--Navigation Bar
   
 
   var adduserButton = new steroids.buttons.NavigationBarButton();
-    adduserButton.title = "Nuevo";
+    adduserButton.imagePath = "/icons/adduser.png"
 
     adduserButton.onTap = function (){
       webView = new steroids.views.WebView("/views/invitados/new.html");
@@ -54,7 +85,9 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
     };
 
     steroids.view.navigationBar.setButtons({
-      right: [adduserButton]
+      left: [imageButton],
+      right: [adduserButton],
+      overrideBackButton: true
     });
   });
 

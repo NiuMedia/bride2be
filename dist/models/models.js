@@ -27,7 +27,6 @@ module.factory('InvitadosRestangular', function(Restangular) {
 
 })();
 
-
 // The contents of individual model .js files will be concatenated into dist/models.js
 
 (function() {
@@ -56,7 +55,6 @@ module.factory('MyprovidersRestangular', function(Restangular) {
 
 
 })();
-
 
 // The contents of individual model .js files will be concatenated into dist/models.js
 

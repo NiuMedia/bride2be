@@ -26,35 +26,5 @@
     steroids.drawers.show(leftDrawer);
   }
 
-//   var drawerButton = new steroids.buttons.NavigationBarButton();
-//   drawerButton.title = "Menu";
-
-//   var drawerButtonClose = new steroids.buttons.NavigationBarButton();
-//   drawerButtonClose.title = "Cerrar";
-
-//   drawerButton.onTap = function (){
-//     steroids.drawers.show(leftDrawer);
-//     steroids.view.navigationBar.setButtons({
-//       right: [drawerButtonClose]
-//     });
-//   };
-
-//   drawerButtonClose.onTap = function(){
-//     steroids.drawers.hide(leftDrawer);
-//     steroids.view.navigationBar.setButtons({
-//       right: [drawerButton]
-//     });
-//   };
-
-//   steroids.view.navigationBar.setButtons({
-//     right: [drawerButton]
-//   }, {
-//   onSuccess: function() {
-//     alert("Buttons set!");
-//   },
-//   onFailure: function() {
-//     alert("Failed to set buttons.");
-//   }
-// });
 
   

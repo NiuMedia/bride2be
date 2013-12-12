@@ -31,7 +31,7 @@ steroids.config.location = "http://localhost/views/drawerExample/index.html"
 # -- Navigation Bar --
 steroids.config.navigationBar.tintColor = "#373435"
 steroids.config.navigationBar.titleColor = "#ffffff"
-steroids.config.navigationBar.buttonTintColor = "#363636"
+steroids.config.navigationBar.buttonTintColor = "#dddddd"
 steroids.config.navigationBar.buttonTitleColor = "#ffffff"
 
 # steroids.config.navigationBar.landscape.backgroundImage = ""
@@ -42,7 +42,7 @@ steroids.config.loadingScreen.tintColor = "#262626"
 
 # -- iOS Status Bar --
 steroids.config.statusBar.enabled = true
-steroids.config.statusBar.style = "default"
+steroids.config.statusBar.style = "black"
 
 # -- File Watcher --
 # steroids.config.watch.exclude = ["www/my_excluded_file.js", "www/my_excluded_dir"]
