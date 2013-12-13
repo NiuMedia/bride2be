@@ -31,16 +31,12 @@
       <h2>Maquillaje, peinado y spa</h2>
     </div>
   <div class="card" ng-controller="MaquillajeCtrl">
-    <div class="topcoat-list__container">
-      <ul class="topcoat-list">
-        <li class="topcoat-list__item center special-list" hm-tap="open(provider.id)" ng-repeat="provider in providers">
-          <img src="{{provider.logo}}" style="width:100%">
-          <h1>{{ provider.title }}</h1>
-        </li>
-      </ul>
-
-    </div>
-
+    <ul class="topcoat-list contenedor_especial">
+      <li class="topcoat-list__item center special-list" hm-tap="open(provider.id)" ng-repeat="provider in providers">
+        <img src="{{provider.logo}}" style="width:100%">
+        <h1>{{ provider.title }}</h1>
+      </li>
+    </ul>
   </div>
 
 </div>

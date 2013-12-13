@@ -32,10 +32,10 @@ steroids.config.location = "http://localhost/views/drawerExample/index.html"
 steroids.config.navigationBar.tintColor = "#373435"
 steroids.config.navigationBar.titleColor = "#ffffff"
 steroids.config.navigationBar.buttonTintColor = "#dddddd"
-steroids.config.navigationBar.buttonTitleColor = "#ffffff"
+steroids.config.navigationBar.buttonTitleColor = "#ccc"
 
 # steroids.config.navigationBar.landscape.backgroundImage = ""
-# steroids.config.navigationBar.portrait.backgroundImage = ""
+# steroids.config.navigationBar.portrait.backgroundImage = "icons/fondo.png"
 
 # -- Android Loading Screen
 steroids.config.loadingScreen.tintColor = "#262626"

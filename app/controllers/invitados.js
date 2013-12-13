@@ -49,29 +49,13 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
       
       //DRAWER--
       var googleView = new steroids.views.WebView( { location: "http://localhost/views/drawerExample/drawer.html" } );
-
-      var myAnimation = new steroids.Animation({
-        transition: "fade",
-        duration: 0.7,
-        curve: "linear"
-      });
-
-      function showDrawer() {
-        steroids.drawers.show( {
-          view: googleView,
-          edge: steroids.screen.edges.LEFT,
-          keepLoading: true,
-          animation: myAnimation
-        });
-      };
-
       googleView.preload();
 
       //--DRAWER
 
       imageButton.imagePath = "/icons/drawer.png"
       imageButton.onTap = function() {
-        showDrawer();
+        steroids.drawers.show(googleView);
       }
     //--Navigation Bar
   

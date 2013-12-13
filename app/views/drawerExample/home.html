@@ -17,7 +17,6 @@
     <center><h3><span class="black">para la boda de</span></h3></center>
     <center><h2><span class="black" id="novios">Juan y Juana</span></h2></center>
     <center><h2><span class="black" id="lugar">San Luis Potosí</span></h2></center>
-    <br>
 
     <script type="text/javascript">
 
@@ -25,30 +24,22 @@
       var imageButton = new steroids.buttons.NavigationBarButton();
       
       //DRAWER--
-      var googleView = new steroids.views.WebView( { location: "http://localhost/views/drawerExample/drawer.html" } );
+      var googleView1 = new steroids.views.WebView( { location: "http://localhost/views/drawerExample/drawer.html" } );
 
-      var myAnimation = new steroids.Animation({
-        transition: "fade",
-        duration: 0.7,
-        curve: "linear"
-      });
+      googleView1.preload({},{
+         onSuccess: initGesture  // When the view has loaded, enable finger tracking
+        }
+      );
 
-      function showDrawer() {
-        steroids.drawers.show( {
-          view: googleView,
-          edge: steroids.screen.edges.LEFT,
-          keepLoading: true,
-          animation: myAnimation
-        });
-      };
-
-      googleView.preload();
+      function initGesture() {
+        steroids.drawers.enableGesture(googleView1);
+      }
 
       //--DRAWER
 
       imageButton.imagePath = "/icons/drawer.png"
       imageButton.onTap = function() {
-        showDrawer();
+        steroids.drawers.show(googleView1);
       }
 
       steroids.view.navigationBar.setButtons({

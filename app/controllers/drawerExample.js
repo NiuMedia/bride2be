@@ -1,30 +1,28 @@
-  steroids.on('ready', function() {
-    steroids.view.navigationBar.show({
-    titleImagePath: "logo.png",
-    relativeTo: "/" + steroids.app.path + "/images/"
-  });
-  });
-  
+steroids.on('ready', function() {
+  steroids.view.navigationBar.show({
+  titleImagePath: "logo.png",
+  relativeTo: "/" + steroids.app.path + "/images/"
+});
+});
 
 
-  // Initialize the left drawer
 
-  var leftDrawer = new steroids.views.WebView("/views/drawerExample/drawer.html");
-  //leftDrawer.preload();
+// Initialize the left drawer
 
-  leftDrawer.preload({},{
-     onSuccess: initGesture  // When the view has loaded, enable finger tracking
-    }
-  );
+// var leftDrawer = new steroids.views.WebView("/views/drawerExample/drawer.html");
+// //leftDrawer.preload();
 
-  function initGesture() {
-    steroids.drawers.enableGesture(leftDrawer);
-  }
-  // Helper functions
+// leftDrawer.preload({},{
+//    onSuccess: initGesture  // When the view has loaded, enable finger tracking
+//   }
+// );
 
-  function openDrawer() {
-    steroids.drawers.show(leftDrawer);
-  }
+// function initGesture() {
+//   steroids.drawers.enableGesture(leftDrawer);
+// }
+// Helper functions
 
+// function openDrawer() {
+//   steroids.drawers.show(leftDrawer);
+// }
 
-  

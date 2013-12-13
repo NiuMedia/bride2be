@@ -159,7 +159,7 @@ li {
 	float:right;
 }
 .cbCont{
-	padding-top: 7px;
+	padding-top: 15px;
 	padding-bottom: 5px;
 	clear:both;
 }
@@ -263,26 +263,26 @@ li {
 	color:white;
 }
 #facebook-btn{
-	background-color: #035FD5;
+	background-color: #4C8BDC;
 }
 #facebook-btn-int{
 	background: url('/icons/facebook.png');
 }
 #twitter-btn{
-	background-color: #10C6DE;
+	background-color: #54CEDE;
 }
 #twitter-btn-int{
 	background: url('/icons/twitter.png');
 }
 
 #phone-btn{
-	background-color: #10DE21;
+	background-color: #66E670;
 }
 #phone-btn-int{
 	background: url('/icons/phone.png');
 }
 #mail-btn{
-	background-color: #ED6B00;
+	background-color: #FFA256;
 }
 #mail-btn-int{
 	background: url('/icons/mail.png');
@@ -298,7 +298,7 @@ li {
 	background-repeat: no-repeat;
 }
 #fav-btn{
-	background-color: #DE10B8;
+	background-color: #EA6FD4;
 }
 #fav-btn-int{
 	background: url('/icons/fav.png');
@@ -330,16 +330,17 @@ li {
  	font-size: 1em;
 }
 
-.topcoat-list__container {
-border-top: 1px solid #B57B99;
+.contenedor_especial{
+border-top: none;
 background-color: rgba(0,0,0,0);
 }
+ .drawer-list{
+ 	padding: 1.1em 1.25em;
+ }
 
 .special-list{
-	border: 1px solid #B57B99;
-	/*background-color: rgba(213, 123, 174, 0.8);*/
-	background-color:#fbdce2;
-	margin-bottom: 5px;
+	padding: 4px;
+	border-bottom: 1px solid #7F7073;
 }
 .special-list h3, .special-list label, .special-list p,.special-list h1, .special-list h2{
 	color: #333;

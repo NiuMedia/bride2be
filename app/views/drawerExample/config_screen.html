@@ -1,12 +1,12 @@
 <div class="content-padded fondo">
-  <div class="card">
-    <div id="banner">
+  <div id="banner">
     <center>
     <div id="texto">
       <h2><span class="black" style="font-size: 26px; margin: 0 auto;" id="dias">Configuración</span></h2>
     </div>
     </center>
   </div>
+  <div class="card">
       <form>
         <label for="novia">Nombre de la novia</label>
         <input type="text" class="topcoat-text-input center wide" name="novia" id="novia"><br><br>
@@ -28,35 +28,11 @@
       
       //DRAWER--
       var googleView = new steroids.views.WebView( { location: "http://localhost/views/drawerExample/drawer.html" } );
-
-      var myAnimation = new steroids.Animation({
-        transition: "fade",
-        duration: 0.7,
-        curve: "linear"
-      });
-
-      function showDrawer() {
-        steroids.drawers.show( {
-          view: googleView,
-          edge: steroids.screen.edges.LEFT,
-          keepLoading: true,
-          animation: myAnimation
-        });
-      };
-
       googleView.preload();
 
       //--DRAWER
 
-      imageButton.imagePath = "/icons/drawer.png"
-      imageButton.onTap = function() {
-        showDrawer();
-      }
-
-      steroids.view.navigationBar.setButtons({
-        left: [imageButton],
-        overrideBackButton: true
-      });
+      
     //--Navigation Bar
 
         $(document).ready(function(){
@@ -107,8 +83,15 @@
       guardarTodo();
     };
 
+    imageButton.imagePath = "/icons/drawer.png"
+      imageButton.onTap = function() {
+        steroids.drawers.show(googleView);
+      }
+
     steroids.view.navigationBar.setButtons({
-      right: [guardarButton]
+       left: [imageButton],
+      right: [guardarButton],
+        overrideBackButton: true
     });
         });
       </script>
