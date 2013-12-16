@@ -19,15 +19,14 @@
         </select><br><br>
         <label for="fecha">Fecha de la Boda</label><br>
         <input type="date" class="topcoat-text-input center wide black" name="fecha" id="fecha"><br><br>
-        <center><img id="foto" class="picture" src=""/></center><br>
+        <div class="cbCont"><div id="foto-cont" class="center"></div></div>
         <div class="topcoat-button center full" id="getPic-btn">Seleccionar Foto de Portada</div><br>
       </form>
       <script type="text/javascript">
-
       document.addEventListener("visibilitychange", onVisibilityChangeConfig, false);
 
     function onVisibilityChangeConfig() {
-        if(document.hidden==false){
+        if(document.hidden==false && typeof window.localStorage.getItem("foto")!='object'){
           cambiarfoto();
         }
     }
@@ -45,11 +44,20 @@
     //--Navigation Bar
 
     function cambiarfoto(){
-          $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
-        }
+      if (typeof window.localStorage.getItem("foto")=='object'){
+        $("#foto-cont").empty();
+        $("#foto-cont").append("<p>No hay foto</p>");
+      }else{
+        $("#foto-cont").empty();
+        $("#foto-cont").append("<img id='foto' class='picture' src='"+window.localStorage.getItem('foto')+"'/>");
+        $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
+      }
+       
+    }
 
         $(document).ready(function(){
           rellenarInfo();
+
           function guardarTodo(){
             window.localStorage.setItem("novio", $("#novio").val());
             window.localStorage.setItem("novia", $("#novia").val());
@@ -74,7 +82,7 @@
               destinationType : Camera.DestinationType.DATA_URL,
               correctOrientation: true
             });
-             $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
+             //$("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
           });
 
         function rellenarInfo(){

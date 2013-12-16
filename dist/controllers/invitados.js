@@ -11,8 +11,15 @@ invitadosApp.factory('invitadoService', function(){
   };
 
   myInvitadosService.removeInvitado = function(index){
-    json_guest.invitados.splice(index, 1);
-    window.localStorage.setItem("invitados", JSON.stringify(json_guest));
+    var r=confirm("¿Segura que quieres eliminar a este invitado?");
+            if (r==true){
+              json_guest.invitados.splice(index, 1);
+              window.localStorage.setItem("invitados", JSON.stringify(json_guest));
+              }
+            else{
+              
+            }
+    
   };
 
   myInvitadosService.updateInvitado = function(index, newInvitado){

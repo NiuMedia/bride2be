@@ -21,7 +21,9 @@
         <option value="Queretaro">Querétaro</option>
       </select><br><br>
       <label for="fecha">Fecha de la Boda</label><br>
-      <input type="date" class="topcoat-text-input center wide black" name="fecha" id="fecha"><br><br>
+      <input type="date" class="topcoat-text-input center wide black" name="fecha" id="fecha"><br>
+      <!--div class="cbCont"><div id="foto-cont" class="center"></div></div>
+      <div class="topcoat-button center full" id="getPic-btn">Seleccionar Foto de Portada</div><br--><br>
     </form>
     <p><b>Podrás acceder al menú de la aplicación deslizando tu dedo de izquierda a derecha sobre la pantalla.</b></p>
     <img src="/images/swipe@2x.png">
@@ -29,6 +31,25 @@
     <div class="cbCont2 center"><div class="topcoat-button b100" id="ok-btn">Comenzar</div></div>
   </div> 
   <script type="text/javascript">
+    // document.addEventListener("visibilitychange", onVisibilityChangeConfig, false);
+
+    // function onVisibilityChangeConfig() {
+    //     if(document.hidden==false && typeof window.localStorage.getItem("foto")!='object'){
+    //       cambiarfoto();
+    //     }
+    // }
+    // function cambiarfoto(){
+    //   if (typeof window.localStorage.getItem("foto")=='object'){
+    //     $("#foto-cont").empty();
+    //     $("#foto-cont").append("<p>No hay foto</p>");
+    //   }else{
+    //     $("#foto-cont").empty();
+    //     $("#foto-cont").append("<img id='foto' class='picture' src='"+window.localStorage.getItem('foto')+"'/>");
+    //     $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
+    //   }
+       
+    // }
+
       $(document).ready(function(){
         $("#ok-btn").on("click", function(){
           window.localStorage.setItem("novio", $("#novio").val());
@@ -48,6 +69,19 @@
             steroids.modal.hide();
           }
         });
+
+        // $("#getPic-btn").on("click", function(){
+        //     navigator.camera.getPicture( function(imageData){
+        //       window.localStorage.setItem("foto", imageData);
+        //     }, function(msg){
+        //       alert(msg);
+        //     }, {
+        //       sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
+        //       destinationType : Camera.DestinationType.DATA_URL,
+        //       correctOrientation: true
+        //     });
+        //      //$("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
+        //   });
       });
     </script>   
 </div>
