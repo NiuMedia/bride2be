@@ -23,6 +23,15 @@
         <div class="topcoat-button center full" id="getPic-btn">Seleccionar Foto de Portada</div><br>
       </form>
       <script type="text/javascript">
+
+      document.addEventListener("visibilitychange", onVisibilityChangeConfig, false);
+
+    function onVisibilityChangeConfig() {
+        if(document.hidden==false){
+          cambiarfoto();
+        }
+    }
+
       //Navigation Bar--
       var imageButton = new steroids.buttons.NavigationBarButton();
       
@@ -34,6 +43,10 @@
 
       
     //--Navigation Bar
+
+    function cambiarfoto(){
+          $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
+        }
 
         $(document).ready(function(){
           rellenarInfo();
@@ -72,9 +85,7 @@
           $("#fecha").val(window.localStorage.getItem("fecha"));
           cambiarfoto();
         }
-        function cambiarfoto(){
-          $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
-        }
+        
 
         var guardarButton = new steroids.buttons.NavigationBarButton();
     guardarButton.title = "Guardar";
@@ -88,8 +99,13 @@
         steroids.drawers.show(googleView);
       }
 
+    // steroids.view.navigationBar.setButtons({
+    //    left: [imageButton],
+    //   right: [guardarButton],
+    //     overrideBackButton: true
+    // });
     steroids.view.navigationBar.setButtons({
-       left: [imageButton],
+       left: [],
       right: [guardarButton],
         overrideBackButton: true
     });

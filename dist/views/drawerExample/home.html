@@ -45,6 +45,18 @@
 
     <script type="text/javascript">
 
+    document.addEventListener("visibilitychange", onVisibilityChange, false);
+
+    function onVisibilityChange() {
+        if(document.hidden==false){
+          window.location.reload();
+        }
+        if(document.hidden==true){
+          steroids.drawers.hide(googleView1);
+        }
+    }
+
+
     //Navigation Bar--
       var imageButton = new steroids.buttons.NavigationBarButton();
       
@@ -58,6 +70,7 @@
 
       function initGesture() {
         steroids.drawers.enableGesture(googleView1);
+        console.log('inicia tracking de gestos');
       }
 
       //--DRAWER
@@ -65,17 +78,22 @@
       imageButton.imagePath = "/icons/drawer.png"
       imageButton.onTap = function() {
         steroids.drawers.show(googleView1);
+        console.log('boton presionado en home');
       }
 
+      // steroids.view.navigationBar.setButtons({
+      //   left: [imageButton],
+      //   overrideBackButton: true
+      // });
       steroids.view.navigationBar.setButtons({
-        left: [imageButton],
+        left: [],
         overrideBackButton: true
       });
     //--Navigation Bar
 
 
       if(window.localStorage.getItem("init") == null){
-        var webView = new steroids.views.WebView("http://localhost/views/drawerExample/config_modal_screen.html");
+        var webView = new steroids.views.WebView("http://localhost/views/drawerExample/welcome.html");
         steroids.modal.show(webView);   
       }
 
@@ -84,7 +102,7 @@
         $("#novios").text(window.localStorage.getItem("novia") + " y " + window.localStorage.getItem("novio"));
         $("#lugar").text("en " + window.localStorage.getItem("lugar"));
         if (typeof window.localStorage.getItem("foto")=='object'){
-          $("#foto-cont").append("<button id='agregar-foto' class='topcoat-button b100' type='button' value='Tips'>Añadir foto</button>");
+          $("#foto-cont").append("<button id='agregar-foto' class='topcoat-button b100' type='button' value='Tips'>Agrega tu foto</button>");
         }else{
           $("#foto-cont").append("<img id='foto' class='picture' src='"+window.localStorage.getItem('foto')+"'/>");
         }

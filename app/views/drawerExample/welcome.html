@@ -1,0 +1,53 @@
+<div class="content-padded fondo">
+  <div id="banner">
+    <center>
+    <div id="texto">
+      <h2><span class="black" style="font-size: 26px; margin: 0 auto;">Bienvenido a:</span></h2>
+    </div>
+    </center>
+  </div>
+  <div class="card">
+    <div class="cbCont2 center"><img src="/logo@2x.png"></div>
+    <p><b>Primero ingresa tu información:</b></p><br>
+    <form>
+      <label for="novia">Nombre de la novia</label>
+      <input type="text" class="topcoat-text-input center wide" name="novia" id="novia"><br><br>
+      <label for="novio">Nombre del novio</label>
+      <input type="text" class="topcoat-text-input center wide" name="novio" id="novio"><br><br>
+      <label for="lugar">Lugar</label><br>
+      <select class="topcoat-text-input center wide black" name="lugar" id="lugar">
+        <option value=""></option>
+        <option value="San Luis Potosí">San Luis Potosí</option>
+        <option value="Queretaro">Querétaro</option>
+      </select><br><br>
+      <label for="fecha">Fecha de la Boda</label><br>
+      <input type="date" class="topcoat-text-input center wide black" name="fecha" id="fecha"><br><br>
+    </form>
+    <p><b>Podrás acceder al menú de la aplicación deslizando tu dedo de izquierda a derecha sobre la pantalla.</b></p>
+    <img src="/images/swipe@2x.png">
+    <p><b>Puedes editar tu información y añadir una foto de portada desde la pantalla de configuración. Ya estás listo para comenzar a usar tu aplicación.</b></p>
+    <div class="cbCont2 center"><div class="topcoat-button b100" id="ok-btn">Comenzar</div></div>
+  </div> 
+  <script type="text/javascript">
+      $(document).ready(function(){
+        $("#ok-btn").on("click", function(){
+          window.localStorage.setItem("novio", $("#novio").val());
+          window.localStorage.setItem("novia", $("#novia").val());
+          window.localStorage.setItem("lugar", $("#lugar").val());
+          window.localStorage.setItem("fecha", $("#fecha").val());
+
+          window.localStorage.setItem("init", 1);
+
+          //alert("novio: "+window.localStorage.getItem("novio")+" de tipo: "+typeof window.localStorage.getItem("novio"));
+
+          // var configView = new steroids.views.WebView("http://localhost/views/drawerExample/config_modal_screen.html");
+          // steroids.modal.show(configView);
+          if(window.localStorage.getItem("novio")== ''&&window.localStorage.getItem("novia")== ''){
+            alert('Al menos añade el nombre de los novios.');
+          }else{
+            steroids.modal.hide();
+          }
+        });
+      });
+    </script>   
+</div>

@@ -68,8 +68,13 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
     steroids.layers.push(webView);
     };
 
+    // steroids.view.navigationBar.setButtons({
+    //   left: [imageButton],
+    //   right: [adduserButton],
+    //   overrideBackButton: true
+    // });
     steroids.view.navigationBar.setButtons({
-      left: [imageButton],
+      left: [],
       right: [adduserButton],
       overrideBackButton: true
     });
