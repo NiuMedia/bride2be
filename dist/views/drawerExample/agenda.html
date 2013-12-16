@@ -1018,7 +1018,12 @@
       }
 
       window.localStorage.setItem("init", 1);
-      alert('Datos almacenados con éxito');
+      navigator.notification.alert(
+            'Datos almacenados con éxito',  // message
+            alertDismissed,         // callback
+            'Bride2Be',            // title
+            'Ok'                  // buttonName
+        );
     }
 
 

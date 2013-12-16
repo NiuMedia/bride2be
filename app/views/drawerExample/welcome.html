@@ -64,7 +64,12 @@
           // var configView = new steroids.views.WebView("http://localhost/views/drawerExample/config_modal_screen.html");
           // steroids.modal.show(configView);
           if(window.localStorage.getItem("novio")== ''&&window.localStorage.getItem("novia")== ''){
-            alert('Al menos añade el nombre de los novios.');
+            navigator.notification.alert(
+            'Al menos añade el nombre de los novios',  // message
+            alertDismissed,         // callback
+            'Bride2Be',            // title
+            'Ok'                  // buttonName
+        );
           }else{
             steroids.modal.hide();
           }

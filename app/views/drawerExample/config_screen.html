@@ -30,7 +30,6 @@
           cambiarfoto();
         }
     }
-
       //Navigation Bar--
       var imageButton = new steroids.buttons.NavigationBarButton();
       
@@ -65,7 +64,12 @@
             window.localStorage.setItem("fecha", $("#fecha").val());
             rellenarInfo();
 
-            alert("Información guardada correctamente");
+            navigator.notification.alert(
+              'Información guardada correctamente',  // message
+              alertDismissed,         // callback
+              'Bride2Be',            // title
+              'Ok'                  // buttonName
+            );
 
             webView = new steroids.views.WebView("http://localhost/views/drawerExample/home.html");
             steroids.layers.push(webView);

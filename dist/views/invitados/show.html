@@ -42,7 +42,7 @@
         <input ng-model="newGuest.tarjeta" type="checkbox" class="topcoat-checkbox__checkmark" name="tarjeta" id="tarjeta"><label for="tarjeta">Tarjeta de agradecimiento</label><br>
         
         <div class="topcoat-button" hm-tap="invitadoServ.updateInvitado(index, newGuest); newGuest = {}; returnToList();">Guardar</div>
-		<div class="topcoat-button" hm-tap="invitadoServ.removeInvitado(index); returnToList();">Eliminar</div>
+		<div class="topcoat-button" hm-tap="invitadoServ.removeInvitado(index); returnToList();showAlert();">Eliminar</div>
 	</div>
 </div>
 
