@@ -51,6 +51,9 @@
     // }
 
       $(document).ready(function(){
+        function alertDismissed (){
+          //Do Nothing
+        }
         $("#ok-btn").on("click", function(){
           window.localStorage.setItem("novio", $("#novio").val());
           window.localStorage.setItem("novia", $("#novia").val());
@@ -70,6 +73,7 @@
             'Bride2Be',            // title
             'Ok'                  // buttonName
         );
+
           }else{
             steroids.modal.hide();
           }

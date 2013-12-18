@@ -317,6 +317,10 @@
       e.preventDefault();
     });
 
+    function alertDismissed (){
+      //Do Nothing
+    }
+
     function guardarTodo(){
       for (var i=1; i<=97; i++){
         window.localStorage.setItem("cbRegalos"+i+"", $("#cbRegalos"+i+"").is(':checked'));
