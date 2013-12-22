@@ -104,8 +104,8 @@ h2, h3, h4 {
 	font-family: script;
 }
 .fondo {
-	background-image:url("/icons/fondo_gris.jpg");
-	background-position:fixed;
+/*	background-image:url("/icons/fondo_gris.jpg");
+*/	background-position:fixed;
 	height: 100%;
 }
 
@@ -155,7 +155,7 @@ li {
 #provider-list .proverdor .provider-facebook{
 	display: none;
 }
-.btn-agenda{;
+.btn-agenda{
 	float:right;
 }
 .cbCont{
@@ -321,8 +321,8 @@ li {
 }
 .topcoat-button{
 	-webkit-border-radius:8px;
-	border-radius:8px;
-	border:1px solid #e0c3c9;
+	border-radius:0px;
+	border: none;
 	padding:0px 9px;
 	text-decoration:none;
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #ffffff), color-stop(100%, #fbdce3) );
@@ -361,3 +361,25 @@ background-color: rgba(0,0,0,0);
 .b50{
 	width:49.3%;
 }
+
+.topcoat-text-input, .topcoat-text-input--large{
+	border: 1px solid transparent;
+	background-color: rgba(89, 91, 91, 0);
+	border-bottom: 4px solid #FFFFFF;
+	color: #444;
+	border-radius: 0px 0px 0px 20px;
+	box-shadow: none;
+}
+
+.topcoat-text-input:focus{
+	background-color: rgba(255, 255, 255, 0.21);
+	box-shadow: none;
+}
+
+input[type="date"]:focus{
+	background-color: rgba(255, 255, 255, 0.21);
+}
+
+
+
+/*----------------- FIN -----------------*/

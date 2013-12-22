@@ -7,13 +7,19 @@ invitadosApp.factory('invitadoService', function(){
   myInvitadosService.addInvitado = function(invitado){
     json_guest.invitados.push(invitado);
     window.localStorage.setItem("invitados", JSON.stringify(json_guest));
-
+    if(typeof window.localStorage.getItem("NumeroDeInvitados")=='object'|| window.localStorage.getItem("NumeroDeInvitados")<=0){
+      window.localStorage.setItem("NumeroDeInvitados", 1);
+      alert('estaba vacio, ahora tiene: '+window.localStorage.getItem("NumeroDeInvitados"));
+    }else{
+      window.localStorage.setItem("NumeroDeInvitados", parseInt(window.localStorage.getItem("NumeroDeInvitados"))+1);
+    }
   };
 
 
   myInvitadosService.removeInvitado = function(index){
       json_guest.invitados.splice(index, 1);
       window.localStorage.setItem("invitados", JSON.stringify(json_guest));
+      window.localStorage.setItem("NumeroDeInvitados", parseInt(window.localStorage.getItem("NumeroDeInvitados"))-1);
       alert('invitado eliminado')
   };
 
@@ -45,53 +51,8 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
       titleImagePath: "logo.png",
       relativeTo: "/" + steroids.app.path + "/images/"
     });
-
-  //Navigation Bar--
-      var imageButton = new steroids.buttons.NavigationBarButton();
-      
-      //DRAWER--
-      var googleView = new steroids.views.WebView( { location: "http://localhost/views/drawerExample/drawer.html" } );
-      googleView.preload();
-
-      //--DRAWER
-
-      imageButton.imagePath = "/icons/drawer.png"
-      imageButton.onTap = function() {
-        steroids.drawers.show(googleView);
-      }
-    //--Navigation Bar
-  
-
-  var adduserButton = new steroids.buttons.NavigationBarButton();
-    adduserButton.imagePath = "/icons/adduser.png"
-
-    adduserButton.onTap = function (){
-      webView = new steroids.views.WebView("/views/invitados/new.html");
-    steroids.layers.push(webView);
-    };
-
-    // steroids.view.navigationBar.setButtons({
-    //   left: [imageButton],
-    //   right: [adduserButton],
-    //   overrideBackButton: true
-    // });
-    steroids.view.navigationBar.setButtons({
-      left: [],
-      right: [adduserButton],
-      overrideBackButton: true
-    });
   });
 
-  // var adduserButton = new steroids.buttons.NavigationBarButton();
-  //   adduserButton.imagePath =  "/" + steroids.app.path + "/icons/adduser.png";
-
-  //   adduserButton.onTap = function() { 
-  //       alert("puchaste a nuevo usuario"); 
-  //   };
-
-  //   steroids.view.navigationBar.setButtons({
-  //       right: [adduserButton]
-  //   });
 
   // Helper function for opening new webviews
   $scope.open = function(id) {
@@ -112,9 +73,10 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
 
   // Convierte el string guardado a json
   json_guest = $.parseJSON(window.localStorage.getItem("invitados"));
+  numInvitados = parseInt(window.localStorage.getItem("NumeroDeInvitados"));
   // Obtiene todos los invitados y los coloca en la variable de invitados 
   $scope.invitados = json_guest.invitados;
-
+  $scope.numeroInvitados = numInvitados;
   
 
 
@@ -156,20 +118,6 @@ invitadosApp.controller('ShowCtrl', function ($scope, invitadoService) {
 
   });
 
-    // var guardarButton = new steroids.buttons.NavigationBarButton();
-    // guardarButton.title = "Guardar";
-
-    // guardarButton.onTap = function (){
-    //   // invitadoServ.updateInvitado(index, newGuest);
-    //   // newGuest = {};
-    //   $scope.returnToList();
-    //   alert('le puchaste al boton');
-    // };
-
-    // steroids.view.navigationBar.setButtons({
-    //   right: [guardarButton]
-    // });
-
 });
 
 
@@ -193,18 +141,5 @@ invitadosApp.controller('NewCtrl', function ($scope, invitadoService) {
     });
   });
 
-    // var guardarButtonNew = new steroids.buttons.NavigationBarButton();
-    // guardarButtonNew.title = "Guardar";
-
-    // guardarButtonNew.onTap = function (){
-    //   //$scope.invitadoServ.addInvitado(newGuest);
-    //   //$scope.newGuest = {};
-    //   $scope.returnToList();
-    //   alert('boton presionado');
-    // };
-
-    // steroids.view.navigationBar.setButtons({
-    //   right: [guardarButtonNew]
-    // });
 
 });

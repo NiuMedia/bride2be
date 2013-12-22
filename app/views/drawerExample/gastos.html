@@ -777,7 +777,7 @@
 
 
 <!-- RECEPCION -->
-	  <div class="card">
+	<div class="card">
 	  	
 	  	<div id="recepcion-header" class="card-titles" style="clear:both;">
 			<div  id="titulo-recepcion" style="float:left"><h2>Recepción</h2></div>
@@ -1271,7 +1271,7 @@
 		  	<label id="costo-total-recepcion">Costo:</label>
 			<label id="saldo-total-recepcion">Saldo:</label>
 		</div>
-	  </div>
+	</div>
 <!-- END card RECEPCION -->
 
 
@@ -1279,7 +1279,7 @@
 
 
 <!-- NOVIO -->
-	  <div class="card">
+	<div class="card">
 	  	<div id="novio-header" class="card-titles" style="clear:both;">
 			<div  id="titulo-novio" style="float:left"><h2>Novio</h2></div>
 			<div id="btn-novio" style="float:right;clear:right;">
@@ -1613,7 +1613,7 @@
 		  	<label id="costo-total-novio">Costo:</label>
 			<label id="saldo-total-novio">Saldo:</label>
 		</div>
-	  </div>
+	</div>
 <!-- END card NOVIO -->
 
 
@@ -1621,7 +1621,7 @@
 
 
 <!-- NOVIA -->
-	  <div class="card">
+	<div class="card">
 	  	<div id="novia-header" class="card-titles" style="clear:both;">
 			<div  id="titulo-novia" style="float:left"><h2>Novia</h2></div>
 			<div id="btn-novia" style="float:right;clear:right;">
@@ -2078,7 +2078,7 @@
 		  	<label id="costo-total-novia">Costo:</label>
 			<label id="saldo-total-novia">Saldo:</label>
 		</div>
-	  </div>
+	</div>
 <!-- END card NOVIA-->
 
 
@@ -2086,7 +2086,7 @@
 
 
 <!-- LUNA DE MIEL -->
-	  <div class="card">
+	<div class="card">
 	  	<div id="luna-header" class="card-titles" style="clear:both;">
 			<div  id="titulo-luna" style="float:left"><h2>Luna de Miel</h2></div>
 			<div id="btn-luna" style="float:right;clear:right;">
@@ -2467,7 +2467,7 @@
 		  	<label id="costo-total-luna">Costo:</label>
 			<label id="saldo-total-luna">Saldo:</label>
 		</div>
-	  </div>
+	</div>
 <!-- END card LUNA DE MIEL -->
 
 
@@ -2475,7 +2475,7 @@
 
 
 <!-- LA NUEVA CASA -->
-	  <div class="card">
+	<div class="card">
 	  	<div id="casa-header" class="card-titles" style="clear:both;">
 			<div  id="titulo-casa" style="float:left"><h2>La nueva casa</h2></div>
 			<div id="btn-casa" style="float:right;clear:right;">
@@ -2816,32 +2816,72 @@
 		  	<label id="costo-total-casa">Costo:</label>
 			<label id="saldo-total-casa">Saldo:</label>
 		</div>
-	  </div>
+	</div>
 <!-- END card LA NUEVA CASA -->
    </form>
    <script type="text/javascript">
+   steroids.drawers.hideAll();
+    var googleView = new steroids.views.WebView( { id:4, location: "http://localhost/views/drawerExample/drawer.html" } );
+    var drawerIsOpen = false;
+
+	  googleView.preload({},{
+	     onSuccess: initGesture  // When the view has loaded, enable finger tracking
+	    }
+	  );
+
+	  document.addEventListener("visibilitychange", onVisibilityChange, false);
+
+    function onVisibilityChange() {
+        if(document.hidden==false){
+          steroids.drawers.enableGesture(googleView);
+        }
+        if(document.hidden==true){
+          steroids.drawers.hideAll();
+          steroids.drawers.disableGesture(googleView);
+        }
+    }
+
    //Navigation Bar--
       var imageButton = new steroids.buttons.NavigationBarButton();
-      
-      //DRAWER--
-      var googleView = new steroids.views.WebView( { location: "http://localhost/views/drawerExample/drawer.html" } );
-      googleView.preload();
+      var imageButton2 = new steroids.buttons.NavigationBarButton();
+
+      function initGesture() {
+        steroids.drawers.enableGesture(googleView);
+      }
 
       //--DRAWER
 
       imageButton.imagePath = "/icons/drawer.png"
+      imageButton2.imagePath = "/icons/drawer.png"
+
       imageButton.onTap = function() {
-        steroids.drawers.show(googleView);
+        if(drawerIsOpen==false){
+          steroids.drawers.show(googleView);
+          steroids.view.navigationBar.setButtons({
+            left: [imageButton2],
+            overrideBackButton: true
+          });
+          steroids.drawers.disableGesture(googleView);
+          drawerIsOpen=true;
+        }
+      }
+      imageButton2.onTap = function() {
+        if(drawerIsOpen==true){
+          steroids.drawers.hide(googleView);
+          steroids.view.navigationBar.setButtons({
+            left: [imageButton],
+            overrideBackButton: true
+          });
+          steroids.drawers.enableGesture(googleView);
+          drawerIsOpen=false;
+        }
       }
 
-      // steroids.view.navigationBar.setButtons({
-      //   left: [imageButton],
-      //   overrideBackButton: true
-      // });
-steroids.view.navigationBar.setButtons({
-        left: [],
+      steroids.view.navigationBar.setButtons({
+        left: [imageButton],
         overrideBackButton: true
       });
+      
     //--Navigation Bar
 
    var seccion;

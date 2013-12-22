@@ -6,46 +6,90 @@
     </div>
     </center>
   </div>
-  <div class="card">
+  <div class="card cbCont">
       <form>
-        <label for="novia">Nombre de la novia</label>
-        <input type="text" class="topcoat-text-input center wide" name="novia" id="novia"><br><br>
-        <label for="novio">Nombre del novio</label>
-        <input type="text" class="topcoat-text-input center wide" name="novio" id="novio"><br><br>
-        <label for="lugar">Lugar</label><br>
-        <select class="topcoat-text-input center wide black" name="lugar" id="lugar">
+        <label><b>Novios:</b></label>
+        <input type="text" class="topcoat-text-input wide" name="novia" id="novia" placeholder="Nombre de la Novia"><br><br>
+        <!--label for="novio">Nombre del novio</label-->
+        <input type="text" class="topcoat-text-input wide" name="novio" id="novio" placeholder="Nombre del Novio"><br><br>
+        <label for="lugar"><b>Lugar:</b></label><br>
+        <select class="topcoat-text-input center wide black" name="lugar" id="lugar" placeholder="Lugar">
           <option value="San Luis Potosí">San Luis Potosí</option>
           <option value="Queretaro">Querétaro</option>
         </select><br><br>
-        <label for="fecha">Fecha de la Boda</label><br>
-        <input type="date" class="topcoat-text-input center wide black" name="fecha" id="fecha"><br><br>
+        <label for="fecha"><b>Fecha de la Boda:</b></label><br>
+        <input type="date" class="topcoat-text-input center wide black" name="fecha" id="fecha" placeholder="Fecha"><br><br>
         <div class="cbCont"><div id="foto-cont" class="center"></div></div>
         <div class="topcoat-button center full" id="getPic-btn">Seleccionar Foto de Portada</div><br>
       </form>
       <script type="text/javascript">
+      steroids.drawers.hideAll();
+      var googleView = new steroids.views.WebView( { id:3, location: "http://localhost/views/drawerExample/drawer.html" } );
+      var drawerIsOpen = false;
+
+      googleView.preload({},{
+         onSuccess: initGesture  // When the view has loaded, enable finger tracking
+        }
+      );
+
       document.addEventListener("visibilitychange", onVisibilityChangeConfig, false);
 
     function onVisibilityChangeConfig() {
         if(document.hidden==false && typeof window.localStorage.getItem("foto")!='object'){
           cambiarfoto();
         }
+        if(document.hidden==false){
+          steroids.drawers.enableGesture(googleView);
+          // alert('disponible drawer home');
+        }
+        if(document.hidden==true){
+          steroids.drawers.hideAll();
+          steroids.drawers.disableGesture(googleView);
+        }
     }
       //Navigation Bar--
       var imageButton = new steroids.buttons.NavigationBarButton();
-      
-      //DRAWER--
-      var googleView = new steroids.views.WebView( { location: "http://localhost/views/drawerExample/drawer.html" } );
-      googleView.preload();
+      var imageButton2 = new steroids.buttons.NavigationBarButton();
+
+      function initGesture() {
+        steroids.drawers.enableGesture(googleView);
+      }
 
       //--DRAWER
 
-      
+      imageButton.imagePath = "/icons/drawer.png"
+      imageButton2.imagePath = "/icons/drawer.png"
+
+      imageButton.onTap = function() {
+        if(drawerIsOpen==false){
+          steroids.drawers.show(googleView);
+          steroids.view.navigationBar.setButtons({
+             left: [imageButton2],
+            right: [guardarButton],
+              overrideBackButton: true
+          });
+          steroids.drawers.disableGesture(googleView);
+          drawerIsOpen=true;
+        }
+      }
+      imageButton2.onTap = function() {
+        if(drawerIsOpen==true){
+          steroids.drawers.hide(googleView);
+          steroids.view.navigationBar.setButtons({
+             left: [imageButton],
+            right: [guardarButton],
+              overrideBackButton: true
+          });
+          steroids.drawers.enableGesture(googleView);
+          drawerIsOpen=false;
+        }
+      }
     //--Navigation Bar
 
     function cambiarfoto(){
       if (typeof window.localStorage.getItem("foto")=='object'){
         $("#foto-cont").empty();
-        $("#foto-cont").append("<p>No hay foto</p>");
+        $("#foto-cont").append("<p class='cbCont2 card' id='foto'>No hay foto</p>");
       }else{
         $("#foto-cont").empty();
         $("#foto-cont").append("<img id='foto' class='picture' src='"+window.localStorage.getItem('foto')+"'/>");
@@ -114,13 +158,8 @@
         steroids.drawers.show(googleView);
       }
 
-    // steroids.view.navigationBar.setButtons({
-    //    left: [imageButton],
-    //   right: [guardarButton],
-    //     overrideBackButton: true
-    // });
     steroids.view.navigationBar.setButtons({
-       left: [],
+       left: [imageButton],
       right: [guardarButton],
         overrideBackButton: true
     });

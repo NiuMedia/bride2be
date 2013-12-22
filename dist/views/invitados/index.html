@@ -36,8 +36,11 @@
       </center>
     </div>
     <div ng-controller="IndexCtrl">
-      <div class="topcoat-list card">
+      <div class="card">
+        <label id="costo-total" style="font-size:1.5em">Total invitados: {{ numeroInvitados }}</label>
+      </div>
 
+      <div class="topcoat-list card">
         <ul class="topcoat-list__container contenedor_especial" id="lista-invitados">
           <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="invitado in invitados">
             <h3>{{ invitado.nombre }}</h3>
@@ -51,13 +54,79 @@
       <!--div class="topcoat-button" id="add-guest" hm-tap="new()">Nuevo invitado</div-->
     </div>
     <script type="text/javascript">
+    steroids.drawers.hideAll();
+    var googleView = new steroids.views.WebView( { id:9, location: "http://localhost/views/drawerExample/drawer.html" } );
+    var drawerIsOpen = false;
+
+      googleView.preload({},{
+         onSuccess: initGesture  // When the view has loaded, enable finger tracking
+        }
+      );
+
     document.addEventListener("visibilitychange", onVisibilityChange, false);
 
     function onVisibilityChange() {
         if(document.hidden==false){
           window.location.reload();
+          steroids.drawers.enableGesture(googleView);
+        }
+        if(document.hidden==true){
+          steroids.drawers.hideAll();
+          steroids.drawers.disableGesture(googleView);
         }
     }
+  //Navigation Bar--
+      var imageButton = new steroids.buttons.NavigationBarButton();
+      var imageButton2 = new steroids.buttons.NavigationBarButton();
+      var adduserButton = new steroids.buttons.NavigationBarButton();
+
+      function initGesture() {
+        steroids.drawers.enableGesture(googleView);
+      }
+
+      //--DRAWER
+
+      imageButton.imagePath = "/icons/drawer.png"
+      imageButton2.imagePath = "/icons/drawer.png"
+      adduserButton.imagePath = "/icons/adduser.png"
+
+      imageButton.onTap = function() {
+        if(drawerIsOpen==false){
+          steroids.drawers.show(googleView);
+          steroids.view.navigationBar.setButtons({
+          left: [imageButton2],
+          right: [adduserButton],
+          overrideBackButton: true
+        });
+          steroids.drawers.disableGesture(googleView);
+          drawerIsOpen=true;
+        }
+      }
+      imageButton2.onTap = function() {
+        if(drawerIsOpen==true){
+          steroids.drawers.hide(googleView);
+        steroids.view.navigationBar.setButtons({
+          left: [imageButton],
+          right: [adduserButton],
+          overrideBackButton: true
+        });
+          steroids.drawers.enableGesture(googleView);
+          drawerIsOpen=false;
+        }
+      }
+      adduserButton.onTap = function (){
+        webView = new steroids.views.WebView("/views/invitados/new.html");
+      steroids.layers.push(webView);
+      };
+
+      steroids.view.navigationBar.setButtons({
+        left: [imageButton],
+        right: [adduserButton],
+        overrideBackButton: true
+      });
+      
+    //--Navigation Bar
+    
     </script>
 </div>
 

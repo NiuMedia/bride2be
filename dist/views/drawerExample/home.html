@@ -44,49 +44,71 @@
     <center><h2><span class="black" id="lugar">San Luis Potosí</span></h2></center>
 
     <script type="text/javascript">
+    steroids.drawers.hideAll();
+    var googleView = new steroids.views.WebView( { id:1, location: "http://localhost/views/drawerExample/drawer.html" } );
+    var drawerIsOpen = false;
+
+      googleView.preload({},{
+         onSuccess: initGesture  // When the view has loaded, enable finger tracking
+        }
+      );
 
     document.addEventListener("visibilitychange", onVisibilityChange, false);
 
     function onVisibilityChange() {
         if(document.hidden==false){
           window.location.reload();
+          steroids.drawers.enableGesture(googleView);
+          // alert('disponible drawer home');
         }
         if(document.hidden==true){
-          steroids.drawers.hide(googleView1);
+          steroids.drawers.hideAll();
+          steroids.drawers.disableGesture(googleView);
         }
     }
 
 
     //Navigation Bar--
       var imageButton = new steroids.buttons.NavigationBarButton();
-      
-      //DRAWER--
-      var googleView1 = new steroids.views.WebView( { location: "http://localhost/views/drawerExample/drawer.html" } );
-
-      googleView1.preload({},{
-         onSuccess: initGesture  // When the view has loaded, enable finger tracking
-        }
-      );
+      var imageButton2 = new steroids.buttons.NavigationBarButton();
 
       function initGesture() {
-        steroids.drawers.enableGesture(googleView1);
+        steroids.drawers.enableGesture(googleView);
       }
 
       //--DRAWER
 
       imageButton.imagePath = "/icons/drawer.png"
+      imageButton2.imagePath = "/icons/drawer.png"
+
       imageButton.onTap = function() {
-        steroids.drawers.show(googleView1);
+        if(drawerIsOpen==false){
+          steroids.drawers.show(googleView);
+          steroids.view.navigationBar.setButtons({
+            left: [imageButton2],
+            overrideBackButton: true
+          });
+          steroids.drawers.disableGesture(googleView);
+          drawerIsOpen=true;
+        }
+      }
+      imageButton2.onTap = function() {
+        if(drawerIsOpen==true){
+          steroids.drawers.hide(googleView);
+          steroids.view.navigationBar.setButtons({
+            left: [imageButton],
+            overrideBackButton: true
+          });
+          steroids.drawers.enableGesture(googleView);
+          drawerIsOpen=false;
+        }
       }
 
-      // steroids.view.navigationBar.setButtons({
-      //   left: [imageButton],
-      //   overrideBackButton: true
-      // });
       steroids.view.navigationBar.setButtons({
-        left: [],
+        left: [imageButton],
         overrideBackButton: true
       });
+      
     //--Navigation Bar
 
 

@@ -86,29 +86,68 @@
     </div>
 </div>
 <script type="text/javascript">
+steroids.drawers.hideAll();
+    var googleView = new steroids.views.WebView( { id:2, location: "http://localhost/views/drawerExample/drawer.html" } );
+    var drawerIsOpen = false;
+
+      googleView.preload({},{
+         onSuccess: initGesture  // When the view has loaded, enable finger tracking
+        }
+      );
+
+    document.addEventListener("visibilitychange", onVisibilityChange, false);
+
+    function onVisibilityChange() {
+        if(document.hidden==false){
+          steroids.drawers.enableGesture(googleView);
+          // alert('disponible drawer home');
+        }
+        if(document.hidden==true){
+          steroids.drawers.hideAll();
+          steroids.drawers.disableGesture(googleView);
+        }
+    }
   //Navigation Bar--
       var imageButton = new steroids.buttons.NavigationBarButton();
-      
-      //DRAWER--
-      var googleView = new steroids.views.WebView( { location: "http://localhost/views/drawerExample/drawer.html" } );
+      var imageButton2 = new steroids.buttons.NavigationBarButton();
 
-      googleView.preload();
+      function initGesture() {
+        steroids.drawers.enableGesture(googleView);
+      }
 
       //--DRAWER
 
       imageButton.imagePath = "/icons/drawer.png"
+      imageButton2.imagePath = "/icons/drawer.png"
+
       imageButton.onTap = function() {
-        steroids.drawers.show(googleView);
+        if(drawerIsOpen==false){
+          steroids.drawers.show(googleView);
+          steroids.view.navigationBar.setButtons({
+            left: [imageButton2],
+            overrideBackButton: true
+          });
+          steroids.drawers.disableGesture(googleView);
+          drawerIsOpen=true;
+        }
+      }
+      imageButton2.onTap = function() {
+        if(drawerIsOpen==true){
+          steroids.drawers.hide(googleView);
+          steroids.view.navigationBar.setButtons({
+            left: [imageButton],
+            overrideBackButton: true
+          });
+          steroids.drawers.enableGesture(googleView);
+          drawerIsOpen=false;
+        }
       }
 
-      // steroids.view.navigationBar.setButtons({
-      //   left: [imageButton],
-      //   overrideBackButton: true
-      // });
       steroids.view.navigationBar.setButtons({
-        left: [],
+        left: [imageButton],
         overrideBackButton: true
       });
+      
     //--Navigation Bar
 
   //TIPS VIEWS

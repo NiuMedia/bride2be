@@ -68,33 +68,75 @@
     </div>
 
     <script type="text/javascript">
-      //Navigation Bar--
-      var imageButton = new steroids.buttons.NavigationBarButton();
-      
-      //DRAWER--
-      var googleView = new steroids.views.WebView( { location: "http://localhost/views/drawerExample/drawer.html" } );
+      steroids.drawers.hideAll();
+    var googleView = new steroids.views.WebView( { id:5, location: "http://localhost/views/drawerExample/drawer.html" } );
+    var drawerIsOpen = false;
 
-      googleView.preload();
+    googleView.preload({},{
+       onSuccess: initGesture  // When the view has loaded, enable finger tracking
+      }
+    );
+
+    document.addEventListener("visibilitychange", onVisibilityChange, false);
+
+    function onVisibilityChange() {
+        if(document.hidden==false){
+          steroids.drawers.enableGesture(googleView);
+        }
+        if(document.hidden==true){
+          steroids.drawers.hideAll();
+          steroids.drawers.disableGesture(googleView);
+        }
+    }
+
+   //Navigation Bar--
+      var imageButton = new steroids.buttons.NavigationBarButton();
+      var imageButton2 = new steroids.buttons.NavigationBarButton();
+
+      function initGesture() {
+        steroids.drawers.enableGesture(googleView);
+      }
 
       //--DRAWER
 
       imageButton.imagePath = "/icons/drawer.png"
+      imageButton2.imagePath = "/icons/drawer.png"
+
       imageButton.onTap = function() {
-         steroids.drawers.show(googleView);
+        if(drawerIsOpen==false){
+          steroids.drawers.show(googleView);
+          steroids.view.navigationBar.setButtons({
+            left: [imageButton2],
+            overrideBackButton: true
+          });
+          steroids.drawers.disableGesture(googleView);
+          drawerIsOpen=true;
+        }
+      }
+      imageButton2.onTap = function() {
+        if(drawerIsOpen==true){
+          steroids.drawers.hide(googleView);
+          steroids.view.navigationBar.setButtons({
+            left: [imageButton],
+            overrideBackButton: true
+          });
+          steroids.drawers.enableGesture(googleView);
+          drawerIsOpen=false;
+        }
       }
 
-      // steroids.view.navigationBar.setButtons({
-      //   left: [imageButton],
-      //   overrideBackButton: true
-      // });
       steroids.view.navigationBar.setButtons({
-        left: [],
+        left: [imageButton],
         overrideBackButton: true
       });
+      
     //--Navigation Bar
 
       $(document).ready(function(){
         $(".btn").on("click", function(event){
+          function alertDismissed (){
+            //Do Nothing
+          }
           switch($(event.target).attr("id")){
             case "ceremonia":
               var providersView = new steroids.views.WebView("http://localhost/views/provider/ceremonia.html");
@@ -133,7 +175,17 @@
               var providersView = new steroids.views.WebView("http://localhost/views/provider/mesa.html");
             break;
           }
-          steroids.layers.push(providersView);
+          var status = navigator.onLine ? 'online' : 'offline';
+          if(status=='online'){
+            steroids.layers.push(providersView);
+          }else{
+            navigator.notification.alert(
+                'Se necesita de una conexión a internet para acceder a la lista de proveedores.',  // message
+                alertDismissed,         // callback
+                'Bride2Be',            // title
+                'Ok'                  // buttonName
+            );
+          }
         });
       });
     </script>
