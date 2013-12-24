@@ -380,6 +380,47 @@ input[type="date"]:focus{
 	background-color: rgba(255, 255, 255, 0.21);
 }
 
+/*---------------- ALERTAS HTML5 ------------------*/
+
+.alerta{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.3);
+	position: fixed;
+	z-index: 99;
+	bottom: 0px;
+}
+.alerta-int{
+	width: 95%;
+	position: fixed;
+	z-index: 999;
+	bottom: -100px;
+	margin: .5em;
+}
+.alerta-int p{
+	color: #555555;
+	width: 100%;
+	padding: 12px 0px 12px 0px;
+	background: rgba(255, 255, 255, 0.95);
+	margin: auto;
+	font-size: .8em;
+	border-radius: 3px;
+	margin-bottom: .5em;
+	letter-spacing: .03em;
+}
+.alerta-boton{
+	width: 100%;
+color: #B457B9;
+background: rgba(255, 255, 255, 0.95);
+border-radius: 3px;
+padding: 10px;
+font-size: 1.2em;
+font-weight: 600;
+border:	0px;
+
+}
+
+/*-------------------------------------------------*/
 
 
 /*----------------- FIN -----------------*/

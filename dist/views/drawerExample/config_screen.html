@@ -48,82 +48,83 @@
         <div class="topcoat-button center full" id="getPic-btn">Seleccionar Foto de Portada</div><br>
       </form>
       <script type="text/javascript">
-      steroids.drawers.hideAll();
-      var googleView = new steroids.views.WebView( { id:3, location: "http://localhost/views/drawerExample/drawer.html" } );
-      var drawerIsOpen = false;
+        steroids.drawers.hideAll();
+        var googleView = new steroids.views.WebView( { id:3, location: "http://localhost/views/drawerExample/drawer.html" } );
+        var drawerIsOpen = false;
 
-      googleView.preload({},{
-         onSuccess: initGesture  // When the view has loaded, enable finger tracking
-        }
-      );
+        googleView.preload({},{
+           onSuccess: initGesture  // When the view has loaded, enable finger tracking
+          }
+        );
 
-      document.addEventListener("visibilitychange", onVisibilityChangeConfig, false);
+        document.addEventListener("visibilitychange", onVisibilityChangeConfig, false);
 
-    function onVisibilityChangeConfig() {
-        if(document.hidden==false && typeof window.localStorage.getItem("foto")!='object'){
-          cambiarfoto();
+        function onVisibilityChangeConfig() {
+            if(document.hidden==false && typeof window.localStorage.getItem("foto")!='object'){
+              cambiarfoto();
+            }
+            if(document.hidden==false){
+              steroids.drawers.enableGesture(googleView);
+            }
+            if(document.hidden==true){
+              steroids.drawers.hideAll();
+              steroids.drawers.disableGesture(googleView);
+            }
         }
-        if(document.hidden==false){
-          steroids.drawers.enableGesture(googleView);
-          // alert('disponible drawer home');
-        }
-        if(document.hidden==true){
-          steroids.drawers.hideAll();
-          steroids.drawers.disableGesture(googleView);
-        }
-    }
       //Navigation Bar--
-      var imageButton = new steroids.buttons.NavigationBarButton();
-      var imageButton2 = new steroids.buttons.NavigationBarButton();
+        var imageButton = new steroids.buttons.NavigationBarButton();
+        var imageButton2 = new steroids.buttons.NavigationBarButton();
 
-      function initGesture() {
-        steroids.drawers.enableGesture(googleView);
-      }
-
-      //--DRAWER
-
-      imageButton.imagePath = "/icons/drawer.png"
-      imageButton2.imagePath = "/icons/drawer.png"
-
-      imageButton.onTap = function() {
-        if(drawerIsOpen==false){
-          steroids.drawers.show(googleView);
-          steroids.view.navigationBar.setButtons({
-             left: [imageButton2],
-            right: [guardarButton],
-              overrideBackButton: true
-          });
-          steroids.drawers.disableGesture(googleView);
-          drawerIsOpen=true;
-        }
-      }
-      imageButton2.onTap = function() {
-        if(drawerIsOpen==true){
-          steroids.drawers.hide(googleView);
-          steroids.view.navigationBar.setButtons({
-             left: [imageButton],
-            right: [guardarButton],
-              overrideBackButton: true
-          });
+        function initGesture() {
           steroids.drawers.enableGesture(googleView);
-          drawerIsOpen=false;
         }
-      }
-    //--Navigation Bar
 
-    function cambiarfoto(){
-      if (typeof window.localStorage.getItem("foto")=='object'){
-        $("#foto-cont").empty();
-        $("#foto-cont").append("<p class='cbCont2 card' id='foto'>No hay foto</p>");
-      }else{
-        $("#foto-cont").empty();
-        $("#foto-cont").append("<img id='foto' class='picture' src='"+window.localStorage.getItem('foto')+"'/>");
-        $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
-      }
-       
-    }
+        imageButton.imagePath = "/icons/drawer.png"
+        imageButton2.imagePath = "/icons/drawer.png"
+
+        imageButton.onTap = function() {
+          if(drawerIsOpen==false){
+            steroids.drawers.show(googleView);
+            steroids.view.navigationBar.setButtons({
+               left: [imageButton2],
+              right: [guardarButton],
+                overrideBackButton: true
+            });
+            steroids.drawers.disableGesture(googleView);
+            drawerIsOpen=true;
+          }
+        }
+        imageButton2.onTap = function() {
+          if(drawerIsOpen==true){
+            steroids.drawers.hide(googleView);
+            steroids.view.navigationBar.setButtons({
+               left: [imageButton],
+              right: [guardarButton],
+                overrideBackButton: true
+            });
+            steroids.drawers.enableGesture(googleView);
+            drawerIsOpen=false;
+          }
+        }
+      //--Navigation Bar
+
+        function cambiarfoto(){
+          if (typeof window.localStorage.getItem("foto")=='object'){
+            $("#foto-cont").empty();
+            $("#foto-cont").append("<p class='cbCont2 card' id='foto'>No hay foto</p>");
+          }else{
+            $("#foto-cont").empty();
+            $("#foto-cont").append("<img id='foto' class='picture' src='"+window.localStorage.getItem('foto')+"'/>");
+            $("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
+          }
+           
+        }
 
         $(document).ready(function(){
+          $("#alerta-aceptar").click(function(){
+            webView = new steroids.views.WebView("http://localhost/views/drawerExample/home.html");
+            steroids.layers.push(webView);
+          });
           rellenarInfo();
           function alertDismissed (){
             //Do Nothing
@@ -135,17 +136,6 @@
             window.localStorage.setItem("lugar", $("#lugar").val());
             window.localStorage.setItem("fecha", $("#fecha").val());
             rellenarInfo();
-
-            navigator.notification.alert(
-              'Información guardada correctamente',  // message
-              alertDismissed,         // callback
-              'Bride2Be',            // title
-              'Ok'                  // buttonName
-            );
-
-            webView = new steroids.views.WebView("http://localhost/views/drawerExample/home.html");
-            steroids.layers.push(webView);
-            
           }
 
           $("#getPic-btn").on("click", function(){
@@ -158,41 +148,52 @@
               destinationType : Camera.DestinationType.DATA_URL,
               correctOrientation: true
             });
-             //$("#foto").attr("src", "data:image/jpeg;base64,"+window.localStorage.getItem("foto"));
           });
 
-        function rellenarInfo(){
-          //Rellena los datos, segun la informacion guardada
-          $("#novio").val(window.localStorage.getItem("novio"));
-          $("#novia").val(window.localStorage.getItem("novia"));
-          $("#lugar").val(window.localStorage.getItem("lugar"));
-          $("#fecha").val(window.localStorage.getItem("fecha"));
-          cambiarfoto();
-        }
-        
+          function rellenarInfo(){
+            //Rellena los datos, segun la informacion guardada
+            $("#novio").val(window.localStorage.getItem("novio"));
+            $("#novia").val(window.localStorage.getItem("novia"));
+            $("#lugar").val(window.localStorage.getItem("lugar"));
+            $("#fecha").val(window.localStorage.getItem("fecha"));
+            cambiarfoto();
+          }
+          
 
-        var guardarButton = new steroids.buttons.NavigationBarButton();
-    guardarButton.title = "Guardar";
+          var guardarButton = new steroids.buttons.NavigationBarButton();
+          guardarButton.title = "Guardar";
 
-    guardarButton.onTap = function (){
-      guardarTodo();
-    };
+          guardarButton.onTap = function (){
+            guardarTodo();
+            var alerta = $("#alerta");
+            var alertaIn = $("#alerta-int");
+            alerta.fadeToggle(100);
+            alertaIn.animate({bottom:"0px"},300);
+          };
 
-    imageButton.imagePath = "/icons/drawer.png"
-      imageButton.onTap = function() {
-        steroids.drawers.show(googleView);
-      }
+          imageButton.imagePath = "/icons/drawer.png"
+            imageButton.onTap = function() {
+              steroids.drawers.show(googleView);
+            }
 
-    steroids.view.navigationBar.setButtons({
-       left: [imageButton],
-      right: [guardarButton],
-        overrideBackButton: true
-    });
+          steroids.view.navigationBar.setButtons({
+             left: [imageButton],
+            right: [guardarButton],
+              overrideBackButton: true
+          });
+
         });
       </script>
   </div>    
 </div>
-
+<!-- INICIO Alerta html5 -->
+  <div class="alerta center" id="alerta" style="display:none">
+    <div class="alerta-int center" id="alerta-int">
+      <p>Datos guardados con éxito.</p>
+      <button class="alerta-boton" id="alerta-aceptar">Aceptar</button>
+    </div>
+  </div>
+<!-- FIN Alerta html5 -->
 
   
 </body>
