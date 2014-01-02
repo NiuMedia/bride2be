@@ -39,13 +39,37 @@
 
 		<input ng-model="newGuest.confirmado" type="checkbox" class="topcoat-checkbox__checkmark" name="confirmado" id="confirmado"><label for="confirmado">Confirmado</label><br>
         <input ng-model="newGuest.regalo" type="checkbox" class="topcoat-checkbox__checkmark" name="regalo" id="regalo"><label for="regalo">Envió Regalo</label><br>
-        <input ng-model="newGuest.tarjeta" type="checkbox" class="topcoat-checkbox__checkmark" name="tarjeta" id="tarjeta"><label for="tarjeta">Tarjeta de agradecimiento</label><br>
+        <input ng-model="newGuest.tarjeta" type="checkbox" class="topcoat-checkbox__checkmark" name="tarjeta" id="tarjeta"><label for="tarjeta">Tarjeta de agradecimiento</label><br><br>
         
         <div class="topcoat-button" hm-tap="invitadoServ.updateInvitado(index, newGuest); newGuest = {}; returnToList();">Guardar</div>
-		<div class="topcoat-button" hm-tap="invitadoServ.removeInvitado(index); returnToList();showAlert();">Eliminar</div>
+		<div class="topcoat-button" id="boton-eliminar">Eliminar</div>
 	</div>
 </div>
-
+<!-- INICIO Alerta html5 -->
+    <div class="alerta center" id="alerta" style="display:none">
+    	<div class="alerta-int center" id="alerta-int">
+    	  	<p>¿Segura que quieres eliminar este invitado?</p>
+      		<button class="alerta-boton last-alerta" id="alerta-eliminar" hm-tap="invitadoServ.removeInvitado(index); returnToList();">Eliminar</button>
+      		<button class="alerta-boton-cancelar" id="alerta-cancelar">Cancelar</button>
+    	</div>
+  	</div>
+<!-- FIN Alerta html5 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#boton-eliminar').on("click", function(){
+			var alerta = $("#alerta");
+		    var alertaIn = $("#alerta-int");
+		    alerta.fadeToggle(100);
+		    alertaIn.animate({bottom:"0px"},300);
+		});
+		$('#alerta-cancelar').on("click", function(){
+			var alerta = $("#alerta");
+		    var alertaIn = $("#alerta-int");
+		    alerta.fadeToggle(100);
+		    alertaIn.animate({bottom:"-100px"},300);
+		});
+	});
+</script>
 
 </body>
 </html>

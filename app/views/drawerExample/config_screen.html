@@ -98,8 +98,13 @@
         $(document).ready(function(){
           $("#alerta-aceptar").click(function(){
             webView = new steroids.views.WebView("http://localhost/views/drawerExample/home.html");
+            var alerta = $("#alerta");
+            var alertaIn = $("#alerta-int");
+            alerta.fadeToggle(100);
+            alertaIn.animate({bottom:"-100px"},300);
             steroids.layers.push(webView);
           });
+
           rellenarInfo();
           function alertDismissed (){
             //Do Nothing

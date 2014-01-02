@@ -11,7 +11,7 @@
         <label id="costo-total" style="font-size:1.5em">Total invitados: {{ numeroInvitados }}</label>
       </div>
 
-      <div class="topcoat-list card">
+      <div class="topcoat-list card" id="contenedor-invitados">
         <ul class="topcoat-list__container contenedor_especial" id="lista-invitados">
           <li class="topcoat-list__item special-list" hm-tap="open($index)" ng-repeat="invitado in invitados">
             <h3>{{ invitado.nombre }}</h3>
@@ -95,8 +95,14 @@
         right: [adduserButton],
         overrideBackButton: true
       });
-      
+
     //--Navigation Bar
-    
+
+    $(document).ready(function(){
+      if($('#costo-total').html()== "Total invitados: 0"){
+        $("#contenedor-invitados").append("<p>No hay Invitados, puedes agregar uno tocando el botón en la esquina superior derecha.</p>");
+      }
+
+    });
     </script>
 </div>

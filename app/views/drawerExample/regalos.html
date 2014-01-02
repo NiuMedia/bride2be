@@ -264,7 +264,14 @@
     //--Navigation Bar
 
 	$(document).ready(function(){
-		function abrirSeccion(sec){
+		$("#alerta-aceptar").click(function(){
+            var alerta = $("#alerta");
+            var alertaIn = $("#alerta-int");
+            alerta.fadeToggle(100);
+            alertaIn.animate({bottom:"-100px"},300);
+          });
+
+	function abrirSeccion(sec){
       document.getElementById("contId"+sec+"").style.display="block";
       document.getElementById("abrir-contId"+sec+"").style.display="none";
       document.getElementById("cerrar-contId"+sec+"").style.display="block";
@@ -376,14 +383,7 @@
       }
 
       window.localStorage.setItem("init", 1);
-      navigator.notification.alert(
-            'Datos almacenados con éxito',  // message
-            alertDismissed,         // callback
-            'Bride2Be',            // title
-            'Ok'                  // buttonName
-        );
     }
-
 
 		for (var i=1; i<=97; i++){
 			gralVar=window.localStorage.getItem("cbRegalos"+i+"");
@@ -398,6 +398,10 @@
 
     guardarButton.onTap = function (){
       guardarTodo();
+      var alerta = $("#alerta");
+            var alertaIn = $("#alerta-int");
+            alerta.fadeToggle(100);
+            alertaIn.animate({bottom:"0px"},300);
     };
 
     imageButton.imagePath = "/icons/drawer.png"
@@ -414,5 +418,12 @@
 
 	});
 </script>
-
+<!-- INICIO Alerta html5 -->
+  <div class="alerta center" id="alerta" style="display:none">
+    <div class="alerta-int center" id="alerta-int">
+      <p>Datos guardados con éxito.</p>
+      <button class="alerta-boton" id="alerta-aceptar">Aceptar</button>
+    </div>
+  </div>
+<!-- FIN Alerta html5 -->
 

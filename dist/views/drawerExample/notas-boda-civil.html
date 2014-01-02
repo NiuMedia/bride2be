@@ -80,6 +80,12 @@
   </form>
   <script type="text/javascript">
       $(document).ready(function(){
+        $("#alerta-aceptar").click(function(){
+            var alerta = $("#alerta");
+            var alertaIn = $("#alerta-int");
+            alerta.fadeToggle(100);
+            alertaIn.animate({bottom:"-100px"},300);
+          });
 
 
     function guardarTodo(){
@@ -97,13 +103,8 @@
       }
 
       window.localStorage.setItem("init", 1);
-      navigator.notification.alert(
-            'Datos almacenados con éxito',  // message
-            alertDismissed,         // callback
-            'Bride2Be',            // title
-            'Ok'                  // buttonName
-        );
-    }
+     }
+     
     function alertDismissed (){
       //Do Nothing
     }
@@ -128,6 +129,10 @@
 
     guardarButton.onTap = function (){
       guardarTodo();
+      var alerta = $("#alerta");
+      var alertaIn = $("#alerta-int");
+      alerta.fadeToggle(100);
+      alertaIn.animate({bottom:"0px"},300);
     };
 
     steroids.view.navigationBar.setButtons({
@@ -138,7 +143,14 @@
       });
     </script>
 </div>
-
+<!-- INICIO Alerta html5 -->
+  <div class="alerta center" id="alerta" style="display:none">
+    <div class="alerta-int center" id="alerta-int">
+      <p>Datos guardados con éxito.</p>
+      <button class="alerta-boton" id="alerta-aceptar">Aceptar</button>
+    </div>
+  </div>
+<!-- FIN Alerta html5 -->
 
   
 </body>

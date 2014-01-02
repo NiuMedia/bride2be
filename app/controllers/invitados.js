@@ -9,7 +9,6 @@ invitadosApp.factory('invitadoService', function(){
     window.localStorage.setItem("invitados", JSON.stringify(json_guest));
     if(typeof window.localStorage.getItem("NumeroDeInvitados")=='object'|| window.localStorage.getItem("NumeroDeInvitados")<=0){
       window.localStorage.setItem("NumeroDeInvitados", 1);
-      alert('estaba vacio, ahora tiene: '+window.localStorage.getItem("NumeroDeInvitados"));
     }else{
       window.localStorage.setItem("NumeroDeInvitados", parseInt(window.localStorage.getItem("NumeroDeInvitados"))+1);
     }
@@ -20,7 +19,6 @@ invitadosApp.factory('invitadoService', function(){
       json_guest.invitados.splice(index, 1);
       window.localStorage.setItem("invitados", JSON.stringify(json_guest));
       window.localStorage.setItem("NumeroDeInvitados", parseInt(window.localStorage.getItem("NumeroDeInvitados"))-1);
-      alert('invitado eliminado')
   };
 
   myInvitadosService.updateInvitado = function(index, newInvitado){
@@ -73,11 +71,18 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
 
   // Convierte el string guardado a json
   json_guest = $.parseJSON(window.localStorage.getItem("invitados"));
-  numInvitados = parseInt(window.localStorage.getItem("NumeroDeInvitados"));
+  if(typeof window.localStorage.getItem("NumeroDeInvitados") == 'object'){
+    numInvitados = 0;
+  }else{
+    numInvitados = parseInt(window.localStorage.getItem("NumeroDeInvitados"));
+  }
   // Obtiene todos los invitados y los coloca en la variable de invitados 
   $scope.invitados = json_guest.invitados;
-  $scope.numeroInvitados = numInvitados;
-  
+  if (numInvitados==0||numInvitados=='null'){
+    $scope.numeroInvitados = '0';
+  }else{
+    $scope.numeroInvitados = numInvitados;
+  }
 
 
 });
