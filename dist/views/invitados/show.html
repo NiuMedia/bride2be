@@ -32,6 +32,15 @@
       <h2>{{invitado.nombre}}</h2>
     </div>
 	<div class="card">
+		<!-- INICIO Alerta html5 -->
+    <div class="alerta center" id="alerta" style="display:none">
+    	<div class="alerta-int center" id="alerta-int">
+    	  	<p>¿Segura que quieres eliminar este invitado?</p>
+      		<button class="alerta-boton last-alerta" id="alerta-eliminar" hm-tap="invitadoServ.removeInvitado(index); returnToList();">Eliminar</button>
+      		<button class="alerta-boton-cancelar" id="alerta-cancelar">Cancelar</button>
+    	</div>
+  	</div>
+<!-- FIN Alerta html5 -->
 		<label for="nombre">Nombre</label><br/>
 		<input ng-model="newGuest.nombre" type="text" name="nombre" id="nombre" class="topcoat-text-input"><br/>
 		<label for="numero">Numero de personas</label><br/>
@@ -45,15 +54,7 @@
 		<div class="topcoat-button" id="boton-eliminar">Eliminar</div>
 	</div>
 </div>
-<!-- INICIO Alerta html5 -->
-    <div class="alerta center" id="alerta" style="display:none">
-    	<div class="alerta-int center" id="alerta-int">
-    	  	<p>¿Segura que quieres eliminar este invitado?</p>
-      		<button class="alerta-boton last-alerta" id="alerta-eliminar" hm-tap="invitadoServ.removeInvitado(index); returnToList();">Eliminar</button>
-      		<button class="alerta-boton-cancelar" id="alerta-cancelar">Cancelar</button>
-    	</div>
-  	</div>
-<!-- FIN Alerta html5 -->
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#boton-eliminar').on("click", function(){
