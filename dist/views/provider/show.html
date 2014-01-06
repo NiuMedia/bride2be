@@ -30,18 +30,23 @@
 
   <div ng-controller="ShowCtrl">
     <div class="tips-titles center">
-        <h1>{{ provider.title }}</h1>
+      <h1>{{ provider.title }}</h1>
     </div>
     <div class="card">
       <img style="width:100%" src="{{ provider.fotos }}" class="provider-logo"/><br />
-      <p>{{provider.direccion}}</p>
-      <p>Tel. {{provider.phone}}</p>
+      <p>{{ provider.direccion }}</p>
+      <p>Tel. {{ provider.phone }}</p>
+      <p>{{ provider.usuario }}</p>
+      <p>{{ provider.facebook }}</p>
+      <p>{{ provider.email }}</p>
+      <p>{{ provider.website }}</p>
+
       <div class="cbCont">
         <div class="cbSingle">
             <button class="topcoat-icon-button provs-btn-first" id="facebook-btn" href="{{provider.facebook}}">
               <span class="topcoat-icon" id="facebook-btn-int"></span>
             </button>
-            <button class="topcoat-icon-button provs-btn" id="twitter-btn" href="{{provider.twitter}}">
+            <button class="topcoat-icon-button provs-btn" id="twitter-btn" href="{{provider.usuario}}">
               <span class="topcoat-icon" id="twitter-btn-int"></span>
             </button>
             <button class="topcoat-icon-button provs-btn" id="phone-btn" href="{{provider.phone}}">

@@ -213,6 +213,7 @@ providerApp.controller('CeremoniaCtrl', function ($scope, ProviderRestangular) {
   $scope.open = function(id) {
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id+"&tipo=ceremonia");
     steroids.layers.push(webView);
+     alert(id);
   };
 
   // Inicializa el json si no hay datos
@@ -222,6 +223,8 @@ providerApp.controller('CeremoniaCtrl', function ($scope, ProviderRestangular) {
 
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_ceremonia/').getList();
+  lista = $scope.providers;
+  alert(lista);
 
   // -- Native navigation
   steroids.on('ready', function() {
@@ -242,6 +245,7 @@ providerApp.controller('RecepcionCtrl', function ($scope, ProviderRestangular) {
   $scope.open = function(id) {
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id+"&tipo=recepcion");
     steroids.layers.push(webView);
+     alert(id);
   };
 
   // Inicializa el json si no hay datos
@@ -249,9 +253,10 @@ providerApp.controller('RecepcionCtrl', function ($scope, ProviderRestangular) {
     window.localStorage.setItem("misprovedores", '{"ceremonia":[], "recepcion":[], "invitaciones":[], "flores":[], "iluminacion":[], "foto":[], "ambientacion": [], "elyella": [], "mps":[], "luna":[], "mesa":[], "musica": []}');
   };
 
-
   // Fetch all objects from the local JSON (see app/models/provider.js)
   $scope.providers = ProviderRestangular.all('get_recepcion/').getList();
+  lista = $scope.providers;
+  alert(lista);
 
   // -- Native navigation
   steroids.on('ready', function() {
@@ -518,6 +523,7 @@ providerApp.controller('MusicaCtrl', function ($scope, ProviderRestangular) {
   $scope.open = function(id) {
     webView = new steroids.views.WebView("/views/provider/show.html?id="+id+"&tipo=musica");
     steroids.layers.push(webView);
+    alert(id);
   };
   // Inicializa el json si no hay datos
   if(window.localStorage.getItem("misprovedores") == null){
@@ -628,6 +634,9 @@ providerApp.controller('ShowCtrl', function ($scope, $filter, ProviderRestangula
       ProviderRestangular.all('get_musica/').getList().then( function(providers) {
         // Then select the one based on the view's id query parameter
         $scope.provider = $filter('filter')(providers, {id: steroids.view.params['id']})[0];
+        elid = $scope.provider.id;
+        elphone = $scope.provider.phone;
+        alert(elid+" "+elphone);
       });
     break;
   }

@@ -27,10 +27,10 @@
 
 
   <div ng-app="providerApp" class="content-padded fondo">
-<div class="notes-titles center">
-      <h2>Maquillaje, peinado y spa</h2>
-    </div>
-  <div class="card" ng-controller="MaquillajeCtrl">
+  <div class="notes-titles center">
+    <h2>Maquillaje, peinado y spa</h2>
+  </div>
+  <div class="card" id="provider-list" ng-controller="MaquillajeCtrl">
     <ul class="topcoat-list contenedor_especial">
       <li class="topcoat-list__item center special-list" hm-tap="open(provider.id)" ng-repeat="provider in providers">
         <img src="{{provider.logo}}" style="width:100%">
@@ -38,7 +38,6 @@
       </li>
     </ul>
   </div>
-
 </div>
 
 </body>

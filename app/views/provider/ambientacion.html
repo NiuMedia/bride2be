@@ -1,18 +1,13 @@
 <div ng-app="providerApp" class="content-padded fondo">
-<div class="notes-titles center">
-      <h2>Ambientación y más</h2>
-    </div>
-  <div class="card" ng-controller="AmbientacionCtrl">
-    <div class="topcoat-list__container center">
-      <ul class="topcoat-list contenedor_especial  center">
-        <li class="topcoat-list__item center special-list" hm-tap="open(provider.id)" ng-repeat="provider in providers">
-          <img src="{{provider.logo}}" style="width:100%">
-          <h1>{{ provider.title }}</h1>
-        </li>
-      </ul>
-
-    </div>
-
+  <div class="notes-titles center">
+    <h2>Ambientación y más</h2>
   </div>
-
+  <div class="card" id="provider-list" ng-controller="AmbientacionCtrl">
+    <ul class="topcoat-list contenedor_especial  center">
+      <li class="topcoat-list__item center special-list" hm-tap="open(provider.id)" ng-repeat="provider in providers">
+        <img src="{{provider.logo}}" style="width:100%">
+        <h1>{{ provider.title }}</h1>
+      </li>
+    </ul>
+  </div>
 </div>   
