@@ -15,21 +15,21 @@
 
       <div class="cbCont">
         <div class="cbSingle">
-            <button class="topcoat-icon-button provs-btn-first" id="facebook-btn" href="{{provider.facebook}}">
+            <a class="topcoat-icon-button provs-btn-first" ng-show="provider.facebook != ''" id="facebook-btn" ng-href="{{provider.facebook}}">
               <span class="topcoat-icon" id="facebook-btn-int"></span>
-            </button>
-            <button class="topcoat-icon-button provs-btn" id="twitter-btn" href="{{provider.usuario}}">
+            </a>
+            <a class="topcoat-icon-button provs-btn" ng-show="provider.usuario != ''" id="twitter-btn" ng-href="{{provider.usuario}}">
               <span class="topcoat-icon" id="twitter-btn-int"></span>
-            </button>
-            <button class="topcoat-icon-button provs-btn" id="phone-btn" href="{{provider.phone}}">
+            </a>
+            <a class="topcoat-icon-button provs-btn" ng-show="provider.phone != ''" id="phone-btn" ng-href="tel:{{provider.phone}}">
               <span class="topcoat-icon" id="phone-btn-int"></span>
-            </button>
-            <button class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{provider.email}}">
+            </a>
+            <a class="topcoat-icon-button provs-btn" ng-show="provider.email != ''" id="mail-btn" ng-href="mailto:{{provider.email}}">
               <span class="topcoat-icon" id="mail-btn-int"></span>
-            </button>
-            <button class="topcoat-icon-button provs-btn-last" id="fav-btn" href="" hm-tap="providersService.addProvider(provider.id)">
+            </a>
+            <a class="topcoat-icon-button provs-btn-last" id="fav-btn" hm-tap="providersService.addProvider(provider.id)">
               <span class="topcoat-icon" id="fav-btn-int"></span>
-            </button>
+            </a>
         </div>
       </div>
     </div>

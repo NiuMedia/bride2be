@@ -1,0 +1,342 @@
+<?php
+	
+	class JSON_API_Proveedores_Controller{
+
+		public function hello_world(){
+			return array('message' => 'hello world!');
+		}
+
+		//informacion individual de proveedor
+		public function single(){
+			global $json_api;
+			$id = $json_api->query->id;
+
+			$array = array();
+
+			$array['result']['title'] = get_the_title($id);
+
+			$custom = get_post_custom($id);
+
+			foreach($custom as $k => $v){
+				$array['result'][substr($k, 5)] = array_shift($v);
+			}
+
+			return $array;
+		}
+
+		//proveedores de ceremonia religiosa y civil
+		public function get_ceremonia(){
+			$ceremonia = array();
+
+			$args = array('post_type' => 'ceremonia', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$ceremonia['ceremonia'][$counter]['title'] = get_the_title();
+			$ceremonia['ceremonia'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$ceremonia['ceremonia'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+			$counter++;
+			endwhile;
+
+			return $ceremonia;
+
+		}
+
+		//proveedores de recepciones y banquetes
+		public function get_recepcion(){
+			$recepcion = array();
+
+			$args = array('post_type' => 'recepcion-y-banquete', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$recepcion['recepcion'][$counter]['title'] = get_the_title();
+			$recepcion['recepcion'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$recepcion['recepcion'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+			$counter++;
+			endwhile;
+
+			return $recepcion;
+
+		}
+
+		//proveedores de invitaciones
+		public function get_invitacion(){
+			$invitacion = array();
+
+			$args = array('post_type' => 'invitaciones', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$invitacion['invitacion'][$counter]['title'] = get_the_title();
+			$invitacion['invitacion'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$invitacion['invitacion'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+			$counter++;
+			endwhile;
+
+			return $invitacion;
+
+		}
+
+		//proveedores de musica
+		public function get_musica(){
+			$musica = array();
+
+			$args = array('post_type' => 'musica', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$musica['musica'][$counter]['title'] = get_the_title();
+			$musica['musica'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$musica['musica'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+			$counter++;
+			endwhile;
+
+			return $musica;
+
+		}
+
+		//proveedores de flores, decoracion y coordinacion
+		public function get_flores(){
+			$flores = array();
+
+			$args = array('post_type' => 'fdc', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$flores['flores'][$counter]['title'] = get_the_title();
+			$flores['flores'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$flores['flores'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+			$counter++;
+			endwhile;
+
+			return $flores;
+
+		}
+
+		//proveedores de Iluminaciones y mobiliario
+		public function get_iluminacion(){
+			$iluminacion = array();
+
+			$args = array('post_type' => 'iluminacion-mobiliar', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$iluminacion['iluminacion'][$counter]['title'] = get_the_title();
+			$iluminacion['iluminacion'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$iluminacion['iluminacion'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+			$counter++;
+			endwhile;
+
+			return $iluminacion;
+
+		}
+
+		//proveedores de fotos y video
+		public function get_fotos(){
+			$fotos = array();
+
+			$args = array('post_type' => 'foto-y-video', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$fotos['fotos'][$counter]['title'] = get_the_title();
+			$fotos['fotos'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$fotos['result'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+			$counter++;
+			endwhile;
+
+			return $fotos;
+
+		}
+
+		//proveedores de ambientacion y mas
+		public function get_ambientacion(){
+			$ambientacion = array();
+
+			$args = array('post_type' => 'ambientacion', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$ambientacion['ambientacion'][$counter]['title'] = get_the_title();
+			$ambientacion['ambientacion'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$ambientacion['ambientacion'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+			$counter++;
+			endwhile;
+
+			return $ambientacion;
+
+		}
+
+		//proveedores de el y ella
+		public function get_elyella(){
+			$elyella = array();
+
+			$args = array('post_type' => 'elyella', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$elyella['elyella'][$counter]['title'] = get_the_title();
+			$elyella['elyella'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$elyella['elyella'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+			$counter++;
+			endwhile;
+
+			return $elyella;
+
+		}
+
+		//proveedores de Maquillaje, peinado y spa
+		public function get_maquillaje(){
+			$maquillaje = array();
+
+			$args = array('post_type' => 'mps', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$maquillaje['maquillaje'][$counter]['title'] = get_the_title();
+			$maquillaje['maquillaje'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$maquillaje['maquillaje'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+			$counter++;
+			endwhile;
+
+			return $maquillaje;
+
+		}
+
+		//proveedores de luna de miel
+		public function get_luna(){
+			$luna = array();
+
+			$args = array('post_type' => 'luna-de-miel', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$luna['luna'][$counter]['title'] = get_the_title();
+			$luna['luna'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$luna['luna'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+
+			$counter++;
+			endwhile;
+
+			return $luna;
+
+		}
+
+		//proveedores de Mesa de regalos y hogar
+		public function get_mesa(){
+			$mesa = array();
+
+			$args = array('post_type' => 'mesa-regalos-hogar', 'post_per_page' =>-1, 'orderby' => 'title', 'order' => 'ASC');
+			$loop = new WP_Query($args);
+
+			$counter = 0;
+
+			while ( $loop->have_posts() ) : $loop->the_post();
+
+			$mesa['mesa'][$counter]['title'] = get_the_title();
+			$mesa['mesa'][$counter]['id'] = get_the_id();
+			$custom = get_post_custom(get_the_id());
+
+			foreach($custom as $k => $v){
+				$mesa['mesa'][$counter][substr($k, 5)] = array_shift($v);
+			}
+
+			$counter++;
+			endwhile;
+
+			return $mesa;
+
+		}
+
+	}
+
+?>

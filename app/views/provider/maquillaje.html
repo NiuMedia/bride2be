@@ -2,11 +2,11 @@
   <div class="notes-titles center">
     <h2>Maquillaje, peinado y spa</h2>
   </div>
-  <div class="card" id="provider-list" ng-controller="MaquillajeCtrl">
+  <div class="" id="provider-list" ng-controller="MaquillajeCtrl">
     <ul class="topcoat-list contenedor_especial">
-      <li class="topcoat-list__item center special-list" hm-tap="open(provider.id)" ng-repeat="provider in providers">
-        <img src="{{provider.logo}}" style="width:100%">
+      <li class="card topcoat-list__item center" hm-tap="open(provider.id)" ng-repeat="provider in providers">
         <h1>{{ provider.title }}</h1>
+        <img src="{{provider.logo}}" style="width:100%">
       </li>
     </ul>
   </div>
