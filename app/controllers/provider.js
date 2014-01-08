@@ -1,4 +1,4 @@
-  var providerApp = angular.module('providerApp', ['ProviderModel', 'hmTouchevents']);
+var providerApp = angular.module('providerApp', ['ProviderModel', 'hmTouchevents']);
 
   providerApp.config(function($compileProvider){
     $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel):/);
@@ -207,7 +207,7 @@
     $scope.open = function(id) {
       webView = new steroids.views.WebView("/views/provider/show.html?id="+id+"&tipo=ceremonia");
       steroids.layers.push(webView);
-       alert(id);
+       
     };
 
     // Inicializa el json si no hay datos
@@ -218,7 +218,6 @@
     // Fetch all objects from the local JSON (see app/models/provider.js)
     $scope.providers = ProviderRestangular.all('get_ceremonia/').getList();
     lista = $scope.providers;
-    alert(lista);
 
     // -- Native navigation
     steroids.on('ready', function() {
@@ -239,7 +238,7 @@
     $scope.open = function(id) {
       webView = new steroids.views.WebView("/views/provider/show.html?id="+id+"&tipo=recepcion");
       steroids.layers.push(webView);
-       alert(id);
+       
     };
 
     // Inicializa el json si no hay datos
@@ -250,7 +249,6 @@
     // Fetch all objects from the local JSON (see app/models/provider.js)
     $scope.providers = ProviderRestangular.all('get_recepcion/').getList();
     lista = $scope.providers;
-    alert(lista);
 
     // -- Native navigation
     steroids.on('ready', function() {
@@ -517,7 +515,7 @@
     $scope.open = function(id) {
       webView = new steroids.views.WebView("/views/provider/show.html?id="+id+"&tipo=musica");
       steroids.layers.push(webView);
-      alert(id);
+      
     };
     // Inicializa el json si no hay datos
     if(window.localStorage.getItem("misprovedores") == null){
@@ -628,9 +626,6 @@
         ProviderRestangular.all('get_musica/').getList().then( function(providers) {
           // Then select the one based on the view's id query parameter
           $scope.provider = $filter('filter')(providers, {id: steroids.view.params['id']})[0];
-          elid = $scope.provider.id;
-          elphone = $scope.provider.phone;
-          alert(elid+" "+elphone);
         });
       break;
     }
