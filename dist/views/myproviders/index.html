@@ -39,11 +39,11 @@
     <!-- ceremonia -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Ceremonia religiosa y civil</h2></div>
-        <ul class="topcoat-list cbCont">
+        <ul class="topcoat-list">
           <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.ceremonia">
           	<h3>{{ myproviders.title }}</h3>
 
-            <div style="clear:both">
+            <!-- <div style="clear:both"> -->
               <p>{{ myproviders.direccion }}</p>
               <p><b>Tel: </b>{{ myproviders.phone }}</p>
               <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
@@ -54,8 +54,8 @@
               </a> -->
               <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
             <br>
-            <div class="topcoat-button" hm-tap="delete(myproviders.title, 0)" href="">Eliminar</div>
-          </div>
+            <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 0)" href="">Eliminar</div>
+          <!-- </div> -->
           </li>
         </ul>
         <div class="cbCont2 center">
@@ -67,7 +67,7 @@
 <!-- recepcion -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Recepciones y Banquetes</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.recepcion">
           <h3>{{ myproviders.title }}</h3>
           <div style="clear:both">
@@ -81,7 +81,7 @@
             </a> -->
             <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           <br>
-          <div class="topcoat-button" hm-tap="delete(myproviders.title, 1)" href="">Eliminar</div>
+          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 1)" href="">Eliminar</div>
         </div>
         </li>
       </ul>
@@ -94,7 +94,7 @@
 <!-- invitacioes -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Invitaciones</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.invitaciones">
           <h3>{{ myproviders.title }}</h3>
           <div style="clear:both">
@@ -108,7 +108,7 @@
             </a> -->
             <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           <br>
-          <div class="topcoat-button" hm-tap="delete(myproviders.title, 2)" href="">Eliminar</div>
+          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 2)" href="">Eliminar</div>
         </div>
         </li>
       </ul>
@@ -121,7 +121,7 @@
 <!-- musica -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Música</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.musica">
           <h3>{{ myproviders.title }}</h3>
           <div style="clear:both">
@@ -135,7 +135,7 @@
             </a> -->
             <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           <br>
-          <div class="topcoat-button" hm-tap="delete(myproviders.title, 3)" href="">Eliminar</div>
+          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 3)" href="">Eliminar</div>
         </div>
         </li>
       </ul>
@@ -148,7 +148,7 @@
 <!-- flores -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Flores, Decoración y Coordinación</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.flores">
           <h3>{{ myproviders.title }}</h3>
           <div style="clear:both">
@@ -162,7 +162,7 @@
             </a> -->
             <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           <br>
-          <div class="topcoat-button" hm-tap="delete(myproviders.title, 4)" href="">Eliminar</div>
+          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 4)" href="">Eliminar</div>
         </div>
         </li>
       </ul>
@@ -175,7 +175,7 @@
 <!-- iluminacion -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Iluminación y mobiliario</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.iluminacion">
           <h3>{{ myproviders.title }}</h3>
           <div style="clear:both">
@@ -189,7 +189,7 @@
             </a> -->
             <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           <br>
-          <div class="topcoat-button" hm-tap="delete(myproviders.title, 5)" href="">Eliminar</div>
+          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 5)" href="">Eliminar</div>
         </div>
         </li>
       </ul>
@@ -202,7 +202,7 @@
 <!-- foto -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Fotos y videos</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.foto">
           <h3>{{ myproviders.title }}</h3>
           <div style="clear:both">
@@ -216,7 +216,7 @@
             </a> -->
             <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           <br>
-          <div class="topcoat-button" hm-tap="delete(myproviders.title, 6)" href="">Eliminar</div>
+          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 6)" href="">Eliminar</div>
         </div>
         </li>
       </ul>
@@ -229,7 +229,7 @@
 <!-- ambientacion -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Ambientacion y más</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.ambientacion">
           <h3>{{ myproviders.title }}</h3>
           <div style="clear:both">
@@ -243,7 +243,7 @@
             </a> -->
             <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           <br>
-          <div class="topcoat-button" hm-tap="delete(myproviders.title, 7)" href="">Eliminar</div>
+          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 7)" href="">Eliminar</div>
         </div>
         </li>
       </ul>
@@ -256,7 +256,7 @@
 <!-- el y ella -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>El y ella</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.elyella">
           <h3>{{ myproviders.title }}</h3>
           <div style="clear:both">
@@ -270,7 +270,7 @@
             </a> -->
             <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           <br>
-          <div class="topcoat-button" hm-tap="delete(myproviders.title, 8)" href="">Eliminar</div>
+          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 8)" href="">Eliminar</div>
         </div>
         </li>
       </ul>
@@ -283,7 +283,7 @@
 <!-- maquillaje -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Maquillaje, peinado y spa</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.mps">
           <h3>{{ myproviders.title }}</h3>
           <div style="clear:both">
@@ -297,7 +297,7 @@
             </a> -->
             <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           <br>
-          <div class="topcoat-button" hm-tap="delete(myproviders.title, 9)" href="">Eliminar</div>
+          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 9)" href="">Eliminar</div>
         </div>
         </li>
       </ul>
@@ -310,7 +310,7 @@
 <!-- luna -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Luna de miel</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.luna">
           <h3>{{ myproviders.title }}</h3>
           <div style="clear:both">
@@ -324,7 +324,7 @@
             </a> -->
             <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           <br>
-          <div class="topcoat-button" hm-tap="delete(myproviders.title, 10)" href="">Eliminar</div>
+          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 10)" href="">Eliminar</div>
         </div>
         </li>
       </ul>
@@ -337,7 +337,7 @@
 <!-- regalos -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Mesa de regalos y hogar</h2></div>
-      <ul class="topcoat-list cbCont">
+      <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.mesa">
           <h3>{{ myproviders.title }}</h3>
           <div style="clear:both">
@@ -351,7 +351,7 @@
             </a> -->
             <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
           <br>
-          <div class="topcoat-button" hm-tap="delete(myproviders.title, 11)" href="">Eliminar</div>
+          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 11)" href="">Eliminar</div>
         </div>
         </li>
       </ul>

@@ -15,30 +15,69 @@
 		<label for="nombre">Nombre</label><br/>
 		<input ng-model="newGuest.nombre" type="text" name="nombre" id="nombre" class="topcoat-text-input"><br/>
 		<label for="numero">Numero de personas</label><br/>
-		<input ng-model="newGuest.invitados"  type="number" name="numero" class="topcoat-text-input" id="numero"><br/>
+		<input ng-model="newGuest.invitados"  type="tel" name="numero" class="topcoat-text-input" id="numero"><br/>
 
 		<input ng-model="newGuest.confirmado" type="checkbox" class="topcoat-checkbox__checkmark" name="confirmado" id="confirmado"><label for="confirmado">Confirmado</label><br>
         <input ng-model="newGuest.regalo" type="checkbox" class="topcoat-checkbox__checkmark" name="regalo" id="regalo"><label for="regalo">Envió Regalo</label><br>
         <input ng-model="newGuest.tarjeta" type="checkbox" class="topcoat-checkbox__checkmark" name="tarjeta" id="tarjeta"><label for="tarjeta">Tarjeta de agradecimiento</label><br><br>
         
-        <div class="topcoat-button" hm-tap="invitadoServ.updateInvitado(index, newGuest); newGuest = {}; returnToList();">Guardar</div>
-		<div class="topcoat-button" id="boton-eliminar">Eliminar</div>
+        <button class="topcoat-button" id="save-btn" hm-tap="invitadoServ.updateInvitado(index, newGuest); newGuest = {}; returnToList();">Guardar</button>
+		<button class="topcoat-button" id="boton-eliminar">Eliminar</button>
 	</div>
 </div>
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		var alabrir;
+		if ($("#numero").val()==""){
+			alabrir=1;
+		}else{
+			alabrir=parseInt($("#numero").val());
+		}
+		var viejos;
+		var nuevos;
+		
 		$('#boton-eliminar').on("click", function(){
 			var alerta = $("#alerta");
 		    var alertaIn = $("#alerta-int");
 		    alerta.fadeToggle(100);
 		    alertaIn.animate({bottom:"0px"},300);
 		});
+
+
 		$('#alerta-cancelar').on("click", function(){
 			var alerta = $("#alerta");
 		    var alertaIn = $("#alerta-int");
 		    alerta.fadeToggle(100);
 		    alertaIn.animate({bottom:"-100px"},300);
+		});
+
+		$("#save-btn").on('click',function(){
+	  		viejos=parseInt(window.localStorage.getItem("invitnum"));
+	  		if ($("#numero").val()==""){
+  				nuevos=1;
+  			}else{
+      			nuevos=parseInt($("#numero").val());
+  			}
+  			if(viejos==0){
+  				window.localStorage.setItem("invitnum", nuevos);
+  			}else if(viejos<0){
+  				window.localStorage.setItem("invitnum", nuevos);
+  			}else{
+  				window.localStorage.setItem("invitnum", (viejos-alabrir+nuevos));
+  			}
+	  	});
+
+		$('#alerta-eliminar').on("click", function(){
+			//borran numero de invitados
+		    viejos=parseInt(window.localStorage.getItem("invitnum"));
+	  		if ($("#numero").val()==""){
+  				nuevos=1;
+  				alert(nuevos);
+  			}else{
+      			nuevos=parseInt($("#numero").val());
+  			}
+			window.localStorage.setItem("invitnum", (viejos-nuevos));
 		});
 	});
 </script>

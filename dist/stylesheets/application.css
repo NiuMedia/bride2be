@@ -348,7 +348,9 @@ background-color: rgba(0,0,0,0);
 
 .special-list{
 	padding: 4px;
-	border-bottom: 1px solid #7F7073;
+	border-bottom: 1px rgba(255,255,255,0.5);
+	border-top: 1px solid #FFFFFF;
+	clear:both;
 }
 .special-list h3, .special-list label, .special-list p,.special-list h1, .special-list h2{
 	color: #333;
@@ -363,6 +365,12 @@ background-color: rgba(0,0,0,0);
 
 .b50{
 	width:49.3%;
+}
+
+.delete-btn-myp{
+	float:right;
+	clear:both;
+	margin-bottom: 10px;
 }
 
 .topcoat-text-input, .topcoat-text-input--large{
