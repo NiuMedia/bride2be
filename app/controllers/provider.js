@@ -19,7 +19,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_ceremonia=false;
             if (misProvedoresJSON.ceremonia==''){//si el JSON de ceremonia está vacío
               misProvedoresJSON.ceremonia.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.ceremonia){//se recorre cada elemento del json de ceremonia
@@ -31,9 +31,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_ceremonia==false && flag_done==false){
               misProvedoresJSON.ceremonia.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
           case 'recepcion':
@@ -41,7 +41,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_recepcion=false;
             if (misProvedoresJSON.recepcion==''){//si el JSON de recepcion está vacío
               misProvedoresJSON.recepcion.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.recepcion){//se recorre cada elemento del json de recepcion
@@ -53,9 +53,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_recepcion==false && flag_done==false){
               misProvedoresJSON.recepcion.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
           case 'invitaciones':
@@ -63,7 +63,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_invitaciones=false;
             if (misProvedoresJSON.invitaciones==''){//si el JSON de invitaciones está vacío
               misProvedoresJSON.invitaciones.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.invitaciones){//se recorre cada elemento del json de invitaciones
@@ -75,9 +75,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_invitaciones==false && flag_done==false){
               misProvedoresJSON.invitaciones.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
           case 'flores':
@@ -85,7 +85,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_flores=false;
             if (misProvedoresJSON.flores==''){//si el JSON de flores está vacío
               misProvedoresJSON.flores.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.flores){//se recorre cada elemento del json de flores
@@ -97,9 +97,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_flores==false && flag_done==false){
               misProvedoresJSON.flores.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
           case 'iluminacion':
@@ -107,7 +107,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_iluminacion=false;
             if (misProvedoresJSON.iluminacion==''){//si el JSON de iluminacion está vacío
               misProvedoresJSON.iluminacion.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.iluminacion){//se recorre cada elemento del json de iluminacion
@@ -119,9 +119,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_iluminacion==false && flag_done==false){
               misProvedoresJSON.iluminacion.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
           case 'fotos':
@@ -129,7 +129,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_fotos=false;
             if (misProvedoresJSON.fotos==''){//si el JSON de fotos está vacío
               misProvedoresJSON.fotos.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.fotos){//se recorre cada elemento del json de fotos
@@ -141,9 +141,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_fotos==false && flag_done==false){
               misProvedoresJSON.fotos.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
           case 'ambientacion':
@@ -151,7 +151,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_ambientacion=false;
             if (misProvedoresJSON.ambientacion==''){//si el JSON de ambientacion está vacío
               misProvedoresJSON.ambientacion.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.ambientacion){//se recorre cada elemento del json de ambientacion
@@ -163,9 +163,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_ambientacion==false && flag_done==false){
               misProvedoresJSON.ambientacion.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
           case 'elyella':
@@ -173,7 +173,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_elyella=false;
             if (misProvedoresJSON.elyella==''){//si el JSON de elyella está vacío
               misProvedoresJSON.elyella.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.elyella){//se recorre cada elemento del json de elyella
@@ -185,9 +185,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_elyella==false && flag_done==false){
               misProvedoresJSON.elyella.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
           case 'maquillaje':
@@ -195,7 +195,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_maquillaje=false;
             if (misProvedoresJSON.maquillaje==''){//si el JSON de maquillaje está vacío
               misProvedoresJSON.maquillaje.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.maquillaje){//se recorre cada elemento del json de maquillaje
@@ -207,9 +207,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_maquillaje==false && flag_done==false){
               misProvedoresJSON.maquillaje.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
           case 'luna':
@@ -217,7 +217,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_luna=false;
             if (misProvedoresJSON.luna==''){//si el JSON de luna está vacío
               misProvedoresJSON.luna.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.luna){//se recorre cada elemento del json de luna
@@ -229,9 +229,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_luna==false && flag_done==false){
               misProvedoresJSON.luna.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
           case 'mesa':
@@ -239,7 +239,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_mesa=false;
             if (misProvedoresJSON.mesa==''){//si el JSON de mesa está vacío
               misProvedoresJSON.mesa.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.mesa){//se recorre cada elemento del json de mesa
@@ -251,9 +251,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_mesa==false && flag_done==false){
               misProvedoresJSON.mesa.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
           case 'musica':
@@ -261,7 +261,7 @@ providerApp.factory('providersService', ['$http', function(http){
             var flag_musica=false;
             if (misProvedoresJSON.musica==''){//si el JSON de musica está vacío
               misProvedoresJSON.musica.push(data.result);//se guarda el resultado en el json
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
               for(x in misProvedoresJSON.musica){//se recorre cada elemento del json de musica
@@ -273,9 +273,9 @@ providerApp.factory('providersService', ['$http', function(http){
             }
             if(flag_musica==false && flag_done==false){
               misProvedoresJSON.musica.push(data.result);//
-              navigator.notification.alert("Proveedor insertado correctamente", function(){}, "Bride2Be");
+              navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
             }else if(flag_done==false){
-              navigator.notification.alert("Proveedor ya añadido", function(){}, "Bride2Be");
+              navigator.notification.alert("Proveedor ya guardado anteriormente", function(){}, "Bride2Be");
             }
           break;
         }

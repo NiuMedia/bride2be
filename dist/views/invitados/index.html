@@ -37,7 +37,7 @@
     </div>
     <div ng-controller="IndexCtrl">
       <div class="card">
-        <label id="costo-total" style="font-size:1.5em">Total invitados: 0</label>
+        <label id="costo-total" style="font-size:1.5em">Total invitados: {{ numeroInvitados }}</label>
       </div>
 
       <div class="topcoat-list card" id="contenedor-invitados">
@@ -128,9 +128,6 @@
     //--Navigation Bar
 
     $(document).ready(function(){
-      if(typeof window.localStorage.getItem("invitnum")!='object'){
-        $('#costo-total').html("Total invitados: "+window.localStorage.getItem("invitnum"));
-      }
       if($('#costo-total').html()== "Total invitados: 0"){
         $("#contenedor-invitados").append("<p>No hay Invitados, puedes agregar uno tocando el botón en la esquina superior derecha.</p>");
       }

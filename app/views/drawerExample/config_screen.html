@@ -8,6 +8,8 @@
   </div>
   <div class="card cbCont">
       <form>
+        <div id="foto-cont" class="center"></div>
+        <div class="topcoat-button center full" id="getPic-btn">Seleccionar Foto de Portada</div><br><br>
         <label><b>Novios:</b></label>
         <input type="text" class="topcoat-text-input wide" name="novia" id="novia" placeholder="Nombre de la Novia"><br><br>
         <!--label for="novio">Nombre del novio</label-->
@@ -19,8 +21,6 @@
         </select><br><br>
         <label for="fecha"><b>Fecha de la Boda:</b></label><br>
         <input type="date" class="topcoat-text-input center wide black" name="fecha" id="fecha" placeholder="Fecha"><br><br>
-        <div class="cbCont"><div id="foto-cont" class="center"></div></div>
-        <div class="topcoat-button center full" id="getPic-btn">Seleccionar Foto de Portada</div><br>
       </form>
       <script type="text/javascript">
         steroids.drawers.hideAll();
@@ -86,7 +86,7 @@
         function cambiarfoto(){
           if (typeof window.localStorage.getItem("foto")=='object'){
             $("#foto-cont").empty();
-            $("#foto-cont").append("<p class='cbCont2 card' id='foto'>No hay foto</p>");
+            $("#foto-cont").append("<img src='/images/cambiar.png' width='250px'/>");
           }else{
             $("#foto-cont").empty();
             $("#foto-cont").append("<img id='foto' class='picture' src='"+window.localStorage.getItem('foto')+"'/>");

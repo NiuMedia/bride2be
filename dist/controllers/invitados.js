@@ -78,11 +78,14 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
   }
   // Obtiene todos los invitados y los coloca en la variable de invitados 
   $scope.invitados = json_guest.invitados;
-  if (numInvitados==0||numInvitados=='null'){
-    $scope.numeroInvitados = '0';
-  }else{
-    $scope.numeroInvitados = numInvitados;
+  var suma=0;
+  for (var x=0;x<json_guest.invitados.length;x++){
+    invitados=json_guest.invitados[x].invitados;
+    if(invitados==null){invitados=1;}
+    invitados=parseInt(invitados);
+    suma+=invitados;
   }
+  $scope.numeroInvitados = suma;
 
 
 });
