@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>Steroids App</title>
+
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
+  <link rel="stylesheet" href="/stylesheets/application.css" />
+
+  <script src="http://localhost/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+  <script src="/components/jquery/jquery.min.js"></script>
+
+  <script src="/components/angular/angular.min.js"></script>
+
+  <script src="/components/underscore/underscore-min.js"></script>
+  <script src="/components/restangular/dist/restangular.min.js"></script>
+
+  <script src="/vendor/hammerjs/hammer.min.js"></script>
+  <script src="/vendor/angular-hammer/angular-hammer.js"></script>
+
+  <script src="/models/models.js"></script>
+
+  <script src="/controllers/myproviders.js"></script>
+</head>
+<body>
+
+
+  <div class="content-padded fondo" ng-app="myprovidersApp" ng-controller="NewRecepcionCtrl">
+	<div class="tips-titles center"><h2>Añadir proveedor</h2></div>
+	<div class="card">
+		<h3>Recepción y Banquete</h3>
+		<label for="title">Nombre</label><br/>
+		<input ng-model="newMyProvider.title" type="text" name="title" id="title" class="topcoat-text-input"><br/>
+		<label for="direccion">Dirección</label><br>
+		<input ng-model="newMyProvider.direccion" type="text" class="topcoat-text-input" name="direccion" id="direccion"><br>
+		<label for="numero">Numero de telefono</label><br/>
+		<input ng-model="newMyProvider.phone"  type="tel" name="phone" class="topcoat-text-input" id="phone" placeholder="Teléfono 1"><br/>
+		<input ng-model="newMyProvider.phone2" type="tel" name="phone2" class="topcoat-text-input" id="phone2" placeholder="Teléfono 2"><br>
+		<label for="email">Email</label><br>
+        <input ng-model="newMyProvider.email" type="text" class="topcoat-text-input" name="email" id="email"><br>  
+        <div class="cbCont center">
+			<div class="topcoat-button b50" hm-tap="miProveedorServ.addMiProveedor('recepcion', newMyProvider); newMyProvider = {}; returnToList();">Guardar</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

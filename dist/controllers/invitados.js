@@ -7,11 +7,6 @@ invitadosApp.factory('invitadoService', function(){
   myInvitadosService.addInvitado = function(invitado){
     json_guest.invitados.push(invitado);
     window.localStorage.setItem("invitados", JSON.stringify(json_guest));
-    if(typeof window.localStorage.getItem("NumeroDeInvitados")=='object'|| window.localStorage.getItem("NumeroDeInvitados")<=0){
-      window.localStorage.setItem("NumeroDeInvitados", 1);
-    }else{
-      window.localStorage.setItem("NumeroDeInvitados", parseInt(window.localStorage.getItem("NumeroDeInvitados"))+1);
-    }
   };
 
 

@@ -1,0 +1,18 @@
+<div class="content-padded fondo" ng-app="myprovidersApp" ng-controller="NewMaquillajeCtrl">
+	<div class="tips-titles center"><h2>Añadir proveedor</h2></div>
+	<div class="card">
+		<h3>Maquillaje, peinado y spa</h3>
+		<label for="title">Nombre</label><br/>
+		<input ng-model="newMyProvider.title" type="text" name="title" id="title" class="topcoat-text-input"><br/>
+		<label for="direccion">Dirección</label><br>
+		<input ng-model="newMyProvider.direccion" type="text" class="topcoat-text-input" name="direccion" id="direccion"><br>
+		<label for="numero">Numero de telefono</label><br/>
+		<input ng-model="newMyProvider.phone"  type="tel" name="phone" class="topcoat-text-input" id="phone" placeholder="Teléfono 1"><br/>
+		<input ng-model="newMyProvider.phone2" type="tel" name="phone2" class="topcoat-text-input" id="phone2" placeholder="Teléfono 2"><br>
+		<label for="email">Email</label><br>
+        <input ng-model="newMyProvider.email" type="text" class="topcoat-text-input" name="email" id="email"><br>
+        <div class="cbCont center">
+			<div class="topcoat-button b50" hm-tap="miProveedorServ.addMiProveedor('maquillaje', newMyProvider); newMyProvider = {}; returnToList();">Guardar</div>
+		</div>
+	</div>
+</div>
