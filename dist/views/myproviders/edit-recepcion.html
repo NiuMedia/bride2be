@@ -27,10 +27,10 @@
 <body>
 
 
-  <div class="content-padded fondo" ng-app="myprovidersApp" ng-controller="NewAmbientacionCtrl">
-	<div class="tips-titles center"><h2>Añadir proveedor</h2></div>
+  <div class="content-padded fondo" ng-app="myprovidersApp" ng-controller="EditRecepcionCtrl">
+	<div class="tips-titles center"><h2>Editar proveedor</h2></div>
 	<div class="card">
-		<h3>Ambientación y más</h3>
+		<h3>Recepción y Banquete</h3>
 		<!-- <input ng-model="newMyProvider.id" type="text" class="topcoat-text-input" name="id" id="id" text="{{jsonindexF}}" disabled> -->
 		<!-- <input ng-model="newMyProvider.propio" type="text" class="topcoat-text-input" name="propio" id="propio" text="Proveedor Propio" disabled> -->
 		<!-- <input ng-model="newMyProvider.editar" type="text" class="topcoat-text-input" name="editar" id="editar" text="Editar">Editar</div> disabled> -->
@@ -42,9 +42,9 @@
 		<input ng-model="newMyProvider.phone"  type="tel" name="phone" class="topcoat-text-input" id="phone" placeholder="Teléfono 1"><br/>
 		<input ng-model="newMyProvider.phone2" type="tel" name="phone2" class="topcoat-text-input" id="phone2" placeholder="Teléfono 2"><br>
 		<label for="email">Email</label><br>
-        <input ng-model="newMyProvider.email" type="email" class="topcoat-text-input" name="email" id="email"><br>
+        <input ng-model="newMyProvider.email" type="email" class="topcoat-text-input" name="email" id="email"><br>  
         <div class="cbCont center">
-			<div class="topcoat-button b50" hm-tap="miProveedorServ.addMiProveedor('ambientacion', newMyProvider); newMyProvider = {}; miProveedorServ.returnToList();">Guardar</div>
+			<div class="topcoat-button b50" hm-tap="miProveedorServ.updateRecepcion(newMyProvider); newMyProvider = {}; miProveedorServ.returnToList();">Guardar</div>
 		</div>
 	</div>
 </div>

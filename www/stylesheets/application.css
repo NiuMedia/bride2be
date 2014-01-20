@@ -104,8 +104,7 @@ h2, h3, h4 {
 	font-family: script;
 }
 .fondo {
-/*	background-image:url("/icons/fondo_gris.jpg");
-*/	background-position:fixed;
+	background-position:fixed;
 	height: 100%;
 }
 
@@ -281,9 +280,6 @@ li {
 	background: url('/icons/mail.png');
 	background-repeat: no-repeat;
 }
-/*#delete-btn{
-	background-color: #ff0000;
-}*/
 #delete-btn-int{
 	height: 32px;
 	width:32px;
@@ -341,6 +337,9 @@ border-bottom: none;
 .special-list h3, .special-list label, .special-list p,.special-list h1, .special-list h2{
 	color: #333;
 }
+.special-list p{
+	font-size: .9em;
+}
 
 .b100{
 	min-width: 50%;
@@ -352,11 +351,42 @@ border-bottom: none;
 .b50{
 	width:49.3%;
 }
-
-.delete-btn-myp{
+.b30{
+	width: 70px;
+	font-size: 0.9em;
+	font-weight: 600;
+	padding: 5px 10px;
 	float:right;
-	clear:both;
-	margin-bottom: 10px;
+	clear:right;
+	margin-top: 10px;
+	background: rgb(255, 255, 255);
+	text-align: center;
+}
+.delete-btn-myp{
+	color: rgb(255, 3, 3);
+}
+.tipo-miproveedor{
+	background-color: #D57BAE;
+	color: white !important;
+	font-size: .8em;
+	padding: .3em;
+	border-radius: .5em;
+	float: right;
+}
+.edit-btn-myp{
+	display: none;
+	color: rgb(7, 135, 190);
+}
+.Editar{
+	display:block !important;
+}
+.cont-myp-left{
+float: left;
+width: 60%;
+}
+.cont-myp-right{
+float: right;
+width: 39%;
 }
 
 .topcoat-text-input, .topcoat-text-input--large{

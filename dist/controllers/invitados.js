@@ -13,10 +13,10 @@ invitadosApp.factory('invitadoService', function(){
   myInvitadosService.removeInvitado = function(index){
       json_guest.invitados.splice(index, 1);
       window.localStorage.setItem("invitados", JSON.stringify(json_guest));
-      window.localStorage.setItem("NumeroDeInvitados", parseInt(window.localStorage.getItem("NumeroDeInvitados"))-1);
   };
 
   myInvitadosService.updateInvitado = function(index, newInvitado){
+    alert(steroids.view.params.id);
     invitado = json_guest.invitados[index];
 
     invitado.nombre = newInvitado.nombre;
@@ -66,11 +66,7 @@ invitadosApp.controller('IndexCtrl', function ($scope) {
 
   // Convierte el string guardado a json
   json_guest = $.parseJSON(window.localStorage.getItem("invitados"));
-  if(typeof window.localStorage.getItem("NumeroDeInvitados") == 'object'){
-    numInvitados = 0;
-  }else{
-    numInvitados = parseInt(window.localStorage.getItem("NumeroDeInvitados"));
-  }
+
   // Obtiene todos los invitados y los coloca en la variable de invitados 
   $scope.invitados = json_guest.invitados;
   var suma=0;
@@ -97,13 +93,9 @@ invitadosApp.controller('ShowCtrl', function ($scope, invitadoService) {
   };
 
   $scope.index = steroids.view.params.id;
-
   $scope.invitadoServ = invitadoService;
-
   json_guest = $.parseJSON(window.localStorage.getItem("invitados"));
-
   $scope.invitado = json_guest.invitados[steroids.view.params.id];
-
   $scope.newGuest = {
     "nombre": json_guest.invitados[steroids.view.params.id].nombre,
     "invitados": json_guest.invitados[steroids.view.params.id].invitados,

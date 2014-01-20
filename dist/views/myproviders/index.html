@@ -41,21 +41,18 @@
       <div class="card-titles center"><h2>Ceremonia religiosa y civil</h2></div>
         <ul class="topcoat-list">
           <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.ceremonia">
-          	<h3>{{ myproviders.title }}</h3>
-
-            <!-- <div style="clear:both"> -->
+            <div class="cont-myp-left">
+              <h3>{{ myproviders.title }}</h3>
               <p>{{ myproviders.direccion }}</p>
-              <p><b>Tel: </b>{{ myproviders.phone }}</p>
-              <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-              </a> -->
-              <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-                <span class="topcoat-icon" id="mail-btn-int"></span>
-              </a> -->
-              <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-            <br>
-            <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 0)" href="">Eliminar</div>
-          <!-- </div> -->
+              <p><b id="phone-ceremonia{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+              <p><b id="phone2-ceremonia{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+              <p><b id="email-ceremonia{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+            </div>
+            <div class="cont-myp-right">
+              <label class="tipo-miproveedor" id="miproveedor-ceremonia">{{myproviders.propio}}</label>
+              <div class="edit-btn-myp edit-ceremonia b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+              <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 0)" href="">Eliminar</div>
+            </div>
           </li>
         </ul>
         <div class="cbCont2 center">
@@ -69,20 +66,18 @@
       <div class="card-titles center"><h2>Recepciones y Banquetes</h2></div>
       <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.recepcion">
-          <h3>{{ myproviders.title }}</h3>
-          <div style="clear:both">
+          <div class="cont-myp-left">
+            <h3>{{ myproviders.title }}</h3>
             <p>{{ myproviders.direccion }}</p>
-            <p><b>Tel: </b>{{ myproviders.phone }}</p>
-            <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-            </a> -->
-            <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-              <span class="topcoat-icon" id="mail-btn-int"></span>
-            </a> -->
-            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-          <br>
-          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 1)" href="">Eliminar</div>
-        </div>
+            <p><b id="phone-recepcion{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+            <p><b id="phone2-recepcion{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+            <p><b id="email-recepcion{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+          </div>
+          <div class="cont-myp-right">
+            <label class="tipo-miproveedor" id="miproveedor-recepcion">{{myproviders.propio}}</label>
+            <div class="edit-btn-myp edit-recepcion b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+            <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 1)" href="">Eliminar</div>
+          </div>
         </li>
       </ul>
       <div class="cbCont2 center">
@@ -91,25 +86,23 @@
         <button id="recepcionP" class="topcoat-button b50" hm-tap="open('recepcion')" href="">Propio</button>
       </div>
     </div>
-<!-- invitacioes -->
+<!-- invitaciones -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Invitaciones</h2></div>
       <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.invitaciones">
-          <h3>{{ myproviders.title }}</h3>
-          <div style="clear:both">
+          <div class="cont-myp-left">
+            <h3>{{ myproviders.title }}</h3>
             <p>{{ myproviders.direccion }}</p>
-            <p><b>Tel: </b>{{ myproviders.phone }}</p>
-            <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-            </a> -->
-            <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-              <span class="topcoat-icon" id="mail-btn-int"></span>
-            </a> -->
-            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-          <br>
-          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 2)" href="">Eliminar</div>
-        </div>
+            <p><b id="phone-invitaciones{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+            <p><b id="phone2-invitaciones{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+            <p><b id="email-invitaciones{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+          </div>
+          <div class="cont-myp-right">
+            <label class="tipo-miproveedor" id="miproveedor-invitaciones">{{myproviders.propio}}</label>
+            <div class="edit-btn-myp edit-invitaciones b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+          <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 2)" href="">Eliminar</div>
+          </div>
         </li>
       </ul>
       <div class="cbCont2 center">
@@ -123,20 +116,18 @@
       <div class="card-titles center"><h2>Música</h2></div>
       <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.musica">
-          <h3>{{ myproviders.title }}</h3>
-          <div style="clear:both">
+          <div class="cont-myp-left">
+            <h3>{{ myproviders.title }}</h3>
             <p>{{ myproviders.direccion }}</p>
-            <p><b>Tel: </b>{{ myproviders.phone }}</p>
-            <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-            </a> -->
-            <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-              <span class="topcoat-icon" id="mail-btn-int"></span>
-            </a> -->
-            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-          <br>
-          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 3)" href="">Eliminar</div>
-        </div>
+            <p><b id="phone-musica{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+            <p><b id="phone2-musica{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+            <p><b id="email-musica{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+          </div>
+          <div class="cont-myp-right">
+            <label class="tipo-miproveedor" id="miproveedor-musica">{{myproviders.propio}}</label>
+            <div class="edit-btn-myp edit-musica b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+          <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 3)" href="">Eliminar</div>
+          </div>
         </li>
       </ul>
       <div class="cbCont2 center">
@@ -150,20 +141,18 @@
       <div class="card-titles center"><h2>Flores, Decoración y Coordinación</h2></div>
       <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.flores">
-          <h3>{{ myproviders.title }}</h3>
-          <div style="clear:both">
+          <div class="cont-myp-left">
+            <h3>{{ myproviders.title }}</h3>
             <p>{{ myproviders.direccion }}</p>
-            <p><b>Tel: </b>{{ myproviders.phone }}</p>
-            <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-            </a> -->
-            <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-              <span class="topcoat-icon" id="mail-btn-int"></span>
-            </a> -->
-            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-          <br>
-          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 4)" href="">Eliminar</div>
-        </div>
+            <p><b id="phone-flores{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+            <p><b id="phone2-flores{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+            <p><b id="email-flores{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+          </div>
+          <div class="cont-myp-right">
+            <label class="tipo-miproveedor" id="miproveedor-flores">{{myproviders.propio}}</label>
+            <div class="edit-btn-myp edit-flores b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+            <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 4)" href="">Eliminar</div>
+          </div>
         </li>
       </ul>
       <div class="cbCont2 center">
@@ -177,20 +166,18 @@
       <div class="card-titles center"><h2>Iluminación y mobiliario</h2></div>
       <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.iluminacion">
-          <h3>{{ myproviders.title }}</h3>
-          <div style="clear:both">
+          <div class="cont-myp-left">
+            <h3>{{ myproviders.title }}</h3>
             <p>{{ myproviders.direccion }}</p>
-            <p><b>Tel: </b>{{ myproviders.phone }}</p>
-            <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-            </a> -->
-            <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-              <span class="topcoat-icon" id="mail-btn-int"></span>
-            </a> -->
-            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-          <br>
-          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 5)" href="">Eliminar</div>
-        </div>
+            <p><b id="phone-iluminacion{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+            <p><b id="phone2-iluminacion{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+            <p><b id="email-iluminacion{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+          </div>
+          <div class="cont-myp-right">
+            <label class="tipo-miproveedor" id="miproveedor-iluminacion">{{myproviders.propio}}</label>
+            <div class="edit-btn-myp edit-iluminacion b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+          <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 5)" href="">Eliminar</div>
+          </div>
         </li>
       </ul>
       <div class="cbCont2 center">
@@ -204,20 +191,18 @@
       <div class="card-titles center"><h2>Fotos y videos</h2></div>
       <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.foto">
-          <h3>{{ myproviders.title }}</h3>
-          <div style="clear:both">
+          <div class="cont-myp-left">
+            <h3>{{ myproviders.title }}</h3>
             <p>{{ myproviders.direccion }}</p>
-            <p><b>Tel: </b>{{ myproviders.phone }}</p>
-            <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-            </a> -->
-            <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-              <span class="topcoat-icon" id="mail-btn-int"></span>
-            </a> -->
-            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-          <br>
-          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 6)" href="">Eliminar</div>
-        </div>
+            <p><b id="phone-foto{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+            <p><b id="phone2-foto{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+            <p><b id="email-foto{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+          </div>
+          <div class="cont-myp-right">
+            <label class="tipo-miproveedor" id="miproveedor-foto">{{myproviders.propio}}</label>
+            <div class="edit-btn-myp edit-foto b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+            <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 6)" href="">Eliminar</div>
+          </div>
         </li>
       </ul>
       <div class="cbCont2 center">
@@ -231,20 +216,18 @@
       <div class="card-titles center"><h2>Ambientacion y más</h2></div>
       <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.ambientacion">
-          <h3>{{ myproviders.title }}</h3>
-          <div style="clear:both">
+          <div class="cont-myp-left">
+            <h3>{{ myproviders.title }}</h3>
             <p>{{ myproviders.direccion }}</p>
-            <p><b>Tel: </b>{{ myproviders.phone }}</p>
-            <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-            </a> -->
-            <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-              <span class="topcoat-icon" id="mail-btn-int"></span>
-            </a> -->
-            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-          <br>
-          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 7)" href="">Eliminar</div>
-        </div>
+            <p><b id="phone-ambientacion{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+            <p><b id="phone2-ambientacion{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+            <p><b id="email-ambientacion{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+          </div>
+          <div class="cont-myp-right">
+            <label class="tipo-miproveedor" id="miproveedor-ambientacion">{{myproviders.propio}}</label>
+            <div class="edit-btn-myp edit-ambientacion b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+            <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 7)" href="">Eliminar</div>
+          </div>
         </li>
       </ul>
       <div class="cbCont2 center">
@@ -253,25 +236,23 @@
         <button id="ambientacionP" class="topcoat-button b50" hm-tap="open('ambientacion')" href="">Propio</button>
       </div>
     </div>
-<!-- el y ella -->
+<!-- elyella -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>El y ella</h2></div>
       <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.elyella">
-          <h3>{{ myproviders.title }}</h3>
-          <div style="clear:both">
+          <div class="cont-myp-left">
+            <h3>{{ myproviders.title }}</h3>
             <p>{{ myproviders.direccion }}</p>
-            <p><b>Tel: </b>{{ myproviders.phone }}</p>
-            <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-            </a> -->
-            <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-              <span class="topcoat-icon" id="mail-btn-int"></span>
-            </a> -->
-            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-          <br>
-          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 8)" href="">Eliminar</div>
-        </div>
+            <p><b id="phone-elyella{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+            <p><b id="phone2-elyella{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+            <p><b id="email-elyella{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+          </div>
+          <div class="cont-myp-right">
+            <label class="tipo-miproveedor" id="miproveedor-elyella">{{myproviders.propio}}</label>
+            <div class="edit-btn-myp edit-elyella b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+            <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 8)" href="">Eliminar</div>
+          </div>
         </li>
       </ul>
       <div class="cbCont2 center">
@@ -285,20 +266,18 @@
       <div class="card-titles center"><h2>Maquillaje, peinado y spa</h2></div>
       <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.mps">
-          <h3>{{ myproviders.title }}</h3>
-          <div style="clear:both">
+          <div class="cont-myp-left">
+            <h3>{{ myproviders.title }}</h3>
             <p>{{ myproviders.direccion }}</p>
-            <p><b>Tel: </b>{{ myproviders.phone }}</p>
-            <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-            </a> -->
-            <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-              <span class="topcoat-icon" id="mail-btn-int"></span>
-            </a> -->
-            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-          <br>
-          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 9)" href="">Eliminar</div>
-        </div>
+            <p><b id="phone-maquillaje{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+            <p><b id="phone2-maquillaje{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+            <p><b id="email-maquillaje{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+          </div>
+          <div class="cont-myp-right">
+            <label class="tipo-miproveedor" id="miproveedor-mps">{{myproviders.propio}}</label>
+            <div class="edit-btn-myp edit-maquillaje b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+            <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 9)" href="">Eliminar</div>
+          </div>
         </li>
       </ul>
       <div class="cbCont2 center">
@@ -312,20 +291,18 @@
       <div class="card-titles center"><h2>Luna de miel</h2></div>
       <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.luna">
-          <h3>{{ myproviders.title }}</h3>
-          <div style="clear:both">
+          <div class="cont-myp-left">
+            <h3>{{ myproviders.title }}</h3>
             <p>{{ myproviders.direccion }}</p>
-            <p><b>Tel: </b>{{ myproviders.phone }}</p>
-            <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-            </a> -->
-            <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-              <span class="topcoat-icon" id="mail-btn-int"></span>
-            </a> -->
-            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-          <br>
-          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 10)" href="">Eliminar</div>
-        </div>
+            <p><b id="phone-luna{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+            <p><b id="phone2-luna{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+            <p><b id="email-luna{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+          </div>
+          <div class="cont-myp-right">
+            <label class="tipo-miproveedor" id="miproveedor-luna">{{myproviders.propio}}</label>
+            <div class="edit-btn-myp edit-luna b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+            <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 10)" href="">Eliminar</div>
+          </div>
         </li>
       </ul>
       <div class="cbCont2 center">
@@ -334,25 +311,23 @@
         <button id="lunaP" class="topcoat-button b50" hm-tap="open('luna')" href="">Propio</button>
       </div>
     </div>
-<!-- regalos -->
+<!-- mesa -->
     <div class="topcoat-list card">
       <div class="card-titles center"><h2>Mesa de regalos y hogar</h2></div>
       <ul class="topcoat-list">
         <li class="topcoat-list__item special-list" ng-repeat="myproviders in myproviderss.mesa">
-          <h3>{{ myproviders.title }}</h3>
-          <div style="clear:both">
+          <div class="cont-myp-left">
+            <h3>{{ myproviders.title }}</h3>
             <p>{{ myproviders.direccion }}</p>
-            <p><b>Tel: </b>{{ myproviders.phone }}</p>
-            <!-- <a class="topcoat-icon-button provs-btn" href="tel:{{ myproviders.phone }}">
-              <span class="topcoat-icon" id="phone-btn-int"></span>
-            </a> -->
-            <!-- <a class="topcoat-icon-button provs-btn" id="mail-btn" href="mailto:{{ myproviders.email }}">
-              <span class="topcoat-icon" id="mail-btn-int"></span>
-            </a> -->
-            <p><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
-          <br>
-          <div class="topcoat-button delete-btn-myp" hm-tap="delete(myproviders.title, 11)" href="">Eliminar</div>
-        </div>
+            <p><b id="phone-mesa{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone }}</p>
+            <p><b id="phone2-mesa{{myproviders.id}}" class="datosMyp">Tel: </b>{{ myproviders.phone2 }}</p>
+            <p><b id="email-mesa{{myproviders.id}}" class="datosMyp">Correo: </b><a href="mailto:{{ myproviders.email }}">{{ myproviders.email }}</a></p>
+          </div>
+          <div class="cont-myp-right">
+            <label class="tipo-miproveedor" id="miproveedor-mesa">{{myproviders.propio}}</label>
+            <div class="edit-btn-myp edit-mesa b30 {{myproviders.editar}}" href="" id="{{myproviders.id}}">{{myproviders.editar}}</div>
+            <div class="delete-btn-myp b30" hm-tap="delete(myproviders.title, 11)" href="">Eliminar</div>
+          </div>
         </li>
       </ul>
       <div class="cbCont2 center">
@@ -429,6 +404,14 @@
     //--Navigation Bar
     
       $(document).ready(function(){
+        var x=0;
+        for(x in $(".datosMyp").length){
+          array[x] = $(".datosMyp").get(x);
+          if(array[x].innerText=="Correo:"||array[x].innerText=="Tel:"){
+            idDelElemento = array[x].id;
+          }
+        }
+
         $(".btn").on("click", function(event){
           function alertDismissed (){
             //Do Nothing
@@ -483,7 +466,70 @@
             );
           }
         });
-      });
+
+
+//---------------------------- EDIT BUTTON ---------------------------------//
+        $(".edit-ceremonia").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-ceremonia.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+        $(".edit-recepcion").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-recepcion.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+        $(".edit-invitaciones").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-invitaciones.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+        $(".edit-musica").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-musica.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+        $(".edit-flores").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-flores.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+        $(".edit-iluminacion").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-iluminacion.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+        $(".edit-foto").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-foto.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+        $(".edit-ambientacion").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-ambientacion.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+        $(".edit-elyella").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-elyella.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+        $(".edit-maquillaje").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-mps.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+        $(".edit-luna").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-luna.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+        $(".edit-mesa").on("click", function(event){
+          var botonazo = $(event.target).attr("id");
+          var editView = new steroids.views.WebView("/views/myproviders/edit-mesa.html?id="+botonazo);
+          steroids.layers.push(editView);
+        });
+      });//DOCUMENT READY ENDS
     </script>
 
 </div>
