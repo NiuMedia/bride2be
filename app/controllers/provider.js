@@ -127,13 +127,13 @@ providerApp.factory('providersService', ['$http', function(http){
           case 'fotos':
             var flag_done=false;
             var flag_fotos=false;
-            if (misProvedoresJSON.fotos==''){//si el JSON de fotos está vacío
-              misProvedoresJSON.fotos.push(data.result);//se guarda el resultado en el json
+            if (misProvedoresJSON.foto==''){//si el JSON de fotos está vacío
+              misProvedoresJSON.foto.push(data.result);//se guarda el resultado en el json
               navigator.notification.alert("Guardado en Mis Proveedores", function(){}, "Bride2Be");
               flag_done=true;
             }else{//si el json no está vacío
-              for(x in misProvedoresJSON.fotos){//se recorre cada elemento del json de fotos
-                if(misProvedoresJSON.fotos[x].title == data.result.title){//si el título del elemento a guardar es igual al titulo del elemento del json
+              for(x in misProvedoresJSON.foto){//se recorre cada elemento del json de fotos
+                if(misProvedoresJSON.foto[x].title == data.result.title){//si el título del elemento a guardar es igual al titulo del elemento del json
                  flag_fotos=true; 
                  break;
                 }

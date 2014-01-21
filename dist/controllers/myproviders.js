@@ -574,144 +574,192 @@ myprovidersApp.controller('IndexCtrl', function ($scope) {
       case 0:
         for(x in misprovedores.ceremonia){
           if(misprovedores.ceremonia[x].title == title){
-            misprovedores.ceremonia.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.ceremonia.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
       case 1:
         for(x in misprovedores.recepcion){
           if(misprovedores.recepcion[x].title == title){
-            misprovedores.recepcion.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.recepcion.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
       case 2:
         for(x in misprovedores.invitaciones){
           if(misprovedores.invitaciones[x].title == title){
-            misprovedores.invitaciones.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.invitaciones.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
       case 3:
         for(x in misprovedores.musica){
           if(misprovedores.musica[x].title == title){
-            misprovedores.musica.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.musica.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
       case 4:
         for(x in misprovedores.flores){
           if(misprovedores.flores[x].title == title){
-            misprovedores.flores.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.flores.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
       case 5:
         for(x in misprovedores.iluminacion){
           if(misprovedores.iluminacion[x].title == title){
-            misprovedores.iluminacion.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.iluminacion.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
       case 6:
         for(x in misprovedores.foto){
           if(misprovedores.foto[x].title == title){
-            misprovedores.foto.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.foto.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
       case 7:
         for(x in misprovedores.ambientacion){
           if(misprovedores.ambientacion[x].title == title){
-            misprovedores.ambientacion.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.ambientacion.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
       case 8:
         for(x in misprovedores.elyella){
           if(misprovedores.elyella[x].title == title){
-            misprovedores.elyella.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.elyella.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
       case 9:
         for(x in misprovedores.mps){
           if(misprovedores.mps[x].title == title){
-            misprovedores.mps.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.mps.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
       case 10:
         for(x in misprovedores.luna){
           if(misprovedores.luna[x].title == title){
-            misprovedores.luna.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.luna.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
       case 11:
         for(x in misprovedores.mesa){
           if(misprovedores.mesa[x].title == title){
-            misprovedores.mesa.splice(x, 1);
-            window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
-            steroids.layers.push( {
-              view: indexView,
-              animation: myAnimation
-            });
+            navigator.notification.confirm("¿Segura que quieres eliminar este proveedor?",
+              function(buttonIndex,x){
+                if(buttonIndex==1){
+                  misprovedores.mesa.splice(x, 1);
+                  window.localStorage.setItem("misprovedores", JSON.stringify(misprovedores));
+                  steroids.layers.push({ view: indexView, animation: myAnimation });
+                }
+              },
+              "Bride2Be",
+              ['Aceptar','Cancelar']);
           }
         }
       break;
