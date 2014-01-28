@@ -23,7 +23,8 @@
 </head>
 <body>
 
-  <div class="content-padded fondo">
+  <img src="/images/liverpool.jpg" id='liverpool' width="100%">
+<div class="content-padded fondo">
 	<div id="banner">
     <center>
     <div id="texto">
@@ -307,6 +308,10 @@
       document.getElementById("cerrar-contId"+sec+"").style.display="none";
       }
 
+    $('#liverpool').on('click',function(){
+      var liverpoolView = new steroids.views.WebView("http://localhost/views/drawerExample/liverpool.html");
+      steroids.layers.push(liverpoolView);
+    });  
     $('#abrir-contId1').on('click',function(e){
       seccion='1';
       abrirSeccion(seccion);

@@ -1,0 +1,21 @@
+<div class="content-padded fondo center">
+	<div class="card cbCont">
+		<h1>Soy Festejado</h1>
+		<p>Consulta el estado de tus regalos</p>
+		<div class="cbCont">
+			<input type="text" class="topcoat-text-input wide" name="tarjeta" placeholder="Mi número de tarjeta" align="center">
+		</div>
+		<div class="cbCont">
+			<div class="topcoat-button" id="consultar">Consultar</div>
+		</div>
+		
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#consultar').on('click',function(){
+	      var liverpoolView = new steroids.views.WebView("http://localhost/views/drawerExample/liverpool-mesa.html");
+	      steroids.layers.push(liverpoolView);
+	    });  
+	});
+</script>
