@@ -3,7 +3,7 @@
     <h2>Flores, Decoración y Coordinación</h2>
   </div>
   <div class="" id="provider-list" ng-controller="FloresCtrl">
-    <ul class="topcoat-list contenedor_especial">
+    <ul class="topcoat-list contenedor_especial" id="lista-p">
       <li class="card topcoat-list__item center" hm-tap="open(provider.id)" ng-repeat="provider in providers">
         <h1>{{ provider.title }}</h1>
         <img src="{{provider.logo}}" style="width:100%">
@@ -11,3 +11,13 @@
     </ul>
   </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    window.setTimeout(function(){
+    lista = $('#lista-p').children();
+    if(lista.length==0){
+      $('#provider-list').append('<div class="card cbCont"><p>Lo siento. Aun no hay proveedores de este servicio en tu estado</p></div>');
+    }
+    }, 10000);
+  });
+</script>

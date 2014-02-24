@@ -2920,23 +2920,30 @@
 
 		function saveChanges(sec,apartado){
    			//declaración de variables para manejo de datos
+   			var costo_anterior;
+   			var costo_anterior;
+   			var resta_costo_saldo;
    			var costo;
    			var anticipo;
    			var saldo='N/A';
+
+   			costo_anterior = parseInt(window.localStorage.getItem('costo-'+sec+''));
+   			saldo_anterior = parseInt(window.localStorage.getItem('saldo-'+sec+''));
+   			resta_costo_saldo = costo_anterior - saldo_anterior;
 
    			window.localStorage.setItem("costo-"+sec+"", $("#costo-"+sec+"").val());//guarda costo
    			costo = window.localStorage.getItem('costo-'+sec+'');//asigna valor guardado de costo a variable local
    			anticipo= $("#anticipo-"+sec+"").val();//asigna valor del campo de anticipo a variable local
    			window.localStorage.setItem("fecha-"+sec+"",$("#fecha-"+sec+"").val());//guarda fecha
    			
-   			if(costo!=''){//si costo es difrente a una cadena vacía...
+   			if(costo!=''){//si costo es diferente a una cadena vacía...
 				if(typeof window.localStorage.getItem('saldo-'+sec+'')=='object'){//...y si lo guardado en saldo-donativo es de tipo object
 					saldo=costo;//entonces saldo es igual al costo
 				}else if(typeof window.localStorage.getItem('saldo-'+sec+'')=='string'){//...y si lo guardado en saldo-donativo es de tipo string
 					if(window.localStorage.getItem('saldo-'+sec+'')==''){//...y si saldo donativo es igual a cadena vacia
 						saldo=costo;//entonces saldo es igual al costo
 					}else{//si no, saldo es igual a lo guardado en saldo-donativo
-						saldo=window.localStorage.getItem('saldo-'+sec+'');
+						saldo=parseInt(costo) - resta_costo_saldo;
 					}
 				}
 				if(anticipo!=''){//Si anticipo es diferente a vacío
