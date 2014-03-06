@@ -47,6 +47,10 @@
         <label for="fecha"><b>Fecha de la Boda:</b></label><br>
         <input type="date" class="topcoat-text-input center wide black" name="fecha" id="fecha" placeholder="Fecha"><br><br>
       </form>
+      <div class="cbCont">
+        <p>¿Resetear datos de la aplicación?</p>
+        <button class="alerta-boton" id="clear-list-item">Reset</button>
+      </div>
       <script type="text/javascript">
         steroids.drawers.hideAll();
         var googleView = new steroids.views.WebView( { id:3, location: "http://localhost/views/drawerExample/drawer.html" } );
@@ -185,6 +189,9 @@
              left: [imageButton],
             right: [guardarButton],
               overrideBackButton: true
+          });
+          $("#clear-list-item").on("click", function(){
+            window.localStorage.clear();
           });
 
         });
