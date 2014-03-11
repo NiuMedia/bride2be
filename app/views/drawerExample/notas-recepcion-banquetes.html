@@ -2,7 +2,7 @@
   <div class="notes-titles center">
       <h2>Notas: Recepción y Banquetes</h2>
     </div>
-  
+
 	<div class="card">
   	<div class="card-titles"><h2>Guía para calcular la bebida.</h2></div>
   	<table style="width:100%">
@@ -25,7 +25,7 @@
     <label id="cantidad" style="font-size:1.2em"></label>
   	<br><br>
 	</div>
-    
+
 </div>
 <script type="text/javascript">
   $(document).ready(function(){
@@ -33,9 +33,9 @@
       invitados=$("#invitados").val();
       calcular(invitados);
     });
-  }); 
+  });
   function calcular(invitados){
-    operacion=parseInt(5*parseInt(invitados,10)/18);
+    operacion=parseInt(7*parseInt(invitados,10)/18);
     document.getElementById("cantidad").innerHTML="Compra "+operacion+" botellas de 750 ml.";
   }
 </script>
