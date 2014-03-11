@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>Drawer Example</title>
+
+  <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-mobile-dark.css" />
+  <link rel="stylesheet" href="/stylesheets/application.css" />
+
+  <script src="/javascripts/onerror.js"></script>
+  <script src="/javascripts/json2.js"></script>
+
+  <!-- cordova.js is served from localhost to ensure the correct version -->
+  <script src="http://localhost/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+  <script src="/components/jquery/jquery.min.js"></script>
+
+  <!-- Controllers can be loaded dynamically based on the resource name -->
+  <script src="/controllers/drawerExample.js"></script> 
+
+
+</head>
+<body>
+
+  <div class="content-padded fondo">
+  <div id="banner">
+    <center>
+    <div id="texto">
+      <h2><span class="black" style="font-size: 26px; margin: 0 auto;" id="dias">Noche</span></h2>
+    </div>
+    </center>
+  </div>
+
+	<div class="topcoat-list">
+	  <ul class="topcoat-list__container">
+	    <li class="topcoat-list__item" id="li1">
+	      <h2>Muy Formal.</h2>
+	    </li>
+	    <li class="topcoat-list__item" id="li2">
+	      <h2>Formal.</h2>
+	    </li>
+	    <li class="topcoat-list__item" id="li1">
+	      <h2>Semi Formal.</h2>
+	    </li>
+	    <li class="topcoat-list__item" id="li2">
+	      <h2>Relajado.</h2>
+	    </li>
+	  </ul>
+	</div>
+</div>
+<script>
+	$(document).ready(function(){
+		$("#li1").on('click',function(){
+			webView = new steroids.views.WebView('http://localhost/views/drawerExample/n-muyformal.html');
+			steroids.layers.push(webView);
+		});
+		$("#li2").on('click',function(){
+			webView = new steroids.views.WebView('http://localhost/views/drawerExample/n-formal.html');
+			steroids.layers.push(webView);
+		});
+		$("#li3").on('click',function(){
+			webView = new steroids.views.WebView('http://localhost/views/drawerExample/n-semiformal.html');
+			steroids.layers.push(webView);
+		});
+		$("#li4").on('click',function(){
+			webView = new steroids.views.WebView('http://localhost/views/drawerExample/n-relajado.html');
+			steroids.layers.push(webView);
+		});
+	});
+</script>
+  
+</body>
+</html>

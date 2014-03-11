@@ -1,0 +1,34 @@
+<div class="content-padded fondo">
+  <div id="banner">
+    <center>
+    <div id="texto">
+      <h2><span class="black" style="font-size: 26px; margin: 0 auto;" id="dias">Formalidad y ambiente</span></h2>
+    </div>
+    </center>
+  </div>
+
+	<div class="topcoat-list">
+	  <ul class="topcoat-list__container">
+	    <li class="topcoat-list__item" id="li1">
+	      <h3>Día o Tarde</h3>
+	      <p class="white">De las 11am a las 5pm.</p>
+	    </li>
+	    <li class="topcoat-list__item" id="li2">
+	      <h3>Noche.</h3>
+	      <p class="white">Después de las 6pm.</p>
+	    </li>
+	  </ul>
+	</div>
+</div>
+<script>
+	$(document).ready(function(){
+		$("#li1").on('click',function(){
+			webView = new steroids.views.WebView('http://localhost/views/drawerExample/f-dia.html');
+			steroids.layers.push(webView);
+		});
+		$("#li2").on('click',function(){
+			webView = new steroids.views.WebView('http://localhost/views/drawerExample/f-noche.html');
+			steroids.layers.push(webView);
+		});
+	});
+</script>

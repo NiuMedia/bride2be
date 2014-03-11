@@ -1,46 +1,41 @@
 <div class="content-padded fondo">
-  <div class="tips-titles center"><h2>Él y Ella</h2></div>
-  <div class="card">
-  	<div class="card-titles"><h2>El mejor vestido y el mejor traje</h2></div>
-<div class="cbCont">
-	<p>Tu vestido de novia te acompañará en tus mejores momentos. Cada novia requiere un vestido único. Recuerda estos tres puntos clave para escogerlo:</p>
-	<ol>
-		<li>Un vestido de novia cómodo</li>
-		<li>Un vestido de novia que refleje tu estilo</li>
-		<li>Un vestido de novia que haga tu día inolvidable</li>
-	</ol></div>
-</div>
+	<div class="tips-titles center"><h2>Él y Ella</h2></div>
 	<div class="card">
-		<div class="card-titles"><h2>¿Cuál es tu estilo?</h2></div>
-<div class="cbCont">
-		<p>Elige tu vestido según tu figura, te damos una serie de consejos para encontrar el vestido ideal según tu estilo.</p>
-		<ul>
-			<li>Si tienes estatura baja: debes usar modelos muy sencillos. Las mangas deben ser cortas. Pruébate vestidos con cuello alto o con corte imperio. Otro estilo de vestido que usualmente te quedará bien es el strapples. Ten cuidado de no escoger un vestido con muchos detalles.</li>
-			<li>Si eres alta y delgada: puedes lucir casi cualquier tipo de vestido, siempre y cuando no te haga parecer demasiado alta y sin forma.</li>
-			<li>Si eres alto y de complexión grande: te sugerimos un vestido sencillo, sin bordados, de líneas simples que estilicen tu figura. Trata de evitar los tirantes cruzados y las faldas con mucho vuelo.</li>
-			<li>Si deseas disimular tu altura: puedes usar un vestido con falda vaporosa, y cintura en V, para dar más volumen. Te quedan muy bien los cuellos con escote bajo, strapples, o también con mangas delgadas. Tienes el cuerpo para usar un velo muy largo.</li>
-			<li>Si eres demasiado delgada: puedes crear la ilusión de volumen al usar telas con más peso. Una falda con mucho vuelo, y un corsé ajustado a la cintura. No te convienen los estilos muy ajustados a todo el cuerpo.</li>
-			<li>Si quieres verte más delgada: te recomendamos un vestido con un corsé ajustado, y con una cintura definida. Te quedaría muy bien un estilo Línea A. No uses capas en tu vestido, ni muchos detalles, para que no te agreguen más volumen.</li>
-			<li>Si quieres disimular el busto: lo más recomendable es un vestido con un cuello alto o cuello en V. No te recomendamos un vestido estilo imperio, ya que este reslate el busto. Puedes optar por una falta recta, o por una falda en línea A.</li>
-			<li>Si tienes poco busto: tienes que crear cierto volumen a la altura del busto. Esto lo puedes obtener al colocarle detalles a tu corsé, drapeadors o bordados. También te sugerimos un vestido con cuello halter.</li>
-			<li>Si quieres disimular las caderas: lo mejor es un vestido en línea A, para dar énfasis en la parte superior de tu cuerpo.</li>
-			<li>Para una espalda ancha: lo más recomendable es seleccionar una falda con vuelos, o línea A. las mangas deben ser pequeñas y sencillas. Evita los drapeados, y cualquier otra cosa que te agregue volumen en la parte de arriba.</li>
-			<li>Si tienes un buen cuerpo con busto, caderas y una cintura bien definida: tienes el cuerpo para usar cualquier tipo de vestido, pero lo resaltaras mejor en un vestido ajustado o estilo sirena.</li>
-		</ul></div>
+  		<div class="card-titles"><h2>El mejor vestido</h2></div>
+		<div class="cbCont">
+			<p>Tu vestido de novia te acompañará en tus mejores momentos. Cada novia requiere un vestido único. Recuerda estos tres puntos clave para escogerlo:</p>
+			<ol>
+				<li>Un vestido de novia cómodo</li>
+				<li>Un vestido de novia que refleje tu estilo</li>
+				<li>Un vestido de novia que haga tu día inolvidable</li>
+			</ol>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-titles center"><h2>¿Cuál es tu estilo?</h2></div>
+		<div class="cbCont center">
+			<button class="topcoat-button b50 center" id="ver-tips-e">Ver tips</button>
+
+		</div>
 	</div>
 	<div class="card">	
-	<div class="card-titles"><h2>Traje del novio</h2></div>
-	<div class="cbCont">
-	<p>Aunque la gran protagonista de todas la bodas es la novia, el novio debe ser igualmente cuidadoso al elegir su traje de novio. Finalmente la boda es de los dos y los dos deben verse espectaculares ese gran día.<br />
-	Tips para elegir el traje del novio:</p>
-	<ul>
-		<li>Lugar de la celebración: el traje del novio debe ir de acuerdo al lugar, hora y estación del año en la que se celebrará la boda, ya que de ello depende el color y el tipo de tela del traje.</li>
-		<li>Si eres alto, una buena opción será el chaqué, mientras que si eres bajito los trajes de tres piezas te favorecerán muchísimo.</li>
-		<li>Los colores más comunes son: negro o gris.</li>
-		<li>Personalidad: al igual que en el caso de la novia, el novio debe estar cómodo y sentirse a gusto con el traje que elija, pues será él quien lo use a lo largo de la noche.</li>
-		<li>Las guayaberas: es un outfit que está de moda, no sólo se utilizan para las bodas en la playa, sino también una excelente opción para las bodas de día. Existen de muchos colores y estilos.</li>
-	</ul></div>
-  </div>
+		<div class="card-titles center"><h2>Formalidad y ambiente</h2></div>
+		<div class="cbCont center">
+			<button class="topcoat-button b50 center" id="ver-tips">Ver tips</button>
+		</div>
+  	</div>
     
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#ver-tips').on('click',function(){
+			webView = new steroids.views.WebView('http://localhost/views/drawerExample/elyella-formalidad.html');
+			steroids.layers.push(webView);
+		});
+		$('#ver-tips-e').on('click',function(){
+			webView = new steroids.views.WebView('http://localhost/views/drawerExample/estilo.html');
+			steroids.layers.push(webView);
+		});
+	});
+</script>
 
